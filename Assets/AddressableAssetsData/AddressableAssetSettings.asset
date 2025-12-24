@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 14e74789f36124d5a922684cacf9e2d5
   m_currentHash:
     serializedVersion: 2
-    Hash: 68487e143f3746bfebc9c1fa7fd02639
+    Hash: 34d9fe0f1771111ec5406cd2a865ee52
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 1
   m_CatalogRequestsTimeout: 20
@@ -62,8 +62,20 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: 6399120cf40804889a19c74751854540, type: 2}
   - {fileID: 11400000, guid: 46569c5d4350b42e79c461f2ac4fdace, type: 2}
+  - {fileID: 11400000, guid: 5a3877c6b0bcb4338856dad56fb88b6d, type: 2}
+  - {fileID: 11400000, guid: 802f60858469f4fb2a1ca14c971aa56d, type: 2}
+  - {fileID: 11400000, guid: 45d04dd0859cc40369d190700a7c907a, type: 2}
+  - {fileID: 11400000, guid: 2f5a4607afe384a18945899c31c71992, type: 2}
+  - {fileID: 11400000, guid: 235b6ea33d3284cb99cdbd813e2ddb9d, type: 2}
+  - {fileID: 11400000, guid: 53b0057ee99804807a00e9d4261ecda7, type: 2}
   - {fileID: 11400000, guid: f1acb15cfb8094a10a09cd3ac8924a05, type: 2}
+  - {fileID: 11400000, guid: 48f4e4b62c2084174a61b8520ac883a2, type: 2}
   - {fileID: 11400000, guid: 1c79174a5b87140af9733dcfb69242a3, type: 2}
+  - {fileID: 11400000, guid: d295a60716406461c9db79f5aa971acf, type: 2}
+  - {fileID: 11400000, guid: 3a6d89904cbe14f53a36d802b380039f, type: 2}
+  - {fileID: 11400000, guid: 8182987c9284145bbb4cb691422daae4, type: 2}
+  - {fileID: 11400000, guid: 06ccadc37c8b64c22a15954f34ce8229, type: 2}
+  - {fileID: 11400000, guid: 8c6f6d74f5bac4f6baa998a38b33555b, type: 2}
   m_BuildSettings:
     m_LogResourceManagerExceptions: 1
     m_BundleBuildPath: Temp/com.unity.addressables/AssetBundles
@@ -112,7 +124,7 @@ MonoBehaviour:
       - m_Id: a19b6f8a321b84b549c447608a27d80d
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
       - m_Id: b1bf7463b22004a7e80a0e74c7b5cb8c
-        m_Value: https://<github-pages-or-cdn-domain>
+        m_Value: https://unluckyidiot16.github.io/DungeonDeck/
       - m_Id: c57a44ca83e8d453eb5112a3d69734b6
         m_Value: 'ServerData/[BuildTarget]'
       - m_Id: eba156c4ceb4a4a3db60f3ba8fe98074
@@ -157,6 +169,31 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - artpack
+    - type_ui
+    - type_data
+    - type_player
+    - type_enemy
+    - type_cardart
+    - type_relicart
+    - type_fx
+    - type_audio
+    - pack_bootstrap
+    - pack_ui_core
+    - pack_data
+    - pack_player_player_01
+    - pack_enemy_ch1
+    - pack_enemy_ch2
+    - pack_bosses
+    - pack_card_oath_a
+    - pack_card_oath_b
+    - pack_card_oath_c
+    - pack_relic
+    - pack_fx_audio
+    - oath_a
+    - oath_b
+    - oath_c
+    - chapter_01
+    - chapter_02
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 2f8751eea0b014f649c13bdc755210af, type: 2}
@@ -169,4 +206,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cd8d4496cbe8b4db08abbad4ae126da2, type: 2}
   - {fileID: 11400000, guid: f1cc0153c25ab416ca6b36ba9f477312, type: 2}
   - {fileID: 11400000, guid: 71d6ed84f900049538065831d6ce3e8f, type: 2}
-  m_ActiveProfileId: 5bb7d2355abf142839f049b02a0da0b2
+  m_ActiveProfileId: 7bab64aea073d4d9cbc4625f0a9ab790

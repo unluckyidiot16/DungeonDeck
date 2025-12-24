@@ -2,6 +2,7 @@
 #if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using System.Collections;
@@ -532,11 +533,46 @@ public class AddressablesDoctorProWindow : EditorWindow
     // ------------------------
     // GH Pages Deploy
     // ------------------------
+    
+    private static string SanitizeBranchName(string raw)
+    {
+        // 사용자가 `git branch` 출력(*, +)을 그대로 복붙하는 경우가 많아서 제거
+        var s = (raw ?? "").Trim();
+        s = s.TrimStart('*', '+').Trim();
+        
+        if (string.IsNullOrEmpty(s))
+            throw new Exception("gh-pages Branch 값이 비어 있습니다. 예: gh-pages");
+        
+        // 공백이 있으면 git 인자 파싱이 깨져 usage가 뜨는 케이스가 많음
+        for (int i = 0; i < s.Length; i++)
+        {
+            if (char.IsWhiteSpace(s[i]))
+                throw new Exception($"gh-pages Branch에 공백이 포함되어 있습니다: '{s}'\nBranch는 공백 없이 'gh-pages' 처럼 입력하세요.");
+        }
+        
+        if (s.Contains("\"") || s.Contains("'"))
+            throw new Exception($"gh-pages Branch에 따옴표가 포함되어 있습니다: '{s}'\n따옴표 없이 입력하세요.");
+        
+        return s;
+    }
+
+    private static string SanitizeWorktreeFolder(string raw)
+    {
+        var s = (raw ?? "").Trim().Trim('\"').Trim();
+        if (string.IsNullOrEmpty(s))
+            throw new Exception("Worktree Folder 값이 비어 있습니다. 예: .addr_ghpages_worktree");
+        return s;
+    }
+    
     private void DeployToGhPages()
     {
         var repoRoot = GetGitRepoRoot();
         if (string.IsNullOrEmpty(repoRoot))
             throw new Exception("Git repo root를 찾지 못했습니다. (git init 되어 있는지 확인)");
+        
+        // ✅ 입력값 정리/검증 (usage 에러 예방)
+        ghPagesBranch = SanitizeBranchName(ghPagesBranch);
+        ghWorktreeFolder = SanitizeWorktreeFolder(ghWorktreeFolder);
         
         // ✅ stale worktree(유령 worktree) 방지
         TryRunGit(repoRoot, "worktree prune --expire now");
@@ -626,6 +662,26 @@ public class AddressablesDoctorProWindow : EditorWindow
         // ✅ IMPORTANT:
         // 기존 코드: `worktree add -B gh-pages <path>` 는 "현재 브랜치 HEAD"를 기준으로 gh-pages를 리셋함.
         // 그래서 gh-pages가 main과 똑같이 되어 버림.
+        
+        branch = SanitizeBranchName(branch);
+        
+        // 원격 브랜치 유무 판단 전에 최신 refs 갱신(선택이지만 추천)
+        TryRunGit(repoRoot, "fetch origin --prune");
+        
+        // ✅ 이미 worktree가 존재하고 브랜치도 맞으면 재사용
+        try
+        {
+            var dotGit = Path.Combine(worktreePath, ".git");
+            if (Directory.Exists(worktreePath) && File.Exists(dotGit))
+            {
+                var cur = RunGit(worktreePath, "rev-parse --abbrev-ref HEAD", allowFail: true);
+                if (cur.ok && cur.output.Trim() == branch)
+                    return;
+            }
+        }
+        catch { /* ignore */ }
+        
+        
         // 개선: origin/gh-pages가 있으면 그걸 기준으로 worktree 생성/리셋.
                     
         string remoteRef = $"origin/{branch}";
@@ -635,17 +691,34 @@ public class AddressablesDoctorProWindow : EditorWindow
             ? $"worktree add -B {branch} \"{worktreePath}\" {remoteRef}"
             : $"worktree add -B {branch} \"{worktreePath}\"";
         
-        var res = RunGit(repoRoot, args, allowFail: true);
-
-        if (!res.ok)
+        var primary = RunGit(repoRoot, args, allowFail: true);
+        if (primary.ok) return;
+        
+        // 1차가 실패했다면: (특히 origin/gh-pages 관련) 로컬 브랜치 포인터를 명시적으로 맞춰두고
+        // path-first 형태의 worktree add로 재시도
+        // ⚠️ gh-pages가 다른 worktree에서 체크아웃 중이면 branch -f는 항상 실패한다.
+        // 브랜치 포인터 이동은 worktree 내부에서 reset으로 처리하는 편이 안전.
+        // (여기서는 branch -f 시도를 하지 않는다.)
+        
+        string args2 = $"worktree add -f \"{worktreePath}\" {branch}";
+        var secondary = RunGit(repoRoot, args2, allowFail: true);
+        if (!secondary.ok)
         {
-            // fallback: try without -B
-            res = hasRemote
-                ? RunGit(repoRoot, $"worktree add {branch} \"{worktreePath}\" {remoteRef}", allowFail: true)
-                : RunGit(repoRoot, $"worktree add {branch} \"{worktreePath}\"", allowFail: true);
-            if (!res.ok)
-                throw new Exception($"git worktree add failed:\n{res.output}");
+            string dbg =
+                $"git worktree add failed.\n" +
+                $"Branch='{branch}'\nWorktreePath='{worktreePath}'\n\n" +
+                $"1) git {args}\n{primary.output}\n\n" +
+                $"2) git {args2}\n{secondary.output}\n";
+            throw new Exception(dbg);
         }
+        
+        // worktree가 만들어졌으면, 원격 기준으로 내용만 맞춘다 (브랜치 강제 이동 아님)
+        if (hasRemote)
+        {
+            TryRunGit(worktreePath, "fetch origin --prune");
+            TryRunGit(worktreePath, $"reset --hard {remoteRef}");
+        }
+        
     }
     
     private bool HasRemoteBranch(string repoRoot, string remoteRef)
