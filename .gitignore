@@ -68,3 +68,10 @@ Assets/AddressableAssetsData/*/*.bin*
 # =========================
 # 개인 환경 설정만 제외
 ProjectSettings/EditorUserSettings.asset
+
+# --- Addressables gh-pages worktree (local deploy worktree; NEVER commit)
+.addr_ghpages_worktree/
+
+# --- Addressables remote build output (generated)
+ServerData/
+
