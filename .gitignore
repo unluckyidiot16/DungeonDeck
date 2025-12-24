@@ -72,6 +72,3 @@ ProjectSettings/EditorUserSettings.asset
 # --- Addressables gh-pages worktree (local deploy worktree; NEVER commit)
 .addr_ghpages_worktree/
 
-# --- Addressables remote build output (generated)
-ServerData/
-
