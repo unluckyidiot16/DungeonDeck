@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using System.Collections;
 using System.Linq;
 using System.Diagnostics;
 using System.Text;
@@ -51,6 +52,11 @@ public class AddressablesDoctorProWindow : EditorWindow
     [SerializeField] private bool ghAllowEmptyCommit = false;
     [SerializeField] private bool ghAutoPush = true;
     [SerializeField] private string ghCommitMessageTemplate = "Deploy Addressables {BuildTarget} {Timestamp}";
+    
+    // ✅ gh-pages hosting-only (ServerData만 유지)
+    [SerializeField] private bool ghHostingOnlyServerData = true;
+    [SerializeField] private bool ghCreateNoJekyll = true;
+    
 
     // Deploy - R2 Presigned
     public enum R2UploadMode { ZipSinglePutUrl, FileMapPutUrls }
@@ -318,6 +324,11 @@ public class AddressablesDoctorProWindow : EditorWindow
             ghCleanWorktreeBeforeDeploy = EditorGUILayout.ToggleLeft("Clean worktree folder before deploy", ghCleanWorktreeBeforeDeploy);
             ghAllowEmptyCommit = EditorGUILayout.ToggleLeft("Allow empty commit", ghAllowEmptyCommit);
             ghAutoPush = EditorGUILayout.ToggleLeft("Auto push after commit", ghAutoPush);
+            
+            // ✅ gh-pages는 배포물 전용
+            ghHostingOnlyServerData = EditorGUILayout.ToggleLeft("Hosting-only: keep ONLY ServerData on gh-pages (recommended)", ghHostingOnlyServerData);
+            if (ghHostingOnlyServerData) ghCreateNoJekyll = EditorGUILayout.ToggleLeft("Create .nojekyll (recommended)", ghCreateNoJekyll);
+            
 
             ghCommitMessageTemplate = EditorGUILayout.TextField("Commit Message", ghCommitMessageTemplate);
 
@@ -526,6 +537,9 @@ public class AddressablesDoctorProWindow : EditorWindow
         var repoRoot = GetGitRepoRoot();
         if (string.IsNullOrEmpty(repoRoot))
             throw new Exception("Git repo root를 찾지 못했습니다. (git init 되어 있는지 확인)");
+        
+        // ✅ stale worktree(유령 worktree) 방지
+        TryRunGit(repoRoot, "worktree prune --expire now");
 
         var serverDataRoot = GetServerDataRoot();
         if (!Directory.Exists(serverDataRoot))
@@ -543,6 +557,12 @@ public class AddressablesDoctorProWindow : EditorWindow
         // Ensure branch worktree
         EnsureGhWorktree(repoRoot, worktreePath, ghPagesBranch);
 
+        // ✅ gh-pages는 배포물(ServerData)만 남기도록 정리
+        if (ghHostingOnlyServerData)
+        { 
+            CleanGhPagesToHostingOnly(worktreePath, createNoJekyll: ghCreateNoJekyll);
+        }
+        
         // Copy content
         EditorUtility.DisplayProgressBar("Deploy gh-pages", "Copying ServerData...", 0.25f);
 
@@ -556,11 +576,16 @@ public class AddressablesDoctorProWindow : EditorWindow
                 throw new Exception($"Target ServerData 폴더가 없습니다: {src}\nBuildTarget에 맞춰 Addressables를 다시 빌드하세요.");
 
             var dst = Path.Combine(destServerDataRoot, GetBuildTargetName());
+            // ✅ stale 파일 방지: 기존 타겟 폴더 삭제 후 복사
+            TryDeleteDirectory(dst);
             CopyDirectory(src, dst, overwrite: true);
         }
         else
         {
             // copy whole ServerData
+            // ✅ stale 파일 방지: 전체 ServerData를 갈아끼움
+            TryDeleteDirectory(destServerDataRoot);
+            Directory.CreateDirectory(destServerDataRoot);
             CopyDirectory(serverDataRoot, destServerDataRoot, overwrite: true);
         }
 
@@ -598,18 +623,40 @@ public class AddressablesDoctorProWindow : EditorWindow
 
     private void EnsureGhWorktree(string repoRoot, string worktreePath, string branch)
     {
-        // Create worktree for branch
-        // If branch doesn't exist, -B will create/reset it based on current HEAD
-        string args = $"worktree add -B {branch} \"{worktreePath}\"";
+        // ✅ IMPORTANT:
+        // 기존 코드: `worktree add -B gh-pages <path>` 는 "현재 브랜치 HEAD"를 기준으로 gh-pages를 리셋함.
+        // 그래서 gh-pages가 main과 똑같이 되어 버림.
+        // 개선: origin/gh-pages가 있으면 그걸 기준으로 worktree 생성/리셋.
+                    
+        string remoteRef = $"origin/{branch}";
+        bool hasRemote = HasRemoteBranch(repoRoot, remoteRef);
+        
+        string args = hasRemote
+            ? $"worktree add -B {branch} \"{worktreePath}\" {remoteRef}"
+            : $"worktree add -B {branch} \"{worktreePath}\"";
+        
         var res = RunGit(repoRoot, args, allowFail: true);
 
         if (!res.ok)
         {
             // fallback: try without -B
-            res = RunGit(repoRoot, $"worktree add {branch} \"{worktreePath}\"", allowFail: true);
+            res = hasRemote
+                ? RunGit(repoRoot, $"worktree add {branch} \"{worktreePath}\" {remoteRef}", allowFail: true)
+                : RunGit(repoRoot, $"worktree add {branch} \"{worktreePath}\"", allowFail: true);
             if (!res.ok)
                 throw new Exception($"git worktree add failed:\n{res.output}");
         }
+    }
+    
+    private bool HasRemoteBranch(string repoRoot, string remoteRef)
+    {
+        // remoteRef example: origin/gh-pages
+        // `show-ref --verify refs/remotes/origin/gh-pages`
+        string rr = remoteRef.Replace("\\", "/");
+        if (!rr.StartsWith("origin/")) return false;
+        string name = rr.Substring("origin/".Length);
+        var r = RunGit(repoRoot, $"show-ref --verify --quiet refs/remotes/origin/{name}", allowFail: true);
+        return r.ok;
     }
 
     private string GetGitRepoRoot()
@@ -892,6 +939,48 @@ public class AddressablesDoctorProWindow : EditorWindow
             Directory.Delete(path, recursive: true);
         }
         catch { /* ignore */ }
+    }
+    
+    // ------------------------
+    // gh-pages hosting-only cleanup
+    // ------------------------
+    private static void CleanGhPagesToHostingOnly(string worktreePath, bool createNoJekyll)
+    {
+        // worktreePath 루트에서 .git(파일) / ServerData / (.nojekyll 옵션)만 남김
+        // ⚠️ .git 은 worktree에서 "파일"로 존재하는 경우가 많음. 삭제하면 worktree가 망가짐.
+        var keep = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        { 
+            ".git",
+            "ServerData",
+        };
+        
+        if (createNoJekyll) keep.Add(".nojekyll");
+        
+        // Create .nojekyll early so it is preserved
+        if (createNoJekyll)
+        {
+            var nojekyll = Path.Combine(worktreePath, ".nojekyll");
+            try
+            {
+                if (!File.Exists(nojekyll)) File.WriteAllText(nojekyll, "");
+            }
+            catch { /* ignore */ }
+        }
+        
+        // delete everything else in root
+        foreach (var entry in Directory.GetFileSystemEntries(worktreePath))
+        {
+            var name = Path.GetFileName(entry);
+            if (string.IsNullOrEmpty(name)) continue;
+            if (keep.Contains(name)) continue;
+            
+            try
+            {
+                if (Directory.Exists(entry)) Directory.Delete(entry, recursive: true);
+                else if (File.Exists(entry)) File.Delete(entry);
+            }
+            catch { /* ignore */ }
+        }
     }
 
     private static string EscapeQuotes(string s) => (s ?? "").Replace("\"", "\\\"");
