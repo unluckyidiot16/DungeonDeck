@@ -3,34 +3,61 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DungeonDeck.Config.Cards;
+using DungeonDeck.Config.UI;
 
 namespace DungeonDeck.UI.Battle
 {
     public class BattleCardButtonView : MonoBehaviour
     {
-        [Header("Wiring")]
+        [Header("Core")]
         public Button button;
+
+        [Header("Visuals")]
+        public Image backgroundImage;
+        public Image frameImage;
+        public Image iconImage;
+
+        [Header("Texts (TMP)")]
         public TMP_Text nameText;
         public TMP_Text costText;
+        public TMP_Text effectText;
+        public TMP_Text rarityText;
+
+        [Header("Theme (optional)")]
+        public CardVisualTheme theme;
 
         private void Awake()
         {
-            EnsureWired();
+            AutoWireIfNeeded();
         }
 
-        public void Bind(CardDefinition card, bool interactable, Action onClick)
+        public void Bind(CardDefinition card, bool interactable, Action onClick, bool showCost = true)
         {
-            EnsureWired();
+            AutoWireIfNeeded();
 
             bool has = card != null;
-
             gameObject.SetActive(has);
+            if (!has) return;
 
-            if (!has)
-                return;
+            if (nameText != null) nameText.text = card.GetDisplayName();
+            if (effectText != null) effectText.text = card.GetEffectText();
 
-            if (nameText != null) nameText.text = card.id;
-            if (costText != null) costText.text = $"COST {card.cost}";
+            if (costText != null)
+            {
+                costText.gameObject.SetActive(showCost);
+                costText.text = showCost ? card.cost.ToString() : "";
+            }
+
+            if (iconImage != null)
+            {
+                iconImage.gameObject.SetActive(card.icon != null);
+                iconImage.sprite = card.icon;
+            }
+
+            if (rarityText != null)
+                rarityText.text = card.rarity.ToString();
+
+            ApplyTheme(card);
 
             if (button != null)
             {
@@ -40,45 +67,62 @@ namespace DungeonDeck.UI.Battle
             }
         }
 
-        private void EnsureWired()
+        private void ApplyTheme(CardDefinition card)
+        {
+            if (card == null) return;
+
+            if (theme != null && theme.TryGet(card.rarity, out var style) && style != null)
+            {
+                if (backgroundImage != null) backgroundImage.color = style.backgroundTint;
+
+                if (frameImage != null)
+                {
+                    frameImage.color = style.frameTint;
+                    if (style.frameSprite != null) frameImage.sprite = style.frameSprite;
+                }
+
+                if (rarityText != null) rarityText.color = style.rarityTextTint;
+                return;
+            }
+
+            // 테마가 없을 때도 최소한 구분은 나게
+            // (색은 네가 theme로 정식 지정하는 게 정답)
+            if (backgroundImage != null) backgroundImage.color = Color.white;
+            if (frameImage != null) frameImage.color = Color.white;
+        }
+
+        private void AutoWireIfNeeded()
         {
             if (button == null) button = GetComponent<Button>();
-
-            // 프리팹에서 미리 연결하는 게 베스트지만,
-            // 혹시 누락돼도 최소한 컴파일/동작은 하게 런타임 자동 생성
             if (button == null)
             {
                 if (GetComponent<Image>() == null) gameObject.AddComponent<Image>();
                 button = gameObject.AddComponent<Button>();
             }
 
-            if (nameText == null) nameText = FindOrCreateTMP("Name");
-            if (costText == null) costText = FindOrCreateTMP("Cost");
+            if (backgroundImage == null) backgroundImage = GetComponent<Image>();
+            // frame/icon/text는 프리팹에서 직접 연결하는 걸 권장 (없어도 null-safe)
+
+            // TMP들 자동 탐색(프리팹 네이밍 추천: NameText/CostText/EffectText/RarityText)
+            if (nameText == null) nameText = FindTmp("NameText");
+            if (costText == null) costText = FindTmp("CostText");
+            if (effectText == null) effectText = FindTmp("EffectText");
+            if (rarityText == null) rarityText = FindTmp("RarityText");
+
+            if (frameImage == null) frameImage = FindImg("Frame");
+            if (iconImage == null) iconImage = FindImg("Icon");
         }
 
-        private TMP_Text FindOrCreateTMP(string childName)
+        private TMP_Text FindTmp(string childName)
         {
             var t = transform.Find(childName);
-            if (t != null)
-                return t.GetComponent<TMP_Text>() ?? t.gameObject.AddComponent<TextMeshProUGUI>();
+            return t ? t.GetComponent<TMP_Text>() : null;
+        }
 
-            var go = new GameObject(childName, typeof(RectTransform));
-            go.transform.SetParent(transform, false);
-
-            var tmp = go.AddComponent<TextMeshProUGUI>();
-            tmp.raycastTarget = false;
-
-            // 아주 기본 배치(프리팹 만들면 이 부분은 무시해도 됨)
-            var rt = (RectTransform)go.transform;
-            rt.anchorMin = new Vector2(0, childName == "Cost" ? 0 : 0.5f);
-            rt.anchorMax = new Vector2(1, childName == "Cost" ? 0.5f : 1);
-            rt.offsetMin = new Vector2(8, 6);
-            rt.offsetMax = new Vector2(-8, -6);
-
-            tmp.alignment = TextAlignmentOptions.Center;
-            tmp.fontSize = childName == "Cost" ? 20 : 28;
-
-            return tmp;
+        private Image FindImg(string childName)
+        {
+            var t = transform.Find(childName);
+            return t ? t.GetComponent<Image>() : null;
         }
     }
 }

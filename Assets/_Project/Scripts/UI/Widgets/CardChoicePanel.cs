@@ -3,106 +3,106 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using DungeonDeck.Rewards;
+using DungeonDeck.Config.Cards;
+using DungeonDeck.UI.Battle; // BattleCardButtonView 재사용
 
 namespace DungeonDeck.UI.Widgets
 {
     public class CardChoicePanel : MonoBehaviour
     {
-        [Header("Wiring")]
-        [SerializeField] private GameObject root;
-        [SerializeField] private TMP_Text titleText;
-        [SerializeField] private Button skipButton;
+        [Header("Root")]
+        public GameObject root;
+        public TMP_Text titleText;
+        public Button skipButton;
 
-        [Header("Option Buttons (3)")]
-        [SerializeField] private Button optionButton0;
-        [SerializeField] private Button optionButton1;
-        [SerializeField] private Button optionButton2;
+        [Header("Cards (Reuse same prefab)")]
+        public Transform cardRoot;
+        public BattleCardButtonView cardPrefab;
 
-        [SerializeField] private TMP_Text optionText0;
-        [SerializeField] private TMP_Text optionText1;
-        [SerializeField] private TMP_Text optionText2;
+        [Header("Settings")]
+        public int optionCount = 3;
 
-        private Action<CardRewardRoller.RewardOption> _onChosen;
+        private readonly List<BattleCardButtonView> _views = new();
+        private Action<CardDefinition> _onChosen;
         private Action _onSkipped;
-        private List<CardRewardRoller.RewardOption> _current;
+        private List<CardDefinition> _options;
 
         private void Awake()
         {
             if (root == null) root = gameObject;
+            if (cardRoot == null) cardRoot = transform;
 
-            Bind(optionButton0, 0);
-            Bind(optionButton1, 1);
-            Bind(optionButton2, 2);
+            BuildViews();
 
             if (skipButton != null)
-                skipButton.onClick.AddListener(HandleSkip);
+            {
+                skipButton.onClick.RemoveAllListeners();
+                skipButton.onClick.AddListener(() =>
+                {
+                    Hide();
+                    _onSkipped?.Invoke();
+                });
+            }
 
             Hide();
         }
 
-        private void Bind(Button btn, int index)
+        private void BuildViews()
         {
-            if (btn == null) return;
-            btn.onClick.RemoveAllListeners();
-            btn.onClick.AddListener(() => HandlePick(index));
+            if (cardPrefab == null) return;
+            if (_views.Count > 0) return;
+
+            for (int i = 0; i < optionCount; i++)
+            {
+                var v = Instantiate(cardPrefab, cardRoot);
+                v.name = $"RewardCard_{i}";
+                _views.Add(v);
+            }
         }
 
         public void Show(
-            IReadOnlyList<CardRewardRoller.RewardOption> options,
-            Action<CardRewardRoller.RewardOption> onChosen,
+            IReadOnlyList<CardDefinition> options,
+            Action<CardDefinition> onChosen,
             Action onSkipped = null,
             string title = "Choose 1 Card")
         {
             _onChosen = onChosen;
             _onSkipped = onSkipped;
 
-            _current = options != null ? new List<CardRewardRoller.RewardOption>(options) : new List<CardRewardRoller.RewardOption>();
+            _options = options != null ? new List<CardDefinition>(options) : new List<CardDefinition>();
 
             if (titleText != null) titleText.text = title;
-
-            ApplyOption(0, optionButton0, optionText0);
-            ApplyOption(1, optionButton1, optionText1);
-            ApplyOption(2, optionButton2, optionText2);
-
             if (skipButton != null) skipButton.gameObject.SetActive(onSkipped != null);
 
-            if (root != null) root.SetActive(true);
+            for (int i = 0; i < _views.Count; i++)
+            {
+                int idx = i;
+
+                if (idx >= _options.Count || _options[idx] == null)
+                {
+                    _views[idx].gameObject.SetActive(false);
+                    continue;
+                }
+
+                var card = _options[idx];
+                _views[idx].Bind(
+                    card,
+                    interactable: true,
+                    onClick: () =>
+                    {
+                        Hide();
+                        _onChosen?.Invoke(card);
+                    },
+                    showCost: false // 보상 선택 화면에선 cost 숨기는 게 보통 더 보기 좋음
+                );
+            }
+
+            root.SetActive(true);
         }
 
         public void Hide()
         {
             if (root != null) root.SetActive(false);
-        }
-
-        private void ApplyOption(int idx, Button btn, TMP_Text txt)
-        {
-            bool has = _current != null && idx >= 0 && idx < _current.Count && _current[idx].cardAsset != null;
-
-            if (btn != null) btn.gameObject.SetActive(has);
-            if (txt != null)
-            {
-                txt.text = has ? _current[idx].displayName : "";
-            }
-        }
-
-        private void HandlePick(int index)
-        {
-            if (_current == null || index < 0 || index >= _current.Count)
-                return;
-
-            var opt = _current[index];
-            if (opt.cardAsset == null)
-                return;
-
-            Hide();
-            _onChosen?.Invoke(opt);
-        }
-
-        private void HandleSkip()
-        {
-            Hide();
-            _onSkipped?.Invoke();
         }
     }
 }

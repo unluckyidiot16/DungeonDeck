@@ -8,20 +8,16 @@ namespace DungeonDeck.UI.Battle
 {
     public class BattleHandUI : MonoBehaviour
     {
-        [Header("Refs")]
         public BattleController battle;
         public Transform handRoot;
 
-        [Header("Prefab (Optional)")]
         public BattleCardButtonView cardPrefab;
 
-        [Header("UI (Optional)")]
         public TMP_Text energyText;
         public TMP_Text playerHpText;
         public TMP_Text enemyHpText;
         public Button endTurnButton;
 
-        [Header("Settings")]
         public int maxHandSlots = 5;
 
         private readonly List<BattleCardButtonView> _slots = new();
@@ -57,32 +53,12 @@ namespace DungeonDeck.UI.Battle
 
         private void BuildSlots()
         {
-            // 이미 만들어져 있다면 유지
             if (_slots.Count > 0) return;
 
             for (int i = 0; i < maxHandSlots; i++)
             {
-                BattleCardButtonView view;
-
-                if (cardPrefab != null)
-                {
-                    view = Instantiate(cardPrefab, handRoot);
-                    view.name = $"CardSlot_{i}";
-                }
-                else
-                {
-                    // 프리팹이 없어도 최소 동작하도록 런타임 생성
-                    var go = new GameObject($"CardSlot_{i}", typeof(RectTransform));
-                    go.transform.SetParent(handRoot, false);
-
-                    // 기본 이미지/버튼 포함은 BattleCardButtonView가 EnsureWired에서 처리
-                    view = go.AddComponent<BattleCardButtonView>();
-
-                    // 보기용 최소 크기(레이아웃 그룹 쓰면 무시됨)
-                    var rt = (RectTransform)go.transform;
-                    rt.sizeDelta = new Vector2(220, 120);
-                }
-
+                var view = Instantiate(cardPrefab, handRoot);
+                view.name = $"CardSlot_{i}";
                 _slots.Add(view);
             }
         }
@@ -97,22 +73,23 @@ namespace DungeonDeck.UI.Battle
 
             for (int i = 0; i < _slots.Count; i++)
             {
-                int idx = i; // closure 안전
+                int idx = i;
                 var card = battle.GetHandCard(idx);
 
                 if (card == null)
                 {
-                    _slots[idx].Bind(null, false, null);
+                    _slots[idx].gameObject.SetActive(false);
                     continue;
                 }
 
                 bool canPlay = battle.Energy >= card.cost;
 
-                _slots[idx].Bind(card, canPlay, () =>
-                {
-                    // 클릭 시 현재 인덱스 카드 사용
-                    battle.TryPlayCardAt(idx);
-                });
+                _slots[idx].Bind(
+                    card,
+                    interactable: canPlay,
+                    onClick: () => battle.TryPlayCardAt(idx),
+                    showCost: true
+                );
             }
         }
     }
