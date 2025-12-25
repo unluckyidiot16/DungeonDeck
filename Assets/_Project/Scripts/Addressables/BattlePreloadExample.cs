@@ -28,8 +28,6 @@ public class BattlePreloadWeightedExample : MonoBehaviour
 
     private void Start()
     {
-        Caching.ClearCache();
-        
         StartCoroutine(PreloadBattleWeighted());
     }
 
