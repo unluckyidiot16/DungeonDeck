@@ -1,5 +1,9 @@
 // Assets/_Project/Scripts/Battle/BattleController.cs
 using System;
+using System.Collections;
+using System.Linq;
+using DungeonDeck.UI.Widgets;
+using DungeonDeck.Rewards;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,6 +24,14 @@ namespace DungeonDeck.Battle
         private DeckRuntime _deck;
         
         public event Action StateChanged;
+        
+        [Header("Reward (Win)")]
+        [SerializeField] private CardChoicePanel rewardPanel;   // 배틀 씬 안에 비활성으로 두고 연결
+        [SerializeField] private List<CardDefinition> fallbackRewardCandidates = new(); // 비었으면 현재 덱에서 후보를 뽑음
+        [SerializeField] private bool allowSkipReward = false;
+
+        private bool _endingFlow = false;
+        
 
 // UI/외부 조회용
         public int Energy => _state != null ? _state.energy : 0;
@@ -241,26 +253,111 @@ namespace DungeonDeck.Battle
 
         private void EndBattle(bool win)
         {
+            if (_endingFlow) return;
+            _endingFlow = true;
+
             var run = RunSession.I;
 
             // sync player hp back to run
             run.State.hp = _state.playerHP;
 
-            if (win)
-            {
-                Debug.Log("[Battle] WIN");
-                if (run.Balance != null) run.State.gold += run.Balance.winGold;
-                run.MarkNodeClearedAndAdvance();
-            }
-            else
+            if (!win)
             {
                 Debug.Log("[Battle] LOSE (M1 stub: return to Map without resetting run)");
-                // Later: go to GameOver screen and reset run
+                SceneManager.LoadScene(SceneRoutes.Map);
+                return;
             }
 
-            SceneManager.LoadScene(SceneRoutes.Map);
+            Debug.Log("[Battle] WIN");
+
+            // 골드 먼저 지급(선택 전/후는 취향인데, 지금은 즉시 지급으로)
+            if (run.Balance != null) run.State.gold += run.Balance.winGold;
+
+            // ✅ 승리 보상 선택 → 덱 추가 → 노드 클리어/진행 → 맵 복귀
+            StartCoroutine(WinRewardFlowCo());
         }
+        
+        private IEnumerator WinRewardFlowCo()
+{
+    var run = RunSession.I;
+
+    // 패널 자동 탐색(인스펙터 연결 권장)
+    var panel = rewardPanel != null ? rewardPanel : FindObjectOfType<CardChoicePanel>(true);
+
+    // 패널이 없으면 그냥 진행(크래시 방지)
+    if (panel == null)
+    {
+        Debug.LogWarning("[Battle] Reward panel not found. Skipping reward.");
+        run.MarkNodeClearedAndAdvance();
+        SceneManager.LoadScene(SceneRoutes.Map);
+        yield break;
     }
+
+    // 1) 후보 리스트 구성
+    var candidates = BuildRewardCandidates(run);
+
+    // 2) 3장 뽑기
+    var options = CardRewardRollerCards.Roll(candidates, count: 3, unique: true);
+
+    if (options == null || options.Count == 0)
+    {
+        Debug.LogWarning("[Battle] No reward options. Advancing without reward.");
+        run.MarkNodeClearedAndAdvance();
+        SceneManager.LoadScene(SceneRoutes.Map);
+        yield break;
+    }
+
+    // 3) UI Show & 선택 대기
+    bool done = false;
+    CardDefinition chosen = null;
+
+    panel.Show(
+        options,
+        onChosen: c => { chosen = c; done = true; },
+        onSkipped: allowSkipReward ? (() => { done = true; }) : null,
+        title: "Reward: Choose 1 Card"
+    );
+
+    while (!done) yield return null;
+
+    // 4) 선택 카드 덱에 추가
+    if (chosen != null)
+    {
+        // run.State.deck는 List<CardDefinition> 가정 (현재 BattleController가 그렇게 쓰고 있음)
+        if (run.State.deck == null) run.State.deck = new List<CardDefinition>();
+        run.State.deck.Add(chosen);
+        Debug.Log($"[Battle] Reward chosen: {chosen.id}");
+    }
+
+    // 노드 클리어/진행
+    run.MarkNodeClearedAndAdvance();
+
+    // Map 복귀
+    SceneManager.LoadScene(SceneRoutes.Map);
+}
+
+private List<CardDefinition> BuildRewardCandidates(RunSession run)
+{
+    // 1) 인스펙터에 지정한 후보가 있으면 우선 사용
+    if (fallbackRewardCandidates != null && fallbackRewardCandidates.Count > 0)
+    {
+        // null 제거 + 중복 제거(레퍼런스 기준)
+        return fallbackRewardCandidates.Where(c => c != null).Distinct().ToList();
+    }
+
+    // 2) 없으면 현재 덱 기반으로 후보 구성(최소 동작 보장)
+    if (run != null && run.State != null && run.State.deck != null && run.State.deck.Count > 0)
+    {
+        return run.State.deck.Where(c => c != null).Distinct().ToList();
+    }
+
+    return new List<CardDefinition>();
+}
+
+        
+    }
+    
+    
 
     // ----------------------------
     // Minimal battle model/runtime
