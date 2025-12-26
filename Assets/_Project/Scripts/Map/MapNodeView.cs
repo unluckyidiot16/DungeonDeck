@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using DungeonDeck.Config.Map;
+using TMPro;
 
 namespace DungeonDeck.Map
 {
@@ -10,7 +11,7 @@ namespace DungeonDeck.Map
     {
         [Header("UI")]
         public Button button;
-        public Text label; // (M1) replace with TMP later if you want
+        public TMP_Text label; // (M1) replace with TMP later if you want
 
         public void Bind(int index, MapNodeType type, bool cleared, bool isCurrent, Action onClick)
         {

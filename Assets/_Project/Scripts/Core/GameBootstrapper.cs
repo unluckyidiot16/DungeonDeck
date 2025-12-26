@@ -15,6 +15,10 @@ namespace DungeonDeck.Core
         public OathDefinition defaultOath;
         public MapPlanDefinition defaultMapPlan;
 
+        [Header("Flow")]
+        [Tooltip("MVP 디버그용: Boot 진입 시 자동으로 새 런 시작 후 Map으로 이동")]
+        [SerializeField] private bool autoStartRunOnBoot = true;
+        
         private void Awake()
         {
             // Ensure RunSession exists
@@ -27,8 +31,8 @@ namespace DungeonDeck.Core
 
         private void Start()
         {
-            // Auto start for M1
-            StartNewRunAndGoMap();
+            if (autoStartRunOnBoot)
+                StartNewRunAndGoMap();
         }
 
         public void StartNewRunAndGoMap()

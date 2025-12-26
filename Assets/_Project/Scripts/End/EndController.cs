@@ -76,7 +76,14 @@ namespace DungeonDeck.Ending
             // 1) RunFactory에 CreateNewRun 같은 함수가 있으면 사용:
             // RunFactory.CreateNewRun();
 
-            // 2) 가장 안전: RunSession에 Reset/NewRun이 없다면 Boot로 보내고 Boot에서 생성하게
+            // ✅ End에서 Restart: 즉시 재시작(부트 스킵) 정책으로 통일
+            if (RunSession.I != null)
+            {
+                RunSession.I.RestartSameRunAndGoToMap();
+                return;
+            }
+            
+            Debug.LogWarning("[End] RunSession missing. Going Boot.");
             SceneManager.LoadScene(SceneRoutes.Boot);
         }
 

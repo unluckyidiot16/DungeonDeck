@@ -38,6 +38,11 @@ namespace DungeonDeck.Shop
         [Tooltip("Premium 슬롯에서만 사용할 풀(여기 비어있으면 일반 Shop 풀로 굴림)")]
         [SerializeField] private List<CardPoolDefinition> premiumShopPools = new();
 
+        [Header("Premium Pricing")]
+        [Tooltip("Premium 슬롯 가격 배수 (예: 1.25 = +25%)")]
+        [Range(1f, 3f)]
+        [SerializeField] private float premiumPriceMultiplier = 1.25f;
+        
         [Header("Reroll")]
         [Tooltip("0이면 무료 리롤")]
         [SerializeField] private int rerollCost = 25;
@@ -61,6 +66,9 @@ namespace DungeonDeck.Shop
         private List<CardDefinition> _offers = new();
         private List<CardDefinition> _candidateList = new();
         private bool _leaving = false;
+        
+        // 카드 id -> 현재 상점에서의 실제 가격(프리미엄 슬롯 반영)
+        private readonly Dictionary<string, int> _priceCacheById = new();
 
         private void Awake()
         {
@@ -126,6 +134,7 @@ namespace DungeonDeck.Shop
             }
 
             LoadOffersFromState();
+            RebuildPriceCache();
         }
 
         private void GenerateOffersIntoState(int seed, bool overwriteSold)
@@ -163,9 +172,13 @@ namespace DungeonDeck.Shop
             }
 
             // ✅ 중요: Shop은 Shop 컨텍스트 풀을 써야 함 (기본 Reward 풀로 굴러가면 UX가 깨짐)
-            var normalPools = (useRunCardPools && _run != null)
-                ? _run.GetActiveCardPools(RunSession.CardPoolContext.Shop)
-                : null;
+            List<CardPoolDefinition> normalPools = null;
+            if (useRunCardPools && _run != null)
+            {
+                var ro = _run.GetActiveCardPools(RunSession.CardPoolContext.Shop);
+                if (ro != null && ro.Count > 0)
+                    normalPools = new List<CardPoolDefinition>(ro);
+            }
 
             // premium 풀: 인스펙터 지정이 있으면 그걸 우선, 없으면 normal과 동일
             var premiumPools = ResolvePoolList(premiumShopPools);
@@ -176,6 +189,14 @@ namespace DungeonDeck.Shop
             // 2) normal 먼저 롤 (유니크)
             // -----------------------------
             var usedIds = new HashSet<string>();
+            
+            // SOLD 슬롯에 이미 박힌 카드 id도 중복 방지에 포함
+            for (int i = 0; i < offerCount; i++)
+            {
+                if (!s.shopOfferSold[i]) continue;
+                var id = s.shopOfferIds[i];
+                if (!string.IsNullOrWhiteSpace(id)) usedIds.Add(id);
+            }
 
             var rolledNormal = RollFromEither(
                 poolsOrNull: normalPools,
@@ -301,8 +322,34 @@ namespace DungeonDeck.Shop
                 string id = s.shopOfferIds[i];
                 _offers.Add(ResolveCandidateById(id));
             }
+            RebuildPriceCache();
         }
 
+        private bool IsPremiumSlot(int slotIndex)
+        {
+            int premiumSlot = Mathf.Clamp(premiumSlotIndex, 0, Mathf.Max(0, offerCount - 1));
+            return usePremiumSlot && slotIndex == premiumSlot;
+        }
+    
+        private void RebuildPriceCache()
+            {
+                _priceCacheById.Clear();
+                if (_offers == null) return;
+        
+                for (int i = 0; i < _offers.Count; i++)
+                {
+                    var c = _offers[i];
+                    if (c == null) continue;
+                    if (string.IsNullOrWhiteSpace(c.id)) continue;
+            
+                    int price = GetBasePrice(c);
+                    if (IsPremiumSlot(i))
+                        price = Mathf.CeilToInt(price * premiumPriceMultiplier);
+            
+                    _priceCacheById[c.id] = price;
+                } 
+            }
+        
         private void EnsureListSize<T>(List<T> list, int size, T fill)
         {
             if (list == null) return;
@@ -323,6 +370,7 @@ namespace DungeonDeck.Shop
             var card = _offers[index];
             if (card == null) return;
 
+            RebuildPriceCache();
             int price = GetPrice(card);
             if (s.gold < price)
             {
@@ -348,6 +396,7 @@ namespace DungeonDeck.Shop
             var c = _offers[index];
             if (c == null) return false;
 
+            RebuildPriceCache();
             return s.gold >= GetPrice(c);
         }
 
@@ -476,6 +525,7 @@ namespace DungeonDeck.Shop
         // -------------------------
         private void RefreshShopView()
         {
+            RebuildPriceCache();
             panel.SetGold(_run.State.gold);
 
             panel.ShowOffersSoldAware(
@@ -496,6 +546,16 @@ namespace DungeonDeck.Shop
         {
             if (card == null) return 0;
 
+            if (!string.IsNullOrWhiteSpace(card.id) && _priceCacheById.TryGetValue(card.id, out int cached))
+                return cached;
+            
+            return GetBasePrice(card);
+        }
+        
+        private int GetBasePrice(CardDefinition card)
+        {
+            if (card == null) return 0;
+            
             switch (card.rarity)
             {
                 case CardRarity.Common: return commonPrice;

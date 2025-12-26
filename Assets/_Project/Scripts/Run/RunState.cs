@@ -9,12 +9,19 @@ namespace DungeonDeck.Run
     {
         public string oathId;
 
+        public int seed = 0;
+        
         public int maxHP;
         public int hp;
         public int gold;
 
         public int nodeIndex;
 
+        public int runClearedBattles = 0;
+        
+        // 전투 승리 보상 롤 횟수(세이브/재진입 시 같은 보상 반복 방지용 salt)
+        public int rewardRollCount = 0;
+        
         public RunEndOutcome lastOutcome = RunEndOutcome.None;
         
         // M1: Keep direct refs (later you can switch to string ids for save-friendly)

@@ -49,6 +49,8 @@ namespace DungeonDeck.Battle
         public int EnemyHP => _state != null ? _state.enemyHP : 0;
         public int EnemyMaxHP => _state != null ? _state.enemyMaxHP : 0;
         public int EnemyBlock => _state != null ? _state.enemyBlock : 0;
+        
+        public int EnemyVulnerableTurns => _state != null ? _state.enemyVulnerableTurns : 0;
 
         public int HandCount => _deck != null ? _deck.HandCount : 0;
 
@@ -85,8 +87,11 @@ namespace DungeonDeck.Battle
             // 카드 효과 먼저 적용(드로우 등으로 손패가 늘어나도, 기존 인덱스 카드는 그대로 유지됨)
             ApplyCard(card);
 
-            // 사용한 카드는 discard로
-            _deck.PlayFromHand(handIndex);
+            // 사용한 카드는 discard 또는 exhaust로
+            if (card.exhaustOnPlay)
+                _deck.ExhaustFromHand(handIndex);
+            else 
+                _deck.PlayFromHand(handIndex);
 
             // 승리 체크
             if (_state.enemyHP <= 0)
@@ -189,6 +194,9 @@ namespace DungeonDeck.Battle
 
             DealDamageToPlayer(dmg);
             Debug.Log($"[Battle] Enemy attacks {dmg}. PlayerHP={_state.playerHP}");
+            
+            if (_state.enemyVulnerableTurns > 0)
+                _state.enemyVulnerableTurns -= 1;
         }
 
         private void ApplyCard(CardDefinition card)
@@ -214,12 +222,29 @@ namespace DungeonDeck.Battle
                     _state.energy += Mathf.Max(0, card.value);
                     Debug.Log($"[Battle] Play {card.id}: Energy +{card.value}. Energy={_state.energy}");
                     break;
+                case CardEffectKind.ApplyVulnerable:
+                    ApplyVulnerableToEnemy(card.value);
+                    Debug.Log($"[Battle] Play {card.id}: Apply Vulnerable +{card.value}. EnemyVuln={_state.enemyVulnerableTurns}");
+                    break;
             }
         }
 
+        private void ApplyVulnerableToEnemy(int turns)
+        {
+            turns = Mathf.Max(0, turns);
+            if (turns <= 0) return;
+            
+            // 스택(누적)
+            _state.enemyVulnerableTurns = Mathf.Clamp(_state.enemyVulnerableTurns + turns, 0, 99);
+        }
+        
         private void DealDamageToEnemy(int amount)
         {
             amount = Mathf.Max(0, amount);
+            
+            // Vulnerable: 받는 피해 +50%
+            if (_state.enemyVulnerableTurns > 0 && amount > 0)
+                amount = Mathf.CeilToInt(amount * 1.5f);
 
             // block first
             int remain = amount;
@@ -281,92 +306,105 @@ namespace DungeonDeck.Battle
         }
         
         private IEnumerator WinRewardFlowCo()
-{
-    var run = RunSession.I;
-
-    // 패널 자동 탐색(인스펙터 연결 권장)
-    var panel = rewardPanel != null ? rewardPanel : FindObjectOfType<CardChoicePanel>(true);
-
-    // 패널이 없으면 그냥 진행(크래시 방지)
-    if (panel == null)
-    {
-        Debug.LogWarning("[Battle] Reward panel not found. Skipping reward.");
-        AdvanceNodeAndRoute(run);
-        yield break;
-    }
-
-    // 1) 후보 리스트 구성
-    var candidates = BuildRewardCandidates(run);
-    if (candidates == null || candidates.Count == 0)
-    {
-        Debug.LogWarning("[Battle] No reward candidates. Advancing without reward.");
-        AdvanceNodeAndRoute(run);
-        yield break;
-    }
-
-    // 2) 3장 뽑기 (가중치 + 중복 패널티)
-    var cfg = DungeonDeck.Rewards.CardRewardRollerCards.RollConfig.Default;
-    cfg.duplicateWeightMultiplier = 0.35f;
-    cfg.scaleByCopies = true;
-    cfg.maxCopyExponent = 3;
-
-    List<CardDefinition> options;
-    var pools = (useRunCardPools && run != null) ? run.GetActiveCardPools(RunSession.CardPoolContext.Reward) : null;
-        if (pools != null && pools.Count > 0)
         {
-            options = DungeonDeck.Rewards.CardRewardRollerCards.RollFromPools(
-                pools: pools,
-                ownedDeck: run.State.deck,
-                count: 3,
-                unique: true,
-                seed: 0,
-                configOpt: cfg
-                );
+            var run = RunSession.I;
+            int battleNodeIndex = (run != null && run.State != null) ? run.State.nodeIndex : 0;
+
+            // 패널 자동 탐색(인스펙터 연결 권장)
+            var panel = rewardPanel != null ? rewardPanel : FindObjectOfType<CardChoicePanel>(true);
+
+            // 패널이 없으면 그냥 진행(크래시 방지)
+            if (panel == null)
+            {
+                Debug.LogWarning("[Battle] Reward panel not found. Skipping reward.");
+                AdvanceNodeAndRoute(run);
+                yield break;
+            }
+
+            // 1) 후보 리스트 구성
+            var candidates = BuildRewardCandidates(run);
+            if (candidates == null || candidates.Count == 0)
+            {
+                Debug.LogWarning("[Battle] No reward candidates. Advancing without reward.");
+                AdvanceNodeAndRoute(run);
+                yield break;
+            }
+
+            // 2) 3장 뽑기 (가중치 + 중복 패널티)
+            var cfg = DungeonDeck.Rewards.CardRewardRollerCards.RollConfig.Default;
+            cfg.duplicateWeightMultiplier = 0.35f;
+            cfg.scaleByCopies = true;
+            cfg.maxCopyExponent = 3;
+
+            List<CardDefinition> options;
+            int baseSeed = (run.State.seed != 0) ? run.State.seed : run.State.shopSeed; // fallback
+            int salt = (run.State.rewardRollCount + 1) * 1009;
+            int seed = unchecked(baseSeed * 10007 + battleNodeIndex * 97 + run.State.runClearedBattles * 13 + salt);
+            if (seed == 0) seed = 1;
+            List<CardPoolDefinition> pools = null;
+            if (useRunCardPools && run != null)
+            {
+                var ro = run.GetActiveCardPools(RunSession.CardPoolContext.Reward);
+                if (ro != null && ro.Count > 0) pools = new List<CardPoolDefinition>(ro);
+            }
+            if (pools != null && pools.Count > 0)
+            {
+                options = DungeonDeck.Rewards.CardRewardRollerCards.RollFromPools(
+                    pools: pools,
+                    ownedDeck: run.State.deck,
+                    count: 3,
+                    unique: true,
+                    seed: seed,
+                    configOpt: cfg
+                    );
+            }
+            else
+            {
+                options = DungeonDeck.Rewards.CardRewardRollerCards.RollWeighted(
+                    candidates: candidates,
+                    ownedDeck: run.State.deck,
+                    count: 3,
+                    unique: true,
+                    seed: seed,
+                    configOpt: cfg
+                    );
+            }
+
+
+            if (options == null || options.Count == 0)
+            {
+                Debug.LogWarning("[Battle] No reward options. Advancing without reward.");
+                AdvanceNodeAndRoute(run);
+                yield break;
+            }
+
+            // 3) UI Show & 선택 대기
+            bool done = false;
+            CardDefinition chosen = null;
+
+            panel.Show(
+                options,
+                onChosen: c => { chosen = c; done = true; },
+                onSkipped: allowSkipReward ? (() => { done = true; }) : null,
+                title: "Reward: Choose 1 Card"
+            );
+
+            while (!done) yield return null;
+
+            // ✅ 이번 승리 보상 롤 카운트 증가(세이브/재진입 시 같은 보상 반복 방지)
+            run.State.rewardRollCount += 1;
+            
+            // 4) 선택 카드 덱에 추가
+            if (chosen != null)
+            {
+                // run.State.deck는 List<CardDefinition> 가정 (현재 BattleController가 그렇게 쓰고 있음)
+                if (run.State.deck == null) run.State.deck = new List<CardDefinition>();
+                run.State.deck.Add(chosen);
+                Debug.Log($"[Battle] Reward chosen: {chosen.id}");
+            }
+
+            AdvanceNodeAndRoute(run);
         }
-        else
-        {
-            options = DungeonDeck.Rewards.CardRewardRollerCards.RollWeighted(
-                candidates: candidates,
-                ownedDeck: run.State.deck,
-                count: 3,
-                unique: true,
-                seed: 0,
-                configOpt: cfg
-                );
-        }
-
-
-    if (options == null || options.Count == 0)
-    {
-        Debug.LogWarning("[Battle] No reward options. Advancing without reward.");
-        AdvanceNodeAndRoute(run);
-        yield break;
-    }
-
-    // 3) UI Show & 선택 대기
-    bool done = false;
-    CardDefinition chosen = null;
-
-    panel.Show(
-        options,
-        onChosen: c => { chosen = c; done = true; },
-        onSkipped: allowSkipReward ? (() => { done = true; }) : null,
-        title: "Reward: Choose 1 Card"
-    );
-
-    while (!done) yield return null;
-
-    // 4) 선택 카드 덱에 추가
-    if (chosen != null)
-    {
-        // run.State.deck는 List<CardDefinition> 가정 (현재 BattleController가 그렇게 쓰고 있음)
-        if (run.State.deck == null) run.State.deck = new List<CardDefinition>();
-        run.State.deck.Add(chosen);
-        Debug.Log($"[Battle] Reward chosen: {chosen.id}");
-    }
-
-    AdvanceNodeAndRoute(run);
-}
 
 private List<CardDefinition> BuildRewardCandidates(RunSession run)
 {
@@ -374,7 +412,11 @@ private List<CardDefinition> BuildRewardCandidates(RunSession run)
     if (fallbackRewardCandidates != null && fallbackRewardCandidates.Count > 0)
     {
         // null 제거 + 중복 제거(레퍼런스 기준)
-        return fallbackRewardCandidates.Where(c => c != null).Distinct().ToList();
+        return fallbackRewardCandidates
+                   .Where(c => c != null)
+                   .GroupBy(c => c.id)
+                   .Select(g => g.First())
+                   .ToList();
     }
 
     // 2) 카드 풀 기반 후보(서약/메타 해금 포함)
@@ -411,6 +453,7 @@ private List<CardDefinition> BuildRewardCandidates(RunSession run)
         public int enemyHP;
         public int enemyMaxHP;
         public int enemyBlock;
+        public int enemyVulnerableTurns;
 
         public int energy;
         public int drawPerTurn;
@@ -421,6 +464,7 @@ private List<CardDefinition> BuildRewardCandidates(RunSession run)
         private readonly List<CardDefinition> _draw = new();
         private readonly List<CardDefinition> _discard = new();
         private readonly List<CardDefinition> _hand = new();
+        private readonly List<CardDefinition> _exhaust = new();
 
         public int HandCount => _hand.Count;
 
@@ -461,6 +505,15 @@ private List<CardDefinition> BuildRewardCandidates(RunSession run)
             _discard.Add(c);
         }
 
+        public void ExhaustFromHand(int index)
+        {
+            if (index < 0 || index >= _hand.Count) return;
+            
+            var c = _hand[index];
+            _hand.RemoveAt(index);
+            _exhaust.Add(c);
+        }
+        
         public void DiscardHand()
         {
             if (_hand.Count == 0) return;

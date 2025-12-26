@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Map.MapNodeView
   button: {fileID: 2385549156897388445}
-  label: {fileID: 0}
+  label: {fileID: 5847405717034333329}
 --- !u!1 &2351909057559820858
 GameObject:
   m_ObjectHideFlags: 0

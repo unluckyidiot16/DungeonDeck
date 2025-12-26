@@ -8,7 +8,8 @@ namespace DungeonDeck.Config.Cards
         Attack,
         Block,
         Draw,
-        GainEnergy
+        GainEnergy,
+        ApplyVulnerable,
     }
 
     public enum CardRarity
@@ -38,6 +39,10 @@ namespace DungeonDeck.Config.Cards
         public int cost = 1;
         public CardEffectKind effectKind = CardEffectKind.Attack;
         public int value = 6;
+        
+        [Header("Keywords")]
+        [Tooltip("사용 후 전투에서 제거(Exhaust)")]
+        public bool exhaustOnPlay = false;
 
         public string GetDisplayName()
             => string.IsNullOrWhiteSpace(displayName) ? id : displayName;
@@ -54,6 +59,7 @@ namespace DungeonDeck.Config.Cards
                 case CardEffectKind.Block:      return $"Gain {value} block.";
                 case CardEffectKind.Draw:       return $"Draw {value} card(s).";
                 case CardEffectKind.GainEnergy: return $"Gain {value} energy.";
+                case CardEffectKind.ApplyVulnerable: return $"Apply Vulnerable {value} turn(s).";
                 default:                        return "";
             }
         }

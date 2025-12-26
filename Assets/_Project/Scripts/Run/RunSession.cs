@@ -123,6 +123,12 @@ namespace DungeonDeck.Run
         {
             if (State == null || Plan == null) return;
 
+            // ✅ "클리어한 노드" 타입 기준으로 전투 승리 카운트 증가 (Shop/Rest/Event는 제외)
+            int clearedIndex = State.nodeIndex;
+            var clearedType = GetNodeType(clearedIndex);
+            if (clearedType == MapNodeType.Battle || clearedType == MapNodeType.Boss)
+                State.runClearedBattles += 1;
+            
             // cleared nodeIndex => next index
             State.nodeIndex += 1;
             State.nodeIndex = Mathf.Clamp(State.nodeIndex, 0, Plan.nodes.Count);
