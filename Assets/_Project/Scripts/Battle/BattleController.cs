@@ -265,8 +265,8 @@ namespace DungeonDeck.Battle
 
             if (!win)
             {
-                Debug.Log("[Battle] LOSE (M1 stub: return to Map without resetting run)");
-                SceneManager.LoadScene(SceneRoutes.Map);
+                Debug.Log("[Battle] LOSE");
+                run.EndRun(RunEndOutcome.Defeat);
                 return;
             }
 

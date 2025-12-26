@@ -15,6 +15,8 @@ namespace DungeonDeck.Run
 
         public int nodeIndex;
 
+        public RunEndOutcome lastOutcome = RunEndOutcome.None;
+        
         // M1: Keep direct refs (later you can switch to string ids for save-friendly)
         public List<CardDefinition> deck = new List<CardDefinition>();
         

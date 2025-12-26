@@ -1,5 +1,7 @@
 // Assets/_Project/Scripts/Run/RunSession.cs
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using DungeonDeck.Core;
 using DungeonDeck.Config.Balance;
 using DungeonDeck.Config.Map;
 using DungeonDeck.Config.Oaths;
@@ -35,6 +37,7 @@ namespace DungeonDeck.Run
             Balance = balance;
             Plan = plan;
             State = RunFactory.CreateNewRun(oath, balance);
+            if (State != null) State.lastOutcome = RunEndOutcome.None;
         }
 
         public bool IsNodeCleared(int index) => State != null && index < State.nodeIndex;
@@ -72,6 +75,9 @@ namespace DungeonDeck.Run
             // cleared nodeIndex => next index
             State.nodeIndex += 1;
             State.nodeIndex = Mathf.Clamp(State.nodeIndex, 0, Plan.nodes.Count);
+            // ✅ 마지막 노드(보스 포함)까지 끝냈다면 승리 결과를 기록 (아직 outcome이 없을 때만)
+            if (IsRunFinished() && State.lastOutcome == RunEndOutcome.None)
+                State.lastOutcome = RunEndOutcome.Victory;
         }
 
         public bool IsRunFinished()
@@ -79,5 +85,15 @@ namespace DungeonDeck.Run
             if (Plan == null || State == null) return false;
             return State.nodeIndex >= Plan.nodes.Count;
         }
+        
+        public void EndRun(RunEndOutcome outcome)
+        {
+            if (State == null) return;
+            if (State.lastOutcome != RunEndOutcome.None) return; // 중복 종료 방지
+            
+            State.lastOutcome = outcome;
+            SceneManager.LoadScene(SceneRoutes.End);
+        }
+        
     }
 }

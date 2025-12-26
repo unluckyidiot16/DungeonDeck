@@ -9,6 +9,7 @@ namespace DungeonDeck.Run
         public static RunState CreateNewRun(OathDefinition oath, RunBalanceDefinition balance)
         {
             var s = new RunState();
+            s.lastOutcome = RunEndOutcome.None;
             s.oathId = oath != null ? oath.id : "unknown";
 
             s.maxHP = balance != null ? balance.startMaxHP : 60;
