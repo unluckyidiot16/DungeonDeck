@@ -28,6 +28,7 @@ namespace DungeonDeck.Battle
         [Header("Reward (Win)")]
         [SerializeField] private CardChoicePanel rewardPanel;   // 배틀 씬 안에 비활성으로 두고 연결
         [SerializeField] private List<CardDefinition> fallbackRewardCandidates = new(); // 비었으면 현재 덱에서 후보를 뽑음
+        [SerializeField] private bool useRunCardPools = true; // RunSession 카드풀 기반 후보/가중치 적용
         [SerializeField] private bool allowSkipReward = false;
 
         private bool _endingFlow = false;
@@ -309,14 +310,30 @@ namespace DungeonDeck.Battle
     cfg.scaleByCopies = true;
     cfg.maxCopyExponent = 3;
 
-    var options = DungeonDeck.Rewards.CardRewardRollerCards.RollWeighted(
-        candidates: candidates,
-        ownedDeck: run.State.deck,
-        count: 3,
-        unique: true,
-        seed: 0,
-        configOpt: cfg
-    );
+    List<CardDefinition> options;
+        var pools = (useRunCardPools && run != null) ? run.GetActiveCardPools() : null;
+        if (pools != null && pools.Count > 0)
+        {
+            options = DungeonDeck.Rewards.CardRewardRollerCards.RollFromPools(
+                pools: pools,
+                ownedDeck: run.State.deck,
+                count: 3,
+                unique: true,
+                seed: 0,
+                configOpt: cfg
+                );
+        }
+        else
+        {
+            options = DungeonDeck.Rewards.CardRewardRollerCards.RollWeighted(
+                candidates: candidates,
+                ownedDeck: run.State.deck,
+                count: 3,
+                unique: true,
+                seed: 0,
+                configOpt: cfg
+                );
+        }
 
 
     if (options == null || options.Count == 0)
@@ -360,7 +377,15 @@ private List<CardDefinition> BuildRewardCandidates(RunSession run)
         return fallbackRewardCandidates.Where(c => c != null).Distinct().ToList();
     }
 
-    // 2) 없으면 현재 덱 기반으로 후보 구성(최소 동작 보장)
+    // 2) 카드 풀 기반 후보(서약/메타 해금 포함)
+    if (useRunCardPools && run != null)
+    { 
+        var poolCandidates = run.GetActiveCardCandidatesUnique();
+        if (poolCandidates != null && poolCandidates.Count > 0) 
+            return poolCandidates;
+    }
+    
+    // 3) 없으면 현재 덱 기반으로 후보 구성(최소 동작 보장)
     if (run != null && run.State != null && run.State.deck != null && run.State.deck.Count > 0)
     {
         return run.State.deck.Where(c => c != null).Distinct().ToList();

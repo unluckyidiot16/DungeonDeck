@@ -154,6 +154,121 @@ namespace DungeonDeck.Rewards
             return result;
         }
 
+        /// <summary>
+        /// 풀(CardPoolDefinition)에서 count장을 제시.
+        /// - 풀 entry.weight를 기본 가중치로 사용
+        /// - 희귀도 가중치 적용
+        /// - 덱 중복은 duplicateWeightMultiplier로 "부드럽게" 감소
+        /// - unique=true면 제시 내 중복 없음
+        /// </summary>
+        public static List<CardDefinition> RollFromPools(
+            IReadOnlyList<CardPoolDefinition> pools,
+            IReadOnlyList<CardDefinition> ownedDeck,
+            int count = 3,
+            bool unique = true,
+            int seed = 0,
+            RollConfig? configOpt = null)
+        {
+            var cfg = configOpt ?? RollConfig.Default;
+
+            var result = new List<CardDefinition>(Mathf.Max(0, count));
+            if (pools == null || pools.Count == 0 || count <= 0) return result;
+
+            // 덱 보유 장수 카운트(id 기준)
+            var ownedCounts = BuildOwnedCounts(ownedDeck);
+
+            // 풀 합성: id 기준으로 baseWeight 합산
+            var baseWeights = new Dictionary<string, long>();
+            var cardById = new Dictionary<string, CardDefinition>();
+
+            for (int p = 0; p < pools.Count; p++)
+            {
+                var pool = pools[p];
+                if (pool == null || pool.entries == null) continue;
+
+                for (int i = 0; i < pool.entries.Count; i++)
+                {
+                    var e = pool.entries[i];
+                    if (e == null || e.cardAsset == null) continue;
+
+                    if (!(e.cardAsset is CardDefinition cd) || cd == null) continue;
+                    if (string.IsNullOrWhiteSpace(cd.id)) continue;
+
+                    int w = Mathf.Max(0, e.weight);
+                    if (w <= 0) continue;
+
+                    baseWeights.TryGetValue(cd.id, out long cur);
+                    baseWeights[cd.id] = cur + w;
+
+                    if (!cardById.ContainsKey(cd.id))
+                        cardById[cd.id] = cd;
+                }
+            }
+
+            if (baseWeights.Count == 0)
+                return result;
+
+            // 아이템 리스트 생성 (가중치 계산)
+            var items = new List<Item>(baseWeights.Count);
+            foreach (var kv in baseWeights)
+            {
+                var id = kv.Key;
+                var card = cardById[id];
+                if (card == null) continue;
+
+                double w = System.Math.Max(0.0, (double)kv.Value);
+
+                // rarity weight
+                w *= System.Math.Max(0.0, (double)cfg.rarityWeights.Get(card.rarity));
+
+                // duplicate penalty
+                if (ownedCounts.TryGetValue(card.id, out int copies) && copies > 0)
+                {
+                    float m = Mathf.Clamp(cfg.duplicateWeightMultiplier, 0.0001f, 1f);
+
+                    if (cfg.scaleByCopies)
+                    {
+                        int exp = Mathf.Clamp(copies, 1, Mathf.Max(1, cfg.maxCopyExponent));
+                        m = Mathf.Pow(m, exp);
+                    }
+
+                    w *= m;
+                }
+
+                if (w <= 0.0) continue;
+                items.Add(new Item { card = card, w = w });
+            }
+
+            if (items.Count == 0)
+            {
+                // 전부 0이면 그냥 유니크 목록에서 균등으로라도
+                var fallback = new List<CardDefinition>();
+                foreach (var kv in cardById)
+                    if (kv.Value != null) fallback.Add(kv.Value);
+
+                return RollUniformFallback(fallback, count, unique, seed);
+            }
+
+            System.Random rng = seed != 0 ? new System.Random(seed) : null;
+
+            for (int k = 0; k < count; k++)
+            {
+                if (items.Count == 0) break;
+
+                int pickedIndex = PickWeightedIndex(items, rng);
+                if (pickedIndex < 0 || pickedIndex >= items.Count) break;
+
+                var picked = items[pickedIndex].card;
+                if (picked != null) result.Add(picked);
+
+                if (unique)
+                    items.RemoveAt(pickedIndex);
+            }
+
+            return result;
+        }
+        
+        
         private static Dictionary<string, int> BuildOwnedCounts(IReadOnlyList<CardDefinition> deck)
         {
             var map = new Dictionary<string, int>();

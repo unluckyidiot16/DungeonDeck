@@ -24,6 +24,9 @@ namespace DungeonDeck.Shop
 
         [Tooltip("비어있으면 '현재 덱'을 후보로 사용(최소 동작용). 실제론 여기에 전체 카드풀 넣기 추천.")]
         [SerializeField] private List<CardDefinition> shopCandidates = new();
+        
+        [Tooltip("RunSession의 카드 풀(서약/메타 해금)을 후보/가중치에 반영")]
+        [SerializeField] private bool useRunCardPools = true;
 
         [Header("Reroll")]
         [Tooltip("0이면 무료 리롤")]
@@ -130,15 +133,32 @@ namespace DungeonDeck.Shop
 
             if (unsoldIndices.Count == 0)
                 return;
+            
+            List<CardDefinition> rolled;
 
-            var rolled = CardRewardRollerCards.RollWeighted(
-                candidates: _candidateList,
-                ownedDeck: s.deck,
-                count: unsoldIndices.Count,
-                unique: true,
-                seed: seed,
-                configOpt: cfg
-            );
+            var pools = (useRunCardPools && _run != null) ? _run.GetActiveCardPools() : null;
+            if (pools != null && pools.Count > 0)
+            {
+                rolled = CardRewardRollerCards.RollFromPools(
+                    pools: pools,
+                    ownedDeck: s.deck,
+                    count: unsoldIndices.Count,
+                    unique: true,
+                    seed: seed,
+                    configOpt: cfg
+                    );
+            }
+            else
+            {
+                rolled = CardRewardRollerCards.RollWeighted(
+                    candidates: _candidateList,
+                    ownedDeck: s.deck,
+                    count: unsoldIndices.Count,
+                    unique: true,
+                    seed: seed,
+                    configOpt: cfg
+                    );
+            }
 
             for (int j = 0; j < unsoldIndices.Count; j++)
             {
@@ -389,6 +409,7 @@ namespace DungeonDeck.Shop
         {
             var list = new List<CardDefinition>();
 
+            // 1) 인스펙터 강제 후보가 있으면 우선
             if (shopCandidates != null && shopCandidates.Count > 0)
             {
                 for (int i = 0; i < shopCandidates.Count; i++)
@@ -396,6 +417,15 @@ namespace DungeonDeck.Shop
                 return DedupById(list);
             }
 
+            // 2) 카드 풀 기반 후보(서약/메타 해금 포함)
+            if (useRunCardPools && _run != null)
+            {
+                var poolCandidates = _run.GetActiveCardCandidatesUnique();
+                if (poolCandidates != null && poolCandidates.Count > 0)
+                    return poolCandidates;
+            }
+            
+            // 3) 없으면 현재 덱 기반(최소 동작)
             if (_run != null && _run.State != null && _run.State.deck != null)
             {
                 for (int i = 0; i < _run.State.deck.Count; i++)
@@ -432,6 +462,11 @@ namespace DungeonDeck.Shop
                 var c = _candidateList[i];
                 if (c != null && c.id == id) return c;
             }
+            
+            // 후보 리스트에 없더라도(예: 후보 캐시 꼬임) RunSession 쪽에서 한번 더 시도
+            if (_run != null && _run.TryResolveCardById(id, out var resolved))
+                return resolved;
+            
             return null;
         }
     }
