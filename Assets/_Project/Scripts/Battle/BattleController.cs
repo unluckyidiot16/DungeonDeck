@@ -32,7 +32,13 @@ namespace DungeonDeck.Battle
 
         private bool _endingFlow = false;
         
-
+        private void AdvanceNodeAndRoute(RunSession run)
+        { 
+            if (run == null) return;
+            run.MarkNodeClearedAndAdvance();
+            SceneManager.LoadScene(run.IsRunFinished() ? SceneRoutes.End : SceneRoutes.Map);
+        }
+        
 // UI/외부 조회용
         public int Energy => _state != null ? _state.energy : 0;
         public int PlayerHP => _state != null ? _state.playerHP : 0;
@@ -284,8 +290,7 @@ namespace DungeonDeck.Battle
     if (panel == null)
     {
         Debug.LogWarning("[Battle] Reward panel not found. Skipping reward.");
-        run.MarkNodeClearedAndAdvance();
-        SceneManager.LoadScene(SceneRoutes.Map);
+        AdvanceNodeAndRoute(run);
         yield break;
     }
 
@@ -294,8 +299,7 @@ namespace DungeonDeck.Battle
     if (candidates == null || candidates.Count == 0)
     {
         Debug.LogWarning("[Battle] No reward candidates. Advancing without reward.");
-        run.MarkNodeClearedAndAdvance();
-        SceneManager.LoadScene(SceneRoutes.Map);
+        AdvanceNodeAndRoute(run);
         yield break;
     }
 
@@ -318,8 +322,7 @@ namespace DungeonDeck.Battle
     if (options == null || options.Count == 0)
     {
         Debug.LogWarning("[Battle] No reward options. Advancing without reward.");
-        run.MarkNodeClearedAndAdvance();
-        SceneManager.LoadScene(SceneRoutes.Map);
+        AdvanceNodeAndRoute(run);
         yield break;
     }
 
@@ -345,11 +348,7 @@ namespace DungeonDeck.Battle
         Debug.Log($"[Battle] Reward chosen: {chosen.id}");
     }
 
-    // 노드 클리어/진행
-    run.MarkNodeClearedAndAdvance();
-
-    // Map 복귀
-    SceneManager.LoadScene(SceneRoutes.Map);
+    AdvanceNodeAndRoute(run);
 }
 
 private List<CardDefinition> BuildRewardCandidates(RunSession run)

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DungeonDeck.Run;
 using DungeonDeck.Config.Cards;
+using DungeonDeck.Config.Map;
+using DungeonDeck.Core;
 using DungeonDeck.Rewards;
 using DungeonDeck.UI.Shop;
 
@@ -45,6 +47,7 @@ namespace DungeonDeck.Shop
         private RunSession _run;
         private List<CardDefinition> _offers = new();
         private List<CardDefinition> _candidateList = new();
+        private bool _leaving = false;
 
         private void Awake()
         {
@@ -365,8 +368,18 @@ namespace DungeonDeck.Shop
 
         private void OnLeaveShop()
         {
-            _run.MarkNodeClearedAndAdvance();
-            SceneManager.LoadScene(mapSceneName);
+            if (_leaving) return;
+            _leaving = true;
+            
+            // 안전: 현재 노드가 Shop일 때만 advance
+            if (_run != null && _run.State != null)
+            {
+                var t = _run.GetNodeType(_run.State.nodeIndex);
+                if (t == MapNodeType.Shop)
+                    _run.MarkNodeClearedAndAdvance();
+            }
+            
+            SceneManager.LoadScene(SceneRoutes.Map);
         }
 
         // -------------------------

@@ -63,9 +63,7 @@ namespace DungeonDeck.Map
                     break;
 
                 case MapNodeType.Shop:
-                    Debug.Log("[Map] Shop node - M1 stub: treat as cleared and advance.");
-                    RunSession.I.MarkNodeClearedAndAdvance();
-                    BuildOrRebuild();
+                    SceneManager.LoadScene(SceneRoutes.Shop); // Shop 씬 라우트 필요
                     break;
 
                 case MapNodeType.Rest:

@@ -71,7 +71,7 @@ namespace DungeonDeck.Run
 
             // cleared nodeIndex => next index
             State.nodeIndex += 1;
-            if (State.nodeIndex > Plan.nodes.Count) State.nodeIndex = Plan.nodes.Count;
+            State.nodeIndex = Mathf.Clamp(State.nodeIndex, 0, Plan.nodes.Count);
         }
 
         public bool IsRunFinished()
