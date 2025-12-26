@@ -27,6 +27,16 @@ namespace DungeonDeck.Shop
         
         [Tooltip("RunSession의 카드 풀(서약/메타 해금)을 후보/가중치에 반영")]
         [SerializeField] private bool useRunCardPools = true;
+        
+        [Header("Slot-specific Pools (Optional)")]
+        [Tooltip("true면 특정 슬롯(기본: 마지막 슬롯)을 Premium 풀로 굴립니다.")]
+        [SerializeField] private bool usePremiumSlot = true;
+            
+        [Tooltip("Premium 슬롯 인덱스 (0-based). 기본 3 = 4칸 중 마지막.")]
+        [SerializeField] private int premiumSlotIndex = 3;
+            
+        [Tooltip("Premium 슬롯에서만 사용할 풀(여기 비어있으면 일반 Shop 풀로 굴림)")]
+        [SerializeField] private List<CardPoolDefinition> premiumShopPools = new();
 
         [Header("Reroll")]
         [Tooltip("0이면 무료 리롤")]
@@ -91,6 +101,10 @@ namespace DungeonDeck.Shop
         private void EnsureShopState()
         {
             var s = _run.State;
+            
+            // 슬롯별 풀을 쓰려면, 후보 리스트에 Premium 풀 카드도 포함되어야
+            // state에 저장된 id -> 카드 resolve가 안전합니다.
+            // (BuildCandidates에서 premiumShopPools도 함께 후보에 합칩니다.)
 
             bool isNewShopNode = (s.shopNodeIndex != s.nodeIndex);
             bool invalidList =
@@ -134,42 +148,149 @@ namespace DungeonDeck.Shop
             if (unsoldIndices.Count == 0)
                 return;
             
-            List<CardDefinition> rolled;
+         // -----------------------------
+            // 1) 슬롯 분리: normal vs premium
+            // -----------------------------
+            int premiumSlot = Mathf.Clamp(premiumSlotIndex, 0, Mathf.Max(0, offerCount - 1));
+            var normalSlots = new List<int>(unsoldIndices.Count);
+            var premiumSlots = new List<int>(1);
 
-            var pools = (useRunCardPools && _run != null) ? _run.GetActiveCardPools() : null;
-            if (pools != null && pools.Count > 0)
+            for (int i = 0; i < unsoldIndices.Count; i++)
             {
-                rolled = CardRewardRollerCards.RollFromPools(
-                    pools: pools,
-                    ownedDeck: s.deck,
-                    count: unsoldIndices.Count,
-                    unique: true,
-                    seed: seed,
-                    configOpt: cfg
-                    );
-            }
-            else
-            {
-                rolled = CardRewardRollerCards.RollWeighted(
-                    candidates: _candidateList,
-                    ownedDeck: s.deck,
-                    count: unsoldIndices.Count,
-                    unique: true,
-                    seed: seed,
-                    configOpt: cfg
-                    );
+                int slot = unsoldIndices[i];
+                if (usePremiumSlot && slot == premiumSlot) premiumSlots.Add(slot);
+                else normalSlots.Add(slot);
             }
 
-            for (int j = 0; j < unsoldIndices.Count; j++)
+            // ✅ 중요: Shop은 Shop 컨텍스트 풀을 써야 함 (기본 Reward 풀로 굴러가면 UX가 깨짐)
+            var normalPools = (useRunCardPools && _run != null)
+                ? _run.GetActiveCardPools(RunSession.CardPoolContext.Shop)
+                : null;
+
+            // premium 풀: 인스펙터 지정이 있으면 그걸 우선, 없으면 normal과 동일
+            var premiumPools = ResolvePoolList(premiumShopPools);
+            if (premiumPools == null || premiumPools.Count == 0)
+                premiumPools = normalPools;
+
+            // -----------------------------
+            // 2) normal 먼저 롤 (유니크)
+            // -----------------------------
+            var usedIds = new HashSet<string>();
+
+            var rolledNormal = RollFromEither(
+                poolsOrNull: normalPools,
+                ownedDeck: s.deck,
+                count: normalSlots.Count, 
+                seed: DeriveSlotSeed(seed, 0),
+                cfg: cfg
+            ); 
+            
+            for (int i = 0; i < normalSlots.Count; i++)
             {
-                int slot = unsoldIndices[j];
-                var c = (rolled != null && j < rolled.Count) ? rolled[j] : null;
+                int slot = normalSlots[i];
+                var c = (rolledNormal != null && i < rolledNormal.Count) ? rolledNormal[i] : null;
 
                 s.shopOfferIds[slot] = c != null ? c.id : "";
+                if (c != null && !string.IsNullOrWhiteSpace(c.id)) usedIds.Add(c.id);
+                if (overwriteSold) s.shopOfferSold[slot] = false;
+            }
+
+            // -----------------------------
+            // 3) premium 롤 (normal과 중복 피하려고 재시도)
+            // -----------------------------
+            for (int p = 0; p < premiumSlots.Count; p++)
+            {
+                int slot = premiumSlots[p];
+
+                CardDefinition chosen = null;
+                const int maxAttempts = 12;
+                for (int attempt = 0; attempt < maxAttempts; attempt++)
+                {
+                    var one = RollFromEither(
+                        poolsOrNull: premiumPools,
+                        ownedDeck: s.deck,
+                        count: 1,
+                        seed: DeriveSlotSeed(seed, 1000 + attempt),
+                        cfg: cfg
+                    );
+                    
+                    var cand = (one != null && one.Count > 0) ? one[0] : null;
+                    if (cand == null) { chosen = null; break; }
+                    if (string.IsNullOrWhiteSpace(cand.id)) { chosen = cand; break; }
+                    if (!usedIds.Contains(cand.id))
+                    {
+                        chosen = cand;
+                        break;
+                    }
+                }
+
+                s.shopOfferIds[slot] = chosen != null ? chosen.id : "";
+                if (chosen != null && !string.IsNullOrWhiteSpace(chosen.id)) usedIds.Add(chosen.id);
                 if (overwriteSold) s.shopOfferSold[slot] = false;
             }
         }
 
+        private int DeriveSlotSeed(int baseSeed, int salt)
+                    {
+                        unchecked
+                        {
+                                int x = baseSeed;
+                                x = x * 1103515245 + 12345;
+                                x ^= (salt * 10007);
+                                if (x == 0) x = 1;
+                                return x;
+                        }
+                    }
+        
+        private List<CardPoolDefinition> ResolvePoolList(List<CardPoolDefinition> pools)
+            {
+                if (pools == null || pools.Count == 0) return pools;
+        
+                var outList = new List<CardPoolDefinition>(pools.Count);
+                for (int i = 0; i < pools.Count; i++)
+                {
+                    var p = pools[i];
+                    if (p == null) continue;
+                    // AllowsShop가 없다면 컴파일 에러가 날 수 있지만,
+                    // RunSession 쪽에서 이미 쓰는 것으로 보이는 필드라 여기서도 필터링해 둠.
+                    if (!p.AllowsShop) continue;
+                    outList.Add(p);
+                }
+                return outList;
+            }
+    
+        private List<CardDefinition> RollFromEither(
+            List<CardPoolDefinition> poolsOrNull,
+            List<CardDefinition> ownedDeck,
+            int count,
+            int seed, 
+            CardRewardRollerCards.RollConfig cfg
+            )
+        {
+                if (count <= 0) return new List<CardDefinition>();
+        
+                if (poolsOrNull != null && poolsOrNull.Count > 0)
+                {
+                    return CardRewardRollerCards.RollFromPools(
+                        pools: poolsOrNull,
+                        ownedDeck: ownedDeck,
+                        count: count,
+                        unique: true,
+                        seed: seed,
+                        configOpt: cfg
+                        );
+                }
+        
+                return CardRewardRollerCards.RollWeighted(
+                    candidates: _candidateList,
+                    ownedDeck: ownedDeck,
+                    count: count,
+                    unique: true,
+                    seed: seed,
+                    configOpt: cfg
+                    );
+        }
+        
         private void LoadOffersFromState()
         {
             var s = _run.State;
@@ -414,15 +535,19 @@ namespace DungeonDeck.Shop
             {
                 for (int i = 0; i < shopCandidates.Count; i++)
                     if (shopCandidates[i] != null) list.Add(shopCandidates[i]);
+                AddCandidatesFromPools(list, premiumShopPools); // premium도 resolve 가능하도록 합침
                 return DedupById(list);
             }
 
             // 2) 카드 풀 기반 후보(서약/메타 해금 포함)
             if (useRunCardPools && _run != null)
             {
-                var poolCandidates = _run.GetActiveCardCandidatesUnique();
+                var poolCandidates = _run.GetActiveCardCandidatesUnique(RunSession.CardPoolContext.Shop);
                 if (poolCandidates != null && poolCandidates.Count > 0)
+                {
+                    AddCandidatesFromPools(poolCandidates, premiumShopPools); // premium도 resolve 가능하도록 합침
                     return poolCandidates;
+                }
             }
             
             // 3) 없으면 현재 덱 기반(최소 동작)
@@ -432,9 +557,32 @@ namespace DungeonDeck.Shop
                     if (_run.State.deck[i] != null) list.Add(_run.State.deck[i]);
             }
 
+            AddCandidatesFromPools(list, premiumShopPools); // premium도 resolve 가능하도록 합침
+            
             return DedupById(list);
         }
 
+        private void AddCandidatesFromPools(List<CardDefinition> list, List<CardPoolDefinition> pools)
+        {
+            if (list == null) return;
+            if (pools == null || pools.Count == 0) return;
+            
+            for (int i = 0; i < pools.Count; i++)
+            {
+                var p = pools[i];
+                if (p == null || p.entries == null) continue;
+                if (!p.AllowsShop) continue;
+                
+                for (int e = 0; e < p.entries.Count; e++)
+                {
+                    var entry = p.entries[e];
+                    if (entry == null) continue;
+                    var c = entry.cardAsset as CardDefinition;
+                    if (c != null) list.Add(c);
+                }
+            }
+        }
+        
         private List<CardDefinition> DedupById(List<CardDefinition> list)
         {
             var map = new Dictionary<string, CardDefinition>();

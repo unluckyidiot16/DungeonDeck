@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7df7af369c1646b3b344b35a859c6e6, type: 3}
+  m_Name: CardLibraryDefinition
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Config.Cards.CardLibraryDefinition
+  cards:
+  - {fileID: 11400000, guid: 0898f4c10fbc7488e9667e52f8efb1c7, type: 2}
+  - {fileID: 11400000, guid: 12791d820f597488daf8821e0e5befaa, type: 2}
+  - {fileID: 11400000, guid: c580b81e4f7314707bd1376561860ab5, type: 2}
+  - {fileID: 11400000, guid: 52516a47d30964feba7c5bf2f5636aec, type: 2}
+  - {fileID: 11400000, guid: 9eeca53e7d3304d9ba6e7d7bc733c1e9, type: 2}
+  - {fileID: 11400000, guid: 6657ac5eefb9d4b29b6edb2b60f4b324, type: 2}
+  - {fileID: 11400000, guid: 6aa4b5175f6ce49699f5b94e3d11b1de, type: 2}
+  - {fileID: 11400000, guid: b02991eaa69374baab2544ed37883df3, type: 2}

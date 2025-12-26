@@ -191,7 +191,8 @@ namespace DungeonDeck.Rewards
                     var e = pool.entries[i];
                     if (e == null || e.cardAsset == null) continue;
 
-                    if (!(e.cardAsset is CardDefinition cd) || cd == null) continue;
+                    var cd = e.cardAsset;
+                    if (cd == null) continue;
                     if (string.IsNullOrWhiteSpace(cd.id)) continue;
 
                     int w = Mathf.Max(0, e.weight);

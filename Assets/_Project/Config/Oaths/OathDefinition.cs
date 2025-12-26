@@ -17,6 +17,12 @@ namespace DungeonDeck.Config.Oaths
         [Header("Card Pools (Reward/Shop)")]
         [Tooltip("이 서약이 기본적으로 사용할 카드 풀들.\n예: [CommonPool, OathSpecificPool] 같은 식으로 여러 개를 넣어도 됨")]
         public List<CardPoolDefinition> basePools = new();
+        
+        [Tooltip("보상(전투 승리 등)에서만 사용할 풀들")]
+        public List<CardPoolDefinition> rewardPools = new();
+            
+        [Tooltip("상점에서만 사용할 풀들")]
+        public List<CardPoolDefinition> shopPools = new();
             
         [Tooltip("(선택) 이 서약이 '해금'을 통해 추가로 받을 수 있는 풀 ID들(디자인용).\n실제 적용은 PlayerMetaProgress.unlockedPoolIds + RewardPoolResolver.knownPools 기준")]
         public List<string> unlockablePoolIds = new();

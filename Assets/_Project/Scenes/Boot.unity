@@ -148,7 +148,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61850a2029efc4165a835ab5267b4aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Run.RunSession
-  cardLibrary: {fileID: 0}
+  cardLibrary: {fileID: 11400000, guid: 2510fc24d9498421eb76691269d5f171, type: 2}
+  rewardPoolResolver: {fileID: 11400000, guid: b1f6e746d58aa40eba49d86d02fce9e1, type: 2}
+  globalBasePools: []
+  globalRewardPools:
+  - {fileID: 11400000, guid: 74670f42248dc4eb4aadef9a4bd7d81a, type: 2}
+  globalShopPools:
+  - {fileID: 11400000, guid: 27ef3e4f4958b4da5a185f254da120fa, type: 2}
+  - {fileID: 11400000, guid: 282f8623321f94506a0439617685684d, type: 2}
+  cardLibraryResourcesPath: CardLibraryDefinition
+  rewardPoolResolverResourcesPath: RewardPoolResolver
 --- !u!4 &52057683
 Transform:
   m_ObjectHideFlags: 0

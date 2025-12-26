@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using DungeonDeck.Config.Cards;
 
 namespace DungeonDeck.Config.Cards
 {
@@ -14,14 +15,29 @@ namespace DungeonDeck.Config.Cards
         [Tooltip("디버그/표시용 이름")]
         public string displayName = "Common Pool";
 
+        [Header("Usage")]
+        [Tooltip("이 풀이 어디에 사용되는지 (상점/보상 분리 튜닝용)")]
+        public PoolUsage usage = PoolUsage.Both;
+        
+        [Flags]
+        public enum PoolUsage
+        {
+            Reward = 1 << 0,
+            Shop   = 1 << 1,
+            Both   = Reward | Shop
+        }
+    
+        public bool AllowsReward => (usage & PoolUsage.Reward) != 0;
+        public bool AllowsShop   => (usage & PoolUsage.Shop)   != 0;
+        
         [Header("Entries")]
         public List<Entry> entries = new();
 
         [Serializable]
         public class Entry
         {
-            [Tooltip("카드 에셋 (CardDefinition SO든 Prefab이든 상관 없음)")]
-            public UnityEngine.Object cardAsset;
+            [Tooltip("카드 정의(SO)")]
+            public CardDefinition cardAsset;
 
             [Min(0)]
             public int weight = 1;

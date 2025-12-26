@@ -311,7 +311,7 @@ namespace DungeonDeck.Battle
     cfg.maxCopyExponent = 3;
 
     List<CardDefinition> options;
-        var pools = (useRunCardPools && run != null) ? run.GetActiveCardPools() : null;
+    var pools = (useRunCardPools && run != null) ? run.GetActiveCardPools(RunSession.CardPoolContext.Reward) : null;
         if (pools != null && pools.Count > 0)
         {
             options = DungeonDeck.Rewards.CardRewardRollerCards.RollFromPools(
@@ -380,7 +380,7 @@ private List<CardDefinition> BuildRewardCandidates(RunSession run)
     // 2) 카드 풀 기반 후보(서약/메타 해금 포함)
     if (useRunCardPools && run != null)
     { 
-        var poolCandidates = run.GetActiveCardCandidatesUnique();
+        var poolCandidates = run.GetActiveCardCandidatesUnique(RunSession.CardPoolContext.Reward);
         if (poolCandidates != null && poolCandidates.Count > 0) 
             return poolCandidates;
     }

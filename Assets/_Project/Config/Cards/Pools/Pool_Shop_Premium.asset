@@ -10,11 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13f505475c23c4f429260f5ce2064524, type: 3}
-  m_Name: OathA_BasePool
+  m_Name: Pool_Shop_Premium
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Config.Cards.CardPoolDefinition
-  poolId: pool_common
-  displayName: Common Pool
+  poolId: pool_premium
+  displayName: Premium Pool
+  usage: 2
   entries:
-  - cardAsset: {fileID: 0}
-    weight: 0
+  - cardAsset: {fileID: 11400000, guid: 9eeca53e7d3304d9ba6e7d7bc733c1e9, type: 2}
+    weight: 20
+    overrideName: 
+  - cardAsset: {fileID: 11400000, guid: 0898f4c10fbc7488e9667e52f8efb1c7, type: 2}
+    weight: 20
+    overrideName: 
+  - cardAsset: {fileID: 11400000, guid: c580b81e4f7314707bd1376561860ab5, type: 2}
+    weight: 20
     overrideName: 

@@ -21,6 +21,8 @@ namespace DungeonDeck.Run
         public RunBalanceDefinition Balance { get; private set; }
         public OathDefinition Oath { get; private set; }
         
+        public enum CardPoolContext { Reward, Shop }
+        
         [Header("Databases")]
         [SerializeField] private CardLibraryDefinition cardLibrary;
         
@@ -30,6 +32,12 @@ namespace DungeonDeck.Run
             
         [Tooltip("(선택) 모든 서약 공통으로 항상 포함되는 풀들. 예: CommonPool")]
         [SerializeField] private List<CardPoolDefinition> globalBasePools = new();
+        
+        [Tooltip("(선택) 보상 전용으로 추가할 글로벌 풀들")]
+        [SerializeField] private List<CardPoolDefinition> globalRewardPools = new();
+            
+        [Tooltip("(선택) 상점 전용으로 추가할 글로벌 풀들")]
+        [SerializeField] private List<CardPoolDefinition> globalShopPools = new();
             
         [Header("Resources Auto-Load (Optional)")]
         [Tooltip("RunSession을 코드로 생성하는 경우(=인스펙터 세팅이 불가) Resources에서 자동 로드할 경로")]
@@ -206,12 +214,26 @@ namespace DungeonDeck.Run
         /// 현재 Run에서 사용할 카드 풀들(서약 기본 풀 + 글로벌 풀 + 메타 해금 풀).
         /// </summary>
         public IReadOnlyList<CardPoolDefinition> GetActiveCardPools()
-        { 
+            => GetActiveCardPools(CardPoolContext.Reward);
+            
+        public IReadOnlyList<CardPoolDefinition> GetActiveCardPools(CardPoolContext ctx)
+        {
             EnsureDatabasesLoaded();
 
             var result = new List<CardPoolDefinition>();
             AddUniquePools(result, globalBasePools);
-            if (Oath != null) AddUniquePools(result, Oath.basePools);
+            if (ctx == CardPoolContext.Reward) AddUniquePools(result, globalRewardPools);
+            if (ctx == CardPoolContext.Shop)   AddUniquePools(result, globalShopPools);
+            
+            if (Oath != null)
+            {
+                // 레거시(공용) 풀은 일단 둘 다 포함
+                AddUniquePools(result, Oath.basePools);
+                
+                // 신규: rewardPools/shopPools가 있으면 컨텍스트별로 추가
+                if (ctx == CardPoolContext.Reward) AddUniquePools(result, Oath.rewardPools);
+                if (ctx == CardPoolContext.Shop)   AddUniquePools(result, Oath.shopPools);
+            }
 
             var meta = PlayerMetaProgress.LoadOrCreate();
             if (rewardPoolResolver != null && meta != null && meta.unlockedPoolIds != null)
@@ -222,7 +244,10 @@ namespace DungeonDeck.Run
                     if (string.IsNullOrWhiteSpace(id)) continue;
 
                     var pool = rewardPoolResolver.FindKnownPool(id);
-                    if (pool != null && !result.Contains(pool))
+                    if (pool == null) continue;
+                    
+                    bool allow = (ctx == CardPoolContext.Reward) ? pool.AllowsReward : pool.AllowsShop;
+                    if (allow && !result.Contains(pool))
                         result.Add(pool);
                 }
             }
@@ -236,8 +261,11 @@ namespace DungeonDeck.Run
         /// - 없으면 CardLibrary -> 없으면 현재 덱
         /// </summary>
         public List<CardDefinition> GetActiveCardCandidatesUnique()
+            => GetActiveCardCandidatesUnique(CardPoolContext.Reward);
+            
+        public List<CardDefinition> GetActiveCardCandidatesUnique(CardPoolContext ctx)
         {
-            var pools = GetActiveCardPools();
+            var pools = GetActiveCardPools(ctx);
             if (pools != null && pools.Count > 0)
                 return BuildUniqueCardsFromPools(pools);
 
@@ -260,13 +288,20 @@ namespace DungeonDeck.Run
             if (cardLibrary != null && cardLibrary.TryGet(id, out card) && card != null)
                 return true;
 
-            var candidates = GetActiveCardCandidatesUnique();
+            var candidates = GetActiveCardCandidatesUnique(CardPoolContext.Reward);
             for (int i = 0; i < candidates.Count; i++)
             {
                 var c = candidates[i];
                 if (c != null && c.id == id) { card = c; return true; }
             }
 
+            candidates = GetActiveCardCandidatesUnique(CardPoolContext.Shop);
+            for (int i = 0; i < candidates.Count; i++)
+            {
+                var c = candidates[i];
+                if (c != null && c.id == id) { card = c; return true; }
+            }
+            
             return false;
         }
 
@@ -296,13 +331,12 @@ namespace DungeonDeck.Run
                     var e = pool.entries[i];
                     if (e == null || e.cardAsset == null) continue;
 
-                    if (e.cardAsset is CardDefinition cd && cd != null)
-                    {
-                        if (string.IsNullOrWhiteSpace(cd.id)) continue;
-                        if (map.ContainsKey(cd.id)) continue;
-                        map[cd.id] = cd;
-                        outList.Add(cd);
-                    }
+                    var cd = e.cardAsset;
+                    if (cd == null) continue;
+                    if (string.IsNullOrWhiteSpace(cd.id)) continue;
+                    if (map.ContainsKey(cd.id)) continue;
+                    map[cd.id] = cd;
+                    outList.Add(cd);
                 }
             }
 
