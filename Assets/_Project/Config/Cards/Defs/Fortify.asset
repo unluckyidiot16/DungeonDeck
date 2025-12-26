@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Fortify
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Config.Cards.CardDefinition
   id: fortify
+  displayName: Fortify
+  icon: {fileID: 0}
+  rarity: 0
+  effectTextOverride: 
   cost: 1
   effectKind: 1
   value: 8

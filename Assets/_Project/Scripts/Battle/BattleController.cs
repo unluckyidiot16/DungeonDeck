@@ -126,14 +126,10 @@ namespace DungeonDeck.Battle
                 SceneManager.LoadScene(SceneRoutes.Boot);
                 return;
             }
-
-            SetupBattle();
-            BeginPlayerTurn();
             
             SetupBattle();
             BeginPlayerTurn();
             NotifyStateChanged();
-
 
             if (autoWinForTest)
                 EndBattle(true);
@@ -295,9 +291,29 @@ namespace DungeonDeck.Battle
 
     // 1) 후보 리스트 구성
     var candidates = BuildRewardCandidates(run);
+    if (candidates == null || candidates.Count == 0)
+    {
+        Debug.LogWarning("[Battle] No reward candidates. Advancing without reward.");
+        run.MarkNodeClearedAndAdvance();
+        SceneManager.LoadScene(SceneRoutes.Map);
+        yield break;
+    }
 
-    // 2) 3장 뽑기
-    var options = CardRewardRollerCards.Roll(candidates, count: 3, unique: true);
+    // 2) 3장 뽑기 (가중치 + 중복 패널티)
+    var cfg = DungeonDeck.Rewards.CardRewardRollerCards.RollConfig.Default;
+    cfg.duplicateWeightMultiplier = 0.35f;
+    cfg.scaleByCopies = true;
+    cfg.maxCopyExponent = 3;
+
+    var options = DungeonDeck.Rewards.CardRewardRollerCards.RollWeighted(
+        candidates: candidates,
+        ownedDeck: run.State.deck,
+        count: 3,
+        unique: true,
+        seed: 0,
+        configOpt: cfg
+    );
+
 
     if (options == null || options.Count == 0)
     {

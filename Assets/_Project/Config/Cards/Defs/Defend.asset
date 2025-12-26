@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Defend
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Config.Cards.CardDefinition
   id: defend
+  displayName: Defend
+  icon: {fileID: 0}
+  rarity: 0
+  effectTextOverride: 
   cost: 1
   effectKind: 1
   value: 5

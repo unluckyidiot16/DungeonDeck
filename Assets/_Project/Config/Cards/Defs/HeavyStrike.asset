@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: HeavyStrike
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Config.Cards.CardDefinition
   id: heavy_strike
+  displayName: HeavyStrike
+  icon: {fileID: 0}
+  rarity: 0
+  effectTextOverride: 
   cost: 2
   effectKind: 0
   value: 12

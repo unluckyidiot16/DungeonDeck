@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Charge
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Config.Cards.CardDefinition
   id: charge
+  displayName: Charge
+  icon: {fileID: 0}
+  rarity: 0
+  effectTextOverride: 
   cost: 0
   effectKind: 3
   value: 1
