@@ -38,8 +38,25 @@ namespace DungeonDeck.Run
             Plan = plan;
             State = RunFactory.CreateNewRun(oath, balance);
             if (State != null) State.lastOutcome = RunEndOutcome.None;
+            PendingBattleType = MapNodeType.Battle;
         }
 
+        /// <summary>
+        /// End 씬에서: 같은 Oath/Balance/Plan으로 런을 즉시 재시작하고 Map으로 이동 (Boot 스킵)
+        /// </summary>
+        public void RestartSameRunAndGoToMap()
+        {
+            if (Oath == null || Balance == null || Plan == null)
+            {
+                Debug.LogWarning("[RunSession] RestartSameRun failed: missing Oath/Balance/Plan. Going Boot.");
+                SceneManager.LoadScene(SceneRoutes.Boot);
+                return;
+            }
+            
+            StartNewRun(Oath, Balance, Plan);
+            SceneManager.LoadScene(SceneRoutes.Map);
+        }
+        
         public bool IsNodeCleared(int index) => State != null && index < State.nodeIndex;
 
         public MapNodeType GetNodeType(int index)
