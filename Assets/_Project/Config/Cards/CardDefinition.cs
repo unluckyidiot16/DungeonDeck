@@ -10,6 +10,7 @@ namespace DungeonDeck.Config.Cards
         Draw,
         GainEnergy,
         ApplyVulnerable,
+        Heal,
     }
 
     public enum CardRarity

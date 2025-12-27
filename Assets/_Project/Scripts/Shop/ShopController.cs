@@ -385,6 +385,9 @@ namespace DungeonDeck.Shop
             s.shopOfferSold[index] = true;
 
             RefreshShopView();
+
+            // Save after purchase
+            if (RunSaveManager.I != null) RunSaveManager.I.SaveCurrentRun();
         }
 
         private bool CanBuyAt(int index)
@@ -411,11 +414,8 @@ namespace DungeonDeck.Shop
             for (int i = 0; i < offerCount; i++)
                 if (!s.shopOfferSold[i]) unsoldCount++;
 
-            if (unsoldCount <= 0)
-                return;
-
-            if (rerollCost > 0 && s.gold < rerollCost)
-                return;
+            if (unsoldCount <= 0) return;
+            if (rerollCost > 0 && s.gold < rerollCost) return;
 
             if (rerollCost > 0)
                 s.gold -= rerollCost;
@@ -429,7 +429,11 @@ namespace DungeonDeck.Shop
             LoadOffersFromState();
 
             RefreshShopView();
+
+            // Save after reroll
+            if (RunSaveManager.I != null) RunSaveManager.I.SaveCurrentRun();
         }
+
 
         private int DeriveRerollSeed(int shopSeed, int rerollCount)
         {
@@ -505,8 +509,12 @@ namespace DungeonDeck.Shop
             _run.State.deck.RemoveAt(idx);
             _run.State.shopRemoveUsed = true;
 
+            // Save after removal
+            if (RunSaveManager.I != null) RunSaveManager.I.SaveCurrentRun();
+
             OpenRemoveMode();
         }
+
 
         private void CloseRemoveMode()
         {
@@ -571,7 +579,7 @@ namespace DungeonDeck.Shop
         {
             if (_leaving) return;
             _leaving = true;
-            
+
             // 안전: 현재 노드가 Shop일 때만 advance
             if (_run != null && _run.State != null)
             {
@@ -579,9 +587,13 @@ namespace DungeonDeck.Shop
                 if (t == MapNodeType.Shop)
                     _run.MarkNodeClearedAndAdvance();
             }
-            
+
+            // Save after leaving (advance applied)
+            if (RunSaveManager.I != null) RunSaveManager.I.SaveCurrentRun();
+
             SceneManager.LoadScene(SceneRoutes.Map);
         }
+
 
         // -------------------------
         // Candidates

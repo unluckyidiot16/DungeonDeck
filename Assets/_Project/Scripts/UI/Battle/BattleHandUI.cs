@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -21,12 +22,19 @@ namespace DungeonDeck.UI.Battle
         public int maxHandSlots = 5;
 
         private readonly List<BattleCardButtonView> _slots = new();
+        
+        public DungeonDeck.Battle.View.BattleAnimDirector animDirector;
+        private bool _busy = false;
+
 
         private void Awake()
         {
             if (battle == null) battle = FindObjectOfType<BattleController>();
             if (handRoot == null) handRoot = transform;
 
+            if (animDirector == null)
+                animDirector = FindObjectOfType<DungeonDeck.Battle.View.BattleAnimDirector>(true);
+            
             BuildSlots();
 
             if (endTurnButton != null)
@@ -86,11 +94,72 @@ namespace DungeonDeck.UI.Battle
 
                 _slots[idx].Bind(
                     card,
-                    interactable: canPlay,
-                    onClick: () => battle.TryPlayCardAt(idx),
+                    interactable: canPlay && !_busy,
+                    onClick: () => OnClickCard(idx),
                     showCost: true
                 );
             }
         }
+        
+        private void OnClickCard(int idx)
+        {
+            if (_busy) return;
+            StartCoroutine(PlayCardFlowCo(idx));
+        }
+
+        private IEnumerator PlayCardFlowCo(int idx)
+        {
+            if (battle == null) yield break;
+
+            var card = battle.GetHandCard(idx);
+            if (card == null) yield break;
+
+            _busy = true;
+            if (endTurnButton != null) endTurnButton.interactable = false;
+
+            // 카드 UI “살짝 눌림” (아주 미니멀)
+            var slot = _slots[idx];
+            yield return PunchScaleCo(slot.transform, 1.08f, 0.08f);
+
+            // 캐릭터 애니
+            if (animDirector != null)
+                yield return animDirector.PlayPlayerCardCo(card);
+
+            // 실제 카드 적용
+            battle.TryPlayCardAt(idx);
+
+            _busy = false;
+            if (endTurnButton != null) endTurnButton.interactable = true;
+        }
+
+        private IEnumerator PunchScaleCo(Transform t, float up, float dur)
+        {
+            if (t == null) yield break;
+
+            Vector3 baseScale = t.localScale;
+            Vector3 upScale = baseScale * up;
+
+            float half = Mathf.Max(0.01f, dur * 0.5f);
+            float tt = 0f;
+
+            while (tt < half)
+            {
+                tt += Time.unscaledDeltaTime;
+                t.localScale = Vector3.Lerp(baseScale, upScale, Mathf.Clamp01(tt / half));
+                yield return null;
+            }
+
+            tt = 0f;
+            while (tt < half)
+            {
+                tt += Time.unscaledDeltaTime;
+                t.localScale = Vector3.Lerp(upScale, baseScale, Mathf.Clamp01(tt / half));
+                yield return null;
+            }
+
+            t.localScale = baseScale;
+        }
+
+        
     }
 }

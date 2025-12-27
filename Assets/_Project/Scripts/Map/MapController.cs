@@ -54,6 +54,9 @@ namespace DungeonDeck.Map
         {
             RunSession.I.EnterNode(index);
 
+            // Save right after node selection (safe-continue from Map)
+            if (RunSaveManager.I != null) RunSaveManager.I.SaveCurrentRun();
+
             var type = RunSession.I.GetNodeType(index);
             switch (type)
             {
@@ -63,7 +66,7 @@ namespace DungeonDeck.Map
                     break;
 
                 case MapNodeType.Shop:
-                    SceneManager.LoadScene(SceneRoutes.Shop); // Shop 씬 라우트 필요
+                    SceneManager.LoadScene(SceneRoutes.Shop);
                     break;
 
                 case MapNodeType.Rest:
@@ -72,9 +75,14 @@ namespace DungeonDeck.Map
                         RunSession.I.State.hp = Mathf.Min(RunSession.I.State.maxHP, RunSession.I.State.hp + 10);
 
                     RunSession.I.MarkNodeClearedAndAdvance();
+
+                    // Save after rest resolution + advance
+                    if (RunSaveManager.I != null) RunSaveManager.I.SaveCurrentRun();
+
                     BuildOrRebuild();
                     break;
             }
         }
+
     }
 }

@@ -34,11 +34,17 @@ namespace DungeonDeck.Battle
         private bool _endingFlow = false;
         
         private void AdvanceNodeAndRoute(RunSession run)
-        { 
+        {
             if (run == null) return;
+
             run.MarkNodeClearedAndAdvance();
+
+            // Save after battle resolution + advance (or clear if run finished)
+            if (RunSaveManager.I != null) RunSaveManager.I.SaveCurrentRun();
+
             SceneManager.LoadScene(run.IsRunFinished() ? SceneRoutes.End : SceneRoutes.Map);
         }
+
         
 // UI/외부 조회용
         public int Energy => _state != null ? _state.energy : 0;
@@ -293,8 +299,13 @@ namespace DungeonDeck.Battle
             {
                 Debug.Log("[Battle] LOSE");
                 run.EndRun(RunEndOutcome.Defeat);
+
+                // Ensure save is cleared on run end
+                RunSaveManager.ClearSave();
+                PlayerPrefs.Save();
                 return;
             }
+
 
             Debug.Log("[Battle] WIN");
 

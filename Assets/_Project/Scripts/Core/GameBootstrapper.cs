@@ -5,6 +5,7 @@ using DungeonDeck.Run;
 using DungeonDeck.Config.Balance;
 using DungeonDeck.Config.Oaths;
 using DungeonDeck.Config.Map;
+using DungeonDeck.Run;
 
 namespace DungeonDeck.Core
 {
@@ -17,22 +18,34 @@ namespace DungeonDeck.Core
 
         [Header("Flow")]
         [Tooltip("MVP 디버그용: Boot 진입 시 자동으로 새 런 시작 후 Map으로 이동")]
-        [SerializeField] private bool autoStartRunOnBoot = true;
-        
+        [SerializeField] private bool autoStartRunOnBoot = false;
+        [SerializeField] private bool goTitleOnBoot = true;
+
         private void Awake()
         {
-            // Ensure RunSession exists
             if (RunSession.I == null)
             {
                 var go = new GameObject("RunSession");
                 go.AddComponent<RunSession>();
+            }
+
+            if (RunSaveManager.I == null)
+            {
+                var go = new GameObject("RunSaveManager");
+                go.AddComponent<RunSaveManager>();
             }
         }
 
         private void Start()
         {
             if (autoStartRunOnBoot)
+            {
                 StartNewRunAndGoMap();
+                return;
+            }
+
+            if (goTitleOnBoot)
+                SceneManager.LoadScene(SceneRoutes.Title);
         }
 
         public void StartNewRunAndGoMap()

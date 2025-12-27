@@ -1,4 +1,6 @@
 // Assets/_Project/Scripts/Run/RunSession.cs
+
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +11,7 @@ using DungeonDeck.Config.Oaths;
 using DungeonDeck.Config.Cards;
 using DungeonDeck.Config.Meta;
 using DungeonDeck.Map;
+using Random = UnityEngine.Random;
 
 namespace DungeonDeck.Run
 {
@@ -216,6 +219,121 @@ namespace DungeonDeck.Run
                 rewardPoolResolver = Resources.Load<RewardPoolResolver>(rewardPoolResolverResourcesPath);
         }
 
+        // RunSession.cs 내부에 추가
+    // RunSession.cs 내부에 추가/교체
+public void LoadFromSaveData(
+    RunSaveManager.RunSaveData data,
+    OathDefinition oath,
+    RunBalanceDefinition balance,
+    MapPlanDefinition planTemplate)
+{
+    if (data == null)
+    {
+        Debug.LogWarning("[RunSession] LoadFromSaveData: data null");
+        return;
+    }
+
+    EnsureDatabasesLoaded();
+
+    Oath = oath;
+    Balance = balance;
+    PlanTemplate = planTemplate;
+
+    // 1) Plan 복원 (nodes snapshot 우선)
+    MapSeed = (data.mapSeed != 0) ? data.mapSeed : UnityEngine.Random.Range(1, int.MaxValue);
+
+    if (_runtimePlan != null)
+        Destroy(_runtimePlan);
+
+    if (data.planNodes != null && data.planNodes.Count > 0)
+    {
+        var loadedPlan = ScriptableObject.CreateInstance<MapPlanDefinition>();
+        loadedPlan.hideFlags = HideFlags.DontSave;
+
+        loadedPlan.nodes = new List<MapNodeType>(data.planNodes.Count);
+
+        // enum max 안전화
+        int maxEnum = Enum.GetValues(typeof(MapNodeType)).Length - 1;
+
+        for (int i = 0; i < data.planNodes.Count; i++)
+        {
+            int v = Mathf.Clamp(data.planNodes[i], 0, maxEnum);
+            loadedPlan.nodes.Add((MapNodeType)v);
+        }
+
+        _runtimePlan = loadedPlan;
+        Plan = _runtimePlan;
+    }
+    else
+    {
+        // 스냅샷이 없으면 템플릿+시드로 재생성
+        var template = PlanTemplate != null ? PlanTemplate : Plan;
+        if (template != null)
+        {
+            _runtimePlan = MapPlanRuntimeFactory.CreateRuntimePlan(template, MapSeed);
+            Plan = _runtimePlan;
+        }
+    }
+
+    // 2) State 복원
+    var s = new RunState();
+    if (data.state != null)
+    {
+        s.oathId = string.IsNullOrWhiteSpace(data.state.oathId) ? (oath != null ? oath.id : "unknown") : data.state.oathId;
+
+        s.seed = data.state.seed;
+        s.maxHP = data.state.maxHP;
+        s.hp = data.state.hp;
+        s.gold = data.state.gold;
+
+        s.nodeIndex = data.state.nodeIndex;
+        s.runClearedBattles = data.state.runClearedBattles;
+        s.rewardRollCount = data.state.rewardRollCount;
+        s.lastOutcome = (RunEndOutcome)data.state.lastOutcome;
+
+        // deck ids -> CardDefinition
+        s.deck = new List<CardDefinition>();
+        if (data.state.deckCardIds != null)
+        {
+            for (int i = 0; i < data.state.deckCardIds.Count; i++)
+            {
+                var id = data.state.deckCardIds[i];
+                if (string.IsNullOrWhiteSpace(id)) continue;
+
+                if (TryResolveCardById(id, out var card) && card != null)
+                    s.deck.Add(card);
+                else
+                    Debug.LogWarning($"[RunSession] Missing card id in load: {id}");
+            }
+        }
+
+        // shop
+        s.shopOfferSold = data.state.shopOfferSold != null ? new List<bool>(data.state.shopOfferSold) : new List<bool>();
+        s.shopRerollCount = data.state.shopRerollCount;
+
+        s.shopNodeIndex = data.state.shopNodeIndex;
+        s.shopSeed = data.state.shopSeed;
+        s.shopOfferIds = data.state.shopOfferIds != null ? new List<string>(data.state.shopOfferIds) : new List<string>();
+        s.shopRemoveUsed = data.state.shopRemoveUsed;
+    }
+    else
+    {
+        s.oathId = oath != null ? oath.id : "unknown";
+        s.seed = UnityEngine.Random.Range(1, int.MaxValue);
+        s.maxHP = balance != null ? balance.startMaxHP : 60;
+        s.hp = s.maxHP;
+        s.gold = balance != null ? balance.startGold : 0;
+        s.nodeIndex = 0;
+        s.lastOutcome = RunEndOutcome.None;
+    }
+
+    State = s;
+
+    // 3) PendingBattleType 안전 복원
+    PendingBattleType = GetNodeType(State.nodeIndex);
+}
+
+        
         /// <summary>
         /// 현재 Run에서 사용할 카드 풀들(서약 기본 풀 + 글로벌 풀 + 메타 해금 풀).
         /// </summary>

@@ -18,9 +18,14 @@ namespace DungeonDeck.Ending
 
         private void Start()
         {
+            // Double safety: clear persisted save when reaching End
+            RunSaveManager.ClearSave();
+            PlayerPrefs.Save();
+
             WireOnce();
             Refresh();
         }
+
 
         private void WireOnce()
         {
