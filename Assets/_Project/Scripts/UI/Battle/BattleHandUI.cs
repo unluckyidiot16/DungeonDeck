@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DungeonDeck.Battle;
 using DG.Tweening;
+using DungeonDeck.Config.Cards;
 
 namespace DungeonDeck.UI.Battle
 {
@@ -180,7 +181,7 @@ namespace DungeonDeck.UI.Battle
             yield return s.WaitForCompletion();
         }
 
-        private IEnumerator FlyCardToDiscardCo(DungeonDeck.Config.Cards.CardDefinition card, BattleCardButtonView source)
+        private IEnumerator FlyCardToDiscardCo(CardDefinition card, BattleCardButtonView source)
         {
             if (cardPrefab == null || flyRoot == null || discardAnchor == null || source == null) yield break;
 
@@ -197,28 +198,44 @@ namespace DungeonDeck.UI.Battle
                 yield break;
             }
 
-            // Raycast 막기 + 페이드용
             var cg = fly.GetComponent<CanvasGroup>();
             if (cg == null) cg = fly.gameObject.AddComponent<CanvasGroup>();
             cg.alpha = 1f;
             cg.blocksRaycasts = false;
 
-            // 시작 위치를 source와 동일하게
             rt.position = srcRt.position;
             rt.localScale = srcRt.localScale;
             fly.transform.SetAsLastSibling();
 
-            // DOTween 이동 + 페이드 + 살짝 회전
             rt.DOKill(true);
             cg.DOKill(true);
 
+            Vector3 start = rt.position;
+            Vector3 end = discardAnchor.position;
+
+            // 곡선 중간점(위로 뜨고, 약간 옆으로 휘게)
+            float side = Random.Range(-60f, 60f);
+            Vector3 mid = (start + end) * 0.5f + new Vector3(side, 120f, 0f);
+
+            float dur = discardFlyDuration;
+
             Sequence s = DOTween.Sequence();
-            s.Join(rt.DOMove(discardAnchor.position, discardFlyDuration).SetEase(Ease.InQuad));
-            s.Join(cg.DOFade(0f, discardFlyDuration).SetEase(Ease.InQuad));
-            s.Join(rt.DORotate(new Vector3(0, 0, -12f), discardFlyDuration).SetEase(Ease.OutQuad));
+
+            // ✅ 곡선 이동
+            s.Join(rt.DOPath(new[] { start, mid, end }, dur, PathType.CatmullRom, PathMode.Ignore)
+                .SetEase(Ease.InQuad));
+
+            // ✅ 페이드 아웃
+            s.Join(cg.DOFade(0f, dur).SetEase(Ease.InQuad));
+
+            // ✅ 회전 + 스케일 다운
+            s.Join(rt.DORotate(new Vector3(0, 0, Random.Range(-25f, -8f)), dur).SetEase(Ease.OutQuad));
+            s.Join(rt.DOScale(srcRt.localScale * 0.85f, dur).SetEase(Ease.InQuad));
 
             yield return s.WaitForCompletion();
+
             Destroy(fly.gameObject);
         }
+
     }
 }

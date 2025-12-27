@@ -25,6 +25,34 @@ namespace DungeonDeck.Battle
         
         public event Action StateChanged;
         
+        [Header("Enemies")]
+        [SerializeField, Range(1, 3)] private int debugEnemyCount = 1;
+
+        [Serializable]
+        public class EnemyState
+        {
+            public int hp;
+            public int maxHp;
+            public int block;
+            public int vulnerableTurns;
+
+            public bool IsAlive => hp > 0;
+        }
+
+        private readonly List<EnemyState> _enemies = new();
+        private int _selectedEnemyIndex = 0;
+
+        public int EnemyCount => _enemies.Count;
+        public int SelectedEnemyIndex => _selectedEnemyIndex;
+
+        private EnemyState GetSelectedEnemy()
+        {
+            if (_enemies.Count == 0) return null;
+            _selectedEnemyIndex = Mathf.Clamp(_selectedEnemyIndex, 0, _enemies.Count - 1);
+            return _enemies[_selectedEnemyIndex];
+        }
+
+        
         [Header("Reward (Win)")]
         [SerializeField] private CardChoicePanel rewardPanel;   // 배틀 씬 안에 비활성으로 두고 연결
         [SerializeField] private List<CardDefinition> fallbackRewardCandidates = new(); // 비었으면 현재 덱에서 후보를 뽑음
@@ -62,11 +90,12 @@ namespace DungeonDeck.Battle
         public int PlayerMaxHP => _state != null ? _state.playerMaxHP : 0;
         public int PlayerBlock => _state != null ? _state.playerBlock : 0;
 
-        public int EnemyHP => _state != null ? _state.enemyHP : 0;
-        public int EnemyMaxHP => _state != null ? _state.enemyMaxHP : 0;
-        public int EnemyBlock => _state != null ? _state.enemyBlock : 0;
+        public int EnemyHP => GetSelectedEnemy() != null ? GetSelectedEnemy().hp : 0;
+        public int EnemyMaxHP => GetSelectedEnemy() != null ? GetSelectedEnemy().maxHp : 0;
+        public int EnemyBlock => GetSelectedEnemy() != null ? GetSelectedEnemy().block : 0;
+
         
-        public int EnemyVulnerableTurns => _state != null ? _state.enemyVulnerableTurns : 0;
+        public int EnemyVulnerableTurns => GetSelectedEnemy() != null ? GetSelectedEnemy().vulnerableTurns : 0;
 
         public int HandCount => _deck != null ? _deck.HandCount : 0;
 
@@ -80,6 +109,139 @@ namespace DungeonDeck.Battle
         {
             StateChanged?.Invoke();
         }
+        
+        public void EnsureEnemyCount(int count)
+        {
+            count = Mathf.Clamp(count, 1, 3);
+
+            // 보스는 항상 1마리(원하면 여기 규칙 삭제 가능)
+            if (RunSession.I != null && RunSession.I.PendingBattleType == MapNodeType.Boss)
+                count = 1;
+
+            if (_enemies.Count == count) return;
+
+            var run = RunSession.I;
+
+            // 늘리기
+            while (_enemies.Count < count)
+                _enemies.Add(CreateDefaultEnemy(run, _enemies.Count));
+
+            // 줄이기
+            while (_enemies.Count > count)
+                _enemies.RemoveAt(_enemies.Count - 1);
+
+            _selectedEnemyIndex = Mathf.Clamp(_selectedEnemyIndex, 0, _enemies.Count - 1);
+            NotifyStateChanged();
+        }
+
+        public bool SelectEnemy(int index)
+        {
+            if (_enemies.Count == 0) return false;
+            _selectedEnemyIndex = Mathf.Clamp(index, 0, _enemies.Count - 1);
+            NotifyStateChanged();
+            return true;
+        }
+
+        private EnemyState CreateDefaultEnemy(RunSession run, int i)
+        {
+            bool boss = (run != null && run.PendingBattleType == MapNodeType.Boss);
+            int baseHp = boss ? 60 : 30;
+
+            // 살짝 변주(같은 스탯만 3개면 밋밋해서)
+            int hp = boss ? baseHp : Mathf.Max(10, baseHp - i * 5);
+
+            return new EnemyState
+            {
+                hp = hp,
+                maxHp = hp,
+                block = 0,
+                vulnerableTurns = 0
+            };
+        }
+
+        private bool AreAllEnemiesDefeated()
+        {
+            for (int i = 0; i < _enemies.Count; i++)
+                if (_enemies[i] != null && _enemies[i].IsAlive)
+                    return false;
+            return true;
+        }
+
+        private int CountAliveEnemies()
+        {
+            int n = 0;
+            for (int i = 0; i < _enemies.Count; i++)
+                if (_enemies[i] != null && _enemies[i].IsAlive)
+                    n++;
+            return n;
+        }
+
+        private void AutoSelectNextAliveIfNeeded()
+        {
+            var sel = GetSelectedEnemy();
+            if (sel != null && sel.IsAlive) return;
+
+            for (int i = 0; i < _enemies.Count; i++)
+            {
+                if (_enemies[i] != null && _enemies[i].IsAlive)
+                {
+                    _selectedEnemyIndex = i;
+                    return;
+                }
+            }
+
+            _selectedEnemyIndex = 0;
+        }
+
+        private EnemyState GetEnemy(int index)
+        {
+            if (_enemies.Count == 0) return null;
+            index = Mathf.Clamp(index, 0, _enemies.Count - 1);
+            return _enemies[index];
+        }
+
+        private void ApplyVulnerableToEnemy(int enemyIndex, int turns)
+        {
+            turns = Mathf.Max(0, turns);
+            if (turns <= 0) return;
+
+            var e = GetEnemy(enemyIndex);
+            if (e == null) return;
+
+            e.vulnerableTurns = Mathf.Clamp(e.vulnerableTurns + turns, 0, 99);
+        }
+
+        private int DealDamageToEnemy_ReturnHpLoss(int enemyIndex, int amount)
+        {
+            amount = Mathf.Max(0, amount);
+
+            var e = GetEnemy(enemyIndex);
+            if (e == null) return 0;
+
+            if (e.vulnerableTurns > 0 && amount > 0)
+                amount = Mathf.CeilToInt(amount * 1.5f);
+
+            int hpBefore = e.hp;
+
+            int remain = amount;
+            if (e.block > 0)
+            {
+                int used = Mathf.Min(e.block, remain);
+                e.block -= used;
+                remain -= used;
+            }
+
+            if (remain > 0) e.hp -= remain;
+            if (e.hp < 0) e.hp = 0;
+
+            // ✅ 선택 중인 적이 죽었으면 다음 살아있는 적 자동 선택
+            if (enemyIndex == _selectedEnemyIndex)
+                AutoSelectNextAliveIfNeeded();
+
+            return Mathf.Max(0, hpBefore - e.hp);
+        }
+
+        
 
         /// <summary>
         /// 손패 인덱스의 카드를 사용 시도. 성공/실패 반환.
@@ -111,7 +273,7 @@ namespace DungeonDeck.Battle
                 _deck.PlayFromHand(handIndex);
 
             // 승리 체크
-            if (_state.enemyHP <= 0)
+            if (AreAllEnemiesDefeated())
             {
                 NotifyStateChanged();
                 EndBattle(true);
@@ -145,15 +307,36 @@ namespace DungeonDeck.Battle
             // 2) 적 공격 “연출” 먼저
             int raw = (RunSession.I.PendingBattleType == MapNodeType.Boss) ? 12 : 8;
 
-            if (animDirector != null)
-                yield return animDirector.PlayEnemyAttackCo();
+            for (int i = 0; i < _enemies.Count; i++)
+            {
+                var e = _enemies[i];
+                if (e == null || !e.IsAlive) continue;
 
-            // 3) 데미지 반영 + 팝업
-            int hpLoss = DealDamageToPlayer_ReturnHpLoss(raw);
-            if (hitPopups != null && hpLoss > 0) hitPopups.SpawnPlayer(hpLoss);
+                if (animDirector != null)
+                    yield return animDirector.PlayEnemyAttackCo(i);
 
-            if (_state.enemyVulnerableTurns > 0)
-                _state.enemyVulnerableTurns -= 1;
+                if (animDirector != null) animDirector.PlayPlayerHitFx();
+                
+                int hpLoss = DealDamageToPlayer_ReturnHpLoss(raw);
+                if (hitPopups != null && hpLoss > 0) hitPopups.SpawnPlayer(hpLoss);
+
+                NotifyStateChanged();
+
+                if (_state.playerHP <= 0)
+                {
+                    EndBattle(false);
+                    yield break;
+                }
+            }
+
+            // ✅ 적 취약 턴 감소(전체)
+            for (int i = 0; i < _enemies.Count; i++)
+            {
+                var e = _enemies[i];
+                if (e == null) continue;
+                if (e.vulnerableTurns > 0) e.vulnerableTurns -= 1;
+            }
+
 
             NotifyStateChanged();
 
@@ -198,16 +381,20 @@ namespace DungeonDeck.Battle
             {
                 playerHP = run.State.hp,
                 playerMaxHP = run.State.maxHP,
-                enemyHP = (run.PendingBattleType == MapNodeType.Boss) ? 60 : 30,
-                enemyMaxHP = (run.PendingBattleType == MapNodeType.Boss) ? 60 : 30,
                 playerBlock = 0,
-                enemyBlock = 0,
                 energy = run.Balance != null ? run.Balance.startEnergyPerTurn : 3,
                 drawPerTurn = run.Balance != null ? run.Balance.startDrawPerTurn : 5,
             };
 
             _deck = new DeckRuntime(run.State.deck);
+
+            // ✅ 적 리스트 초기화 (일반은 debugEnemyCount, 보스는 1)
+            EnsureEnemyCount(debugEnemyCount);
+
+            // 기본 선택
+            SelectEnemy(0);
         }
+
 
         private void BeginPlayerTurn()
         {
@@ -237,10 +424,12 @@ namespace DungeonDeck.Battle
             switch (card.effectKind)
             {
                 case CardEffectKind.Attack:
-                    int hpLoss = DealDamageToEnemy_ReturnHpLoss(card.value);
-                    if (hitPopups != null && hpLoss > 0) hitPopups.SpawnEnemy(hpLoss);
+                {
+                    int target = SelectedEnemyIndex;
+                    int hpLoss = DealDamageToEnemy_ReturnHpLoss(target, card.value);
+                    if (hitPopups != null && hpLoss > 0) hitPopups.SpawnEnemy(hpLoss, target);
                     break;
-
+                }
                 case CardEffectKind.Block:
                     _state.playerBlock += Mathf.Max(0, card.value);
                     Debug.Log($"[Battle] Play {card.id}: Block +{card.value}. Block={_state.playerBlock}");
@@ -256,21 +445,57 @@ namespace DungeonDeck.Battle
                     Debug.Log($"[Battle] Play {card.id}: Energy +{card.value}. Energy={_state.energy}");
                     break;
                 case CardEffectKind.ApplyVulnerable:
-                    ApplyVulnerableToEnemy(card.value);
-                    Debug.Log($"[Battle] Play {card.id}: Apply Vulnerable +{card.value}. EnemyVuln={_state.enemyVulnerableTurns}");
+                {
+                    int target = SelectedEnemyIndex;
+                    ApplyVulnerableToEnemy(target, card.value);
+                    var e = GetEnemy(target);
+                    Debug.Log($"[Battle] Play {card.id}: Apply Vulnerable +{card.value}. TargetVuln={(e != null ? e.vulnerableTurns : 0)}");
                     break;
+                }
             }
         }
 
-        private void ApplyVulnerableToEnemy(int turns)
+        private void ApplyVulnerableToSelectedEnemy(int turns)
         {
             turns = Mathf.Max(0, turns);
             if (turns <= 0) return;
-            
-            // 스택(누적)
-            _state.enemyVulnerableTurns = Mathf.Clamp(_state.enemyVulnerableTurns + turns, 0, 99);
+
+            var e = GetSelectedEnemy();
+            if (e == null) return;
+
+            e.vulnerableTurns = Mathf.Clamp(e.vulnerableTurns + turns, 0, 99);
         }
-        
+
+        private int DealDamageToSelectedEnemy_ReturnHpLoss(int amount)
+        {
+            amount = Mathf.Max(0, amount);
+
+            var e = GetSelectedEnemy();
+            if (e == null) return 0;
+
+            if (e.vulnerableTurns > 0 && amount > 0)
+                amount = Mathf.CeilToInt(amount * 1.5f);
+
+            int hpBefore = e.hp;
+
+            int remain = amount;
+            if (e.block > 0)
+            {
+                int used = Mathf.Min(e.block, remain);
+                e.block -= used;
+                remain -= used;
+            }
+
+            if (remain > 0)
+                e.hp -= remain;
+
+            if (e.hp < 0) e.hp = 0;
+
+            AutoSelectNextAliveIfNeeded();
+
+            return Mathf.Max(0, hpBefore - e.hp);
+        }
+
         private int DealDamageToPlayer_ReturnHpLoss(int amount)
         {
             amount = Mathf.Max(0, amount);
@@ -290,30 +515,6 @@ namespace DungeonDeck.Battle
 
             if (_state.playerHP < 0) _state.playerHP = 0;
             return Mathf.Max(0, hpBefore - _state.playerHP);
-        }
-
-        private int DealDamageToEnemy_ReturnHpLoss(int amount)
-        {
-            amount = Mathf.Max(0, amount);
-
-            if (_state.enemyVulnerableTurns > 0 && amount > 0)
-                amount = Mathf.CeilToInt(amount * 1.5f);
-
-            int hpBefore = _state.enemyHP;
-
-            int remain = amount;
-            if (_state.enemyBlock > 0)
-            {
-                int used = Mathf.Min(_state.enemyBlock, remain);
-                _state.enemyBlock -= used;
-                remain -= used;
-            }
-
-            if (remain > 0)
-                _state.enemyHP -= remain;
-
-            if (_state.enemyHP < 0) _state.enemyHP = 0;
-            return Mathf.Max(0, hpBefore - _state.enemyHP);
         }
 
 

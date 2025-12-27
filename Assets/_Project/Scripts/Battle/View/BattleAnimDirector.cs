@@ -1,81 +1,125 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using DungeonDeck.Config.Cards;
+using DG.Tweening;
 
 namespace DungeonDeck.Battle.View
 {
     public class BattleAnimDirector : MonoBehaviour
     {
-        public BattleActorView player;
-        public BattleActorView enemy;
+        [Header("Player")]
+        public Transform playerView;
+        public Animator playerAnimator;
+        public string playerHitTrigger = "Hit";
+        public float playerHitShakeDuration = 0.12f;
+        public float playerHitShakeStrength = 0.10f;
 
-        [Header("Timings")]
-        public float attackWindup = 0.12f;
-        public float hitDelay = 0.06f;
-        public float shortPause = 0.08f;
+        [Header("Enemies (by index)")]
+        public Transform[] enemyViews = new Transform[3];
+        public Animator[] enemyAnimators = new Animator[3];
+        public string enemyAttackTrigger = "Attack";
 
-        public bool IsPlaying { get; private set; }
+        [Header("Enemy Lunge")]
+        public float lungeDistance = 0.25f;
+        public float lungeOutTime = 0.10f;
+        public float lungeBackTime = 0.12f;
 
-        public void Bind(BattleActorView p, BattleActorView e)
+        // -------------------------
+        // Auto binding helpers
+        // -------------------------
+
+        // Legacy (single enemy) compatibility
+        public void Bind(BattleActorView player, BattleActorView enemy)
         {
-            if (p != null) player = p;
-            if (e != null) enemy = e;
+            if (enemy != null)
+                Bind(player, new List<BattleActorView> { enemy });
+            else
+                Bind(player, (IList<BattleActorView>)null);
         }
 
-        public IEnumerator PlayPlayerCardCo(CardDefinition card)
+        // Multi enemy bind
+        public void Bind(BattleActorView player, IList<BattleActorView> enemies)
         {
-            if (card == null) yield break;
-
-            IsPlaying = true;
-
-            switch (card.effectKind)
+            if (player != null)
             {
-                case CardEffectKind.Attack:
-                    if (player) player.PlayAttack();
-                    yield return new WaitForSeconds(attackWindup);
-                    if (enemy) enemy.PlayHit();
-                    yield return new WaitForSeconds(hitDelay);
-                    break;
-
-                case CardEffectKind.Block:
-                    if (player) player.PlayBlock();
-                    yield return new WaitForSeconds(shortPause);
-                    break;
-
-                case CardEffectKind.Heal:
-                    if (player) player.PlayHeal();
-                    yield return new WaitForSeconds(shortPause);
-                    break;
-
-                case CardEffectKind.ApplyVulnerable:
-                    if (player) player.PlayAttack(); // 임시 “시전” 느낌
-                    yield return new WaitForSeconds(shortPause);
-                    if (enemy) enemy.PlayDebuff();
-                    yield return new WaitForSeconds(shortPause);
-                    break;
-
-                default:
-                    // 확장 전 기본 연출
-                    if (player) player.PlayAttack();
-                    yield return new WaitForSeconds(shortPause);
-                    break;
+                playerView = player.transform;
+                if (playerAnimator == null)
+                    playerAnimator = player.GetComponentInChildren<Animator>(true);
             }
 
-            IsPlaying = false;
+            // clear arrays
+            for (int i = 0; i < enemyViews.Length; i++)
+            {
+                enemyViews[i] = null;
+                if (enemyAnimators != null && i < enemyAnimators.Length)
+                    enemyAnimators[i] = null;
+            }
+
+            if (enemies == null) return;
+
+            int n = Mathf.Min(enemies.Count, enemyViews.Length);
+            for (int i = 0; i < n; i++)
+            {
+                var e = enemies[i];
+                if (e == null) continue;
+
+                enemyViews[i] = e.transform;
+
+                if (enemyAnimators != null && i < enemyAnimators.Length)
+                    enemyAnimators[i] = e.GetComponentInChildren<Animator>(true);
+            }
         }
-        
+
+        // Compatibility overload (some older call sites)
         public IEnumerator PlayEnemyAttackCo()
         {
-            IsPlaying = true;
-
-            if (enemy) enemy.PlayAttack();
-            yield return new WaitForSeconds(attackWindup);
-
-            if (player) player.PlayHit();
-            yield return new WaitForSeconds(hitDelay);
-
-            IsPlaying = false;
+            yield return PlayEnemyAttackCo(0);
         }
 
+        public IEnumerator PlayEnemyAttackCo(int enemyIndex)
+        {
+            if (enemyIndex < 0) yield break;
+            if (enemyViews == null || enemyIndex >= enemyViews.Length) yield break;
+
+            var view = enemyViews[enemyIndex];
+            var anim = (enemyAnimators != null && enemyIndex < enemyAnimators.Length) ? enemyAnimators[enemyIndex] : null;
+
+            if (anim != null && !string.IsNullOrEmpty(enemyAttackTrigger))
+                anim.SetTrigger(enemyAttackTrigger);
+
+            if (view == null)
+            {
+                yield return new WaitForSeconds(lungeOutTime + lungeBackTime);
+                yield break;
+            }
+
+            Vector3 start = view.localPosition;
+
+            // move slightly toward player (left/right only)
+            float dir = 1f;
+            if (playerView != null)
+                dir = Mathf.Sign((playerView.position - view.position).x);
+
+            Vector3 outPos = start + new Vector3(dir * lungeDistance, 0f, 0f);
+
+            view.DOKill(true);
+            var seq = DOTween.Sequence();
+            seq.Join(view.DOLocalMove(outPos, lungeOutTime).SetEase(Ease.OutQuad));
+            seq.Append(view.DOLocalMove(start, lungeBackTime).SetEase(Ease.InQuad));
+
+            yield return seq.WaitForCompletion();
+        }
+
+        public void PlayPlayerHitFx()
+        {
+            if (playerAnimator != null && !string.IsNullOrEmpty(playerHitTrigger))
+                playerAnimator.SetTrigger(playerHitTrigger);
+
+            if (playerView != null)
+            {
+                playerView.DOKill(true);
+                playerView.DOShakePosition(playerHitShakeDuration, playerHitShakeStrength, 12, 90f, false, true);
+            }
+        }
     }
 }

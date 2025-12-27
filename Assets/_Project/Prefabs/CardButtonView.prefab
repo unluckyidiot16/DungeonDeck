@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 1880450698642032424}
   - component: {fileID: 2385549156897388445}
   - component: {fileID: 4048873826834633223}
+  - component: {fileID: 3676726564479757243}
   m_Layer: 5
   m_Name: CardButtonView
   m_TagString: Untagged
@@ -255,6 +256,24 @@ MonoBehaviour:
   effectText: {fileID: 7900976540138181642}
   rarityText: {fileID: 2455190375070239231}
   theme: {fileID: 0}
+--- !u!114 &3676726564479757243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789035944021154331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72eb1e855c6446bf9196502cb681c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.UI.Battle.CardHoverLiftFx
+  liftY: 22
+  hoverScale: 1.05
+  hoverDuration: 0.12
+  pressScale: 0.97
+  pressDuration: 0.06
+  useUnscaledTime: 1
 --- !u!1 &847225836771110954
 GameObject:
   m_ObjectHideFlags: 0
