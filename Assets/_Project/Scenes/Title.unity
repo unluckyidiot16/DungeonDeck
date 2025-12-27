@@ -1550,7 +1550,6 @@ GameObject:
   - component: {fileID: 1048903285}
   - component: {fileID: 1048903288}
   - component: {fileID: 1048903287}
-  - component: {fileID: 1048903289}
   m_Layer: 5
   m_Name: TitleSlotView
   m_TagString: Untagged
@@ -1618,23 +1617,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048903284}
   m_CullTransparentMesh: 1
---- !u!114 &1048903289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048903284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63bc4af52912e424eafa3b8b356662ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Title.TitleSlotView
-  slotLabel: {fileID: 812817084}
-  infoText: {fileID: 1984097596}
-  continueButton: {fileID: 1742069331}
-  newGameButton: {fileID: 1854009758}
-  clearButton: {fileID: 178630391}
 --- !u!1 &1484693439
 GameObject:
   m_ObjectHideFlags: 0

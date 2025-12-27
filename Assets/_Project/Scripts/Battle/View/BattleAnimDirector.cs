@@ -63,5 +63,19 @@ namespace DungeonDeck.Battle.View
 
             IsPlaying = false;
         }
+        
+        public IEnumerator PlayEnemyAttackCo()
+        {
+            IsPlaying = true;
+
+            if (enemy) enemy.PlayAttack();
+            yield return new WaitForSeconds(attackWindup);
+
+            if (player) player.PlayHit();
+            yield return new WaitForSeconds(hitDelay);
+
+            IsPlaying = false;
+        }
+
     }
 }

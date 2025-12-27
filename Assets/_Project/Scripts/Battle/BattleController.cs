@@ -30,7 +30,17 @@ namespace DungeonDeck.Battle
         [SerializeField] private List<CardDefinition> fallbackRewardCandidates = new(); // 비었으면 현재 덱에서 후보를 뽑음
         [SerializeField] private bool useRunCardPools = true; // RunSession 카드풀 기반 후보/가중치 적용
         [SerializeField] private bool allowSkipReward = false;
+        
+        [Header("FX (optional)")]
+        [SerializeField] private DungeonDeck.Battle.View.BattleAnimDirector animDirector;
+        [SerializeField] private DungeonDeck.Battle.View.HitPopupSpawner hitPopups;
 
+        private bool _isPlayerTurn = false;
+        private bool _resolving = false;
+
+        public bool IsPlayerTurn => _isPlayerTurn;
+        public bool IsResolving => _resolving;
+        
         private bool _endingFlow = false;
         
         private void AdvanceNodeAndRoute(RunSession run)
@@ -76,6 +86,7 @@ namespace DungeonDeck.Battle
         /// </summary>
         public bool TryPlayCardAt(int handIndex)
         {
+            if (_endingFlow || _resolving || !_isPlayerTurn) return false;
             if (_deck == null || _state == null) return false;
             if (handIndex < 0 || handIndex >= _deck.HandCount) return false;
 
@@ -117,20 +128,42 @@ namespace DungeonDeck.Battle
         public void EndTurn()
         {
             if (_deck == null || _state == null) return;
+            if (_endingFlow || _resolving || !_isPlayerTurn) return;
 
-            // discard remaining hand
+            StartCoroutine(EndTurnFlowCo());
+        }
+
+        private IEnumerator EndTurnFlowCo()
+        {
+            _resolving = true;
+            _isPlayerTurn = false;
+
+            // 1) 손패 버림
             _deck.DiscardHand();
             NotifyStateChanged();
 
-            RunEnemyTurn();
+            // 2) 적 공격 “연출” 먼저
+            int raw = (RunSession.I.PendingBattleType == MapNodeType.Boss) ? 12 : 8;
+
+            if (animDirector != null)
+                yield return animDirector.PlayEnemyAttackCo();
+
+            // 3) 데미지 반영 + 팝업
+            int hpLoss = DealDamageToPlayer_ReturnHpLoss(raw);
+            if (hitPopups != null && hpLoss > 0) hitPopups.SpawnPlayer(hpLoss);
+
+            if (_state.enemyVulnerableTurns > 0)
+                _state.enemyVulnerableTurns -= 1;
+
+            NotifyStateChanged();
 
             if (_state.playerHP <= 0)
             {
-                NotifyStateChanged();
                 EndBattle(false);
-                return;
+                yield break;
             }
 
+            // 4) 플레이어 턴 시작
             BeginPlayerTurn();
             NotifyStateChanged();
         }
@@ -146,6 +179,10 @@ namespace DungeonDeck.Battle
             }
             
             SetupBattle();
+            
+            if (animDirector == null) animDirector = FindObjectOfType<DungeonDeck.Battle.View.BattleAnimDirector>(true);
+            if (hitPopups == null) hitPopups = FindObjectOfType<DungeonDeck.Battle.View.HitPopupSpawner>(true);
+            
             BeginPlayerTurn();
             NotifyStateChanged();
 
@@ -178,7 +215,9 @@ namespace DungeonDeck.Battle
             _state.energy = RunSession.I.Balance != null ? RunSession.I.Balance.startEnergyPerTurn : 3;
 
             _deck.Draw(_state.drawPerTurn);
-            Debug.Log($"[Battle] Player turn start. Hand={_deck.HandCount} Energy={_state.energy}");
+
+            _isPlayerTurn = true;
+            _resolving = false;
         }
 
         // Hook this to UI button later
@@ -193,25 +232,13 @@ namespace DungeonDeck.Battle
             EndTurn();
         }
 
-        private void RunEnemyTurn()
-        {
-            // M1 minimal: enemy always attacks for 8
-            int dmg = (RunSession.I.PendingBattleType == MapNodeType.Boss) ? 12 : 8;
-
-            DealDamageToPlayer(dmg);
-            Debug.Log($"[Battle] Enemy attacks {dmg}. PlayerHP={_state.playerHP}");
-            
-            if (_state.enemyVulnerableTurns > 0)
-                _state.enemyVulnerableTurns -= 1;
-        }
-
         private void ApplyCard(CardDefinition card)
         {
             switch (card.effectKind)
             {
                 case CardEffectKind.Attack:
-                    DealDamageToEnemy(card.value);
-                    Debug.Log($"[Battle] Play {card.id}: Attack {card.value}. EnemyHP={_state.enemyHP}");
+                    int hpLoss = DealDamageToEnemy_ReturnHpLoss(card.value);
+                    if (hitPopups != null && hpLoss > 0) hitPopups.SpawnEnemy(hpLoss);
                     break;
 
                 case CardEffectKind.Block:
@@ -244,32 +271,11 @@ namespace DungeonDeck.Battle
             _state.enemyVulnerableTurns = Mathf.Clamp(_state.enemyVulnerableTurns + turns, 0, 99);
         }
         
-        private void DealDamageToEnemy(int amount)
+        private int DealDamageToPlayer_ReturnHpLoss(int amount)
         {
             amount = Mathf.Max(0, amount);
-            
-            // Vulnerable: 받는 피해 +50%
-            if (_state.enemyVulnerableTurns > 0 && amount > 0)
-                amount = Mathf.CeilToInt(amount * 1.5f);
 
-            // block first
-            int remain = amount;
-            if (_state.enemyBlock > 0)
-            {
-                int used = Mathf.Min(_state.enemyBlock, remain);
-                _state.enemyBlock -= used;
-                remain -= used;
-            }
-
-            if (remain > 0)
-                _state.enemyHP -= remain;
-
-            if (_state.enemyHP < 0) _state.enemyHP = 0;
-        }
-
-        private void DealDamageToPlayer(int amount)
-        {
-            amount = Mathf.Max(0, amount);
+            int hpBefore = _state.playerHP;
 
             int remain = amount;
             if (_state.playerBlock > 0)
@@ -283,12 +289,43 @@ namespace DungeonDeck.Battle
                 _state.playerHP -= remain;
 
             if (_state.playerHP < 0) _state.playerHP = 0;
+            return Mathf.Max(0, hpBefore - _state.playerHP);
         }
+
+        private int DealDamageToEnemy_ReturnHpLoss(int amount)
+        {
+            amount = Mathf.Max(0, amount);
+
+            if (_state.enemyVulnerableTurns > 0 && amount > 0)
+                amount = Mathf.CeilToInt(amount * 1.5f);
+
+            int hpBefore = _state.enemyHP;
+
+            int remain = amount;
+            if (_state.enemyBlock > 0)
+            {
+                int used = Mathf.Min(_state.enemyBlock, remain);
+                _state.enemyBlock -= used;
+                remain -= used;
+            }
+
+            if (remain > 0)
+                _state.enemyHP -= remain;
+
+            if (_state.enemyHP < 0) _state.enemyHP = 0;
+            return Mathf.Max(0, hpBefore - _state.enemyHP);
+        }
+
 
         private void EndBattle(bool win)
         {
             if (_endingFlow) return;
             _endingFlow = true;
+
+            // ✅ UI/입력 잠금 (BattleHandUI가 IsPlayerTurn/IsResolving로 버튼을 끄게)
+            _isPlayerTurn = false;
+            _resolving = true;
+            NotifyStateChanged();
 
             var run = RunSession.I;
 
@@ -303,18 +340,21 @@ namespace DungeonDeck.Battle
                 // Ensure save is cleared on run end
                 RunSaveManager.ClearSave();
                 PlayerPrefs.Save();
+
+                // ✅ End 씬으로 라우팅
+                SceneManager.LoadScene(SceneRoutes.End);
                 return;
             }
 
-
             Debug.Log("[Battle] WIN");
 
-            // 골드 먼저 지급(선택 전/후는 취향인데, 지금은 즉시 지급으로)
+            // 골드 먼저 지급
             if (run.Balance != null) run.State.gold += run.Balance.winGold;
 
-            // ✅ 승리 보상 선택 → 덱 추가 → 노드 클리어/진행 → 맵 복귀
+            // ✅ 승리 보상 선택 → 덱 추가 → 노드 클리어/진행 → 맵/엔드 라우팅
             StartCoroutine(WinRewardFlowCo());
         }
+
         
         private IEnumerator WinRewardFlowCo()
         {
