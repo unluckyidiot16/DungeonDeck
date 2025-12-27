@@ -1679,7 +1679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c36ccaa09764ba3b7f4fa80397e360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Battle.View.BattleActorView
-  animator: {fileID: 0}
+  animator: {fileID: 367350450}
   trigAttack: Attack
   trigHit: Hit
   trigBlock: Block
