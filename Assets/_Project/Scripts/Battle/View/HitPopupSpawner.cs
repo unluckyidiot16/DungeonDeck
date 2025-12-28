@@ -4,54 +4,39 @@ namespace DungeonDeck.Battle.View
 {
     public class HitPopupSpawner : MonoBehaviour
     {
-        [Header("UI Root")]
-        public Canvas canvas;
-        public RectTransform root;
-
         [Header("Popup")]
         public HitPopup popupPrefab;
 
-        [Header("Player Target")]
-        public Transform playerTarget;
-        public RectTransform playerCanvasRoot;
+        [Header("Player")]
+        public Transform playerTarget;                 // 월드 기준(보통 PlayerAnchor 혹은 Canvas/Target)
+        public RectTransform playerCanvasRoot;         // PlayerAnchor의 Canvas (RectTransform)
 
-        [Header("Enemy Targets (by index)")]
-        public Transform[] enemyTargets = new Transform[3];
-        public RectTransform[] enemyCanvasRoots = new RectTransform[3];
+        [Header("Enemies (by index)")]
+        public Transform[] enemyTargets = new Transform[3];          // 각 적의 Target(월드)
+        public RectTransform[] enemyCanvasRoots = new RectTransform[3]; // 각 적의 Canvas (RectTransform)
 
         [Header("Offsets")]
-        public Vector2 screenOffset = new Vector2(0, 40);
-        public Vector2 localOffset = new Vector2(0, 40);
+        public Vector2 localOffset = new Vector2(0, 40); // 캔버스 로컬 좌표 오프셋
 
-        Camera _uiCam;
+        // -------------------------
+        // Public API
+        // -------------------------
 
-        private void Awake()
+        public void RegisterEnemyTarget(int index, Transform target, RectTransform canvasRoot)
         {
-            if (canvas == null) canvas = GetComponentInParent<Canvas>();
-            if (root == null && canvas != null) root = canvas.transform as RectTransform;
+            if (index < 0 || index >= enemyTargets.Length) return;
 
-            if (canvas != null && canvas.renderMode != RenderMode.ScreenSpaceOverlay)
-                _uiCam = canvas.worldCamera;
+            enemyTargets[index] = target;
+            // ✅ null이면 기존 canvasRoot 유지 (TargetManager가 null로 덮어쓰는 문제 방지)
+            if (canvasRoot != null && enemyCanvasRoots != null && index < enemyCanvasRoots.Length) 
+                enemyCanvasRoots[index] = canvasRoot;
         }
 
-        // ---- Registration helpers (optional) ----
-        public void RegisterEnemyTarget(int index, Transform t, RectTransform canvasRootOpt = null)
-        {
-            if (index < 0) return;
-            if (enemyTargets == null || enemyTargets.Length <= index) return;
-
-            enemyTargets[index] = t;
-            if (enemyCanvasRoots != null && enemyCanvasRoots.Length > index)
-                enemyCanvasRoots[index] = canvasRootOpt;
-        }
-
-        // ---- Spawn API ----
         public void SpawnPlayer(int amount)
         {
-            SpawnInternal(amount, playerCanvasRoot, playerTarget);
+            SpawnOnCanvas(amount, playerCanvasRoot, playerTarget);
         }
 
-        // Backward compatible (old call sites)
         public void SpawnEnemy(int amount)
         {
             SpawnEnemy(amount, 0);
@@ -59,45 +44,60 @@ namespace DungeonDeck.Battle.View
 
         public void SpawnEnemy(int amount, int enemyIndex)
         {
-            Transform t = null;
-            RectTransform cr = null;
+            if (enemyIndex < 0 || enemyIndex >= enemyTargets.Length) return;
 
-            if (enemyTargets != null && enemyIndex >= 0 && enemyIndex < enemyTargets.Length)
-                t = enemyTargets[enemyIndex];
+            var canvasRoot = (enemyCanvasRoots != null && enemyIndex < enemyCanvasRoots.Length)
+                ? enemyCanvasRoots[enemyIndex]
+                : null;
 
-            if (enemyCanvasRoots != null && enemyIndex >= 0 && enemyIndex < enemyCanvasRoots.Length)
-                cr = enemyCanvasRoots[enemyIndex];
+            var target = enemyTargets[enemyIndex];
 
-            // fallback: 없으면 root+enemyTargets[0] 같은 식으로라도
-            SpawnInternal(amount, cr, t);
+            SpawnOnCanvas(amount, canvasRoot, target);
         }
 
-        private void SpawnInternal(int amount, RectTransform preferredRoot, Transform worldTarget)
+        // -------------------------
+        // Core
+        // -------------------------
+
+        private void SpawnOnCanvas(int amount, RectTransform canvasRoot, Transform worldTarget)
         {
             if (popupPrefab == null) return;
+            if (canvasRoot == null) return; // ✅ 이번 요구사항: 각자 캔버스에 스폰 (없으면 안 띄움)
 
-            // 1) per-actor canvas root 우선 (월드/카메라 영향 최소)
-            if (preferredRoot != null)
+            var popup = Instantiate(popupPrefab, canvasRoot);
+            if (popup.transform is not RectTransform rt) return;
+
+            // target이 없으면 그냥 localOffset 위치
+            if (worldTarget == null)
             {
-                var p = Instantiate(popupPrefab, preferredRoot);
-                if (p.transform is RectTransform prt)
-                    prt.anchoredPosition = localOffset;
-
-                p.Play(amount);
+                rt.anchoredPosition = localOffset;
+                popup.Play(amount);
                 return;
             }
 
-            // 2) fallback: 월드→스크린→root 로컬
-            if (root == null || worldTarget == null) return;
+            // target 월드 위치 → 해당 canvasRoot의 로컬 좌표로 변환
+            var cam = GetCamFor(canvasRoot);
 
-            var popup = Instantiate(popupPrefab, root);
-            if (popup.transform is not RectTransform rt) return;
+            Vector2 screen = RectTransformUtility.WorldToScreenPoint(cam, worldTarget.position);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRoot, screen, cam, out var local);
 
-            Vector2 screen = RectTransformUtility.WorldToScreenPoint(_uiCam, worldTarget.position);
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(root, screen, _uiCam, out var local);
-            rt.anchoredPosition = local + screenOffset;
-
+            rt.anchoredPosition = local + localOffset;
             popup.Play(amount);
+        }
+
+        private Camera GetCamFor(RectTransform canvasRoot)
+        {
+            if (canvasRoot == null) return null;
+
+            var c = canvasRoot.GetComponentInParent<Canvas>();
+            if (c == null) return null;
+
+            // ScreenSpaceOverlay면 camera null
+            if (c.renderMode == RenderMode.ScreenSpaceOverlay) return null;
+
+            // ScreenSpaceCamera/WorldSpace면 worldCamera 사용, 없으면 Main
+            if (c.worldCamera != null) return c.worldCamera;
+            return Camera.main;
         }
     }
 }

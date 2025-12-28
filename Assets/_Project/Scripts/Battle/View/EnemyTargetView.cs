@@ -25,14 +25,41 @@ namespace DungeonDeck.Battle.View
         [Header("Manager (auto find if null)")]
         public BattleTargetManager manager;
 
+        [Header("Auto Collider (click support)")]
+        public bool autoAddCollider2D = true;
+        
         public int Index { get; private set; } = -1;
 
         private void Awake()
         {
             if (popupTarget == null) popupTarget = transform;
             if (selectedMarker != null) selectedMarker.SetActive(false);
+            
+            EnsureCollider();
         }
 
+        private void EnsureCollider()
+        {
+            // 이미 콜라이더가 있으면 OK
+            if (GetComponentInChildren<Collider2D>() != null || GetComponentInChildren<Collider>() != null) return;
+            
+            if (!autoAddCollider2D) return;
+            
+            var sr = GetComponentInChildren<SpriteRenderer>(true);
+            if (sr == null) return;
+            
+            // 콜라이더는 SpriteRenderer가 붙은 오브젝트에 추가 (루트에 추가하면 사이즈/오프셋 꼬일 수 있음)
+            var host = sr.gameObject;
+            if (host.GetComponent<Collider2D>() != null) return;
+            
+            var bc = host.AddComponent<BoxCollider2D>();
+            if (sr.sprite != null)
+            {
+                bc.size = sr.sprite.bounds.size;
+                bc.offset = sr.sprite.bounds.center;
+            }
+        }
+        
         private void OnEnable()
         {
             if (manager == null) manager = FindObjectOfType<BattleTargetManager>(true);

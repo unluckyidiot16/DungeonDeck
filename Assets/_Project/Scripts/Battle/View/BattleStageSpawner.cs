@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DungeonDeck.Run;
@@ -19,6 +20,10 @@ namespace DungeonDeck.Battle.View
         [Header("Optional")]
         public BattleAnimDirector animDirector;
         public HitPopupSpawner hitPopups;
+        
+        [Header("Enemy Spawn")]
+        public float enemySpacing = 2.2f;
+        public DungeonDeck.Battle.BattleController battle;
 
         [Header("Auto Bind Popup Target")]
         [Tooltip("Find() path under actor root to locate popup target. Ex) Canvas/Target")]
@@ -49,8 +54,10 @@ namespace DungeonDeck.Battle.View
             if (hitPopups == null) hitPopups = FindObjectOfType<HitPopupSpawner>(true);
         }
 
-        private void Start()
+        private IEnumerator Start()
         {
+            // BattleController.Start()에서 EnemyCount 세팅 끝난 다음 스폰하기 위해 1프레임 대기
+            yield return null;
             Spawn();
             AutoBindViewsAndPopups();
         }
@@ -63,34 +70,47 @@ namespace DungeonDeck.Battle.View
                 return;
             }
 
+            // clear (중복 스폰 방지)
+            for (int i = playerAnchor.childCount - 1; i >= 0; i--) Destroy(playerAnchor.GetChild(i).gameObject);
+            for (int i = enemyAnchor.childCount - 1; i >= 0; i--) Destroy(enemyAnchor.GetChild(i).gameObject);
+            
             if (playerPrefab != null)
-                Player = Instantiate(playerPrefab, playerAnchor.position, Quaternion.identity, playerAnchor);
+            { 
+                Player = Instantiate(playerPrefab, playerAnchor);
+                Player.transform.localPosition = Vector3.zero;
+                Player.transform.localRotation = Quaternion.identity;
+            }
 
             var run = RunSession.I;
             bool isBoss = (run != null && run.PendingBattleType == MapNodeType.Boss);
 
             var enemyToSpawn = isBoss ? bossPrefab : enemyPrefab;
+            if (battle == null) battle = FindObjectOfType<DungeonDeck.Battle.BattleController>(true);
+            
+            int count = 1;
+            if (!isBoss && battle != null && battle.EnemyCount > 0)
+                count = Mathf.Clamp(battle.EnemyCount, 1, 3);
+            
+            _enemies.Clear();
             if (enemyToSpawn != null)
-                Enemy = Instantiate(enemyToSpawn, enemyAnchor.position, Quaternion.identity, enemyAnchor);
+            {
+                float center = (count - 1) * 0.5f;
+                for (int i = 0; i < count; i++)
+                {
+                    var e = Instantiate(enemyToSpawn, enemyAnchor);
+                    e.transform.localRotation = Quaternion.identity;
+                    e.transform.localPosition = new Vector3((i - center) * enemySpacing, 0f, 0f);
+                    _enemies.Add(e);
+                }
+            }
+            
+            Enemy = (_enemies.Count > 0) ? _enemies[0] : null;
         }
 
         private void AutoBindViewsAndPopups()
         {
-            // -------- collect enemies (supports future multi spawn) --------
-            _enemies.Clear();
-            if (enemyAnchor != null)
-            {
-                var found = enemyAnchor.GetComponentsInChildren<BattleActorView>(true);
-                for (int i = 0; i < found.Length; i++)
-                {
-                    var e = found[i];
-                    if (e == null) continue;
-                    _enemies.Add(e);
-                }
-
-                // stable order: left -> right
-                _enemies.Sort((a, b) => a.transform.position.x.CompareTo(b.transform.position.x));
-            }
+            // stable order: left -> right
+            _enemies.Sort((a, b) => a.transform.position.x.CompareTo(b.transform.position.x));
 
             // legacy
             if (Enemy == null && _enemies.Count > 0) Enemy = _enemies[0];
@@ -107,19 +127,17 @@ namespace DungeonDeck.Battle.View
             {
                 // Player target: prefer actor target, fallback to anchor
                 Transform pTarget = FindPopupTarget(Player != null ? Player.transform : null)
-                                 ?? FindPopupTarget(playerAnchor)
-                                 ?? (Player != null ? Player.transform : playerAnchor);
-
-                var pRt = (preferLocalCanvasTarget && pTarget is RectTransform) ? (RectTransform)pTarget : null;
-
+                                    ?? (Player != null ? Player.transform : playerAnchor);
+                
+                var pCanvas = FindCanvasRoot(Player != null ? Player.transform : null);
                 hitPopups.playerTarget = pTarget;
-                hitPopups.playerCanvasRoot = pRt;
+                hitPopups.playerCanvasRoot = pCanvas;
 
                 // Enemies
                 for (int i = 0; i < 3; i++)
                 {
                     Transform eTarget = null;
-                    RectTransform eRt = null;
+                    RectTransform eCanvas = null;
 
                     if (i < _enemies.Count && _enemies[i] != null)
                     {
@@ -127,18 +145,25 @@ namespace DungeonDeck.Battle.View
                                  ?? FindPopupTarget(enemyAnchor)
                                  ?? _enemies[i].transform;
 
-                        eRt = (preferLocalCanvasTarget && eTarget is RectTransform) ? (RectTransform)eTarget : null;
+                        eCanvas = FindCanvasRoot(_enemies[i].transform);
                     }
                     else
                     {
                         // clear stale bindings
                         eTarget = null;
-                        eRt = null;
+                        eCanvas = null;
                     }
 
-                    hitPopups.RegisterEnemyTarget(i, eTarget, eRt);
+                    hitPopups.RegisterEnemyTarget(i, eTarget, eCanvas);
                 }
             }
+        }
+        
+        private RectTransform FindCanvasRoot(Transform actorRoot)
+        {
+            if (actorRoot == null) return null;
+            var c = actorRoot.GetComponentInChildren<Canvas>(true);
+            return c != null ? c.transform as RectTransform : null;
         }
 
         private Transform FindPopupTarget(Transform root)

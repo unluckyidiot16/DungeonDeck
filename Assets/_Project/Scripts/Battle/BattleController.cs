@@ -26,7 +26,7 @@ namespace DungeonDeck.Battle
         public event Action StateChanged;
         
         [Header("Enemies")]
-        [SerializeField, Range(1, 3)] private int debugEnemyCount = 1;
+        [SerializeField, Range(1, 3)] private int debugEnemyCount = 3;
 
         [Serializable]
         public class EnemyState
@@ -44,7 +44,32 @@ namespace DungeonDeck.Battle
 
         public int EnemyCount => _enemies.Count;
         public int SelectedEnemyIndex => _selectedEnemyIndex;
-
+        
+        // -------------------------
+        // Player action queue (buffer)
+        // -------------------------
+        private enum BattleActionKind { PlayCard, EndTurn }
+        
+        [System.Serializable]
+        private struct QueuedAction
+        { 
+            public BattleActionKind kind;
+            public CardDefinition card;
+            public int requestedHandIndex;
+            public int targetIndex;
+            public int seq;
+        }
+    
+        private readonly Queue<QueuedAction> _actionQueue = new();
+        private Coroutine _actionRunner = null;
+        private int _actionSeq = 0;
+        private bool _endTurnQueued = false;
+    
+        public int PendingActionCount => _actionQueue.Count;
+        public bool IsActionQueueRunning => _actionRunner != null;
+        public bool HasQueuedEndTurn => _endTurnQueued;
+            
+            
         private EnemyState GetSelectedEnemy()
         {
             if (_enemies.Count == 0) return null;
@@ -246,44 +271,211 @@ namespace DungeonDeck.Battle
         /// <summary>
         /// 손패 인덱스의 카드를 사용 시도. 성공/실패 반환.
         /// </summary>
+        /// <summary>
+        /// 손패 인덱스의 카드를 사용(큐에 적재) 시도. 성공/실패 반환.
+        /// </summary>
         public bool TryPlayCardAt(int handIndex)
         {
-            if (_endingFlow || _resolving || !_isPlayerTurn) return false;
+            if (_endingFlow || !_isPlayerTurn) return false;
             if (_deck == null || _state == null) return false;
+            if (_endTurnQueued) return false;
             if (handIndex < 0 || handIndex >= _deck.HandCount) return false;
 
             var card = _deck.PeekHand(handIndex);
             if (card == null) return false;
 
-            if (_state.energy < card.cost)
+            // ✅ 입력 버퍼: 지금 바로 처리하지 않고 큐에 쌓는다.
+            //    (큐의 순서대로 실행했을 때 에너지가 모자라면 거절: 플레이어가 "예상 가능한" 동작)
+            int energyAfterQueue = SimulateEnergyAfterQueuedActions();
+            if (energyAfterQueue < card.cost)
             {
-                Debug.Log("[Battle] Not enough energy.");
+                Debug.Log("[Battle] Not enough energy (queued).");
                 return false;
             }
 
-            _state.energy -= card.cost;
+            var action = new QueuedAction
+            {
+                kind = BattleActionKind.PlayCard,
+                card = card,
+                requestedHandIndex = handIndex,
+                targetIndex = SelectedEnemyIndex,
+                seq = ++_actionSeq
+            };
 
-            // 카드 효과 먼저 적용(드로우 등으로 손패가 늘어나도, 기존 인덱스 카드는 그대로 유지됨)
-            ApplyCard(card);
+            _actionQueue.Enqueue(action);
+            NotifyStateChanged();
 
-            // 사용한 카드는 discard 또는 exhaust로
-            if (card.exhaustOnPlay)
-                _deck.ExhaustFromHand(handIndex);
-            else 
-                _deck.PlayFromHand(handIndex);
+            EnsureActionRunner();
+            return true;
+        }
 
-            // 승리 체크
+        private void EnsureActionRunner()
+        {
+            if (_actionRunner != null) return;
+            _actionRunner = StartCoroutine(RunActionQueueCo());
+        }
+
+        private int SimulateEnergyAfterQueuedActions()
+        {
+            if (_state == null) return 0;
+
+            int energy = _state.energy;
+
+            foreach (var a in _actionQueue)
+            {
+                if (a.kind != BattleActionKind.PlayCard) continue;
+                if (a.card == null) continue;
+
+                energy -= a.card.cost;
+
+                // GainEnergy가 큐에서 먼저 들어오면, 이후 카드 큐잉이 가능해짐
+                if (a.card.effectKind == CardEffectKind.GainEnergy)
+                    energy += Mathf.Max(0, a.card.value);
+            }
+
+            return energy;
+        }
+
+        private IEnumerator RunActionQueueCo()
+        {
+            try
+            {
+                while (!_endingFlow)
+                {
+                    // 플레이어 턴이 아니면 큐는 버림(적 턴/종료 중)
+                    if (!_isPlayerTurn)
+                    {
+                        _actionQueue.Clear();
+                        _endTurnQueued = false;
+                        yield break;
+                    }
+
+                    if (_actionQueue.Count == 0)
+                        yield break;
+
+                    var a = _actionQueue.Dequeue();
+
+                    if (a.kind == BattleActionKind.EndTurn)
+                    {
+                        // 턴 종료는 항상 큐를 비우고 진행(다음 턴 carry-over 금지)
+                        _actionQueue.Clear();
+                        _endTurnQueued = false;
+
+                        yield return EndTurnFlowCo();
+                        yield break;
+                    }
+
+                    yield return ExecuteQueuedCardCo(a);
+
+                    if (_endingFlow)
+                        yield break;
+                }
+            }
+            finally
+            {
+                _actionRunner = null;
+                NotifyStateChanged();
+            }
+        }
+
+        private int ResolveTargetIndexForQueuedAction(int requested)
+        {
+            if (_enemies.Count == 0) return 0;
+
+            requested = Mathf.Clamp(requested, 0, _enemies.Count - 1);
+            var e = GetEnemy(requested);
+            if (e != null && e.IsAlive) return requested;
+
+            AutoSelectNextAliveIfNeeded();
+            return _selectedEnemyIndex;
+        }
+
+        private IEnumerator ExecuteQueuedCardCo(QueuedAction a)
+        {
+            if (_endingFlow || !_isPlayerTurn) yield break;
+            if (_deck == null || _state == null) yield break;
+            if (a.card == null) yield break;
+
+            // ✅ 큐잉 중 인덱스 변화/중복 클릭 대응: "현재 손패에서 해당 카드 찾기"
+            int handIndexNow = -1;
+            if (a.requestedHandIndex >= 0 && a.requestedHandIndex < _deck.HandCount && _deck.PeekHand(a.requestedHandIndex) == a.card)
+                handIndexNow = a.requestedHandIndex;
+            else
+                handIndexNow = _deck.FindHandIndex(a.card);
+
+            if (handIndexNow < 0)
+                yield break; // 이미 소비/이동된 카드면 스킵
+
+            if (_state.energy < a.card.cost)
+            {
+                Debug.Log("[Battle] Not enough energy (exec).");
+                yield break;
+            }
+
+            int targetIndex = ResolveTargetIndexForQueuedAction(a.targetIndex);
+
+            // 1) 에너지 선차감
+            _state.energy -= a.card.cost;
+            NotifyStateChanged();
+
+            // 2) 연출
+            if (animDirector != null)
+            {
+                if (a.card.effectKind == CardEffectKind.Attack)
+                {
+                    // ✅ 공격: 적 앞으로 접근 유지 + 콤보 펀치
+                    yield return animDirector.PlayPlayerAttackComboCo(targetIndex);
+                }
+                else
+                {
+                    // ✅ 비공격: BattleAnimDirector.Co_Cast가 "근접이면 자동 복귀 → 시전"을 처리한다.
+                    // (여기서 ReturnToBase를 또 호출하면 트리거/이동이 중복될 수 있음)
+                    yield return animDirector.PlayPlayerCardCo(a.card, targetIndex);
+                }
+            }
+
+            // 3) 효과 적용
+            ApplyCard(a.card, targetIndex);
+
+            // 4) 카드 이동
+            if (a.card.exhaustOnPlay) _deck.ExhaustFromHand(handIndexNow);
+            else _deck.PlayFromHand(handIndexNow);
+
+            // 5) 승리 체크
             if (AreAllEnemiesDefeated())
             {
                 NotifyStateChanged();
                 EndBattle(true);
-                return true;
+                yield break;
+            }
+            
+            // ✅ 하이브리드 규칙:
+            //    "에너지 0 + (액션 큐 비었음) + (EndTurn 예약 없음) + (근접 상태)"
+            //    => 턴을 강제로 끝내지는 않되, 할 거 없으니 '연출용' 자동 복귀(=forced:false)
+            if (ShouldAutoReturnToBaseNow())
+            {
+                yield return animDirector.ReturnToBaseCo(false);
             }
 
             NotifyStateChanged();
+        }
+        
+        private bool ShouldAutoReturnToBaseNow()
+        {
+            if (_endingFlow || !_isPlayerTurn) return false;
+            if (_state == null) return false;
+            if (_state.energy > 0) return false;
+            
+            // EndTurn이 큐에 들어가 있으면 EndTurnFlow에서 forced=true 복귀가 처리되므로 여기선 스킵
+            if (_endTurnQueued) return false;
+            if (_actionQueue != null && _actionQueue.Count > 0) return false;
+            
+            if (animDirector == null) return false;
+            if (!animDirector.IsMelee) return false;
+            
             return true;
         }
-
+        
         /// <summary>
         /// 턴 종료 (UI 버튼 연결용)
         /// </summary>
@@ -292,6 +484,25 @@ namespace DungeonDeck.Battle
             if (_deck == null || _state == null) return;
             if (_endingFlow || _resolving || !_isPlayerTurn) return;
 
+            // ✅ 카드 처리 중이면(또는 이미 큐가 있으면) "턴 종료"도 큐에 적재해서 순차 처리
+            if (_actionRunner != null || _actionQueue.Count > 0)
+            {
+                if (_endTurnQueued) return;
+                _endTurnQueued = true;
+                _actionQueue.Enqueue(new QueuedAction
+                {
+                    kind = BattleActionKind.EndTurn,
+                    card = null,
+                    requestedHandIndex = -1,
+                    targetIndex = SelectedEnemyIndex,
+                    seq = ++_actionSeq
+                });
+                
+                NotifyStateChanged();
+                EnsureActionRunner();
+                return;
+            }
+            
             StartCoroutine(EndTurnFlowCo());
         }
 
@@ -299,6 +510,13 @@ namespace DungeonDeck.Battle
         {
             _resolving = true;
             _isPlayerTurn = false;
+            
+            _actionQueue.Clear();
+            _endTurnQueued = false;
+            
+            // ✅ 근접 상태로 턴 종료했으면, 적 턴 전에 원위치 복귀
+            if (animDirector != null)
+                yield return animDirector.ReturnToBaseCo(true); // forced=true => BackDash 고정
 
             // 1) 손패 버림
             _deck.DiscardHand();
@@ -420,14 +638,18 @@ namespace DungeonDeck.Battle
         }
 
         private void ApplyCard(CardDefinition card)
+        { 
+            ApplyCard(card, SelectedEnemyIndex);
+        }
+        
+        private void ApplyCard(CardDefinition card, int targetIndex)
         {
             switch (card.effectKind)
             {
                 case CardEffectKind.Attack:
                 {
-                    int target = SelectedEnemyIndex;
-                    int hpLoss = DealDamageToEnemy_ReturnHpLoss(target, card.value);
-                    if (hitPopups != null && hpLoss > 0) hitPopups.SpawnEnemy(hpLoss, target);
+                    int hpLoss = DealDamageToEnemy_ReturnHpLoss(targetIndex, card.value);
+                    if (hitPopups != null && hpLoss > 0) hitPopups.SpawnEnemy(hpLoss, targetIndex);
                     break;
                 }
                 case CardEffectKind.Block:
@@ -446,9 +668,8 @@ namespace DungeonDeck.Battle
                     break;
                 case CardEffectKind.ApplyVulnerable:
                 {
-                    int target = SelectedEnemyIndex;
-                    ApplyVulnerableToEnemy(target, card.value);
-                    var e = GetEnemy(target);
+                    ApplyVulnerableToEnemy(targetIndex, card.value);
+                    var e = GetEnemy(targetIndex);
                     Debug.Log($"[Battle] Play {card.id}: Apply Vulnerable +{card.value}. TargetVuln={(e != null ? e.vulnerableTurns : 0)}");
                     break;
                 }
@@ -691,8 +912,6 @@ private List<CardDefinition> BuildRewardCandidates(RunSession run)
         
     }
     
-    
-
     // ----------------------------
     // Minimal battle model/runtime
     // ----------------------------
@@ -748,6 +967,16 @@ private List<CardDefinition> BuildRewardCandidates(RunSession run)
             return _hand[index];
         }
 
+        public int FindHandIndex(CardDefinition card)
+        {
+            if (card == null) return -1;
+            for (int i = 0; i < _hand.Count; i++)
+            {
+                if (_hand[i] == card) return i;
+            }
+            return -1;
+        }
+        
         public void PlayFromHand(int index)
         {
             if (index < 0 || index >= _hand.Count) return;

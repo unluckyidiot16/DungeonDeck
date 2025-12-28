@@ -1,5 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+#if ENABLE_INPUT_SYSTEM
+    using UnityEngine.InputSystem.UI;
+#endif
 
 namespace DungeonDeck.Battle.View
 {
@@ -18,6 +22,8 @@ namespace DungeonDeck.Battle.View
         [Header("Runtime")]
         [SerializeField] private int selectedIndex = 0;
 
+        public BattleAnimDirector animDirector;
+        
         private readonly List<EnemyTargetView> _views = new();
 
         public int SelectedIndex => selectedIndex;
@@ -26,8 +32,32 @@ namespace DungeonDeck.Battle.View
         {
             if (battle == null) battle = FindObjectOfType<DungeonDeck.Battle.BattleController>(true);
             if (hitPopups == null) hitPopups = FindObjectOfType<HitPopupSpawner>(true);
+            if (animDirector == null) animDirector = FindObjectOfType<BattleAnimDirector>(true);
+            
+            EnsureEventSystemAndRaycasters();
         }
 
+        private void EnsureEventSystemAndRaycasters()
+        {
+            // EventSystem
+            if (FindObjectOfType<EventSystem>(true) == null)
+            {
+                var go = new GameObject("EventSystem");
+                go.AddComponent<EventSystem>();
+#if ENABLE_INPUT_SYSTEM
+                go.AddComponent<InputSystemUIInputModule>();
+#else
+                go.AddComponent<StandaloneInputModule>();
+#endif
+            }
+            
+            // Raycaster (월드 오브젝트 클릭용)
+            var cam = Camera.main;
+            if (cam == null) return;
+            if (cam.GetComponent<Physics2DRaycaster>() == null) cam.gameObject.AddComponent<Physics2DRaycaster>();
+            if (cam.GetComponent<PhysicsRaycaster>() == null) cam.gameObject.AddComponent<PhysicsRaycaster>();
+        }
+        
         private void Start()
         {
             // 자동 선택(등록이 먼저 끝난 뒤)
@@ -96,6 +126,10 @@ namespace DungeonDeck.Battle.View
 
             RefreshSelectionVisual();
             SyncPopupTargets();
+            
+            if (animDirector != null)
+                animDirector.OnTargetChanged(selectedIndex);
+            
         }
 
         private void RefreshSelectionVisual()

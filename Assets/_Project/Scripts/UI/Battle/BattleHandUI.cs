@@ -15,7 +15,7 @@ namespace DungeonDeck.UI.Battle
         public Transform handRoot;
 
         public BattleCardButtonView cardPrefab;
-
+        
         public TMP_Text energyText;
         public TMP_Text playerHpText;
         public TMP_Text enemyHpText;
@@ -150,16 +150,17 @@ namespace DungeonDeck.UI.Battle
                 // 1) 클릭 피드백(살짝 흔들림)
                 yield return SlotPunchCo(slot.transform);
 
-                // 2) 플레이어/적 애니 (픽셀 Animator 트리거 중심)
-                if (animDirector != null)
-                    yield return animDirector.PlayPlayerCardCo(card);
+                // 2) 실제 카드 처리 시작 (로직 + 전투 연출은 BattleController가 담당)
+                //    ❗ BattleController 내부에서 animDirector를 이미 호출하므로
+                //    여기서 또 호출하면 공격 트리거가 2번 나갈 수 있음.
+                bool started = battle.TryPlayCardAt(idx);
+                if (!started) yield break;
 
                 // 3) 카드가 discard로 날아가는 연출 (실제 적용 전에 “복제 카드”만 날림)
                 if (discardAnchor != null && flyRoot != null)
                     yield return FlyCardToDiscardCo(card, slot);
 
-                // 4) 실제 카드 적용 (StateChanged -> Refresh는 busy=true로 한번 돌 수 있음)
-                battle.TryPlayCardAt(idx);
+                // 실제 적용/해결/승리 체크 등은 BattleController 코루틴에서 처리됨
             }
             finally
             {

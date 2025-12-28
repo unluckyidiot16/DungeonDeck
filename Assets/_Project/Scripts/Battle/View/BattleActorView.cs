@@ -1,11 +1,18 @@
 using System.Collections;
 using UnityEngine;
+using DungeonDeck.Debugging;
+
 
 namespace DungeonDeck.Battle.View
 {
     public class BattleActorView : MonoBehaviour
     {
+        [Header("Refs")]
         public Animator animator;
+ 
+        [Header("Driver")]
+        [Tooltip("If true, this view ignores trigger-based animation calls because an external director drives it.")]
+        public bool drivenByDirector = false;
 
         [Header("Animator Triggers")]
         public string trigAttack = "Attack";
@@ -37,13 +44,14 @@ namespace DungeonDeck.Battle.View
 
         private void Play(string trigger)
         {
+            if (drivenByDirector) return;
             if (animator == null) return;
-            animator.ResetTrigger(trigger);
-            animator.SetTrigger(trigger);
+            AnimTriggerTrace.ResetAndSetTrigger(animator, trigger, this);
         }
 
         private void PlayOrPunch(string trigger, Vector3 dir)
         {
+            if (drivenByDirector) return;
             if (animator != null)
             {
                 Play(trigger);
