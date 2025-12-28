@@ -44,6 +44,10 @@ namespace DungeonDeck.Config.Cards
         [Header("Keywords")]
         [Tooltip("사용 후 전투에서 제거(Exhaust)")]
         public bool exhaustOnPlay = false;
+        
+        public string approachId;     // e.g. "Sprint", "Sliding"
+        public string attackTrigger;  // e.g. "Atk_SlashA"
+
 
         public string GetDisplayName()
             => string.IsNullOrWhiteSpace(displayName) ? id : displayName;
