@@ -20,6 +20,13 @@ namespace DungeonDeck.Battle.View
     /// </summary>
     public class BattleAnimDirector : MonoBehaviour
     {
+        [Serializable]
+        public class OathAnimatorOverride
+        { 
+            public string oathId; 
+            public AnimatorOverrideController overrideController;
+        }
+        
         // ─────────────────────────────────────────
         // Inspector References
         // ─────────────────────────────────────────
@@ -27,6 +34,12 @@ namespace DungeonDeck.Battle.View
         public Transform playerView;
         public Animator playerAnimator;
 
+        [Header("Oath Stance (Idle Override)")]
+        [Tooltip("RunSession.State.oathId -> AnimatorOverrideController 매핑. Idle만 교체하는 용도로 사용하세요.")]
+        public List<OathAnimatorOverride> oathOverrides = new();
+            
+        private RuntimeAnimatorController _playerBaseController;
+        
         [Header("Enemies")]
         public Transform[] enemyViews = new Transform[3];
         public Animator[] enemyAnimators = new Animator[3];
@@ -134,6 +147,72 @@ namespace DungeonDeck.Battle.View
             ConfigureMover();
         }
 
+        private void CachePlayerBaseControllerIfNeeded()
+        {
+            if (_playerBaseController != null) return;
+            if (playerAnimator == null) return;
+
+            var cur = playerAnimator.runtimeAnimatorController;
+            if (cur is AnimatorOverrideController aoc && aoc.runtimeAnimatorController != null)
+                _playerBaseController = aoc.runtimeAnimatorController;
+            else
+                _playerBaseController = cur;
+        }
+
+        /// <summary>
+        /// 서약(oathId)에 맞는 AnimatorOverrideController를 적용합니다.
+        /// (Idle만 교체하는 스탠스 연출에 사용)
+        /// </summary>
+        public void ApplyOathAnimatorOverride(string oathId)
+        {
+            if (playerAnimator == null) return;
+
+            CachePlayerBaseControllerIfNeeded();
+            if (_playerBaseController == null) return;
+
+            AnimatorOverrideController chosen = null;
+            if (!string.IsNullOrEmpty(oathId) && oathOverrides != null)
+            {
+                for (int i = 0; i < oathOverrides.Count; i++)
+                {
+                    var e = oathOverrides[i];
+                    if (e == null) continue;
+                    if (string.Equals(e.oathId, oathId, StringComparison.OrdinalIgnoreCase))
+                    {
+                        chosen = e.overrideController;
+                        break;
+                    }
+                }
+            }
+
+            // 매칭이 없으면 base로 복귀
+            if (chosen == null)
+            {
+                if (playerAnimator.runtimeAnimatorController != _playerBaseController)
+                {
+                    playerAnimator.runtimeAnimatorController = _playerBaseController;
+                    playerAnimator.Rebind();
+                    playerAnimator.Update(0f);
+                }
+                return;
+            }
+
+            // 베이스 컨트롤러가 다르면 경고 (애니 파라미터 구조가 어긋날 수 있음)
+            if (chosen.runtimeAnimatorController != _playerBaseController)
+            {
+                Debug.LogWarning($"[BattleAnimDirector] Oath override base mismatch. oathId={oathId}, " +
+                                 $"overrideBase={(chosen.runtimeAnimatorController != null ? chosen.runtimeAnimatorController.name : "null")}, " +
+                                 $"expectedBase={_playerBaseController.name}");
+            }
+
+            if (playerAnimator.runtimeAnimatorController != chosen)
+            {
+                playerAnimator.runtimeAnimatorController = chosen;
+                playerAnimator.Rebind();
+                playerAnimator.Update(0f);
+            }
+        }
+        
         private void OnDisable()
         {
             StopRunner();

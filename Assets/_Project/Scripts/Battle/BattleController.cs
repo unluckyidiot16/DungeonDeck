@@ -105,6 +105,9 @@ namespace DungeonDeck.Battle
             if (hitPopups == null)
                 hitPopups = FindObjectOfType<View.HitPopupSpawner>(true);
 
+            // ✅ Oath stance(Idle) 적용: AnimatorOverrideController로 Idle만 교체
+            animDirector?.ApplyOathAnimatorOverride(RunSession.I.State.oathId);
+            
             animDirector?.OnTargetChanged(SelectedEnemyIndex);
             
             BeginPlayerTurn();
