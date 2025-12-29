@@ -8,8 +8,8 @@ namespace DungeonDeck.Config.Oaths
     [CreateAssetMenu(menuName = "DungeonDeck/Oaths/Oath", fileName = "OathDefinition")]
     public class OathDefinition : ScriptableObject
     {
-        public string id = "oath_a";
-        public string displayName = "Oath A";
+        public string id = "Oath_Knight";
+        public string displayName = "Knight";
 
         [Header("Starting Deck (M1)")]
         public List<CardDefinition> startDeck = new List<CardDefinition>();

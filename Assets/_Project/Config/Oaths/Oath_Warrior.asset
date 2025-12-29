@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f79a76548cdc5421799b7b5258570035, type: 3}
-  m_Name: Oath_A
+  m_Name: Oath_Warrior
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Config.Oaths.OathDefinition
-  id: oath_a
-  displayName: Oath A
+  id: Oath_Warrior
+  displayName: Warrior
   startDeck:
   - {fileID: 11400000, guid: b02991eaa69374baab2544ed37883df3, type: 2}
   - {fileID: 11400000, guid: b02991eaa69374baab2544ed37883df3, type: 2}

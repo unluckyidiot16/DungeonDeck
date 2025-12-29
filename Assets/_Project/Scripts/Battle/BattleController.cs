@@ -56,7 +56,8 @@ namespace DungeonDeck.Battle
         private bool _resolving = false;
         private bool _endingFlow = false;
         private Coroutine _actionRunner = null;
-
+        private Coroutine _targetRefreshAfterDeathCo = null;
+        
         public event Action StateChanged;
 
         // ─────────────────────────────────────────
@@ -134,11 +135,36 @@ namespace DungeonDeck.Battle
                 animDirector?.OnTargetChanged(_enemies.SelectedIndex);
                 NotifyStateChanged();
             };
+            _enemies.EnemyDefeated += OnEnemyDefeated;
             _enemies.AllEnemiesDefeated += () => EndBattle(true);
 
             _actionQueue.OnExecuteCard += ExecuteQueuedCardCo;
             _actionQueue.OnExecuteEndTurn += EndTurnFlowCo;
             _actionQueue.QueueChanged += NotifyStateChanged;
+        }
+        
+        private void OnEnemyDefeated(int enemyIndex)
+        {
+            // ✅ 사망 연출 후 숨김(Disable) 처리
+            if (animDirector != null) 
+                StartCoroutine(animDirector.PlayEnemyDieThenHideCo(enemyIndex, destroy: false));
+            
+            // ✅ 선택/뷰 상태가 한 프레임 뒤에 정리되는 경우가 있어 강제 리프레시
+            if (_targetRefreshAfterDeathCo != null)
+                StopCoroutine(_targetRefreshAfterDeathCo);
+            _targetRefreshAfterDeathCo = StartCoroutine(RefreshTargetAfterDeathCo());
+        }
+    
+        private IEnumerator RefreshTargetAfterDeathCo()
+        {
+            yield return null; // 1프레임 대기: AutoSelectNextAlive/SelectionChanged/비활성화 타이밍 안정화
+            _targetRefreshAfterDeathCo = null;
+        
+            if (_endingFlow || _enemies == null) yield break;
+            if (_enemies.AreAllDefeated()) yield break;
+        
+            animDirector?.OnTargetChanged(_enemies.SelectedIndex);
+            NotifyStateChanged();
         }
 
         private void SetupBattle()

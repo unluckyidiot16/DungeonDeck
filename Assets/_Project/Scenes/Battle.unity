@@ -1526,12 +1526,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeda9647fa70d4293b61ff2ba2996904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Battle.View.BattleAnimDirector
+  enemyDieHideDelay: 0.6
   playerView: {fileID: 0}
   playerAnimator: {fileID: 0}
   oathOverrides:
-  - oathId: Defender
+  - oathId: Oath_Defender
     overrideController: {fileID: 22100000, guid: 2ec3c22b56bef47b7aa7a852fa1a4219, type: 2}
-  - oathId: Warrior
+  - oathId: Oath_Warrior
     overrideController: {fileID: 22100000, guid: 6a21fbf9275894c668f64428e90fd49e, type: 2}
   enemyViews:
   - {fileID: 0}
@@ -1555,6 +1556,8 @@ MonoBehaviour:
   playerBackDashTrigger: BackDash
   enemyAttackTrigger: Attack
   enemyFocusTrigger: Focus
+  enemyDieTrigger: Die
+  enemyDieMinShowTime: 0.35
   approachStopDistance: 1
   approachSpeed: 4
   approachMinDuration: 0.18

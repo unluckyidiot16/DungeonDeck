@@ -16,11 +16,18 @@ namespace DungeonDeck.Title
         public RunBalanceDefinition balance;
         public OathDefinition defaultOath;
         public MapPlanDefinition defaultMapPlan;
+        
+        [Tooltip("New Game에서 고를 수 있는 서약 목록(비워두면 defaultOath로 바로 시작).")]
+        public OathDefinition[] newGameOaths;
+
 
         [Header("UI")]
         public Button continueButton;
         public Button newGameButton;
         public TMP_Text infoText;
+        
+        [Header("Oath Select UI")]
+        public OathSelectPanel oathSelectPanel;
 
         private void Awake()
         {
@@ -77,12 +84,29 @@ namespace DungeonDeck.Title
                 return;
             }
 
+            // ✅ 1) 패널이 있으면 서약 선택부터
+            if (oathSelectPanel != null && newGameOaths != null && newGameOaths.Length > 0)
+            {
+                oathSelectPanel.gameObject.SetActive(true);
+                oathSelectPanel.Show(newGameOaths, BeginNewGameWithOath, defaultOath);
+                return;
+            }
+            
+            // ✅ 2) 없으면 기존처럼 default로 시작
+            BeginNewGameWithOath(defaultOath);
+        }
+        
+        private void BeginNewGameWithOath(OathDefinition oath)
+        {
+            if (oath == null) oath = defaultOath;
+            
             // ✅ NewGame = 초기화 + 새 런
             RunSaveManager.ClearSave();
             PlayerPrefs.Save();
-
-            RunSession.I.StartNewRun(defaultOath, balance, defaultMapPlan);
+            
+            RunSession.I.StartNewRun(oath, balance, defaultMapPlan);
             SceneManager.LoadScene(SceneRoutes.Map);
         }
+        
     }
 }

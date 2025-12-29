@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using DG.Tweening;
 using DungeonDeck.Config.Cards;
@@ -25,6 +26,30 @@ namespace DungeonDeck.Battle.View
         { 
             public string oathId; 
             public AnimatorOverrideController overrideController;
+        }
+        
+        [Header("Enemy Death Hide")]
+        [Tooltip("Die 트리거 후, 이 시간만큼 보여준 뒤 Disable/Destroy 합니다.")]
+        public float enemyDieHideDelay = 0.6f;
+            
+        /// <summary>
+        /// 적 사망 트리거 → 잠깐 대기 → Disable(기본) 또는 Destroy.
+        /// </summary>
+        public IEnumerator PlayEnemyDieThenHideCo(int enemyIndex, bool destroy = false)
+        {
+            // Die 트리거는 기존 로직(있다면) 그대로 사용
+            PlayEnemyDieFx(enemyIndex);
+            
+            float wait = Mathf.Max(0.05f, enemyDieHideDelay);
+            yield return new WaitForSeconds(wait);
+            
+            if (enemyViews == null || enemyIndex < 0 || enemyIndex >= enemyViews.Length) yield break;
+            var v = enemyViews[enemyIndex];
+            if (v == null) yield break;
+            
+            // 배열 인덱스 안정성을 위해 기본은 Disable 추천
+            if (destroy) Destroy(v.gameObject);
+            else v.gameObject.SetActive(false);
         }
         
         // ─────────────────────────────────────────
@@ -77,6 +102,11 @@ namespace DungeonDeck.Battle.View
         public string enemyAttackTrigger = "Attack";
         public string enemyFocusTrigger = "Focus";
         
+        [Tooltip("적 사망 트리거. Enemy Animator에 이 이름의 Trigger 파라미터가 있어야 합니다.")]
+        public string enemyDieTrigger = "Die";
+            
+        [Tooltip("사망 트리거 후 최소 노출 시간(다른 곳에서 즉시 Disable/Destroy 되는 경우 대비용).")]
+        public float enemyDieMinShowTime = 0.35f;
         
 
         // ─────────────────────────────────────────
@@ -448,8 +478,7 @@ namespace DungeonDeck.Battle.View
                 yield break;
 
             var view = enemyViews[enemyIndex];
-            var anim = enemyAnimators != null && enemyIndex < enemyAnimators.Length
-                ? enemyAnimators[enemyIndex] : null;
+            var anim = GetEnemyAnimator(enemyIndex);
 
             if (anim != null && !string.IsNullOrEmpty(enemyAttackTrigger))
                 AnimTriggerTrace.SetTrigger(anim, enemyAttackTrigger, this);
@@ -488,12 +517,22 @@ namespace DungeonDeck.Battle.View
 
         public void OnTargetChanged(int selectedIndex)
         {
+            if (enemyViews == null || enemyViews.Length == 0) return;
+            
+            // base cache가 비어있으면(0스케일 등) 현재 값으로 보정
+            for (int i = 0; i < enemyViews.Length; i++)
+                EnsureEnemyBaseCached(i);
+            
             selectedIndex = Mathf.Clamp(selectedIndex, 0, enemyViews.Length - 1);
+            selectedIndex = ResolveExistingEnemyIndex(selectedIndex);
+            
+            // ✅ 타겟 이미지(타겟 매니저)도 동기화
+            SyncTargetManagerSelectedIndex(selectedIndex);
 
             for (int i = 0; i < enemyViews.Length; i++)
             {
                 var v = enemyViews[i];
-                if (v == null) continue;
+                if (v == null || !v.gameObject.activeInHierarchy) continue;
 
                 v.DOKill(true);
 
@@ -511,7 +550,7 @@ namespace DungeonDeck.Battle.View
                     v.DOLocalMove(focusPos, focusTime).SetEase(Ease.OutQuad);
                     v.DOScale(baseScale + Vector3.one * focusScale, focusTime).SetEase(Ease.OutQuad);
 
-                    var anim = enemyAnimators != null && i < enemyAnimators.Length ? enemyAnimators[i] : null;
+                    var anim = GetEnemyAnimator(i);
                     if (anim != null && !string.IsNullOrEmpty(enemyFocusTrigger))
                         AnimTriggerTrace.SetTrigger(anim, enemyFocusTrigger, this);
                 }
@@ -521,6 +560,110 @@ namespace DungeonDeck.Battle.View
                     v.DOScale(baseScale, focusTime).SetEase(Ease.OutQuad);
                 }
             }
+        }
+        
+        
+        // ─────────────────────────────────────────
+        // Public API - Enemy Death
+        // ─────────────────────────────────────────
+        public void PlayEnemyDieFx(int enemyIndex)
+        {
+            if (enemyIndex < 0 || enemyViews == null || enemyIndex >= enemyViews.Length) return;
+            var anim = GetEnemyAnimator(enemyIndex);
+            if (anim == null) return;
+            if (string.IsNullOrEmpty(enemyDieTrigger)) return;
+
+            // Reset+Set로 확실히 발사
+            AnimTriggerTrace.ResetAndSetTrigger(anim, enemyDieTrigger, this);
+        }
+
+        public IEnumerator PlayEnemyDieCo(int enemyIndex)
+        {
+            PlayEnemyDieFx(enemyIndex);
+            if (enemyDieMinShowTime > 0f)
+                yield return new WaitForSeconds(enemyDieMinShowTime);
+        }
+
+        // ─────────────────────────────────────────
+        // Helpers (Target/Enemy Animator Cache)
+        // ─────────────────────────────────────────
+        private Animator GetEnemyAnimator(int index)
+        {
+            if (enemyAnimators != null &&
+                index >= 0 && index < enemyAnimators.Length &&
+                enemyAnimators[index] != null)
+                return enemyAnimators[index];
+
+            var v = (enemyViews != null && index >= 0 && index < enemyViews.Length) ? enemyViews[index] : null;
+            if (v == null) return null;
+
+            var a = v.GetComponentInChildren<Animator>(true);
+            if (enemyAnimators != null && index >= 0 && index < enemyAnimators.Length)
+                enemyAnimators[index] = a;
+            return a;
+        }
+
+        private void EnsureEnemyBaseCached(int i)
+        {
+            if (enemyViews == null || i < 0 || i >= enemyViews.Length) return;
+            var v = enemyViews[i];
+            if (v == null) return;
+
+            // 스케일이 0이면(=미캐시 가능성이 높음) 현재 값으로 캐시
+            if (_enemyBaseScale[i] == Vector3.zero)
+            {
+                _enemyBasePos[i] = v.localPosition;
+                _enemyBaseScale[i] = v.localScale;
+            }
+        }
+
+        private int ResolveExistingEnemyIndex(int preferred)
+        {
+            if (enemyViews == null || enemyViews.Length == 0) return preferred;
+
+            if (preferred >= 0 && preferred < enemyViews.Length)
+            {
+                var v = enemyViews[preferred];
+                if (v != null && v.gameObject.activeInHierarchy) return preferred;
+            }
+
+            for (int i = 0; i < enemyViews.Length; i++)
+            {
+                var v = enemyViews[i];
+                if (v != null && v.gameObject.activeInHierarchy) return i;
+            }
+
+            for (int i = 0; i < enemyViews.Length; i++)
+                if (enemyViews[i] != null) return i;
+
+            return preferred;
+        }
+
+        private void SyncTargetManagerSelectedIndex(int selectedIndex)
+        {
+            if (targetManager == null) return;
+            try
+            {
+                var t = targetManager.GetType();
+                var flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+
+                var prop = t.GetProperty("SelectedIndex", flags);
+                if (prop != null && prop.CanWrite && prop.PropertyType == typeof(int))
+                {
+                    prop.SetValue(targetManager, selectedIndex);
+                }
+                else
+                {
+                    var field = t.GetField("SelectedIndex", flags);
+                    if (field != null && field.FieldType == typeof(int))
+                        field.SetValue(targetManager, selectedIndex);
+                }
+            }
+            catch { /* targetManager 구현 차이 허용 */ }
+
+            // 구현체가 어떤 이름을 쓰든 안전하게 한 번 더 흔들어주기
+            targetManager.SendMessage("OnTargetChanged", selectedIndex, SendMessageOptions.DontRequireReceiver);
+            targetManager.SendMessage("Refresh", SendMessageOptions.DontRequireReceiver);
         }
 
         // ─────────────────────────────────────────

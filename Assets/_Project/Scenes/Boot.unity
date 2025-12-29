@@ -209,7 +209,10 @@ MonoBehaviour:
   skipSaveOnTitle: 1
   skipSaveOnEnd: 1
   validateSceneWithNodeType: 1
-  knownOaths: []
+  knownOaths:
+  - {fileID: 11400000, guid: 9118a9442b0ae4bd89168c60df260905, type: 2}
+  - {fileID: 11400000, guid: bbb617524725743faa50b828100af7a4, type: 2}
+  - {fileID: 11400000, guid: 2ea4aea81114b40e6a185c4bb61cc919, type: 2}
   knownBalances: []
   knownMapPlans: []
   forceSavedSceneNameToMap: 1
