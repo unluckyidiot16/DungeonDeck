@@ -106,8 +106,18 @@ namespace DungeonDeck.Battle
             if (hitPopups == null)
                 hitPopups = FindObjectOfType<View.HitPopupSpawner>(true);
 
-            // ✅ Oath stance(Idle) 적용: AnimatorOverrideController로 Idle만 교체
-            animDirector?.ApplyOathAnimatorOverride(RunSession.I.State.oathId);
+            // ✅ 서약 선택(런 상태)을 배틀 애니메이션에 반영
+            if (animDirector != null)
+            {
+                string oathId = null;
+                var run = RunSession.I;
+                if (run?.State != null && !string.IsNullOrWhiteSpace(run.State.oathId)) 
+                    oathId = run.State.oathId;
+                else if (run?.Oath != null && !string.IsNullOrWhiteSpace(run.Oath.id))
+                    oathId = run.Oath.id;
+                
+                animDirector.ApplyOathAnimatorOverride(oathId);
+            }
             
             animDirector?.OnTargetChanged(SelectedEnemyIndex);
             

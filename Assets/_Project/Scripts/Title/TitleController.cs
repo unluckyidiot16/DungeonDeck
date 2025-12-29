@@ -84,15 +84,21 @@ namespace DungeonDeck.Title
                 return;
             }
 
+            // ✅ 디버그: 현재 설정 상태 확인
+            Debug.Log($"[Title] OnClickNewGame - oathSelectPanel: {(oathSelectPanel != null ? "OK" : "NULL")}, " +
+                      $"newGameOaths: {(newGameOaths != null ? newGameOaths.Length.ToString() : "NULL")}");
+
             // ✅ 1) 패널이 있으면 서약 선택부터
             if (oathSelectPanel != null && newGameOaths != null && newGameOaths.Length > 0)
             {
+                Debug.Log("[Title] Showing OathSelectPanel...");
                 oathSelectPanel.gameObject.SetActive(true);
                 oathSelectPanel.Show(newGameOaths, BeginNewGameWithOath, defaultOath);
                 return;
             }
             
             // ✅ 2) 없으면 기존처럼 default로 시작
+            Debug.Log($"[Title] No oath selection UI. Using defaultOath: {defaultOath?.id}");
             BeginNewGameWithOath(defaultOath);
         }
         
@@ -100,13 +106,19 @@ namespace DungeonDeck.Title
         {
             if (oath == null) oath = defaultOath;
             
+            // ✅ 디버그: 선택된 서약 확인
+            Debug.Log($"[Title] BeginNewGameWithOath - Selected oath: \"{oath?.id}\" ({oath?.name})");
+            
             // ✅ NewGame = 초기화 + 새 런
             RunSaveManager.ClearSave();
             PlayerPrefs.Save();
             
             RunSession.I.StartNewRun(oath, balance, defaultMapPlan);
+            
+            // ✅ 디버그: RunSession에 저장된 값 확인
+            Debug.Log($"[Title] After StartNewRun - RunSession.State.oathId: \"{RunSession.I?.State?.oathId}\"");
+            
             SceneManager.LoadScene(SceneRoutes.Map);
         }
-        
     }
 }

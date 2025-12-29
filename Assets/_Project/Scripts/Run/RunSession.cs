@@ -79,6 +79,10 @@ namespace DungeonDeck.Run
             RegeneratePlanWithNewSeed();
             State = RunFactory.CreateNewRun(oath, balance);
             
+            // ✅ 배틀/연출 쪽에서 oathId로 참조하는 경우가 있으니 반드시 채워둠
+            if (State != null && string.IsNullOrWhiteSpace(State.oathId) && oath != null)
+                State.oathId = oath.id;
+            
             ApplyMetaRunStartBonuses(State);
             
             if (State != null) State.lastOutcome = RunEndOutcome.None;

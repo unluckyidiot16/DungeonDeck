@@ -62,6 +62,9 @@ namespace DungeonDeck.Battle.View
         [Header("Oath Stance (Idle Override)")]
         [Tooltip("RunSession.State.oathId -> AnimatorOverrideController 매핑. Idle만 교체하는 용도로 사용하세요.")]
         public List<OathAnimatorOverride> oathOverrides = new();
+        
+        // Apply가 먼저 호출되었는데 animator가 아직 없을 때를 대비
+        private string _pendingOathId = null;
             
         private RuntimeAnimatorController _playerBaseController;
         
@@ -195,10 +198,25 @@ namespace DungeonDeck.Battle.View
         /// </summary>
         public void ApplyOathAnimatorOverride(string oathId)
         {
-            if (playerAnimator == null) return;
+            Debug.Log($"[BattleAnimDirector] ApplyOathAnimatorOverride called. oathId=\"{oathId}\"");
+            
+            if (playerAnimator == null)
+            {
+                Debug.LogWarning($"[BattleAnimDirector] playerAnimator is NULL. Storing pending oathId=\"{oathId}\"");
+                _pendingOathId = oathId;   // ✅ animator가 아직 없으면 보류
+                return;
+            }
+            _pendingOathId = null;         // ✅ 적용 가능해졌으니 pending 해제
 
             CachePlayerBaseControllerIfNeeded();
-            if (_playerBaseController == null) return;
+            if (_playerBaseController == null)
+            {
+                Debug.LogError($"[BattleAnimDirector] _playerBaseController is NULL after cache attempt!");
+                return;
+            }
+            
+            Debug.Log($"[BattleAnimDirector] Base controller cached: \"{_playerBaseController.name}\"");
+            Debug.Log($"[BattleAnimDirector] oathOverrides count: {(oathOverrides != null ? oathOverrides.Count : 0)}");
 
             AnimatorOverrideController chosen = null;
             if (!string.IsNullOrEmpty(oathId) && oathOverrides != null)
@@ -207,9 +225,13 @@ namespace DungeonDeck.Battle.View
                 {
                     var e = oathOverrides[i];
                     if (e == null) continue;
+                    
+                    Debug.Log($"[BattleAnimDirector]   [{i}] oathId=\"{e.oathId}\", controller={(e.overrideController != null ? e.overrideController.name : "NULL")}");
+                    
                     if (string.Equals(e.oathId, oathId, StringComparison.OrdinalIgnoreCase))
                     {
                         chosen = e.overrideController;
+                        Debug.Log($"[BattleAnimDirector] ✓ MATCHED! Using override: \"{chosen?.name}\"");
                         break;
                     }
                 }
@@ -218,6 +240,7 @@ namespace DungeonDeck.Battle.View
             // 매칭이 없으면 base로 복귀
             if (chosen == null)
             {
+                Debug.LogWarning($"[BattleAnimDirector] No matching override for oathId=\"{oathId}\". Reverting to base.");
                 if (playerAnimator.runtimeAnimatorController != _playerBaseController)
                 {
                     playerAnimator.runtimeAnimatorController = _playerBaseController;
@@ -237,9 +260,15 @@ namespace DungeonDeck.Battle.View
 
             if (playerAnimator.runtimeAnimatorController != chosen)
             {
+                Debug.Log($"[BattleAnimDirector] ✓ Applying override controller: \"{chosen.name}\"");
                 playerAnimator.runtimeAnimatorController = chosen;
                 playerAnimator.Rebind();
                 playerAnimator.Update(0f);
+                Debug.Log($"[BattleAnimDirector] ✓ Override applied successfully!");
+            }
+            else
+            {
+                Debug.Log($"[BattleAnimDirector] Override already applied (same controller).");
             }
         }
         
@@ -326,6 +355,11 @@ namespace DungeonDeck.Battle.View
 
             if (targetManager == null)
                 targetManager = FindObjectOfType<BattleTargetManager>(true);
+            
+            // ✅ Bind로 playerAnimator가 확보된 시점: base 캐시 + pending oath 적용
+            CachePlayerBaseControllerIfNeeded();
+            if (!string.IsNullOrEmpty(_pendingOathId)) 
+                ApplyOathAnimatorOverride(_pendingOathId);
         }
 
         private void CacheEnemyBases()

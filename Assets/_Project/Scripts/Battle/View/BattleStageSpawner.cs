@@ -120,8 +120,15 @@ namespace DungeonDeck.Battle.View
             {
                 if (_enemies.Count > 0) animDirector.Bind(Player, _enemies);
                 else animDirector.Bind(Player, (IList<BattleActorView>)null);
-            }
 
+                // ✅ 여기서 Apply하면 타이밍 100% 안전 (playerAnimator 확보된 뒤)
+                var run = RunSession.I;
+                string oathId = run?.State?.oathId;
+                if (string.IsNullOrEmpty(oathId)) oathId = run?.Oath?.id;
+
+                animDirector.ApplyOathAnimatorOverride(oathId);
+            }
+            
             // -------- hit popup bind --------
             if (hitPopups != null)
             {
