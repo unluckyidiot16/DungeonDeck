@@ -45,8 +45,13 @@ namespace DungeonDeck.Config.Cards
         [Tooltip("사용 후 전투에서 제거(Exhaust)")]
         public bool exhaustOnPlay = false;
         
-        public string approachId;     // e.g. "Sprint", "Sliding"
-        public string attackTrigger;  // e.g. "Atk_SlashA"
+        [Header("Animation - Approach")]
+        [Tooltip("적에게 접근할 때 사용할 애니메이션")]
+        public ApproachAnimType approachAnimType = ApproachAnimType.Run;
+        
+        [Header("Animation - Attack")]
+        [Tooltip("공격 시 사용할 애니메이션 (Attack 타입 카드에만 적용)")]
+        public AttackAnimType attackAnimType = AttackAnimType.Slash;
 
 
         public string GetDisplayName()
@@ -65,6 +70,7 @@ namespace DungeonDeck.Config.Cards
                 case CardEffectKind.Draw:       return $"Draw {value} card(s).";
                 case CardEffectKind.GainEnergy: return $"Gain {value} energy.";
                 case CardEffectKind.ApplyVulnerable: return $"Apply Vulnerable {value} turn(s).";
+                case CardEffectKind.Heal: return $"Heal {value}.";
                 default:                        return "";
             }
         }

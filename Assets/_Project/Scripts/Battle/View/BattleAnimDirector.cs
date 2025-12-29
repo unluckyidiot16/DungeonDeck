@@ -1,4 +1,4 @@
-// Assets/_Project/Scripts/Battle/View/BattleAnimDirector.cs (Refactored)
+// Assets/_Project/Scripts/Battle/View/BattleAnimDirector.cs (Refactored v4)
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,9 +10,13 @@ using DungeonDeck.Debugging;
 namespace DungeonDeck.Battle.View
 {
     /// <summary>
-    /// 전투 애니메이션 감독 (리팩토링됨).
-    /// 실제 로직은 PlayerAnimFSM, PlayerMover에 위임.
-    /// 이 클래스는 외부 API와 조정자 역할만 담당.
+    /// 전투 애니메이션 감독 (v4 - 프로파일 기반)
+    /// 
+    /// v4 변경사항:
+    /// - ApproachAnimProfile / AttackAnimProfile 사용
+    /// - 공격 애니메이션 완료 대기 로직 추가
+    /// - 타겟 변경 시 리포지션 타이밍 개선
+    /// - AttackAnimType 지원
     /// </summary>
     public class BattleAnimDirector : MonoBehaviour
     {
@@ -31,24 +35,41 @@ namespace DungeonDeck.Battle.View
         public BattleTargetManager targetManager;
 
         // ─────────────────────────────────────────
-        // Inspector Settings - Triggers
+        // Inspector Settings - Approach Bool Parameters
         // ─────────────────────────────────────────
-        [Header("Player Triggers")]
+        [Header("Player Bool Parameters (접근 애니메이션)")]
+        public string playerRunBool = "Run";
+        public string playerDashBool = "Dash";
+        public string playerSprintBool = "Sprint";
+        public string playerSlideBool = "Slide";
+        public string playerRunBlockingBool = "RunBlocking";
+
+        // ─────────────────────────────────────────
+        // Inspector Settings - Attack
+        // ─────────────────────────────────────────
+        [Header("Player Attack")]
+        [Tooltip("공격 진입 트리거. Animator에서 AttackHub(모션 없는 허브)로 연결하는 용도로 사용하세요.")]
         public string playerAttackTrigger = "Attack";
+        
+        [Tooltip("AttackHub에서 실제 공격 모션으로 분기할 Int 파라미터 이름. 값은 (int)AttackAnimType 입니다.")]
+        public string playerAttackTypeInt = "AttackType";
+        
+        [Header("Player Other Triggers")]
         public string playerBlockTrigger = "Block";
         public string playerCastTrigger = "Cast";
         public string playerHitTrigger = "Hit";
         public string playerBackDashTrigger = "BackDash";
-        public string playerRunBool = "Run";
 
         [Header("Enemy Triggers")]
         public string enemyAttackTrigger = "Attack";
         public string enemyFocusTrigger = "Focus";
+        
+        
 
         // ─────────────────────────────────────────
-        // Inspector Settings - Movement
+        // Inspector Settings - Movement (기본값, 프로파일 없을 때 사용)
         // ─────────────────────────────────────────
-        [Header("Approach")]
+        [Header("Approach (Fallback)")]
         public float approachStopDistance = 1f;
         public float approachSpeed = 4.0f;
         public float approachMinDuration = 0.18f;
@@ -61,7 +82,7 @@ namespace DungeonDeck.Battle.View
         public float returnMaxDuration = 0.35f;
         public Ease returnMoveEase = Ease.OutQuad;
 
-        [Header("Combat FX")]
+        [Header("Combat FX (Fallback)")]
         public float comboPunchX = 0.10f;
         public float comboPunchScale = 0.07f;
         public float comboPunchTime = 0.10f;
@@ -78,11 +99,6 @@ namespace DungeonDeck.Battle.View
         public float focusScale = 0.06f;
         public float focusTime = 0.12f;
 
-        [Header("Attack Guard")]
-        public float postAttackGuardSeconds = 0.08f;
-        public string attackStateTag = "Attack";
-        [Range(0.5f, 1f)] public float attackGuardNormalizedTime = 0.90f;
-
         // ─────────────────────────────────────────
         // Sub-systems
         // ─────────────────────────────────────────
@@ -94,12 +110,18 @@ namespace DungeonDeck.Battle.View
         private readonly Vector3[] _enemyBasePos = new Vector3[3];
         private readonly Vector3[] _enemyBaseScale = new Vector3[3];
         private float _lastAttackTriggerTime = -999f;
+        private float _lastAttackDuration = 0f;
+
+        // 현재 활성화된 접근 애니메이션 타입 추적
+        private ApproachAnimType _currentApproachType = ApproachAnimType.None;
 
         // ─────────────────────────────────────────
         // Public Properties
         // ─────────────────────────────────────────
         public bool IsMelee => _fsm?.IsMelee ?? false;
         public int MeleeTargetIndex => _fsm?.MeleeTargetIndex ?? -1;
+        public ApproachAnimType CurrentApproachType => _currentApproachType;
+        public bool IsAttacking => _fsm?.CurrentState == PlayerAnimFSM.State.Attacking;
 
         // ─────────────────────────────────────────
         // Lifecycle
@@ -117,6 +139,8 @@ namespace DungeonDeck.Battle.View
             StopRunner();
             _fsm?.Reset();
             _mover?.ResetToBase();
+
+            ClearAllApproachBools();
 
             if (playerView != null)
             {
@@ -167,7 +191,6 @@ namespace DungeonDeck.Battle.View
                 playerAnimator = player.animator ?? player.GetComponentInChildren<Animator>(true);
             }
 
-            // Init enemy arrays
             for (int i = 0; i < enemyViews.Length; i++)
             {
                 enemyViews[i] = null;
@@ -214,6 +237,73 @@ namespace DungeonDeck.Battle.View
 
             _mover.Initialize(playerView, playerAnimator, enemyViews);
             _mover.SetBasePosition(basePos, baseScale);
+        }
+
+        // ─────────────────────────────────────────
+        // Profile Helpers
+        // ─────────────────────────────────────────
+        
+        private string GetApproachBoolName(ApproachAnimType type)
+        {
+            switch (type)
+            {
+                case ApproachAnimType.None: return null;
+                case ApproachAnimType.Run: return playerRunBool;
+                case ApproachAnimType.DashB: return playerDashBool;
+                case ApproachAnimType.Sprint: return playerSprintBool;
+                case ApproachAnimType.Slide: return playerSlideBool;
+                case ApproachAnimType.RunBlocking: return playerRunBlockingBool;
+                default: return playerRunBool;
+            }
+        }
+
+        private ApproachAnimProfile GetApproachProfile(CardDefinition card)
+        {
+            var type = card != null ? card.approachAnimType : ApproachAnimType.Run;
+            return AnimProfileManager.GetApproachProfile(type);
+        }
+
+        private AttackAnimProfile GetAttackProfile(CardDefinition card)
+        {
+            var type = card != null ? card.attackAnimType : AttackAnimType.Slash;
+            return AnimProfileManager.GetAttackProfile(type);
+        }
+
+        private void SetApproachBool(ApproachAnimType type, bool value)
+        {
+            if (playerAnimator == null) return;
+            if (type == ApproachAnimType.None) return;
+
+            string boolName = GetApproachBoolName(type);
+            if (string.IsNullOrEmpty(boolName)) return;
+
+            if (value && type != _currentApproachType)
+            {
+                ClearAllApproachBools();
+            }
+
+            playerAnimator.SetBool(boolName, value);
+            
+            if (value)
+                _currentApproachType = type;
+        }
+
+        private void ClearAllApproachBools()
+        {
+            if (playerAnimator == null) return;
+
+            if (!string.IsNullOrEmpty(playerRunBool))
+                playerAnimator.SetBool(playerRunBool, false);
+            if (!string.IsNullOrEmpty(playerDashBool))
+                playerAnimator.SetBool(playerDashBool, false);
+            if (!string.IsNullOrEmpty(playerSprintBool))
+                playerAnimator.SetBool(playerSprintBool, false);
+            if (!string.IsNullOrEmpty(playerSlideBool))
+                playerAnimator.SetBool(playerSlideBool, false);
+            if (!string.IsNullOrEmpty(playerRunBlockingBool))
+                playerAnimator.SetBool(playerRunBlockingBool, false);
+            
+            _currentApproachType = ApproachAnimType.None;
         }
 
         // ─────────────────────────────────────────
@@ -418,8 +508,58 @@ namespace DungeonDeck.Battle.View
             if (playerView == null) yield break;
 
             int targetIndex = cmd.TargetIndex;
+            var card = cmd.Card;
+            
+            // 프로파일 가져오기
+            var approachProfile = GetApproachProfile(card);
+            var attackProfile = GetAttackProfile(card);
+            var approachType = card != null ? card.approachAnimType : ApproachAnimType.Run;
+            var attackType = card != null ? card.attackAnimType : AttackAnimType.Slash;
 
-            // Approach if needed
+            // ─────────────────────────────────────────
+            // 1. 접근 없음 (원거리 공격)
+            // ─────────────────────────────────────────
+            if (approachType == ApproachAnimType.None)
+            {
+                // 근접 상태였으면 먼저 복귀
+                if (_fsm.IsMelee)
+                {
+                    yield return ExecuteReturnCo(true);
+                }
+                
+                _fsm.SetState(PlayerAnimFSM.State.Attacking);
+                
+                // 적 방향으로 회전만
+                if (_mover.IsValidEnemyIndex(targetIndex))
+                {
+                    float dir = _mover.ComputeDirToEnemy(targetIndex);
+                    _mover.FaceDir(dir);
+                }
+                
+                // 공격 트리거
+                SetPlayerAttackType(attackType);
+                TriggerPlayer(playerAttackTrigger);
+                _lastAttackTriggerTime = Time.time;
+                _lastAttackDuration = attackProfile.TotalDuration;
+                
+                // ✅ 히트 딜레이 대기
+                if (attackProfile.hitDelay > 0f)
+                    yield return new WaitForSeconds(attackProfile.hitDelay);
+                
+                // Punch effect
+                yield return _mover.PunchCo(attackProfile.punchX, attackProfile.punchScale, attackProfile.punchTime);
+                
+                // ✅ 복구 시간 대기
+                if (attackProfile.recoveryTime > 0f)
+                    yield return new WaitForSeconds(attackProfile.recoveryTime);
+                
+                _fsm.SetState(PlayerAnimFSM.State.Idle);
+                yield break;
+            }
+
+            // ─────────────────────────────────────────
+            // 2. 접근이 필요한 경우
+            // ─────────────────────────────────────────
             if (_mover.IsValidEnemyIndex(targetIndex))
             {
                 if (!_fsm.IsMelee || _fsm.MeleeTargetIndex != targetIndex)
@@ -428,14 +568,18 @@ namespace DungeonDeck.Battle.View
 
                     if (_fsm.IsMelee)
                     {
-                        yield return _mover.RepositionCo(targetIndex, () => TriggerPlayer(playerBackDashTrigger));
+                        // 이미 근접 중이지만 다른 타겟 → 리포지션
+                        // ✅ 프로파일의 리포지션 시간 사용
+                        yield return RepositionWithProfileCo(targetIndex, approachProfile);
                     }
                     else
                     {
+                        // 기지에서 출발
                         if (!_mover.IsAtBase())
                             yield return ExecuteReturnCo(true);
 
-                        yield return _mover.ApproachCo(targetIndex, on => SetRunBool(on));
+                        // ✅ 프로파일 기반 접근
+                        yield return ApproachWithProfileCo(targetIndex, approachProfile, approachType);
                     }
 
                     _fsm.SetMeleeState(true, targetIndex);
@@ -444,14 +588,118 @@ namespace DungeonDeck.Battle.View
 
             _fsm.SetState(PlayerAnimFSM.State.Attacking);
 
-            // Attack trigger
+            // ─────────────────────────────────────────
+            // 3. 공격 트리거 (프로파일 기반)
+            // ─────────────────────────────────────────
+            SetPlayerAttackType(attackType);
             TriggerPlayer(playerAttackTrigger);
             _lastAttackTriggerTime = Time.time;
+            _lastAttackDuration = attackProfile.TotalDuration;
+
+            // ✅ 접근 bool 해제 (Attack 상태로 전환 후)
+            yield return new WaitForSeconds(Mathf.Max(0.02f, attackProfile.hitDelay * 0.3f));
+            ClearAllApproachBools();
+
+            // ✅ 히트 타이밍까지 대기 (남은 시간)
+            float remainHitDelay = attackProfile.hitDelay - (attackProfile.hitDelay * 0.3f);
+            if (remainHitDelay > 0f)
+                yield return new WaitForSeconds(remainHitDelay);
 
             // Punch effect
-            yield return _mover.PunchCo(comboPunchX, comboPunchScale, comboPunchTime);
+            yield return _mover.PunchCo(attackProfile.punchX, attackProfile.punchScale, attackProfile.punchTime);
+
+            // ✅ 화면 흔들림 (있으면)
+            if (attackProfile.hitShakeStrength > 0f && attackProfile.hitShakeDuration > 0f)
+            {
+                if (playerView != null)
+                    playerView.DOShakePosition(attackProfile.hitShakeDuration, attackProfile.hitShakeStrength, 10, 90f, false, false);
+            }
+
+            // ✅ 복구 시간 대기
+            if (attackProfile.recoveryTime > 0f)
+                yield return new WaitForSeconds(attackProfile.recoveryTime);
 
             _fsm.SetState(_fsm.IsMelee ? PlayerAnimFSM.State.MeleeIdle : PlayerAnimFSM.State.Idle);
+        }
+
+        /// <summary>
+        /// 프로파일 기반 접근 코루틴
+        /// </summary>
+        private IEnumerator ApproachWithProfileCo(int targetIndex, ApproachAnimProfile profile, ApproachAnimType type)
+        {
+            if (!_mover.IsValidEnemyIndex(targetIndex) || playerView == null)
+                yield break;
+
+            var enemy = enemyViews[targetIndex];
+            float dir = _mover.ComputeDirToEnemy(targetIndex);
+            _mover.FaceDir(dir);
+
+            Vector3 targetWorld = enemy.position - new Vector3(dir * approachStopDistance, 0f, 0f);
+            Transform parent = playerView.parent ?? playerView;
+            Vector3 targetLocal = parent.InverseTransformPoint(targetWorld);
+
+            float dist = Vector3.Distance(playerView.localPosition, targetLocal);
+            float duration = profile.ComputeDuration(dist);
+
+            // ✅ 접근 애니메이션 시작
+            SetApproachBool(type, true);
+
+            // ✅ 시작 홀드 (애니메이션 준비)
+            if (profile.beginHold > 0f)
+                yield return new WaitForSeconds(profile.beginHold);
+
+            // 이동
+            float loopDur = Mathf.Max(profile.loopMinDuration, duration - profile.beginHold - profile.endHold);
+
+            playerView.DOKill(true);
+            yield return playerView
+                .DOLocalMove(targetLocal, loopDur)
+                .SetEase(profile.moveEase)
+                .WaitForCompletion();
+
+            // ✅ 끝 홀드 (착지/정지 모션)
+            if (profile.endHold > 0f)
+                yield return new WaitForSeconds(profile.endHold);
+
+            // 접근 bool은 공격 트리거 후에 해제
+        }
+
+        /// <summary>
+        /// 프로파일 기반 리포지션 코루틴
+        /// </summary>
+        private IEnumerator RepositionWithProfileCo(int targetIndex, ApproachAnimProfile profile)
+        {
+            if (!_mover.IsValidEnemyIndex(targetIndex) || playerView == null)
+                yield break;
+
+            var enemy = enemyViews[targetIndex];
+            float moveDir = Mathf.Sign(enemy.position.x - playerView.position.x);
+            if (Mathf.Approximately(moveDir, 0f)) moveDir = 1f;
+
+            Vector3 targetWorld = enemy.position - new Vector3(moveDir * approachStopDistance, 0f, 0f);
+            Transform parent = playerView.parent ?? playerView;
+            Vector3 targetLocal = parent.InverseTransformPoint(targetWorld);
+
+            float dist = Vector3.Distance(playerView.localPosition, targetLocal);
+
+            if (dist <= 0.05f)
+            {
+                _mover.FaceDir(moveDir);
+                yield break;
+            }
+
+            TriggerPlayer(playerBackDashTrigger);
+
+            // ✅ 프로파일의 리포지션 시간 사용
+            float repoTime = Mathf.Max(0.08f, profile.repositionTime);
+
+            playerView.DOKill(true);
+            yield return playerView
+                .DOLocalMove(targetLocal, repoTime)
+                .SetEase(profile.repositionEase)
+                .WaitForCompletion();
+
+            _mover.FaceDir(moveDir);
         }
 
         private IEnumerator ExecuteCastCo(PlayerAnimFSM.Command cmd)
@@ -488,11 +736,12 @@ namespace DungeonDeck.Battle.View
                 yield break;
             }
 
-            // Wait for attack animation if needed
+            // ✅ 공격 애니메이션 완료 대기
             yield return WaitPostAttackGuard();
 
             _fsm.SetState(PlayerAnimFSM.State.Returning);
-            SetRunBool(false);
+            
+            ClearAllApproachBools();
 
             yield return _mover.ReturnToBaseCo(forced, () => TriggerPlayer(playerBackDashTrigger));
 
@@ -510,7 +759,10 @@ namespace DungeonDeck.Battle.View
             }
 
             _fsm.SetState(PlayerAnimFSM.State.Approaching);
-            yield return _mover.RepositionCo(targetIndex, () => TriggerPlayer(playerBackDashTrigger));
+            
+            var profile = ApproachAnimProfile.CreateDefault(ApproachAnimType.Run);
+            yield return RepositionWithProfileCo(targetIndex, profile);
+            
             _fsm.SetMeleeState(true, targetIndex);
             _fsm.SetState(PlayerAnimFSM.State.MeleeIdle);
         }
@@ -540,17 +792,28 @@ namespace DungeonDeck.Battle.View
             AnimTriggerTrace.ResetAndSetTrigger(playerAnimator, trigger, this);
         }
 
-        private void SetRunBool(bool value)
+        private void SetPlayerAttackType(AttackAnimType type)
         {
-            if (playerAnimator == null || string.IsNullOrEmpty(playerRunBool)) return;
-            playerAnimator.SetBool(playerRunBool, value);
+            if (playerAnimator == null || string.IsNullOrEmpty(playerAttackTypeInt)) return;
+            playerAnimator.SetInteger(playerAttackTypeInt, (int)type);
         }
-
+        
+        /// <summary>
+        /// ✅ 공격 애니메이션 완료까지 대기
+        /// </summary>
         private IEnumerator WaitPostAttackGuard()
         {
             float elapsed = Time.time - _lastAttackTriggerTime;
-            if (elapsed < postAttackGuardSeconds)
-                yield return new WaitForSeconds(postAttackGuardSeconds - elapsed);
+            float required = _lastAttackDuration;
+            
+            // 최소 대기 시간 보장
+            if (required < 0.1f) required = 0.1f;
+            
+            if (elapsed < required)
+            {
+                float wait = required - elapsed;
+                yield return new WaitForSeconds(wait);
+            }
         }
     }
 }

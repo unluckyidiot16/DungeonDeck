@@ -1537,12 +1537,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   targetManager: {fileID: 0}
+  playerRunBool: Run
+  playerDashBool: Dash
+  playerSprintBool: Sprint
+  playerSlideBool: Slide
+  playerRunBlockingBool: RunBlocking
   playerAttackTrigger: Attack
+  playerAttackTypeInt: AttackType
   playerBlockTrigger: Block
   playerCastTrigger: Cast
   playerHitTrigger: Hit
   playerBackDashTrigger: BackDash
-  playerRunBool: Run
   enemyAttackTrigger: Attack
   enemyFocusTrigger: Focus
   approachStopDistance: 1
@@ -1565,9 +1570,6 @@ MonoBehaviour:
   focusMove: 0.25
   focusScale: 0.06
   focusTime: 0.12
-  postAttackGuardSeconds: 0.08
-  attackStateTag: Attack
-  attackGuardNormalizedTime: 0.9
 --- !u!1 &565310907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,10 +1796,10 @@ MonoBehaviour:
   playerPrefab: {fileID: 2294075924047804569, guid: 2f946486a807c435883482c88ffaf68b, type: 3}
   enemyPrefab: {fileID: 2343006386388804047, guid: 77464aabbb812407080b70d83561c037, type: 3}
   bossPrefab: {fileID: 2343006386388804047, guid: 77464aabbb812407080b70d83561c037, type: 3}
-  animDirector: {fileID: 0}
+  animDirector: {fileID: 527812083}
   hitPopups: {fileID: 672337088}
   enemySpacing: 2.2
-  battle: {fileID: 0}
+  battle: {fileID: 1108695679}
   popupTargetPath: Canvas/Target
   preferLocalCanvasTarget: 1
 --- !u!1 &656690976
@@ -4802,10 +4804,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b2c0f690ad9437b9053e0de40011aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Battle.View.BattleTargetManager
-  battle: {fileID: 0}
+  battle: {fileID: 1108695679}
   hitPopups: {fileID: 672337088}
   selectedIndex: 0
-  animDirector: {fileID: 0}
+  animDirector: {fileID: 527812083}
 --- !u!4 &1859476896
 Transform:
   m_ObjectHideFlags: 0

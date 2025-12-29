@@ -1,4 +1,4 @@
-// Assets/_Project/Scripts/Battle/BattleController.cs (Refactored)
+// Assets/_Project/Scripts/Battle/BattleController.cs (Refactored v2)
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +18,10 @@ namespace DungeonDeck.Battle
     /// 전투 흐름 제어 (리팩토링됨).
     /// 상태 관리는 BattlePlayerState, BattleEnemyManager에 위임.
     /// 액션 큐는 BattleActionQueue에 위임.
+    /// 
+    /// v2 변경사항:
+    /// - ShouldAutoReturnToBase() 로직 개선: animDirector.IsAttacking 체크 추가
+    /// - 공격 완료 후에만 자동 복귀
     /// </summary>
     public class BattleController : MonoBehaviour
     {
@@ -101,6 +105,8 @@ namespace DungeonDeck.Battle
             if (hitPopups == null)
                 hitPopups = FindObjectOfType<View.HitPopupSpawner>(true);
 
+            animDirector?.OnTargetChanged(SelectedEnemyIndex);
+            
             BeginPlayerTurn();
             NotifyStateChanged();
 
@@ -120,7 +126,11 @@ namespace DungeonDeck.Battle
             _player.StateChanged += NotifyStateChanged;
             _player.Died += () => EndBattle(false);
 
-            _enemies.SelectionChanged += NotifyStateChanged;
+            _enemies.SelectionChanged += () => 
+            {
+                animDirector?.OnTargetChanged(_enemies.SelectedIndex);
+                NotifyStateChanged();
+            };
             _enemies.AllEnemiesDefeated += () => EndBattle(true);
 
             _actionQueue.OnExecuteCard += ExecuteQueuedCardCo;
@@ -248,7 +258,7 @@ namespace DungeonDeck.Battle
             // 1) 에너지 소비
             _player.TrySpendEnergy(action.Card.cost);
 
-            // 2) 애니메이션
+            // 2) 애니메이션 (✅ 완전히 완료될 때까지 대기)
             if (animDirector != null)
             {
                 if (action.Card.effectKind == CardEffectKind.Attack)
@@ -273,7 +283,9 @@ namespace DungeonDeck.Battle
                 yield break;
             }
 
-            // 6) 하이브리드 규칙: 에너지 0 + 큐 비었음 + 근접 상태 → 자동 복귀
+            // 6) ✅ 개선된 자동 복귀 로직
+            //    - 에너지 0이고 큐가 비었고 근접 상태일 때만
+            //    - animDirector.IsAttacking이 false여야 함 (공격 완료 후)
             if (ShouldAutoReturnToBase())
             {
                 yield return animDirector?.ReturnToBaseCo(false);
@@ -308,6 +320,9 @@ namespace DungeonDeck.Battle
             return _enemies.SelectedIndex;
         }
 
+        /// <summary>
+        /// ✅ 개선된 자동 복귀 조건 체크
+        /// </summary>
         private bool ShouldAutoReturnToBase()
         {
             if (_endingFlow || !_isPlayerTurn) return false;
@@ -316,6 +331,10 @@ namespace DungeonDeck.Battle
             if (_actionQueue.PendingCount > 0) return false;
             if (animDirector == null) return false;
             if (!animDirector.IsMelee) return false;
+            
+            // ✅ 공격 중이면 복귀하지 않음
+            if (animDirector.IsAttacking) return false;
+            
             return true;
         }
 
@@ -346,6 +365,10 @@ namespace DungeonDeck.Battle
 
                 case CardEffectKind.ApplyVulnerable:
                     _enemies.ApplyVulnerable(targetIndex, card.value);
+                    break;
+                
+                case CardEffectKind.Heal: 
+                    _player.Heal(card.value);
                     break;
             }
 

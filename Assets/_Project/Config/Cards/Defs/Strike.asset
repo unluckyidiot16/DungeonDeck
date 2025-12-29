@@ -21,5 +21,4 @@ MonoBehaviour:
   effectKind: 0
   value: 6
   exhaustOnPlay: 0
-  approachId: Run
-  attackTrigger: 
+  approachAnimType: 4

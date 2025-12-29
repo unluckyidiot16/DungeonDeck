@@ -178,7 +178,7 @@ namespace DungeonDeck.Battle.View
         // ─────────────────────────────────────────
         // Movement Coroutines
         // ─────────────────────────────────────────
-        public IEnumerator ApproachCo(int targetIndex, Action<bool> onRunBool = null)
+        public IEnumerator ApproachCo(int targetIndex, Action<bool> onRunBool = null, bool autoDisableRunBool = true)
         {
             if (!IsValidEnemyIndex(targetIndex) || _playerView == null)
                 yield break;
@@ -221,6 +221,12 @@ namespace DungeonDeck.Battle.View
 
                 if (endHold > 0f)
                     yield return new WaitForSeconds(endHold);
+                if (autoDisableRunBool)
+                { 
+                    onRunBool?.Invoke(false);
+                    if (endHold > 0f)
+                        yield return new WaitForSeconds(endHold);
+                }
             }
             else
             {
