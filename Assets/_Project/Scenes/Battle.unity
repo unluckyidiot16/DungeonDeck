@@ -1491,7 +1491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 527812082}
-  - component: {fileID: 527812081}
+  - component: {fileID: 527812083}
   m_Layer: 0
   m_Name: BattleAnimDirector
   m_TagString: Untagged
@@ -1499,71 +1499,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &527812081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527812080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c47e3ff0755b847da9ba9d49f91c022d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Battle.View.BattleAnimDirector
-  playerView: {fileID: 0}
-  playerAnimator: {fileID: 0}
-  playerHitTrigger: Hit
-  playerHitShakeDuration: 0.12
-  playerHitShakeStrength: 0.1
-  enemyViews:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  enemyAnimators:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  enemyAttackTrigger: Attack
-  lungeDistance: 1
-  lungeOutTime: 0.1
-  lungeBackTime: 0.12
-  playerAttackTrigger: Attack
-  playerBlockTrigger: Block
-  playerCastTrigger: Cast
-  playerRunBool: Run
-  runStopDelay: 0.05
-  playerCardFxDuration: 0.14
-  playerPunchScale: 0.07
-  playerPunchPosX: 0.12
-  focusMove: 0.25
-  focusScale: 1.06
-  focusTime: 0.12
-  enemyFocusTrigger: 
-  approachStopDistance: 2
-  approachMoveTime: 0.14
-  returnMoveTime: 0.18
-  approachUseSpeedBased: 1
-  approachSpeed: 1
-  approachMinDuration: 0.14
-  approachMaxDuration: 1
-  approachMoveEase: 4
-  approachUseRunBeginEndHold: 1
-  runBeginHold: 0.06
-  runEndHold: 0.04
-  runHoldMinDistance: 0.3
-  approachLoopMinDuration: 0.08
-  meleeRepositionMoveTime: 0.1
-  meleeRepositionMinDistance: 0.05
-  meleeTurnDelay: 0.03
-  playerDashTrigger: Dash
-  playerBackDashTrigger: BackDash
-  comboPunchX: 0.1
-  comboPunchTime: 0.1
-  traceAttackRequests: 0
-  traceFullStack: 0
-  traceAllRequests: 0
-  targetManager: {fileID: 0}
 --- !u!4 &527812082
 Transform:
   m_ObjectHideFlags: 0
@@ -1579,6 +1514,60 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &527812083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527812080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeda9647fa70d4293b61ff2ba2996904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Battle.View.BattleAnimDirector
+  playerView: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  enemyViews:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyAnimators:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  targetManager: {fileID: 0}
+  playerAttackTrigger: Attack
+  playerBlockTrigger: Block
+  playerCastTrigger: Cast
+  playerHitTrigger: Hit
+  playerBackDashTrigger: BackDash
+  playerRunBool: Run
+  enemyAttackTrigger: Attack
+  enemyFocusTrigger: Focus
+  approachStopDistance: 1
+  approachSpeed: 4
+  approachMinDuration: 0.18
+  approachMaxDuration: 0.55
+  approachMoveEase: 4
+  returnSpeed: 6
+  returnMinDuration: 0.1
+  returnMaxDuration: 0.35
+  returnMoveEase: 6
+  comboPunchX: 0.1
+  comboPunchScale: 0.07
+  comboPunchTime: 0.1
+  playerHitShakeDuration: 0.12
+  playerHitShakeStrength: 0.1
+  lungeDistance: 0.25
+  lungeOutTime: 0.1
+  lungeBackTime: 0.12
+  focusMove: 0.25
+  focusScale: 0.06
+  focusTime: 0.12
+  postAttackGuardSeconds: 0.08
+  attackStateTag: Attack
+  attackGuardNormalizedTime: 0.9
 --- !u!1 &565310907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,10 +1794,10 @@ MonoBehaviour:
   playerPrefab: {fileID: 2294075924047804569, guid: 2f946486a807c435883482c88ffaf68b, type: 3}
   enemyPrefab: {fileID: 2343006386388804047, guid: 77464aabbb812407080b70d83561c037, type: 3}
   bossPrefab: {fileID: 2343006386388804047, guid: 77464aabbb812407080b70d83561c037, type: 3}
-  animDirector: {fileID: 527812081}
+  animDirector: {fileID: 0}
   hitPopups: {fileID: 672337088}
   enemySpacing: 2.2
-  battle: {fileID: 1108695679}
+  battle: {fileID: 0}
   popupTargetPath: Canvas/Target
   preferLocalCanvasTarget: 1
 --- !u!1 &656690976
@@ -2225,7 +2214,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1108695679}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DungeonDeck.Battle.BattleController, Assembly-CSharp
         m_MethodName: DebugEndTurn
         m_Mode: 1
@@ -3064,16 +3053,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1108695677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c67f8c816df7d4076b5d3d08f8dde547, type: 3}
+  m_Script: {fileID: 11500000, guid: dbb9d9372e1a94ee693921b5264e00c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Battle.BattleController
   autoWinForTest: 0
-  debugEnemyCount: 1
+  debugEnemyCount: 3
   rewardPanel: {fileID: 1454991492}
   fallbackRewardCandidates: []
   useRunCardPools: 1
   allowSkipReward: 0
-  animDirector: {fileID: 527812081}
+  animDirector: {fileID: 527812083}
   hitPopups: {fileID: 672337088}
 --- !u!1 &1167431500
 GameObject:
@@ -3297,7 +3286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ada2ee679a9a4a569c6233a0ecbc103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.UI.Battle.BattleHandUI
-  battle: {fileID: 1108695679}
+  battle: {fileID: 0}
   handRoot: {fileID: 28507094}
   cardPrefab: {fileID: 4048873826834633223, guid: 6fd0fd22156e7408aafe3b8bb2a2c2c4, type: 3}
   energyText: {fileID: 1536366473}
@@ -3308,7 +3297,7 @@ MonoBehaviour:
   discardAnchor: {fileID: 874127654}
   discardFlyDuration: 0.28
   maxHandSlots: 5
-  animDirector: {fileID: 527812081}
+  animDirector: {fileID: 0}
 --- !u!114 &1185304048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3673,7 +3662,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1108695679}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DungeonDeck.Battle.BattleController, Assembly-CSharp
         m_MethodName: DebugPlayFirstCard
         m_Mode: 1
@@ -4813,10 +4802,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b2c0f690ad9437b9053e0de40011aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Battle.View.BattleTargetManager
-  battle: {fileID: 1108695679}
+  battle: {fileID: 0}
   hitPopups: {fileID: 672337088}
   selectedIndex: 0
-  animDirector: {fileID: 527812081}
+  animDirector: {fileID: 0}
 --- !u!4 &1859476896
 Transform:
   m_ObjectHideFlags: 0

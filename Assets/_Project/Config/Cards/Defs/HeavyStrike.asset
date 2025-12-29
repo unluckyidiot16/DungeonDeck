@@ -20,3 +20,6 @@ MonoBehaviour:
   cost: 2
   effectKind: 0
   value: 12
+  exhaustOnPlay: 0
+  approachId: Sprint
+  attackTrigger: 
