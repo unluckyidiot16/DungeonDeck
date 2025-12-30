@@ -1,3 +1,4 @@
+// Assets/_Project/Scripts/Battle/View/EnemyTargetView.cs
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -5,53 +6,58 @@ namespace DungeonDeck.Battle.View
 {
     /// <summary>
     /// 적 오브젝트에 붙이는 클릭/선택 표시 컴포넌트.
-    /// - SpriteRenderer든 UI든 상관없이 "클릭 이벤트"만 들어오면 됨.
-    /// - SpriteRenderer인 경우: Collider2D + Camera에 Physics2DRaycaster 필요.
+    /// BattleEnemy 컴포넌트와 함께 사용됩니다.
+    /// 클릭 시 자신의 BattleEnemy를 타겟으로 지정합니다.
     /// </summary>
+    [RequireComponent(typeof(BattleEnemy))]
     public class EnemyTargetView : MonoBehaviour, IPointerClickHandler
     {
-        [Header("Index (optional)")]
-        [Tooltip("비워두면(=-1) 등록 순서대로 자동 인덱스가 배정됩니다.")]
-        public int index = -1;
+        [Header("Slot Index (fixed mapping)")]
+        [Tooltip("0~2 고정 슬롯 인덱스. -1이면 Awake에서 siblingIndex로 자동 세팅.")]
+        public int slotIndex = -1;
 
         [Header("Selection Visual")]
         [Tooltip("선택 링/하이라이트 오브젝트")]
         public GameObject selectedMarker;
 
-        [Header("Popup/FX Target")]
-        [Tooltip("HitPopup/FX가 뜰 위치. 비워두면 자기 transform 사용")]
-        public Transform popupTarget;
-
         [Header("Manager (auto find if null)")]
-        public BattleTargetManager manager;
+        public BattleTargetManager targetManager;
 
         [Header("Auto Collider (click support)")]
         public bool autoAddCollider2D = true;
-        
-        public int Index { get; private set; } = -1;
+
+        private BattleEnemy _enemy;
+
+        public int SlotIndex => slotIndex;
+        public BattleEnemy Enemy => _enemy;
+        public Transform PopupTarget => _enemy != null ? _enemy.PopupTarget : transform;
 
         private void Awake()
         {
-            if (popupTarget == null) popupTarget = transform;
-            if (selectedMarker != null) selectedMarker.SetActive(false);
-            
+            _enemy = GetComponent<BattleEnemy>();
+
+            if (slotIndex < 0)
+                slotIndex = transform.GetSiblingIndex();
+
+            if (selectedMarker != null)
+                selectedMarker.SetActive(false);
+
             EnsureCollider();
         }
 
         private void EnsureCollider()
         {
-            // 이미 콜라이더가 있으면 OK
-            if (GetComponentInChildren<Collider2D>() != null || GetComponentInChildren<Collider>() != null) return;
-            
+            if (GetComponentInChildren<Collider2D>() != null || GetComponentInChildren<Collider>() != null)
+                return;
+
             if (!autoAddCollider2D) return;
-            
+
             var sr = GetComponentInChildren<SpriteRenderer>(true);
             if (sr == null) return;
-            
-            // 콜라이더는 SpriteRenderer가 붙은 오브젝트에 추가 (루트에 추가하면 사이즈/오프셋 꼬일 수 있음)
+
             var host = sr.gameObject;
             if (host.GetComponent<Collider2D>() != null) return;
-            
+
             var bc = host.AddComponent<BoxCollider2D>();
             if (sr.sprite != null)
             {
@@ -59,29 +65,36 @@ namespace DungeonDeck.Battle.View
                 bc.offset = sr.sprite.bounds.center;
             }
         }
-        
+
         private void OnEnable()
         {
-            if (manager == null) manager = FindObjectOfType<BattleTargetManager>(true);
-            if (manager != null) manager.Register(this);
+            if (targetManager == null)
+                targetManager = FindObjectOfType<BattleTargetManager>(true);
+
+            if (targetManager != null)
+                targetManager.Register(this);
         }
 
         private void OnDisable()
         {
-            if (manager != null) manager.Unregister(this);
+            if (targetManager != null)
+                targetManager.Unregister(this);
         }
-
-        public void SetIndex(int i) => Index = i;
 
         public void SetSelected(bool on)
         {
-            if (selectedMarker != null) selectedMarker.SetActive(on);
+            if (selectedMarker != null)
+                selectedMarker.SetActive(on);
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (manager == null) return;
-            manager.Select(Index);
+            if (targetManager == null) return;
+            if (_enemy == null) return;
+
+            // “BattleEnemy.IsAlive”가 상태 기반 컨트롤러와 불일치할 수 있으니
+            // 최종 검증은 TargetManager에서 한 번 더 해준다.
+            targetManager.Select(_enemy);
         }
     }
 }

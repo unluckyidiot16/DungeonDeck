@@ -1,0 +1,1248 @@
+fileFormatVersion: 2
+guid: 1e16c283ab14c40f6a0df203941de4a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5164222708042615027
+    second: Goblin Boar Rider Sprite Sheet_0
+  - first:
+      213: 8099946886084593173
+    second: Goblin Boar Rider Sprite Sheet_1
+  - first:
+      213: -8545576689260573356
+    second: Goblin Boar Rider Sprite Sheet_2
+  - first:
+      213: -7141756499720311399
+    second: Goblin Boar Rider Sprite Sheet_3
+  - first:
+      213: -6245804131683004277
+    second: Goblin Boar Rider Sprite Sheet_4
+  - first:
+      213: 1027694076089914968
+    second: Goblin Boar Rider Sprite Sheet_5
+  - first:
+      213: 2350378748814089902
+    second: Goblin Boar Rider Sprite Sheet_6
+  - first:
+      213: 868271855725280600
+    second: Goblin Boar Rider Sprite Sheet_7
+  - first:
+      213: -3489018397540757271
+    second: Goblin Boar Rider Sprite Sheet_8
+  - first:
+      213: 74034705137938910
+    second: Goblin Boar Rider Sprite Sheet_9
+  - first:
+      213: 6278154115342917739
+    second: Goblin Boar Rider Sprite Sheet_10
+  - first:
+      213: 316008111330661043
+    second: Goblin Boar Rider Sprite Sheet_11
+  - first:
+      213: -1844284623236750243
+    second: Goblin Boar Rider Sprite Sheet_12
+  - first:
+      213: 438983974279784228
+    second: Goblin Boar Rider Sprite Sheet_13
+  - first:
+      213: -4087234486090544217
+    second: Goblin Boar Rider Sprite Sheet_14
+  - first:
+      213: 2310853214436032821
+    second: Goblin Boar Rider Sprite Sheet_15
+  - first:
+      213: 4440952717038536223
+    second: Goblin Boar Rider Sprite Sheet_16
+  - first:
+      213: -697906276012582529
+    second: Goblin Boar Rider Sprite Sheet_17
+  - first:
+      213: -3533721664695819252
+    second: Goblin Boar Rider Sprite Sheet_18
+  - first:
+      213: 5377332613032625165
+    second: Goblin Boar Rider Sprite Sheet_19
+  - first:
+      213: 727064606129682644
+    second: Goblin Boar Rider Sprite Sheet_20
+  - first:
+      213: -7459412527686022692
+    second: Goblin Boar Rider Sprite Sheet_21
+  - first:
+      213: 3870512380727849520
+    second: Goblin Boar Rider Sprite Sheet_22
+  - first:
+      213: -3743164972176398649
+    second: Goblin Boar Rider Sprite Sheet_23
+  - first:
+      213: -6813366336787632463
+    second: Goblin Boar Rider Sprite Sheet_24
+  - first:
+      213: 5462377330171237662
+    second: Goblin Boar Rider Sprite Sheet_25
+  - first:
+      213: 683749236680534405
+    second: Goblin Boar Rider Sprite Sheet_26
+  - first:
+      213: -714028121924643272
+    second: Goblin Boar Rider Sprite Sheet_27
+  - first:
+      213: -4124263512893517801
+    second: Goblin Boar Rider Sprite Sheet_28
+  - first:
+      213: -1207355377257774208
+    second: Goblin Boar Rider Sprite Sheet_29
+  - first:
+      213: -2818689556786954915
+    second: Goblin Boar Rider Sprite Sheet_30
+  - first:
+      213: -2354267027699908076
+    second: Goblin Boar Rider Sprite Sheet_31
+  - first:
+      213: 8073886632164397109
+    second: Goblin Boar Rider Sprite Sheet_32
+  - first:
+      213: -3351889884468293383
+    second: Goblin Boar Rider Sprite Sheet_33
+  - first:
+      213: -4611590841637848240
+    second: Goblin Boar Rider Sprite Sheet_34
+  - first:
+      213: 4366242123110114341
+    second: Goblin Boar Rider Sprite Sheet_35
+  - first:
+      213: 4377797135012222517
+    second: Goblin Boar Rider Sprite Sheet_36
+  - first:
+      213: 5139775399929137067
+    second: Goblin Boar Rider Sprite Sheet_37
+  - first:
+      213: 4233380136523228052
+    second: Goblin Boar Rider Sprite Sheet_38
+  - first:
+      213: -5897214033423524181
+    second: Goblin Boar Rider Sprite Sheet_39
+  - first:
+      213: 8882999683958471102
+    second: Goblin Boar Rider Sprite Sheet_40
+  - first:
+      213: 2520551780781968427
+    second: Goblin Boar Rider Sprite Sheet_41
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 159
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d073d1aeecef458b0800000000000000
+      internalID: -5164222708042615027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 159
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5168a9c07cac86070800000000000000
+      internalID: 8099946886084593173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 159
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45dc3cb0743086980800000000000000
+      internalID: -8545576689260573356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 131
+        width: 35
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d65d95d4263ec90800000000000000
+      internalID: -7141756499720311399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 129
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b801e52eb327259a0800000000000000
+      internalID: -6245804131683004277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 159
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856dc17315a134e00800000000000000
+      internalID: 1027694076089914968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 159
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaed0bae4093e9020800000000000000
+      internalID: 2350378748814089902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 127
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85d79f807a8bc0c00800000000000000
+      internalID: 868271855725280600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 129
+        width: 35
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e0d7c7c044849fc0800000000000000
+      internalID: -3489018397540757271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 127
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed13ccc0c26070100800000000000000
+      internalID: 74034705137938910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 128
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60eb22a7eb702750800000000000000
+      internalID: 6278154115342917739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 129
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b29106f3bfa26400800000000000000
+      internalID: 316008111330661043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 128
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d54224718e8c766e0800000000000000
+      internalID: -1844284623236750243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 95
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42729094995971600800000000000000
+      internalID: 438983974279784228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 63
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7abc8d6d3e93747c0800000000000000
+      internalID: -4087234486090544217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 95
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 531878e41ccc11020800000000000000
+      internalID: 2310853214436032821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 95
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f16436b87fe61ad30800000000000000
+      internalID: 4440952717038536223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 95
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7911cb80f98056f0800000000000000
+      internalID: -697906276012582529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 63
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0424b05ed2b5fec0800000000000000
+      internalID: -3533721664695819252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 63
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d04ceee658f10aa40800000000000000
+      internalID: 5377332613032625165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 63
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d87e19386d071a00800000000000000
+      internalID: 727064606129682644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 63
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd90d26e3d7da7890800000000000000
+      internalID: -7459412527686022692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 31
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032f800e082d6b530800000000000000
+      internalID: 3870512380727849520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 63
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c6adb93a4b9d0cc0800000000000000
+      internalID: -3743164972176398649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 63
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be2b2b5a6f0271a0800000000000000
+      internalID: -6813366336787632463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 63
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e15d00aad334ecb40800000000000000
+      internalID: 5462377330171237662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 63
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 589a9cfde4a2d7900800000000000000
+      internalID: 683749236680534405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 63
+        width: 33
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 836da09c4334716f0800000000000000
+      internalID: -714028121924643272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 63
+        width: 33
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71090e1bf2ca3c6c0800000000000000
+      internalID: -4124263512893517801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 31
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08384e46eac9e3fe0800000000000000
+      internalID: -1207355377257774208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 31
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d3c9b38c002e8d0800000000000000
+      internalID: -2818689556786954915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 412488b9c96f35fd0800000000000000
+      internalID: -2354267027699908076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 31
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5301fea5d153c0070800000000000000
+      internalID: 8073886632164397109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 0
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f0da0eb8e1bb71d0800000000000000
+      internalID: -3351889884468293383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 31
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b3bb210965000c0800000000000000
+      internalID: -4611590841637848240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 524635fd312089c30800000000000000
+      internalID: 4366242123110114341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 31
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 536502bbc4f01cc30800000000000000
+      internalID: 4377797135012222517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 0
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba7411a9e76245740800000000000000
+      internalID: 5139775399929137067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 31
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49369a40eccffba30800000000000000
+      internalID: 4233380136523228052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 31
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bae9755d413e82ea0800000000000000
+      internalID: -5897214033423524181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb9704ef521c64b70800000000000000
+      internalID: 8882999683958471102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Boar Rider Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2ccc7b7d7ccaf220800000000000000
+      internalID: 2520551780781968427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Goblin Boar Rider Sprite Sheet_0: -5164222708042615027
+      Goblin Boar Rider Sprite Sheet_1: 8099946886084593173
+      Goblin Boar Rider Sprite Sheet_10: 6278154115342917739
+      Goblin Boar Rider Sprite Sheet_11: 316008111330661043
+      Goblin Boar Rider Sprite Sheet_12: -1844284623236750243
+      Goblin Boar Rider Sprite Sheet_13: 438983974279784228
+      Goblin Boar Rider Sprite Sheet_14: -4087234486090544217
+      Goblin Boar Rider Sprite Sheet_15: 2310853214436032821
+      Goblin Boar Rider Sprite Sheet_16: 4440952717038536223
+      Goblin Boar Rider Sprite Sheet_17: -697906276012582529
+      Goblin Boar Rider Sprite Sheet_18: -3533721664695819252
+      Goblin Boar Rider Sprite Sheet_19: 5377332613032625165
+      Goblin Boar Rider Sprite Sheet_2: -8545576689260573356
+      Goblin Boar Rider Sprite Sheet_20: 727064606129682644
+      Goblin Boar Rider Sprite Sheet_21: -7459412527686022692
+      Goblin Boar Rider Sprite Sheet_22: 3870512380727849520
+      Goblin Boar Rider Sprite Sheet_23: -3743164972176398649
+      Goblin Boar Rider Sprite Sheet_24: -6813366336787632463
+      Goblin Boar Rider Sprite Sheet_25: 5462377330171237662
+      Goblin Boar Rider Sprite Sheet_26: 683749236680534405
+      Goblin Boar Rider Sprite Sheet_27: -714028121924643272
+      Goblin Boar Rider Sprite Sheet_28: -4124263512893517801
+      Goblin Boar Rider Sprite Sheet_29: -1207355377257774208
+      Goblin Boar Rider Sprite Sheet_3: -7141756499720311399
+      Goblin Boar Rider Sprite Sheet_30: -2818689556786954915
+      Goblin Boar Rider Sprite Sheet_31: -2354267027699908076
+      Goblin Boar Rider Sprite Sheet_32: 8073886632164397109
+      Goblin Boar Rider Sprite Sheet_33: -3351889884468293383
+      Goblin Boar Rider Sprite Sheet_34: -4611590841637848240
+      Goblin Boar Rider Sprite Sheet_35: 4366242123110114341
+      Goblin Boar Rider Sprite Sheet_36: 4377797135012222517
+      Goblin Boar Rider Sprite Sheet_37: 5139775399929137067
+      Goblin Boar Rider Sprite Sheet_38: 4233380136523228052
+      Goblin Boar Rider Sprite Sheet_39: -5897214033423524181
+      Goblin Boar Rider Sprite Sheet_4: -6245804131683004277
+      Goblin Boar Rider Sprite Sheet_40: 8882999683958471102
+      Goblin Boar Rider Sprite Sheet_41: 2520551780781968427
+      Goblin Boar Rider Sprite Sheet_5: 1027694076089914968
+      Goblin Boar Rider Sprite Sheet_6: 2350378748814089902
+      Goblin Boar Rider Sprite Sheet_7: 868271855725280600
+      Goblin Boar Rider Sprite Sheet_8: -3489018397540757271
+      Goblin Boar Rider Sprite Sheet_9: 74034705137938910
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

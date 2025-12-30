@@ -1,0 +1,1404 @@
+fileFormatVersion: 2
+guid: 1d474d49bd1e5431f948794ce12b8920
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6853614053878161379
+    second: Orc Kid Sprite Sheet_0
+  - first:
+      213: -4623348481053123195
+    second: Orc Kid Sprite Sheet_1
+  - first:
+      213: -1200617355130054740
+    second: Orc Kid Sprite Sheet_2
+  - first:
+      213: -5792970712331853440
+    second: Orc Kid Sprite Sheet_3
+  - first:
+      213: -8208040366876657181
+    second: Orc Kid Sprite Sheet_4
+  - first:
+      213: 6064285444289125630
+    second: Orc Kid Sprite Sheet_5
+  - first:
+      213: -3360157207252163114
+    second: Orc Kid Sprite Sheet_6
+  - first:
+      213: -2202744313580161077
+    second: Orc Kid Sprite Sheet_7
+  - first:
+      213: -159547005786481204
+    second: Orc Kid Sprite Sheet_8
+  - first:
+      213: 6883171484514878309
+    second: Orc Kid Sprite Sheet_9
+  - first:
+      213: -2101517777211676861
+    second: Orc Kid Sprite Sheet_10
+  - first:
+      213: -5308830068098748009
+    second: Orc Kid Sprite Sheet_11
+  - first:
+      213: 7352506770734380413
+    second: Orc Kid Sprite Sheet_12
+  - first:
+      213: 8572970151737634324
+    second: Orc Kid Sprite Sheet_13
+  - first:
+      213: -6137609730965847211
+    second: Orc Kid Sprite Sheet_14
+  - first:
+      213: -3470248726884374228
+    second: Orc Kid Sprite Sheet_15
+  - first:
+      213: -4078881576400957341
+    second: Orc Kid Sprite Sheet_16
+  - first:
+      213: -2380955784374375373
+    second: Orc Kid Sprite Sheet_17
+  - first:
+      213: 2057613259202531185
+    second: Orc Kid Sprite Sheet_18
+  - first:
+      213: -4083799846411732337
+    second: Orc Kid Sprite Sheet_19
+  - first:
+      213: -3667963594330163525
+    second: Orc Kid Sprite Sheet_20
+  - first:
+      213: -560102494052356258
+    second: Orc Kid Sprite Sheet_21
+  - first:
+      213: 8535949899419597773
+    second: Orc Kid Sprite Sheet_22
+  - first:
+      213: -7572036720317809208
+    second: Orc Kid Sprite Sheet_23
+  - first:
+      213: 8674177755911901924
+    second: Orc Kid Sprite Sheet_24
+  - first:
+      213: 3621275374317703957
+    second: Orc Kid Sprite Sheet_25
+  - first:
+      213: 799448131838473744
+    second: Orc Kid Sprite Sheet_26
+  - first:
+      213: -1526548279065655968
+    second: Orc Kid Sprite Sheet_27
+  - first:
+      213: 8746643124128500476
+    second: Orc Kid Sprite Sheet_28
+  - first:
+      213: -5282114547869837636
+    second: Orc Kid Sprite Sheet_29
+  - first:
+      213: 1966456037359954160
+    second: Orc Kid Sprite Sheet_30
+  - first:
+      213: -1753959282627283660
+    second: Orc Kid Sprite Sheet_31
+  - first:
+      213: 8932800364485255040
+    second: Orc Kid Sprite Sheet_32
+  - first:
+      213: -4370399117585932770
+    second: Orc Kid Sprite Sheet_33
+  - first:
+      213: -2442077603471482758
+    second: Orc Kid Sprite Sheet_34
+  - first:
+      213: 7073922135705802939
+    second: Orc Kid Sprite Sheet_35
+  - first:
+      213: -1127354291034074160
+    second: Orc Kid Sprite Sheet_36
+  - first:
+      213: -6703282648745434734
+    second: Orc Kid Sprite Sheet_37
+  - first:
+      213: -8538602533381465631
+    second: Orc Kid Sprite Sheet_38
+  - first:
+      213: 7035677764351686927
+    second: Orc Kid Sprite Sheet_39
+  - first:
+      213: 3257322732793715962
+    second: Orc Kid Sprite Sheet_40
+  - first:
+      213: 692494062731588162
+    second: Orc Kid Sprite Sheet_41
+  - first:
+      213: 2358415783781642983
+    second: Orc Kid Sprite Sheet_42
+  - first:
+      213: 86080047386383372
+    second: Orc Kid Sprite Sheet_43
+  - first:
+      213: 2647048746113673201
+    second: Orc Kid Sprite Sheet_44
+  - first:
+      213: -6932433767688645855
+    second: Orc Kid Sprite Sheet_45
+  - first:
+      213: -8840862756006897303
+    second: Orc Kid Sprite Sheet_46
+  - first:
+      213: 384536803638177239
+    second: Orc Kid Sprite Sheet_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 127
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ef58058badec1f50800000000000000
+      internalID: 6853614053878161379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 127
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58d9cf15d0196dfb0800000000000000
+      internalID: -4623348481053123195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 127
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca7dd4c60ec865fe0800000000000000
+      internalID: -1200617355130054740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 127
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 081e73164db3b9fa0800000000000000
+      internalID: -5792970712331853440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 127
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e9ff3e36ce271e80800000000000000
+      internalID: -8208040366876657181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 127
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efcdc6b4b7ba82450800000000000000
+      internalID: 6064285444289125630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 127
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d52448a2d25e51d0800000000000000
+      internalID: -3360157207252163114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 127
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc7fa0aa7b74e61e0800000000000000
+      internalID: -2202744313580161077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 95
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd9e13f7dc29cdf0800000000000000
+      internalID: -159547005786481204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 98
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5638b9e1fffe58f50800000000000000
+      internalID: 6883171484514878309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 100
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 347212847b8e5d2e0800000000000000
+      internalID: -2101517777211676861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 98
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 791bf023e2f3356b0800000000000000
+      internalID: -5308830068098748009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 95
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d75f646e3f9590660800000000000000
+      internalID: 7352506770734380413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 98
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41e29547eee49f670800000000000000
+      internalID: 8572970151737634324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 99
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 553ccc7d774d2daa0800000000000000
+      internalID: -6137609730965847211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 98
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c292ec74b2337dfc0800000000000000
+      internalID: -3470248726884374228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 63
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3605cbd21d6e467c0800000000000000
+      internalID: -4078881576400957341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 63
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c2476345525fed0800000000000000
+      internalID: -2380955784374375373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 63
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17f86e78b5c1e8c10800000000000000
+      internalID: 2057613259202531185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 63
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a75d43dad6357c0800000000000000
+      internalID: -4083799846411732337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 63
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb6b2ee6b86c81dc0800000000000000
+      internalID: -3667963594330163525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 63
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5fe23ccfbd1a38f0800000000000000
+      internalID: -560102494052356258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 63
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcbbf674539c57670800000000000000
+      internalID: 8535949899419597773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 63
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd3e33a8b8bae690800000000000000
+      internalID: -7572036720317809208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 31
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e259b316bed06870800000000000000
+      internalID: 8674177755911901924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 31
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 513931044ca514230800000000000000
+      internalID: 3621275374317703957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 31
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 016f49a17d5381b00800000000000000
+      internalID: 799448131838473744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 31
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 065cecd9d6c90dae0800000000000000
+      internalID: -1526548279065655968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 31
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfacac66491526970800000000000000
+      internalID: 8746643124128500476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 31
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb69b47fdc822b6b0800000000000000
+      internalID: -5282114547869837636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 31
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f82345e8514a4b10800000000000000
+      internalID: 1966456037359954160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 31
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4357088435fa8a7e0800000000000000
+      internalID: -1753959282627283660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08f9f9e7a9ea7fb70800000000000000
+      internalID: 8932800364485255040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1e1c9d68293953c0800000000000000
+      internalID: -4370399117585932770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a70252bbb5ffb1ed0800000000000000
+      internalID: -2442077603471482758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb8548304be9b2260800000000000000
+      internalID: 7073922135705802939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d3d6eace35da50f0800000000000000
+      internalID: -1127354291034074160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 0
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2912d7c42f729f2a0800000000000000
+      internalID: -6703282648745434734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e91c8f3c3ac08980800000000000000
+      internalID: -8538602533381465631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 0
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f09fb4a66afb3a160800000000000000
+      internalID: 7035677764351686927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc59f674c5543d20800000000000000
+      internalID: 3257322732793715962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 0
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 242fe2a5eab3c9900800000000000000
+      internalID: 692494062731588162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 0
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e2baf0f8a6cab020800000000000000
+      internalID: 2358415783781642983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c04d6b6d851d13100800000000000000
+      internalID: 86080047386383372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 0
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f7af375fc43cb420800000000000000
+      internalID: 2647048746113673201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 0
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 123def7c73c0bcf90800000000000000
+      internalID: -6932433767688645855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9695a301a22fe4580800000000000000
+      internalID: -8840862756006897303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kid Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 0
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ddeaef7f26265500800000000000000
+      internalID: 384536803638177239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Orc Kid Sprite Sheet_0: 6853614053878161379
+      Orc Kid Sprite Sheet_1: -4623348481053123195
+      Orc Kid Sprite Sheet_10: -2101517777211676861
+      Orc Kid Sprite Sheet_11: -5308830068098748009
+      Orc Kid Sprite Sheet_12: 7352506770734380413
+      Orc Kid Sprite Sheet_13: 8572970151737634324
+      Orc Kid Sprite Sheet_14: -6137609730965847211
+      Orc Kid Sprite Sheet_15: -3470248726884374228
+      Orc Kid Sprite Sheet_16: -4078881576400957341
+      Orc Kid Sprite Sheet_17: -2380955784374375373
+      Orc Kid Sprite Sheet_18: 2057613259202531185
+      Orc Kid Sprite Sheet_19: -4083799846411732337
+      Orc Kid Sprite Sheet_2: -1200617355130054740
+      Orc Kid Sprite Sheet_20: -3667963594330163525
+      Orc Kid Sprite Sheet_21: -560102494052356258
+      Orc Kid Sprite Sheet_22: 8535949899419597773
+      Orc Kid Sprite Sheet_23: -7572036720317809208
+      Orc Kid Sprite Sheet_24: 8674177755911901924
+      Orc Kid Sprite Sheet_25: 3621275374317703957
+      Orc Kid Sprite Sheet_26: 799448131838473744
+      Orc Kid Sprite Sheet_27: -1526548279065655968
+      Orc Kid Sprite Sheet_28: 8746643124128500476
+      Orc Kid Sprite Sheet_29: -5282114547869837636
+      Orc Kid Sprite Sheet_3: -5792970712331853440
+      Orc Kid Sprite Sheet_30: 1966456037359954160
+      Orc Kid Sprite Sheet_31: -1753959282627283660
+      Orc Kid Sprite Sheet_32: 8932800364485255040
+      Orc Kid Sprite Sheet_33: -4370399117585932770
+      Orc Kid Sprite Sheet_34: -2442077603471482758
+      Orc Kid Sprite Sheet_35: 7073922135705802939
+      Orc Kid Sprite Sheet_36: -1127354291034074160
+      Orc Kid Sprite Sheet_37: -6703282648745434734
+      Orc Kid Sprite Sheet_38: -8538602533381465631
+      Orc Kid Sprite Sheet_39: 7035677764351686927
+      Orc Kid Sprite Sheet_4: -8208040366876657181
+      Orc Kid Sprite Sheet_40: 3257322732793715962
+      Orc Kid Sprite Sheet_41: 692494062731588162
+      Orc Kid Sprite Sheet_42: 2358415783781642983
+      Orc Kid Sprite Sheet_43: 86080047386383372
+      Orc Kid Sprite Sheet_44: 2647048746113673201
+      Orc Kid Sprite Sheet_45: -6932433767688645855
+      Orc Kid Sprite Sheet_46: -8840862756006897303
+      Orc Kid Sprite Sheet_47: 384536803638177239
+      Orc Kid Sprite Sheet_5: 6064285444289125630
+      Orc Kid Sprite Sheet_6: -3360157207252163114
+      Orc Kid Sprite Sheet_7: -2202744313580161077
+      Orc Kid Sprite Sheet_8: -159547005786481204
+      Orc Kid Sprite Sheet_9: 6883171484514878309
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

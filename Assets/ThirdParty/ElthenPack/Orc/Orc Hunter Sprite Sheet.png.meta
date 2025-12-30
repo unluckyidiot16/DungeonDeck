@@ -1,0 +1,1196 @@
+fileFormatVersion: 2
+guid: d3848d5ae2f834788bd913ed9cf08f83
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4062720061762080124
+    second: Orc Hunter Sprite Sheet_0
+  - first:
+      213: -1701826605933532934
+    second: Orc Hunter Sprite Sheet_1
+  - first:
+      213: 8216008258795398331
+    second: Orc Hunter Sprite Sheet_2
+  - first:
+      213: 602138448926094068
+    second: Orc Hunter Sprite Sheet_3
+  - first:
+      213: 4363532532255179675
+    second: Orc Hunter Sprite Sheet_4
+  - first:
+      213: 3332436522086149120
+    second: Orc Hunter Sprite Sheet_5
+  - first:
+      213: -6016580779226911836
+    second: Orc Hunter Sprite Sheet_6
+  - first:
+      213: -318849347744590934
+    second: Orc Hunter Sprite Sheet_7
+  - first:
+      213: 1962948982444762426
+    second: Orc Hunter Sprite Sheet_8
+  - first:
+      213: 882561032057343704
+    second: Orc Hunter Sprite Sheet_9
+  - first:
+      213: -7428856491271935857
+    second: Orc Hunter Sprite Sheet_10
+  - first:
+      213: 6049025747023292786
+    second: Orc Hunter Sprite Sheet_11
+  - first:
+      213: 2360571675095906256
+    second: Orc Hunter Sprite Sheet_12
+  - first:
+      213: 1285241607933387243
+    second: Orc Hunter Sprite Sheet_13
+  - first:
+      213: 579785160531771672
+    second: Orc Hunter Sprite Sheet_14
+  - first:
+      213: 2154046212155616560
+    second: Orc Hunter Sprite Sheet_15
+  - first:
+      213: 2582824686514472848
+    second: Orc Hunter Sprite Sheet_16
+  - first:
+      213: -8622236560869763190
+    second: Orc Hunter Sprite Sheet_17
+  - first:
+      213: -1037531230360714793
+    second: Orc Hunter Sprite Sheet_18
+  - first:
+      213: -1179122520115135599
+    second: Orc Hunter Sprite Sheet_19
+  - first:
+      213: -2200714897931994341
+    second: Orc Hunter Sprite Sheet_20
+  - first:
+      213: 1725190204895904812
+    second: Orc Hunter Sprite Sheet_21
+  - first:
+      213: -6801960693404254696
+    second: Orc Hunter Sprite Sheet_22
+  - first:
+      213: 6030358699465699448
+    second: Orc Hunter Sprite Sheet_23
+  - first:
+      213: -9154017323867243151
+    second: Orc Hunter Sprite Sheet_24
+  - first:
+      213: -1186819369378626830
+    second: Orc Hunter Sprite Sheet_25
+  - first:
+      213: -149748520191383162
+    second: Orc Hunter Sprite Sheet_26
+  - first:
+      213: 8333302815242153197
+    second: Orc Hunter Sprite Sheet_27
+  - first:
+      213: 1453983984856488799
+    second: Orc Hunter Sprite Sheet_28
+  - first:
+      213: 2473563695923991037
+    second: Orc Hunter Sprite Sheet_29
+  - first:
+      213: -1532191210929322269
+    second: Orc Hunter Sprite Sheet_30
+  - first:
+      213: 2031477479679423748
+    second: Orc Hunter Sprite Sheet_31
+  - first:
+      213: 9167414171516498752
+    second: Orc Hunter Sprite Sheet_32
+  - first:
+      213: -4714537343568727407
+    second: Orc Hunter Sprite Sheet_33
+  - first:
+      213: -4329862051628732054
+    second: Orc Hunter Sprite Sheet_34
+  - first:
+      213: -4704018129441467967
+    second: Orc Hunter Sprite Sheet_35
+  - first:
+      213: -4662368940179102839
+    second: Orc Hunter Sprite Sheet_36
+  - first:
+      213: 4270088465505922256
+    second: Orc Hunter Sprite Sheet_37
+  - first:
+      213: 7560838194219690521
+    second: Orc Hunter Sprite Sheet_38
+  - first:
+      213: 639660390563345796
+    second: Orc Hunter Sprite Sheet_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 191
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7d8e27fe5ea16830800000000000000
+      internalID: 4062720061762080124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 191
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af8e504f7b5e168e0800000000000000
+      internalID: -1701826605933532934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 191
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb4ec292bff150270800000000000000
+      internalID: 8216008258795398331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 191
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f238d1aab93b5800800000000000000
+      internalID: 602138448926094068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 159
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b934ee618b16e8c30800000000000000
+      internalID: 4363532532255179675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 162
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00cab7f5c513f3e20800000000000000
+      internalID: 3332436522086149120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 163
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4abacb398afc08ca0800000000000000
+      internalID: -6016580779226911836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 162
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa391d22538339bf0800000000000000
+      internalID: -318849347744590934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 159
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a35a5da03bbcd3b10800000000000000
+      internalID: 1962948982444762426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 161
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de4168259c7f3c00800000000000000
+      internalID: 882561032057343704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 163
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f88a166816667e890800000000000000
+      internalID: -7428856491271935857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 161
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 279e3882ed472f350800000000000000
+      internalID: 6049025747023292786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 127
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d7b0f08e6f62c020800000000000000
+      internalID: 2360571675095906256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 127
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be1eb63de6816d110800000000000000
+      internalID: 1285241607933387243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 127
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8110a8b188fcb0800800000000000000
+      internalID: 579785160531771672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 127
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03daf490e95b4ed10800000000000000
+      internalID: 2154046212155616560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 127
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0970ec43e5908d320800000000000000
+      internalID: 2582824686514472848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 127
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a87d8fbc789a75880800000000000000
+      internalID: -8622236560869763190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 95
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d1c9f2d7d2f991f0800000000000000
+      internalID: -1037531230360714793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 95
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19bbfd1b05ae2afe0800000000000000
+      internalID: -1179122520115135599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 95
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1b7ad0d57d7571e0800000000000000
+      internalID: -2200714897931994341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 95
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c24cdc4d95b11f710800000000000000
+      internalID: 1725190204895904812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 95
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e3875a9c49a91a0800000000000000
+      internalID: -6801960693404254696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 95
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870f6d5794320b350800000000000000
+      internalID: 6030358699465699448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 95
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17dfe177eb566f080800000000000000
+      internalID: -9154017323867243151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 63
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f242a35212978fe0800000000000000
+      internalID: -1186819369378626830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 63
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6892a58a38cfbedf0800000000000000
+      internalID: -149748520191383162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 63
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dec654c32c6d5a370800000000000000
+      internalID: 8333302815242153197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 63
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b5a7e0bb69d2410800000000000000
+      internalID: 1453983984856488799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 31
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df11ad0731dd35220800000000000000
+      internalID: 2473563695923991037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 31
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e6059826309cbae0800000000000000
+      internalID: -1532191210929322269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 31
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4057f792102413c10800000000000000
+      internalID: 2031477479679423748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 31
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0437f123e92393f70800000000000000
+      internalID: 9167414171516498752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 192b544c349929eb0800000000000000
+      internalID: -4714537343568727407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 0
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a61b936976d39e3c0800000000000000
+      internalID: -4329862051628732054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 0
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c1d4a92f68f7beb0800000000000000
+      internalID: -4704018129441467967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9836fc4b620fb4fb0800000000000000
+      internalID: -4662368940179102839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 0
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dc29f1e5d6624b30800000000000000
+      internalID: 4270088465505922256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 0
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91aaba2574e7de860800000000000000
+      internalID: 7560838194219690521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Hunter Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 0
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4857a647cb780e800800000000000000
+      internalID: 639660390563345796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Orc Hunter Sprite Sheet_0: 4062720061762080124
+      Orc Hunter Sprite Sheet_1: -1701826605933532934
+      Orc Hunter Sprite Sheet_10: -7428856491271935857
+      Orc Hunter Sprite Sheet_11: 6049025747023292786
+      Orc Hunter Sprite Sheet_12: 2360571675095906256
+      Orc Hunter Sprite Sheet_13: 1285241607933387243
+      Orc Hunter Sprite Sheet_14: 579785160531771672
+      Orc Hunter Sprite Sheet_15: 2154046212155616560
+      Orc Hunter Sprite Sheet_16: 2582824686514472848
+      Orc Hunter Sprite Sheet_17: -8622236560869763190
+      Orc Hunter Sprite Sheet_18: -1037531230360714793
+      Orc Hunter Sprite Sheet_19: -1179122520115135599
+      Orc Hunter Sprite Sheet_2: 8216008258795398331
+      Orc Hunter Sprite Sheet_20: -2200714897931994341
+      Orc Hunter Sprite Sheet_21: 1725190204895904812
+      Orc Hunter Sprite Sheet_22: -6801960693404254696
+      Orc Hunter Sprite Sheet_23: 6030358699465699448
+      Orc Hunter Sprite Sheet_24: -9154017323867243151
+      Orc Hunter Sprite Sheet_25: -1186819369378626830
+      Orc Hunter Sprite Sheet_26: -149748520191383162
+      Orc Hunter Sprite Sheet_27: 8333302815242153197
+      Orc Hunter Sprite Sheet_28: 1453983984856488799
+      Orc Hunter Sprite Sheet_29: 2473563695923991037
+      Orc Hunter Sprite Sheet_3: 602138448926094068
+      Orc Hunter Sprite Sheet_30: -1532191210929322269
+      Orc Hunter Sprite Sheet_31: 2031477479679423748
+      Orc Hunter Sprite Sheet_32: 9167414171516498752
+      Orc Hunter Sprite Sheet_33: -4714537343568727407
+      Orc Hunter Sprite Sheet_34: -4329862051628732054
+      Orc Hunter Sprite Sheet_35: -4704018129441467967
+      Orc Hunter Sprite Sheet_36: -4662368940179102839
+      Orc Hunter Sprite Sheet_37: 4270088465505922256
+      Orc Hunter Sprite Sheet_38: 7560838194219690521
+      Orc Hunter Sprite Sheet_39: 639660390563345796
+      Orc Hunter Sprite Sheet_4: 4363532532255179675
+      Orc Hunter Sprite Sheet_5: 3332436522086149120
+      Orc Hunter Sprite Sheet_6: -6016580779226911836
+      Orc Hunter Sprite Sheet_7: -318849347744590934
+      Orc Hunter Sprite Sheet_8: 1962948982444762426
+      Orc Hunter Sprite Sheet_9: 882561032057343704
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1820 @@
+fileFormatVersion: 2
+guid: 914df1cf5729447cab77d2beb4977ef1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6144998588520913665
+    second: Orc Shaman Sprite Sheet_0
+  - first:
+      213: 1734889721342242152
+    second: Orc Shaman Sprite Sheet_1
+  - first:
+      213: 4075855019381960602
+    second: Orc Shaman Sprite Sheet_2
+  - first:
+      213: -8477480733113897090
+    second: Orc Shaman Sprite Sheet_3
+  - first:
+      213: -974607282728545016
+    second: Orc Shaman Sprite Sheet_4
+  - first:
+      213: -5472508008159238900
+    second: Orc Shaman Sprite Sheet_5
+  - first:
+      213: 1016597066542871481
+    second: Orc Shaman Sprite Sheet_6
+  - first:
+      213: 6051081344488221479
+    second: Orc Shaman Sprite Sheet_7
+  - first:
+      213: -7725632783271547888
+    second: Orc Shaman Sprite Sheet_8
+  - first:
+      213: 7946286386221202955
+    second: Orc Shaman Sprite Sheet_9
+  - first:
+      213: -3450525610857166492
+    second: Orc Shaman Sprite Sheet_10
+  - first:
+      213: -448160355896537381
+    second: Orc Shaman Sprite Sheet_11
+  - first:
+      213: -1137901868440109114
+    second: Orc Shaman Sprite Sheet_12
+  - first:
+      213: 3167840944914398859
+    second: Orc Shaman Sprite Sheet_13
+  - first:
+      213: -3500634288388212250
+    second: Orc Shaman Sprite Sheet_14
+  - first:
+      213: -6211166885535738807
+    second: Orc Shaman Sprite Sheet_15
+  - first:
+      213: -3941229247480878850
+    second: Orc Shaman Sprite Sheet_16
+  - first:
+      213: -6618227380223290967
+    second: Orc Shaman Sprite Sheet_17
+  - first:
+      213: 6884660690567888216
+    second: Orc Shaman Sprite Sheet_18
+  - first:
+      213: -8975279017207119849
+    second: Orc Shaman Sprite Sheet_19
+  - first:
+      213: 5072930590774980854
+    second: Orc Shaman Sprite Sheet_20
+  - first:
+      213: -2338167766451100841
+    second: Orc Shaman Sprite Sheet_21
+  - first:
+      213: 8639728498956203389
+    second: Orc Shaman Sprite Sheet_22
+  - first:
+      213: 3247661172294445406
+    second: Orc Shaman Sprite Sheet_23
+  - first:
+      213: -998419107048792839
+    second: Orc Shaman Sprite Sheet_24
+  - first:
+      213: 7325199869479462941
+    second: Orc Shaman Sprite Sheet_25
+  - first:
+      213: 1364291614860404444
+    second: Orc Shaman Sprite Sheet_26
+  - first:
+      213: 5719652079749411016
+    second: Orc Shaman Sprite Sheet_27
+  - first:
+      213: -8454416782901536053
+    second: Orc Shaman Sprite Sheet_28
+  - first:
+      213: 4229672552680602018
+    second: Orc Shaman Sprite Sheet_29
+  - first:
+      213: 1765420976694884869
+    second: Orc Shaman Sprite Sheet_30
+  - first:
+      213: -847001614246342851
+    second: Orc Shaman Sprite Sheet_31
+  - first:
+      213: -3456565131335805940
+    second: Orc Shaman Sprite Sheet_32
+  - first:
+      213: -748520452363871497
+    second: Orc Shaman Sprite Sheet_33
+  - first:
+      213: 8849096797224794838
+    second: Orc Shaman Sprite Sheet_34
+  - first:
+      213: 4396577747922239642
+    second: Orc Shaman Sprite Sheet_35
+  - first:
+      213: 5151354840425854518
+    second: Orc Shaman Sprite Sheet_36
+  - first:
+      213: -6248924915245740101
+    second: Orc Shaman Sprite Sheet_37
+  - first:
+      213: 5307377635018220105
+    second: Orc Shaman Sprite Sheet_38
+  - first:
+      213: 4662805869687177524
+    second: Orc Shaman Sprite Sheet_39
+  - first:
+      213: 3237763376064825431
+    second: Orc Shaman Sprite Sheet_40
+  - first:
+      213: -3215306467188263411
+    second: Orc Shaman Sprite Sheet_41
+  - first:
+      213: 5465438408592082194
+    second: Orc Shaman Sprite Sheet_42
+  - first:
+      213: 2457191653297784957
+    second: Orc Shaman Sprite Sheet_43
+  - first:
+      213: -7734721041177582022
+    second: Orc Shaman Sprite Sheet_44
+  - first:
+      213: 2154261161379179000
+    second: Orc Shaman Sprite Sheet_45
+  - first:
+      213: 6726522115328960961
+    second: Orc Shaman Sprite Sheet_46
+  - first:
+      213: -5775960190895404719
+    second: Orc Shaman Sprite Sheet_47
+  - first:
+      213: 2970148981230592528
+    second: Orc Shaman Sprite Sheet_48
+  - first:
+      213: 8439792976171813376
+    second: Orc Shaman Sprite Sheet_49
+  - first:
+      213: -7438326202218986784
+    second: Orc Shaman Sprite Sheet_50
+  - first:
+      213: 7742300004795998081
+    second: Orc Shaman Sprite Sheet_51
+  - first:
+      213: 4367737237686895036
+    second: Orc Shaman Sprite Sheet_52
+  - first:
+      213: 6006925408618845388
+    second: Orc Shaman Sprite Sheet_53
+  - first:
+      213: -8535607312994016912
+    second: Orc Shaman Sprite Sheet_54
+  - first:
+      213: 4870365375044895759
+    second: Orc Shaman Sprite Sheet_55
+  - first:
+      213: 5891532734853844677
+    second: Orc Shaman Sprite Sheet_56
+  - first:
+      213: -9171617252212790642
+    second: Orc Shaman Sprite Sheet_57
+  - first:
+      213: -5534835104349804490
+    second: Orc Shaman Sprite Sheet_58
+  - first:
+      213: -7979585382702139196
+    second: Orc Shaman Sprite Sheet_59
+  - first:
+      213: 5850255694577899615
+    second: Orc Shaman Sprite Sheet_60
+  - first:
+      213: 8852681339186037288
+    second: Orc Shaman Sprite Sheet_61
+  - first:
+      213: -4294990269138253802
+    second: Orc Shaman Sprite Sheet_62
+  - first:
+      213: -7251839672714738433
+    second: Orc Shaman Sprite Sheet_63
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 287
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff42fe1675498baa0800000000000000
+      internalID: -6144998588520913665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 287
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86da41d7201931810800000000000000
+      internalID: 1734889721342242152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 287
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9f214a9b88509830800000000000000
+      internalID: 4075855019381960602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 287
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f27885030f95a80800000000000000
+      internalID: -8477480733113897090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 287
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 805d47d07df7972f0800000000000000
+      internalID: -974607282728545016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 287
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c05203f06febd04b0800000000000000
+      internalID: -5472508008159238900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 287
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b3fdf655adab1e00800000000000000
+      internalID: 1016597066542871481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 287
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ba63d3c62c9f350800000000000000
+      internalID: 6051081344488221479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 255
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01cacff6ae909c490800000000000000
+      internalID: -7725632783271547888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 257
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0ebc36fd51e64e60800000000000000
+      internalID: 7946286386221202955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 258
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46988741d354d10d0800000000000000
+      internalID: -3450525610857166492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 257
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdecf50e780d7c9f0800000000000000
+      internalID: -448160355896537381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 255
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cfbf5e874c5530f0800000000000000
+      internalID: -1137901868440109114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 256
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e7f823e8e66fb20800000000000000
+      internalID: 3167840944914398859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 257
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e9711079af3b6fc0800000000000000
+      internalID: -3500634288388212250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 256
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94419f230a08dc9a0800000000000000
+      internalID: -6211166885535738807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 223
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef8a58581e0fd49c0800000000000000
+      internalID: -3941229247480878850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 223
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a1d60733455724a0800000000000000
+      internalID: -6618227380223290967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 223
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85df46ceb6a3b8f50800000000000000
+      internalID: 6884660690567888216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 223
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7104a537947617380800000000000000
+      internalID: -8975279017207119849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 223
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f0fa59ae7ba66640800000000000000
+      internalID: 5072930590774980854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 191
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 753e967fdc82d8fd0800000000000000
+      internalID: -2338167766451100841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 191
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d757a186b4b76e770800000000000000
+      internalID: 8639728498956203389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 191
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e59607d11a2021d20800000000000000
+      internalID: 3247661172294445406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 191
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fcd46bac17e422f0800000000000000
+      internalID: -998419107048792839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 191
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18af01887658a560800000000000000
+      internalID: 7325199869479462941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 191
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd66cc1deffeee210800000000000000
+      internalID: 1364291614860404444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 191
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c0b9443349406f40800000000000000
+      internalID: 5719652079749411016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 159
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bca9d08bab0ebaa80800000000000000
+      internalID: -8454416782901536053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 159
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a93fb2e6c0d2ba30800000000000000
+      internalID: 4229672552680602018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 159
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50afbe25609008810800000000000000
+      internalID: 1765420976694884869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 159
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3f0aaaf488de34f0800000000000000
+      internalID: -847001614246342851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 127
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c045ab3a350d700d0800000000000000
+      internalID: -3456565131335805940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 127
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fa9cb94d98bc95f0800000000000000
+      internalID: -748520452363871497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 127
+        width: 28
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6da71ad07ae4eca70800000000000000
+      internalID: 8849096797224794838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 127
+        width: 29
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a90ca4cea28c30d30800000000000000
+      internalID: 4396577747922239642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 128
+        width: 29
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636729f2fe94d7740800000000000000
+      internalID: 5151354840425854518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 127
+        width: 29
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf80b6d5eb5749a0800000000000000
+      internalID: -6248924915245740101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 95
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9422d10e6d797a940800000000000000
+      internalID: 5307377635018220105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 63
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4318f4fdb3d95b040800000000000000
+      internalID: 4662805869687177524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 63
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7580d19d2a8deec20800000000000000
+      internalID: 3237763376064825431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 63
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d063a33bdcfe063d0800000000000000
+      internalID: -3215306467188263411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 63
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21548e5864329db40800000000000000
+      internalID: 5465438408592082194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 63
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d788ed73ac2b91220800000000000000
+      internalID: 2457191653297784957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 63
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a36eedf7130c8a490800000000000000
+      internalID: -7734721041177582022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 31
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f92d6dcc1975ed10800000000000000
+      internalID: 2154261161379179000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 31
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c9edf9a938695d50800000000000000
+      internalID: 6726522115328960961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 31
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 159c1e80fcaa7dfa0800000000000000
+      internalID: -5775960190895404719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 31
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 012ec3c03c6183920800000000000000
+      internalID: 2970148981230592528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00ace82fefa202570800000000000000
+      internalID: 8439792976171813376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 13
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e2c141aab1c5c890800000000000000
+      internalID: -7438326202218986784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 15
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18fde5a75dc227b60800000000000000
+      internalID: 7742300004795998081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 10
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1c29c50e15d9c30800000000000000
+      internalID: 4367737237686895036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 17
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc49ef445d2ec5350800000000000000
+      internalID: 6006925408618845388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 19
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 071e3c65f5e6b8980800000000000000
+      internalID: -8535607312994016912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 12
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f04c9e91183079340800000000000000
+      internalID: 4870365375044895759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ce8c83cecde2c150800000000000000
+      internalID: 5891532734853844677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a2302d3bed7b080800000000000000
+      internalID: -9171617252212790642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6382ed22cc05033b0800000000000000
+      internalID: -5534835104349804490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 4
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c8b3214f51d24190800000000000000
+      internalID: -7979585382702139196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f589588ee88403150800000000000000
+      internalID: 5850255694577899615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 822c9e346ca0bda70800000000000000
+      internalID: 8852681339186037288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 1
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61841462b112564c0800000000000000
+      internalID: -4294990269138253802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Shaman Sprite Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff4c0c35d3a4c5b90800000000000000
+      internalID: -7251839672714738433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Orc Shaman Sprite Sheet_0: -6144998588520913665
+      Orc Shaman Sprite Sheet_1: 1734889721342242152
+      Orc Shaman Sprite Sheet_10: -3450525610857166492
+      Orc Shaman Sprite Sheet_11: -448160355896537381
+      Orc Shaman Sprite Sheet_12: -1137901868440109114
+      Orc Shaman Sprite Sheet_13: 3167840944914398859
+      Orc Shaman Sprite Sheet_14: -3500634288388212250
+      Orc Shaman Sprite Sheet_15: -6211166885535738807
+      Orc Shaman Sprite Sheet_16: -3941229247480878850
+      Orc Shaman Sprite Sheet_17: -6618227380223290967
+      Orc Shaman Sprite Sheet_18: 6884660690567888216
+      Orc Shaman Sprite Sheet_19: -8975279017207119849
+      Orc Shaman Sprite Sheet_2: 4075855019381960602
+      Orc Shaman Sprite Sheet_20: 5072930590774980854
+      Orc Shaman Sprite Sheet_21: -2338167766451100841
+      Orc Shaman Sprite Sheet_22: 8639728498956203389
+      Orc Shaman Sprite Sheet_23: 3247661172294445406
+      Orc Shaman Sprite Sheet_24: -998419107048792839
+      Orc Shaman Sprite Sheet_25: 7325199869479462941
+      Orc Shaman Sprite Sheet_26: 1364291614860404444
+      Orc Shaman Sprite Sheet_27: 5719652079749411016
+      Orc Shaman Sprite Sheet_28: -8454416782901536053
+      Orc Shaman Sprite Sheet_29: 4229672552680602018
+      Orc Shaman Sprite Sheet_3: -8477480733113897090
+      Orc Shaman Sprite Sheet_30: 1765420976694884869
+      Orc Shaman Sprite Sheet_31: -847001614246342851
+      Orc Shaman Sprite Sheet_32: -3456565131335805940
+      Orc Shaman Sprite Sheet_33: -748520452363871497
+      Orc Shaman Sprite Sheet_34: 8849096797224794838
+      Orc Shaman Sprite Sheet_35: 4396577747922239642
+      Orc Shaman Sprite Sheet_36: 5151354840425854518
+      Orc Shaman Sprite Sheet_37: -6248924915245740101
+      Orc Shaman Sprite Sheet_38: 5307377635018220105
+      Orc Shaman Sprite Sheet_39: 4662805869687177524
+      Orc Shaman Sprite Sheet_4: -974607282728545016
+      Orc Shaman Sprite Sheet_40: 3237763376064825431
+      Orc Shaman Sprite Sheet_41: -3215306467188263411
+      Orc Shaman Sprite Sheet_42: 5465438408592082194
+      Orc Shaman Sprite Sheet_43: 2457191653297784957
+      Orc Shaman Sprite Sheet_44: -7734721041177582022
+      Orc Shaman Sprite Sheet_45: 2154261161379179000
+      Orc Shaman Sprite Sheet_46: 6726522115328960961
+      Orc Shaman Sprite Sheet_47: -5775960190895404719
+      Orc Shaman Sprite Sheet_48: 2970148981230592528
+      Orc Shaman Sprite Sheet_49: 8439792976171813376
+      Orc Shaman Sprite Sheet_5: -5472508008159238900
+      Orc Shaman Sprite Sheet_50: -7438326202218986784
+      Orc Shaman Sprite Sheet_51: 7742300004795998081
+      Orc Shaman Sprite Sheet_52: 4367737237686895036
+      Orc Shaman Sprite Sheet_53: 6006925408618845388
+      Orc Shaman Sprite Sheet_54: -8535607312994016912
+      Orc Shaman Sprite Sheet_55: 4870365375044895759
+      Orc Shaman Sprite Sheet_56: 5891532734853844677
+      Orc Shaman Sprite Sheet_57: -9171617252212790642
+      Orc Shaman Sprite Sheet_58: -5534835104349804490
+      Orc Shaman Sprite Sheet_59: -7979585382702139196
+      Orc Shaman Sprite Sheet_6: 1016597066542871481
+      Orc Shaman Sprite Sheet_60: 5850255694577899615
+      Orc Shaman Sprite Sheet_61: 8852681339186037288
+      Orc Shaman Sprite Sheet_62: -4294990269138253802
+      Orc Shaman Sprite Sheet_63: -7251839672714738433
+      Orc Shaman Sprite Sheet_7: 6051081344488221479
+      Orc Shaman Sprite Sheet_8: -7725632783271547888
+      Orc Shaman Sprite Sheet_9: 7946286386221202955
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

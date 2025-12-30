@@ -1,3 +1,4 @@
+// Assets/_Project/Scripts/UI/Battle/BattleHandUI.cs
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -21,12 +22,21 @@ namespace DungeonDeck.UI.Battle
         public TMP_Text enemyHpText;
         public Button endTurnButton;
 
+        [Header("Fan Layout")]
+        [Tooltip("FanHandLayout 컴포넌트. 비워두면 handRoot에서 자동 탐색/생성")]
+        public FanHandLayout fanLayout;
+
         [Header("FX Anchors")]
         public RectTransform flyRoot;          // 카드가 날아다닐 레이어(캔버스 안). 비우면 자동 탐색
         public RectTransform discardAnchor;    // Discard 더미 위치(캔버스 안)
+        public RectTransform drawAnchor;       // Draw 더미 위치(캔버스 안). 드로우 애니메이션 시작점
         public float discardFlyDuration = 0.28f;
+        
+        [Header("Draw Animation")]
+        public float drawFlyDuration = 0.25f;
+        public float drawStaggerDelay = 0.08f;  // 카드 간 딜레이
 
-        public int maxHandSlots = 5;
+        public int maxHandSlots = 10;
 
         private readonly List<BattleCardButtonView> _slots = new();
 
@@ -35,6 +45,7 @@ namespace DungeonDeck.UI.Battle
         private bool _busy = false;
         private Canvas _canvas;
         private Camera _uiCam;
+        private int _lastHandCount = 0;
 
         private void Awake()
         {
@@ -51,12 +62,41 @@ namespace DungeonDeck.UI.Battle
             if (flyRoot == null && _canvas != null)
                 flyRoot = _canvas.transform as RectTransform;
 
+            // FanHandLayout 설정
+            SetupFanLayout();
+
             BuildSlots();
 
             if (endTurnButton != null)
             {
                 endTurnButton.onClick.RemoveAllListeners();
                 endTurnButton.onClick.AddListener(OnClickEndTurn);
+            }
+        }
+
+        private void SetupFanLayout()
+        {
+            // FanHandLayout이 없으면 handRoot에서 찾거나 생성
+            if (fanLayout == null && handRoot != null)
+            {
+                fanLayout = handRoot.GetComponent<FanHandLayout>();
+                if (fanLayout == null)
+                {
+                    fanLayout = handRoot.gameObject.AddComponent<FanHandLayout>();
+                }
+            }
+
+            // 기존 GridLayoutGroup이 있으면 비활성화
+            var gridLayout = handRoot?.GetComponent<GridLayoutGroup>();
+            if (gridLayout != null)
+            {
+                gridLayout.enabled = false;
+            }
+
+            var horizLayout = handRoot?.GetComponent<HorizontalLayoutGroup>();
+            if (horizLayout != null)
+            {
+                horizLayout.enabled = false;
             }
         }
 
@@ -70,7 +110,53 @@ namespace DungeonDeck.UI.Battle
             if (battle != null) battle.StateChanged -= Refresh;
         }
 
-        private void Start() => Refresh();
+        private void Start()
+        {
+            StartCoroutine(InitialDrawCo());
+        }
+        
+        private IEnumerator InitialDrawCo()
+        {
+            yield return null;
+            
+            if (battle == null) yield break;
+            
+            int handCount = battle.HandCount;
+            _lastHandCount = handCount;
+            
+            // 카드 슬롯 초기 상태 설정 (숨김)
+            for (int i = 0; i < _slots.Count; i++)
+            {
+                var slot = _slots[i];
+                var card = battle.GetHandCard(i);
+                
+                if (card != null)
+                {
+                    slot.Bind(card, interactable: false, onClick: null, showCost: true);
+                    SetupHoverHandler(slot, i);
+                    
+                    var cg = slot.GetComponent<CanvasGroup>();
+                    if (cg == null) cg = slot.gameObject.AddComponent<CanvasGroup>();
+                    cg.alpha = 0f;
+                    
+                    var rt = slot.transform as RectTransform;
+                    if (rt != null) rt.localScale = Vector3.one * 0.5f;
+                }
+                else
+                {
+                    slot.gameObject.SetActive(false);
+                }
+            }
+            
+            // 드로우 애니메이션 재생
+            yield return PlayDrawAnimationCo(0, handCount);
+            
+            // 레이아웃 갱신
+            UpdateFanLayout(true);
+            
+            // 최종 Refresh
+            Refresh();
+        }
 
         private void BuildSlots()
         {
@@ -80,8 +166,45 @@ namespace DungeonDeck.UI.Battle
             {
                 var view = Instantiate(cardPrefab, handRoot);
                 view.name = $"CardSlot_{i}";
+                view.gameObject.SetActive(false);
+                
+                // CardHoverLiftFx가 있으면 비활성화 (FanHandLayout이 호버 처리)
+                var hoverLiftFx = view.GetComponent<CardHoverLiftFx>();
+                if (hoverLiftFx != null)
+                {
+                    hoverLiftFx.enabled = false;
+                }
+                
                 _slots.Add(view);
             }
+        }
+
+        private void SetupHoverHandler(BattleCardButtonView slot, int index)
+        {
+            var handler = slot.GetComponent<FanCardHoverHandler>();
+            if (handler == null)
+            {
+                handler = slot.gameObject.AddComponent<FanCardHoverHandler>();
+            }
+            handler.layout = fanLayout;
+            handler.cardIndex = index;
+        }
+
+        private void UpdateFanLayout(bool animate)
+        {
+            if (fanLayout == null) return;
+
+            // 활성화된 카드 슬롯들의 RectTransform 수집
+            List<RectTransform> activeCards = new();
+            for (int i = 0; i < _slots.Count; i++)
+            {
+                if (_slots[i].gameObject.activeSelf)
+                {
+                    activeCards.Add(_slots[i].transform as RectTransform);
+                }
+            }
+
+            fanLayout.SetCards(activeCards, animate);
         }
 
         private void Refresh()
@@ -95,6 +218,21 @@ namespace DungeonDeck.UI.Battle
             bool allowInput = !_busy && battle.IsPlayerTurn && !battle.IsResolving;
             if (endTurnButton != null) endTurnButton.interactable = allowInput;
 
+            int currentHandCount = battle.HandCount;
+            int newCards = currentHandCount - _lastHandCount;
+            
+            // 새로 드로우된 카드가 있으면 애니메이션 재생
+            if (newCards > 0 && !_busy)
+            {
+                StartCoroutine(DrawNewCardsCo(_lastHandCount, newCards, allowInput));
+                _lastHandCount = currentHandCount;
+                return;
+            }
+            
+            _lastHandCount = currentHandCount;
+
+            // 기존 카드 업데이트
+            int activeCount = 0;
             for (int i = 0; i < _slots.Count; i++)
             {
                 int idx = i;
@@ -114,7 +252,126 @@ namespace DungeonDeck.UI.Battle
                     onClick: () => OnClickCard(idx),
                     showCost: true
                 );
+                
+                SetupHoverHandler(_slots[idx], activeCount);
+                activeCount++;
             }
+
+            // 레이아웃 갱신
+            UpdateFanLayout(true);
+        }
+        
+        private IEnumerator DrawNewCardsCo(int startIndex, int count, bool allowInput)
+        {
+            // 기존 카드들 먼저 업데이트
+            for (int i = 0; i < startIndex && i < _slots.Count; i++)
+            {
+                int idx = i;
+                var card = battle.GetHandCard(idx);
+                if (card != null)
+                {
+                    bool canPlay = allowInput && battle.Energy >= card.cost;
+                    _slots[idx].Bind(card, interactable: canPlay, onClick: () => OnClickCard(idx), showCost: true);
+                }
+            }
+            
+            // 새 카드들 준비 (숨김 상태로)
+            for (int i = startIndex; i < startIndex + count && i < _slots.Count; i++)
+            {
+                int idx = i;
+                var card = battle.GetHandCard(idx);
+                if (card != null)
+                {
+                    _slots[idx].Bind(card, interactable: false, onClick: null, showCost: true);
+                    SetupHoverHandler(_slots[idx], idx);
+                    
+                    var cg = _slots[idx].GetComponent<CanvasGroup>();
+                    if (cg == null) cg = _slots[idx].gameObject.AddComponent<CanvasGroup>();
+                    cg.alpha = 0f;
+                    
+                    var rt = _slots[idx].transform as RectTransform;
+                    if (rt != null) rt.localScale = Vector3.one * 0.5f;
+                }
+            }
+            
+            // 레이아웃 갱신 (애니메이션 없이 - 드로우 애니메이션이 별도로 처리)
+            UpdateFanLayout(false);
+            
+            // 드로우 애니메이션
+            yield return PlayDrawAnimationCo(startIndex, count);
+            
+            // 최종 상태 적용
+            for (int i = startIndex; i < startIndex + count && i < _slots.Count; i++)
+            {
+                int idx = i;
+                var card = battle.GetHandCard(idx);
+                if (card != null)
+                {
+                    bool canPlay = allowInput && battle.Energy >= card.cost;
+                    _slots[idx].Bind(card, interactable: canPlay, onClick: () => OnClickCard(idx), showCost: true);
+                }
+            }
+            
+            // 레이아웃 다시 갱신 (최종 위치)
+            UpdateFanLayout(true);
+        }
+        
+        private IEnumerator PlayDrawAnimationCo(int startIndex, int count)
+        {
+            if (fanLayout == null) yield break;
+
+            for (int i = startIndex; i < startIndex + count && i < _slots.Count; i++)
+            {
+                var slot = _slots[i];
+                if (!slot.gameObject.activeSelf) continue;
+                
+                var rt = slot.transform as RectTransform;
+                var cg = slot.GetComponent<CanvasGroup>();
+                if (rt == null) continue;
+                if (cg == null) cg = slot.gameObject.AddComponent<CanvasGroup>();
+                
+                // FanLayout에서 목표 위치 가져오기
+                int activeIndex = 0;
+                for (int j = 0; j < i; j++)
+                {
+                    if (_slots[j].gameObject.activeSelf) activeIndex++;
+                }
+                
+                Vector3 targetPos = fanLayout.GetBasePosition(activeIndex);
+                Quaternion targetRot = fanLayout.GetBaseRotation(activeIndex);
+
+                // 시작 위치 설정
+                Vector3 startPos = targetPos;
+                if (drawAnchor != null)
+                {
+                    startPos = rt.parent.InverseTransformPoint(drawAnchor.position);
+                }
+                else
+                {
+                    startPos = targetPos + new Vector3(0, -150f, 0);
+                }
+                
+                rt.anchoredPosition = startPos;
+                rt.localRotation = Quaternion.identity;
+                rt.localScale = Vector3.one * 0.5f;
+                cg.alpha = 0f;
+                
+                // 애니메이션
+                rt.DOKill(true);
+                cg.DOKill(true);
+                
+                Sequence seq = DOTween.Sequence();
+                seq.Join(rt.DOAnchorPos(targetPos, drawFlyDuration).SetEase(Ease.OutBack));
+                seq.Join(rt.DOLocalRotateQuaternion(targetRot, drawFlyDuration).SetEase(Ease.OutQuad));
+                seq.Join(rt.DOScale(Vector3.one, drawFlyDuration).SetEase(Ease.OutBack));
+                seq.Join(cg.DOFade(1f, drawFlyDuration * 0.7f).SetEase(Ease.OutQuad));
+                
+                // 스태거 딜레이
+                yield return new WaitForSeconds(drawStaggerDelay);
+            }
+            
+            // 마지막 애니메이션 완료 대기
+            yield return new WaitForSeconds(Mathf.Max(0, drawFlyDuration - drawStaggerDelay));
         }
 
         private void OnClickEndTurn()
@@ -123,13 +380,20 @@ namespace DungeonDeck.UI.Battle
             if (battle == null) return;
             if (!battle.IsPlayerTurn || battle.IsResolving) return;
 
+            // 호버 해제
+            fanLayout?.ClearHover();
+
             battle.EndTurn();
-            Refresh(); // 즉시 UI 잠금 반영
+            Refresh();
         }
 
         private void OnClickCard(int idx)
         {
             if (_busy) return;
+            
+            // 호버 해제
+            fanLayout?.ClearHover();
+            
             StartCoroutine(PlayCardFlowCo(idx));
         }
 
@@ -141,102 +405,108 @@ namespace DungeonDeck.UI.Battle
             if (card == null) yield break;
 
             _busy = true;
-            Refresh(); // ✅ busy true 상태 UI 반영
+            
+            var slot = _slots[idx];
+            var srcRt = slot.transform as RectTransform;
+            
+            // ✅ 1) 날아갈 복제본 먼저 생성 (원본 위치/회전/스케일 캡처)
+            BattleCardButtonView flyCard = null;
+            Vector3 srcPos = Vector3.zero;
+            Quaternion srcRot = Quaternion.identity;
+            Vector3 srcScale = Vector3.one;
+            
+            if (discardAnchor != null && flyRoot != null && srcRt != null)
+            {
+                srcPos = srcRt.position;
+                srcRot = srcRt.localRotation;
+                srcScale = srcRt.localScale;
+                
+                flyCard = Instantiate(cardPrefab, flyRoot);
+                flyCard.name = "FlyCardFx";
+                flyCard.Bind(card, interactable: false, onClick: null, showCost: true);
+                
+                var hoverLiftFx = flyCard.GetComponent<CardHoverLiftFx>();
+                if (hoverLiftFx != null) hoverLiftFx.enabled = false;
+                
+                var flyRt = flyCard.transform as RectTransform;
+                if (flyRt != null)
+                {
+                    flyRt.position = srcPos;
+                    flyRt.localRotation = srcRot;
+                    flyRt.localScale = srcScale;
+                }
+                
+                var cg = flyCard.GetComponent<CanvasGroup>();
+                if (cg == null) cg = flyCard.gameObject.AddComponent<CanvasGroup>();
+                cg.alpha = 1f;
+                cg.blocksRaycasts = false;
+                
+                flyCard.transform.SetAsLastSibling();
+            }
+            
+            // ✅ 2) 원본 슬롯 즉시 숨김 (잔상 방지)
+            slot.gameObject.SetActive(false);
+            
+            // ✅ 3) 레이아웃 즉시 갱신 (남은 카드들 재배치)
+            UpdateFanLayout(true);
 
             try
             {
-                var slot = _slots[idx];
-
-                // 1) 클릭 피드백(살짝 흔들림)
-                yield return SlotPunchCo(slot.transform);
-
-                // 2) 실제 카드 처리 시작 (로직 + 전투 연출은 BattleController가 담당)
-                //    ❗ BattleController 내부에서 animDirector를 이미 호출하므로
-                //    여기서 또 호출하면 공격 트리거가 2번 나갈 수 있음.
+                // ✅ 4) 실제 카드 처리 시작
                 bool started = battle.TryPlayCardAt(idx);
-                if (!started) yield break;
+                if (!started)
+                {
+                    // 실패 시 복제본 제거
+                    if (flyCard != null) Destroy(flyCard.gameObject);
+                    yield break;
+                }
 
-                // 3) 카드가 discard로 날아가는 연출 (실제 적용 전에 “복제 카드”만 날림)
-                if (discardAnchor != null && flyRoot != null)
-                    yield return FlyCardToDiscardCo(card, slot);
+                // ✅ 5) 복제본 날아가는 애니메이션
+                if (flyCard != null)
+                {
+                    yield return FlyCardAnimationCo(flyCard, srcPos, srcScale);
+                    Destroy(flyCard.gameObject);
+                }
 
-                // 실제 적용/해결/승리 체크 등은 BattleController 코루틴에서 처리됨
+                // 카드 사용 완료 후 손패 수 동기화
+                _lastHandCount = battle.HandCount;
             }
             finally
             {
                 _busy = false;
-                Refresh(); // ✅ 핵심: busy 해제 후 다시 Refresh해서 interactable 복구
+                Refresh();
             }
         }
-
-        private IEnumerator SlotPunchCo(Transform t)
+        
+        /// <summary>
+        /// 복제 카드 날아가는 애니메이션
+        /// </summary>
+        private IEnumerator FlyCardAnimationCo(BattleCardButtonView flyCard, Vector3 startPos, Vector3 startScale)
         {
-            if (t == null) yield break;
-
-            t.DOKill(true);
-
-            // 더 “화려하게”: 스케일 + 회전 펀치
-            Sequence s = DOTween.Sequence();
-            s.Join(t.DOPunchScale(Vector3.one * 0.10f, 0.12f, 10, 1f));
-            s.Join(t.DOPunchRotation(new Vector3(0, 0, 6f), 0.12f, 10, 1f));
-            yield return s.WaitForCompletion();
-        }
-
-        private IEnumerator FlyCardToDiscardCo(CardDefinition card, BattleCardButtonView source)
-        {
-            if (cardPrefab == null || flyRoot == null || discardAnchor == null || source == null) yield break;
-
-            var fly = Instantiate(cardPrefab, flyRoot);
-            fly.name = "FlyCardFx";
-            fly.Bind(card, interactable: false, onClick: null, showCost: true);
-
-            var rt = fly.transform as RectTransform;
-            var srcRt = source.transform as RectTransform;
-
-            if (rt == null || srcRt == null)
-            {
-                Destroy(fly.gameObject);
-                yield break;
-            }
-
-            var cg = fly.GetComponent<CanvasGroup>();
-            if (cg == null) cg = fly.gameObject.AddComponent<CanvasGroup>();
-            cg.alpha = 1f;
-            cg.blocksRaycasts = false;
-
-            rt.position = srcRt.position;
-            rt.localScale = srcRt.localScale;
-            fly.transform.SetAsLastSibling();
-
+            if (flyCard == null || discardAnchor == null) yield break;
+            
+            var rt = flyCard.transform as RectTransform;
+            var cg = flyCard.GetComponent<CanvasGroup>();
+            if (rt == null) yield break;
+            if (cg == null) cg = flyCard.gameObject.AddComponent<CanvasGroup>();
+            
             rt.DOKill(true);
             cg.DOKill(true);
 
-            Vector3 start = rt.position;
             Vector3 end = discardAnchor.position;
-
-            // 곡선 중간점(위로 뜨고, 약간 옆으로 휘게)
             float side = Random.Range(-60f, 60f);
-            Vector3 mid = (start + end) * 0.5f + new Vector3(side, 120f, 0f);
+            Vector3 mid = (startPos + end) * 0.5f + new Vector3(side, 120f, 0f);
 
             float dur = discardFlyDuration;
 
             Sequence s = DOTween.Sequence();
-
-            // ✅ 곡선 이동
-            s.Join(rt.DOPath(new[] { start, mid, end }, dur, PathType.CatmullRom, PathMode.Ignore)
+            s.Join(rt.DOPath(new[] { startPos, mid, end }, dur, PathType.CatmullRom, PathMode.Ignore)
                 .SetEase(Ease.InQuad));
-
-            // ✅ 페이드 아웃
             s.Join(cg.DOFade(0f, dur).SetEase(Ease.InQuad));
-
-            // ✅ 회전 + 스케일 다운
             s.Join(rt.DORotate(new Vector3(0, 0, Random.Range(-25f, -8f)), dur).SetEase(Ease.OutQuad));
-            s.Join(rt.DOScale(srcRt.localScale * 0.85f, dur).SetEase(Ease.InQuad));
+            s.Join(rt.DOScale(startScale * 0.85f, dur).SetEase(Ease.InQuad));
 
             yield return s.WaitForCompletion();
-
-            Destroy(fly.gameObject);
         }
-
     }
 }

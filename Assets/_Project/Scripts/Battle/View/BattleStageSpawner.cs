@@ -1,202 +1,294 @@
+// Assets/_Project/Scripts/Battle/View/BattleStageSpawner.cs
+// v2: 슬롯 인덱스 보존 바인딩 수정
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DungeonDeck.Run;
+using DungeonDeck.Config.Encounters;
 using DungeonDeck.Config.Map;
+using DungeonDeck.Config.Enemies;
 
 namespace DungeonDeck.Battle.View
 {
+    /// <summary>
+    /// 씬에 미리 배치된 플레이어/적 오브젝트를 Encounter 데이터에 따라 초기화합니다.
+    /// </summary>
     public class BattleStageSpawner : MonoBehaviour
     {
-        [Header("Anchors")]
-        public Transform playerAnchor;
-        public Transform enemyAnchor;
+        [Header("Player")]
+        public BattleActorView playerView;
 
-        [Header("Prefabs")]
-        public BattleActorView playerPrefab;
-        public BattleActorView enemyPrefab;
-        public BattleActorView bossPrefab;
-
-        [Header("Optional")]
+        [Header("Enemies (씬에 미리 배치)")]
+        [Tooltip("슬롯 0~2에 해당하는 적 오브젝트. 인스펙터에서 직접 할당.")]
+        public BattleEnemy[] enemies = new BattleEnemy[3];
+        
+        [Header("Encounter Source")]
+        [Tooltip("일반 전투에서 사용할 Encounter Table (RunSession.PendingBattleType이 Boss가 아니면 사용)")]
+        public BattleEncounterTable encounterTable;
+            
+        [Tooltip("보스 전투에서 사용할 Encounter Table (없으면 encounterTable을 사용)")]
+        public BattleEncounterTable bossEncounterTable;
+            
+        [Tooltip("(디버그) 지정 시, 테이블/런 상태 무시하고 항상 이 Encounter를 사용")]
+        public BattleEncounterDefinition debugEncounterOverride;
+        
+        [Header("Refs")]
+        public BattleController battle;
         public BattleAnimDirector animDirector;
         public HitPopupSpawner hitPopups;
-        
-        [Header("Enemy Spawn")]
-        public float enemySpacing = 2.2f;
-        public DungeonDeck.Battle.BattleController battle;
 
-        [Header("Auto Bind Popup Target")]
-        [Tooltip("Find() path under actor root to locate popup target. Ex) Canvas/Target")]
-        public string popupTargetPath = "Canvas/Target";
-
-        [Tooltip("If a RectTransform target is found, spawn popup under that target (local UI). Otherwise use world->screen conversion.")]
-        public bool preferLocalCanvasTarget = true;
-
-        public BattleActorView Player { get; private set; }
-        public BattleActorView Enemy { get; private set; } // legacy: first enemy
-
-        private readonly List<BattleActorView> _enemies = new List<BattleActorView>(3);
-
-        private void Awake()
+        private IEnumerator Start()
         {
-            if (playerAnchor == null)
-            {
-                var t = transform.Find("PlayerAnchor");
-                if (t) playerAnchor = t;
-            }
-            if (enemyAnchor == null)
-            {
-                var t = transform.Find("EnemyAnchor");
-                if (t) enemyAnchor = t;
-            }
-
+            CacheRefs();
+            
+            // ✅ PendingEncounter 우선 → (없을 때만) 테이블 롤백
+            var encounter = ResolveEncounter();
+            
+            Debug.Log($"[BattleStageSpawner] Resolved encounter: {(encounter != null ? encounter.id : "NULL")}");
+            
+            InitializeEnemiesFromEncounter(encounter);
+            
+            // 한 프레임 대기 후 바인딩 (다른 컴포넌트들 초기화 대기)
+            yield return null;
+            
+            BindToSystems();
+        }
+        
+        private void CacheRefs()
+        {
+            if (battle == null) battle = FindObjectOfType<BattleController>(true);
             if (animDirector == null) animDirector = FindObjectOfType<BattleAnimDirector>(true);
             if (hitPopups == null) hitPopups = FindObjectOfType<HitPopupSpawner>(true);
         }
 
-        private IEnumerator Start()
+        /// <summary>
+        /// ✅ 이번 전투 Encounter 결정 우선순위
+        /// 1) debugEncounterOverride
+        /// 2) RunSession.I.PendingEncounter (맵 노드에서 미리 결정된 Encounter)
+        /// 3) (fallback) 이 씬 단독 실행 시 encounterTable/bossEncounterTable 롤
+        /// </summary>
+        private BattleEncounterDefinition ResolveEncounter()
         {
-            // BattleController.Start()에서 EnemyCount 세팅 끝난 다음 스폰하기 위해 1프레임 대기
-            yield return null;
-            Spawn();
-            AutoBindViewsAndPopups();
-        }
-
-        private void Spawn()
-        {
-            if (playerAnchor == null || enemyAnchor == null)
-            {
-                Debug.LogError("[BattleStageSpawner] Missing anchors. Create PlayerAnchor/EnemyAnchor.");
-                return;
-            }
-
-            // clear (중복 스폰 방지)
-            for (int i = playerAnchor.childCount - 1; i >= 0; i--) Destroy(playerAnchor.GetChild(i).gameObject);
-            for (int i = enemyAnchor.childCount - 1; i >= 0; i--) Destroy(enemyAnchor.GetChild(i).gameObject);
+            if (debugEncounterOverride != null) 
+                return debugEncounterOverride;
             
-            if (playerPrefab != null)
-            { 
-                Player = Instantiate(playerPrefab, playerAnchor);
-                Player.transform.localPosition = Vector3.zero;
-                Player.transform.localRotation = Quaternion.identity;
-            }
-
             var run = RunSession.I;
-            bool isBoss = (run != null && run.PendingBattleType == MapNodeType.Boss);
-
-            var enemyToSpawn = isBoss ? bossPrefab : enemyPrefab;
-            if (battle == null) battle = FindObjectOfType<DungeonDeck.Battle.BattleController>(true);
-            
-            int count = 1;
-            if (!isBoss && battle != null && battle.EnemyCount > 0)
-                count = Mathf.Clamp(battle.EnemyCount, 1, 3);
-            
-            _enemies.Clear();
-            if (enemyToSpawn != null)
-            {
-                float center = (count - 1) * 0.5f;
-                for (int i = 0; i < count; i++)
+            if (run != null)
+            { 
+                // ✅ 핵심: 맵에서 세팅해둔 PendingEncounter를 그대로 사용
+                var pending = run.PendingEncounter;
+                if (pending != null)
                 {
-                    var e = Instantiate(enemyToSpawn, enemyAnchor);
-                    e.transform.localRotation = Quaternion.identity;
-                    e.transform.localPosition = new Vector3((i - center) * enemySpacing, 0f, 0f);
-                    _enemies.Add(e);
+                    Debug.Log($"[BattleStageSpawner] Using PendingEncounter: {pending.id}");
+                    return pending;
                 }
             }
             
-            Enemy = (_enemies.Count > 0) ? _enemies[0] : null;
-        }
-
-        private void AutoBindViewsAndPopups()
-        {
-            // stable order: left -> right
-            _enemies.Sort((a, b) => a.transform.position.x.CompareTo(b.transform.position.x));
-
-            // legacy
-            if (Enemy == null && _enemies.Count > 0) Enemy = _enemies[0];
-
-            // -------- anim director bind --------
-            if (animDirector != null)
+            // ── fallback: Battle 씬 단독 실행(맵 진입 없이) 시에만 테이블로 굴린다
+            var type = run != null ? run.PendingBattleType : MapNodeType.Battle;
+            
+            BattleEncounterTable table = null;
+            if (type == MapNodeType.Boss)
+                table = bossEncounterTable != null ? bossEncounterTable : encounterTable;
+            else
+                table = encounterTable;
+            
+            if (table == null)
             {
-                if (_enemies.Count > 0) animDirector.Bind(Player, _enemies);
-                else animDirector.Bind(Player, (IList<BattleActorView>)null);
-
-                // ✅ 여기서 Apply하면 타이밍 100% 안전 (playerAnimator 확보된 뒤)
-                var run = RunSession.I;
-                string oathId = run?.State?.oathId;
-                if (string.IsNullOrEmpty(oathId)) oathId = run?.Oath?.id;
-
-                animDirector.ApplyOathAnimatorOverride(oathId);
+                Debug.LogWarning("[BattleStageSpawner] No encounter table assigned!");
+                return null;
             }
             
-            // -------- hit popup bind --------
+            int seed = ComputeEncounterSeed(run, type);
+            return table.Roll(seed);
+        }
+        
+        private int ComputeEncounterSeed(RunSession run, MapNodeType type)
+        {
+            unchecked
+            {
+                int seed = 17;
+                seed = seed * 31 + (run != null ? run.MapSeed : 0);
+                seed = seed * 31 + (run != null && run.State != null ? run.State.nodeIndex : 0);
+                seed = seed * 31 + (int)type;
+                seed = seed * 31 + (run != null && run.State != null ? run.State.rewardRollCount : 0);
+                return seed;
+            }
+        }
+                
+        /// <summary>
+        /// Encounter 데이터를 읽어 각 슬롯의 적을 초기화/활성화합니다.
+        /// </summary>
+        private void InitializeEnemiesFromEncounter(BattleEncounterDefinition encounter)
+        {
+            for (int slot = 0; slot < 3; slot++)
+            {
+                var enemy = enemies[slot];
+                if (enemy == null) continue;
+                
+                // 1) Encounter 우선, 2) 없으면 씬에 박아둔 EnemyDefinition(폴백)
+                var enemyDef = encounter != null ? encounter.GetEnemyAt(slot) : enemy.Definition;
+                
+                if (enemyDef != null)
+                {
+                    Debug.Log($"[BattleStageSpawner] Slot {slot}: Initializing with {enemyDef.id}");
+                    
+                    enemy.Init(enemyDef, slot);
+                    ApplyVisualOverrides(enemy, encounter, slot);
+                    
+                    // 이 슬롯은 사용 → GO + 주요 컴포넌트가 꺼져있어도 강제로 켠다
+                    enemy.gameObject.SetActive(true);
+                    EnsureCoreComponentsEnabled(enemy.gameObject);
+                }
+                else
+                {
+                    Debug.Log($"[BattleStageSpawner] Slot {slot}: No enemy, disabling");
+                    // 이 슬롯에 적 없음 → 비활성화
+                    enemy.gameObject.SetActive(false);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// Encounter/EnemyDefinition에 설정된 AnimatorOverrideController를 적용합니다.
+        /// 우선순위: Encounter.slotAnimationOverrides[slot] > EnemyDefinition.animationOverride > (기존 AnimatorController 유지)
+        /// </summary>
+        private void ApplyVisualOverrides(BattleEnemy enemy, BattleEncounterDefinition encounter, int slot)
+        {
+            if (enemy == null) return;
+            
+            var animator = enemy.GetComponentInChildren<Animator>(true);
+            if (animator == null) return;
+            
+            AnimatorOverrideController ctrl = null;
+            if (encounter != null)
+                ctrl = encounter.GetAnimationOverrideAt(slot);
+            
+            if (ctrl == null && enemy.Definition != null)
+                ctrl = enemy.Definition.animationOverride;
+            
+            if (ctrl != null && animator.runtimeAnimatorController != ctrl)
+            {
+                animator.runtimeAnimatorController = ctrl;
+                // 씬에서 Animator가 꺼져있어도 안전하게 켠다
+                animator.enabled = true;
+            }
+        }
+        
+        private void EnsureCoreComponentsEnabled(GameObject enemyGo)
+        {
+            if (enemyGo == null) return;
+            
+            var be = enemyGo.GetComponent<BattleEnemy>();
+            if (be != null) be.enabled = true;
+            
+            var etv = enemyGo.GetComponent<EnemyTargetView>();
+            if (etv != null) etv.enabled = true;
+            
+            var bav = enemyGo.GetComponent<BattleActorView>();
+            if (bav != null) bav.enabled = true;
+            
+            var anim = enemyGo.GetComponentInChildren<Animator>(true);
+            if (anim != null) anim.enabled = true;
+            
+            var srs = enemyGo.GetComponentsInChildren<SpriteRenderer>(true);
+            for (int i = 0; i < srs.Length; i++)
+                if (srs[i] != null) srs[i].enabled = true;
+        }
+
+        /// <summary>
+        /// AnimDirector, HitPopups 등에 View 참조를 연결합니다.
+        /// ✅ 슬롯 인덱스를 보존하며 바인딩
+        /// </summary>
+        private void BindToSystems()
+        {
+            CacheRefs();
+
+            // ✅ 슬롯 인덱스를 유지하는 배열 생성 (null 허용)
+            var enemyViewsArray = new BattleActorView[3];
+            int activeCount = 0;
+            
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                if (enemies[i] != null && enemies[i].gameObject.activeInHierarchy)
+                {
+                    var view = enemies[i].GetComponent<BattleActorView>();
+                    enemyViewsArray[i] = view;  // ✅ 슬롯 인덱스 유지
+                    if (view != null) activeCount++;
+                    
+                    Debug.Log($"[BattleStageSpawner] BindToSystems: Slot {i} = {(view != null ? view.name : "NULL")}");
+                }
+            }
+            
+            Debug.Log($"[BattleStageSpawner] Active enemy count: {activeCount}");
+
+            // AnimDirector 바인딩 - 슬롯 인덱스 유지
+            if (animDirector != null)
+            {
+                if (animDirector.targetManager == null)
+                    animDirector.targetManager = FindObjectOfType<BattleTargetManager>(true);
+
+                // ✅ 슬롯 인덱스를 유지하는 새 Bind 메서드 사용
+                animDirector.BindWithSlots(playerView, enemyViewsArray);
+                
+                // 첫 번째 활성화된 슬롯 찾기
+                int firstActiveSlot = FindFirstActiveSlot();
+                Debug.Log($"[BattleStageSpawner] First active slot: {firstActiveSlot}");
+                
+                animDirector.OnTargetChanged(firstActiveSlot);
+            }
+
+            // HitPopup 타겟 바인딩
             if (hitPopups != null)
             {
-                // Player target: prefer actor target, fallback to anchor
-                Transform pTarget = FindPopupTarget(Player != null ? Player.transform : null)
-                                    ?? (Player != null ? Player.transform : playerAnchor);
-                
-                var pCanvas = FindCanvasRoot(Player != null ? Player.transform : null);
-                hitPopups.playerTarget = pTarget;
-                hitPopups.playerCanvasRoot = pCanvas;
-
-                // Enemies
                 for (int i = 0; i < 3; i++)
                 {
-                    Transform eTarget = null;
-                    RectTransform eCanvas = null;
-
-                    if (i < _enemies.Count && _enemies[i] != null)
+                    Transform popupTarget = null;
+                    
+                    if (enemies[i] != null && enemies[i].gameObject.activeInHierarchy)
                     {
-                        eTarget = FindPopupTarget(_enemies[i].transform)
-                                 ?? FindPopupTarget(enemyAnchor)
-                                 ?? _enemies[i].transform;
-
-                        eCanvas = FindCanvasRoot(_enemies[i].transform);
+                        popupTarget = enemies[i].PopupTarget;
                     }
-                    else
-                    {
-                        // clear stale bindings
-                        eTarget = null;
-                        eCanvas = null;
-                    }
-
-                    hitPopups.RegisterEnemyTarget(i, eTarget, eCanvas);
+                    
+                    hitPopups.RegisterEnemyTarget(i, popupTarget, null);
                 }
             }
         }
         
-        private RectTransform FindCanvasRoot(Transform actorRoot)
+        /// <summary>
+        /// 첫 번째 활성화된 슬롯 인덱스 찾기
+        /// </summary>
+        private int FindFirstActiveSlot()
         {
-            if (actorRoot == null) return null;
-            var c = actorRoot.GetComponentInChildren<Canvas>(true);
-            return c != null ? c.transform as RectTransform : null;
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                if (enemies[i] != null && enemies[i].gameObject.activeInHierarchy && enemies[i].IsAlive)
+                    return i;
+            }
+            return 0;
         }
 
-        private Transform FindPopupTarget(Transform root)
+        /// <summary>
+        /// 외부에서 강제 리바인딩이 필요할 때 호출
+        /// </summary>
+        public void RebindFromBattle()
         {
-            if (root == null) return null;
-
-            // 1) path
-            if (!string.IsNullOrEmpty(popupTargetPath))
-            {
-                var t = root.Find(popupTargetPath);
-                if (t != null) return t;
-            }
-
-            // 2) common names
-            var direct = root.Find("Target");
-            if (direct != null) return direct;
-
-            // 3) deep search by name (one-time, small)
-            var all = root.GetComponentsInChildren<Transform>(true);
-            for (int i = 0; i < all.Length; i++)
-            {
-                var t = all[i];
-                if (t != null && t.name == "Target") return t;
-            }
-
-            return null;
+            BindToSystems();
+        }
+        
+        // ─────────────────────────────────────────────────
+        // Helper: 슬롯별 적/뷰 접근
+        // ─────────────────────────────────────────────────
+        public BattleEnemy GetEnemy(int slot)
+        {
+            if (slot < 0 || slot >= enemies.Length) return null;
+            return enemies[slot];
+        }
+        
+        public BattleActorView GetEnemyView(int slot)
+        {
+            var enemy = GetEnemy(slot);
+            return enemy != null ? enemy.GetComponent<BattleActorView>() : null;
         }
     }
 }

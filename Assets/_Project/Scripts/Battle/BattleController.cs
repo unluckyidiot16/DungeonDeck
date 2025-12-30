@@ -1,4 +1,4 @@
-// Assets/_Project/Scripts/Battle/BattleController.cs (Refactored v2)
+// Assets/_Project/Scripts/Battle/BattleController.cs (Refactored v4 - Slot Index Based)
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,21 +15,13 @@ using DungeonDeck.Rewards;
 namespace DungeonDeck.Battle
 {
     /// <summary>
-    /// 전투 흐름 제어 (리팩토링됨).
-    /// 상태 관리는 BattlePlayerState, BattleEnemyManager에 위임.
-    /// 액션 큐는 BattleActionQueue에 위임.
-    /// 
-    /// v2 변경사항:
-    /// - ShouldAutoReturnToBase() 로직 개선: animDirector.IsAttacking 체크 추가
-    /// - 공격 완료 후에만 자동 복귀
+    /// 전투 흐름 제어 (v4 - 슬롯 인덱스 기반).
+    /// 슬롯 인덱스를 일관되게 사용하여 AnimDirector/TargetManager와 동기화합니다.
     /// </summary>
     public class BattleController : MonoBehaviour
     {
         [Header("Debug")]
         public bool autoWinForTest = false;
-
-        [Header("Enemies")]
-        [SerializeField, Range(1, 3)] private int debugEnemyCount = 3;
 
         [Header("Reward")]
         [SerializeField] private CardChoicePanel rewardPanel;
@@ -41,28 +33,34 @@ namespace DungeonDeck.Battle
         [SerializeField] private View.BattleAnimDirector animDirector;
         [SerializeField] private View.HitPopupSpawner hitPopups;
 
-        // ─────────────────────────────────────────
-        // Sub-systems (분리된 책임)
-        // ─────────────────────────────────────────
+        [Header("Target UI")]
+        [Tooltip("현재 선택된 적을 표시하는 타겟 UI 매니저")]
+        public View.BattleTargetManager targetManager;
+
+        // ─────────────────────────────────────────────────
+        // Sub-systems
+        // ─────────────────────────────────────────────────
         private BattlePlayerState _player;
         private BattleEnemyManager _enemies;
         private BattleActionQueue _actionQueue;
         private DeckRuntime _deck;
 
-        // ─────────────────────────────────────────
+        private bool _subsystemsReady = false;
+        private bool _eventsWired = false;
+        
+        // ─────────────────────────────────────────────────
         // State
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         private bool _isPlayerTurn = false;
         private bool _resolving = false;
         private bool _endingFlow = false;
         private Coroutine _actionRunner = null;
-        private Coroutine _targetRefreshAfterDeathCo = null;
-        
+
         public event Action StateChanged;
 
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         // Public Properties
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         public bool IsPlayerTurn => _isPlayerTurn;
         public bool IsResolving => _resolving;
 
@@ -72,22 +70,64 @@ namespace DungeonDeck.Battle
         public int PlayerBlock => _player?.Block ?? 0;
 
         public int EnemyCount => _enemies?.Count ?? 0;
-        public int SelectedEnemyIndex => _enemies?.SelectedIndex ?? 0;
+        public BattleEnemy SelectedEnemy => _enemies?.Selected;
+        
+        /// <summary>
+        /// ✅ 선택된 적의 슬롯 인덱스 (AnimDirector/TargetManager와 동기화용)
+        /// </summary>
+        public int SelectedEnemyIndex => _enemies?.SelectedSlotIndex ?? 0;
 
-        public int EnemyHP => _enemies?.GetHP(SelectedEnemyIndex) ?? 0;
-        public int EnemyMaxHP => _enemies?.GetMaxHP(SelectedEnemyIndex) ?? 0;
-        public int EnemyBlock => _enemies?.GetBlock(SelectedEnemyIndex) ?? 0;
-        public int EnemyVulnerableTurns => _enemies?.GetVulnerableTurns(SelectedEnemyIndex) ?? 0;
+        // 하위 호환용 프로퍼티 (선택된 적 기준)
+        public int EnemyHP => SelectedEnemy?.HP ?? 0;
+        public int EnemyMaxHP => SelectedEnemy?.MaxHP ?? 0;
+        public int EnemyBlock => SelectedEnemy?.Block ?? 0;
+        public int EnemyVulnerableTurns => SelectedEnemy?.VulnerableTurns ?? 0;
 
         public int HandCount => _deck?.HandCount ?? 0;
 
         public int PendingActionCount => _actionQueue?.PendingCount ?? 0;
         public bool IsActionQueueRunning => _actionRunner != null;
         public bool HasQueuedEndTurn => _actionQueue?.HasQueuedEndTurn ?? false;
+        
+        // ─────────────────────────────────────────────────
+        // Enemy Query (슬롯 인덱스 기반)
+        // ─────────────────────────────────────────────────
+        /// <summary>
+        /// 슬롯 인덱스로 적 생존 여부 확인
+        /// </summary>
+        public bool IsEnemyAlive(int slotIndex)
+        {
+            var enemy = _enemies?.GetBySlot(slotIndex);
+            return enemy != null && enemy.IsAlive;
+        }
 
-        // ─────────────────────────────────────────
+        /// <summary>
+        /// 슬롯 인덱스로 적 HP 조회
+        /// </summary>
+        public int GetEnemyHP(int slotIndex)
+        {
+            var enemy = _enemies?.GetBySlot(slotIndex);
+            return enemy?.HP ?? 0;
+        }
+
+        /// <summary>
+        /// 슬롯 인덱스로 적 MaxHP 조회
+        /// </summary>
+        public int GetEnemyMaxHP(int slotIndex)
+        {
+            var enemy = _enemies?.GetBySlot(slotIndex);
+            return enemy?.MaxHP ?? 0;
+        }
+
+        // ─────────────────────────────────────────────────
         // Lifecycle
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
+        
+        private void Awake()
+        { 
+            EnsureSubsystemsReady();
+        }
+        
         private void Start()
         {
             if (RunSession.I == null || RunSession.I.State == null)
@@ -97,30 +137,38 @@ namespace DungeonDeck.Battle
                 return;
             }
 
-            InitializeSubsystems();
+            EnsureSubsystemsReady();
             SetupBattle();
-            WireEvents();
+            EnsureEventsWired();
 
             if (animDirector == null)
                 animDirector = FindObjectOfType<View.BattleAnimDirector>(true);
             if (hitPopups == null)
                 hitPopups = FindObjectOfType<View.HitPopupSpawner>(true);
+            if (targetManager == null)
+                targetManager = FindObjectOfType<View.BattleTargetManager>(true);
 
-            // ✅ 서약 선택(런 상태)을 배틀 애니메이션에 반영
+            // 서약 선택(런 상태)을 배틀 애니메이션에 반영
             if (animDirector != null)
             {
                 string oathId = null;
                 var run = RunSession.I;
-                if (run?.State != null && !string.IsNullOrWhiteSpace(run.State.oathId)) 
+                if (run?.State != null && !string.IsNullOrWhiteSpace(run.State.oathId))
                     oathId = run.State.oathId;
                 else if (run?.Oath != null && !string.IsNullOrWhiteSpace(run.Oath.id))
                     oathId = run.Oath.id;
-                
+
                 animDirector.ApplyOathAnimatorOverride(oathId);
             }
-            
-            animDirector?.OnTargetChanged(SelectedEnemyIndex);
-            
+
+            // ✅ 초기 타겟 설정 (슬롯 인덱스 기반)
+            if (SelectedEnemy != null)
+            {
+                int slotIdx = SelectedEnemy.SlotIndex;
+                Debug.Log($"[BattleController] Initial target: {SelectedEnemy.name} at slot {slotIdx}");
+                animDirector?.OnTargetChanged(slotIdx);
+            }
+
             BeginPlayerTurn();
             NotifyStateChanged();
 
@@ -128,53 +176,102 @@ namespace DungeonDeck.Battle
                 EndBattle(true);
         }
 
-        private void InitializeSubsystems()
+        
+        private void EnsureSubsystemsReady()
         {
+            if (_subsystemsReady) return;
             _player = new BattlePlayerState();
             _enemies = new BattleEnemyManager();
             _actionQueue = new BattleActionQueue();
+            _subsystemsReady = true;
+        }
+        
+        private void InitializeSubsystems()
+        {
+            // legacy entrypoint (kept for compatibility)
+            EnsureSubsystemsReady();
         }
 
+        private void EnsureEventsWired()
+        { 
+            if (_eventsWired) return;
+            WireEvents();
+            _eventsWired = true;
+        }
+        
         private void WireEvents()
         {
-            _player.StateChanged += NotifyStateChanged;
-            _player.Died += () => EndBattle(false);
-
-            _enemies.SelectionChanged += () => 
+            _enemies.SelectionChanged += () =>
             {
-                animDirector?.OnTargetChanged(_enemies.SelectedIndex);
+                var selected = _enemies.Selected;
+                if (selected != null)
+                {
+                    // ✅ 슬롯 인덱스 사용
+                    int slotIdx = selected.SlotIndex;
+                    Debug.Log($"[BattleController] Selection changed to: {selected.name} at slot {slotIdx}");
+                    animDirector?.OnTargetChanged(slotIdx);
+                    SyncTargetSelection(selected);
+                }
                 NotifyStateChanged();
             };
-            _enemies.EnemyDefeated += OnEnemyDefeated;
+
+            _enemies.EnemyDefeated += (deadEnemy) =>
+            {
+                if (_endingFlow) return;
+                StartCoroutine(EnemyDefeatedFlowCo(deadEnemy));
+            };
+
+            _player.Died += () => EndBattle(false);
+
             _enemies.AllEnemiesDefeated += () => EndBattle(true);
 
             _actionQueue.OnExecuteCard += ExecuteQueuedCardCo;
             _actionQueue.OnExecuteEndTurn += EndTurnFlowCo;
             _actionQueue.QueueChanged += NotifyStateChanged;
         }
-        
-        private void OnEnemyDefeated(int enemyIndex)
+
+        private void OnEnemyDefeated(BattleEnemy enemy)
         {
-            // ✅ 사망 연출 후 숨김(Disable) 처리
-            if (animDirector != null) 
-                StartCoroutine(animDirector.PlayEnemyDieThenHideCo(enemyIndex, destroy: false));
-            
-            // ✅ 선택/뷰 상태가 한 프레임 뒤에 정리되는 경우가 있어 강제 리프레시
-            if (_targetRefreshAfterDeathCo != null)
-                StopCoroutine(_targetRefreshAfterDeathCo);
-            _targetRefreshAfterDeathCo = StartCoroutine(RefreshTargetAfterDeathCo());
+            if (_enemies == null || enemy == null) return;
+            _enemies.NotifyEnemyDefeated(enemy);
+            NotifyStateChanged();
         }
     
-        private IEnumerator RefreshTargetAfterDeathCo()
+        private void OnEnemyStatsChanged(BattleEnemy enemy)
         {
-            yield return null; // 1프레임 대기: AutoSelectNextAlive/SelectionChanged/비활성화 타이밍 안정화
-            _targetRefreshAfterDeathCo = null;
-        
-            if (_endingFlow || _enemies == null) yield break;
-            if (_enemies.AreAllDefeated()) yield break;
-        
-            animDirector?.OnTargetChanged(_enemies.SelectedIndex);
+            // HP/Block/Vulnerable UI 갱신 트리거
             NotifyStateChanged();
+        }
+        
+        private void SyncTargetSelection(BattleEnemy selected)
+        {
+            if (targetManager == null) return;
+            targetManager.SetSelectedFromBattle(selected);
+            targetManager.Refresh();
+        }
+
+        private IEnumerator EnemyDefeatedFlowCo(BattleEnemy deadEnemy)
+        {
+            // ✅ 슬롯 인덱스 사용
+            int deadSlotIndex = deadEnemy.SlotIndex;
+            Debug.Log($"[BattleController] Enemy defeated: {deadEnemy.name} at slot {deadSlotIndex}");
+
+            // 1) 사망 애니메이션 재생 + 잠깐 노출 후 슬롯 비활성화
+            if (animDirector != null && deadSlotIndex >= 0)
+                yield return animDirector.PlayEnemyDieThenHideCo(deadSlotIndex, destroy: false);
+            else
+                yield return null;
+
+            // 2) Disable 이후 한 번 더 "현재 선택"을 강제로 재동기화
+            if (_endingFlow) yield break;
+
+            var nextSelected = _enemies.Selected;
+            if (nextSelected != null)
+            {
+                int slotIdx = nextSelected.SlotIndex;
+                animDirector?.OnTargetChanged(slotIdx);
+                SyncTargetSelection(nextSelected);
+            }
         }
 
         private void SetupBattle()
@@ -182,7 +279,7 @@ namespace DungeonDeck.Battle
             var run = RunSession.I;
 
             _player.Initialize(run);
-            _enemies.Initialize(debugEnemyCount, run);
+            // 적 초기화는 이제 각 BattleEnemy가 스스로 등록함
             _deck = new DeckRuntime(run.State.deck);
         }
 
@@ -191,30 +288,91 @@ namespace DungeonDeck.Battle
             StateChanged?.Invoke();
         }
 
-        // ─────────────────────────────────────────
-        // Card Access
-        // ─────────────────────────────────────────
-        public CardDefinition GetHandCard(int index) => _deck?.PeekHand(index);
-
-        // ─────────────────────────────────────────
-        // Enemy Management (delegate)
-        // ─────────────────────────────────────────
-        public void EnsureEnemyCount(int count)
+        // ─────────────────────────────────────────────────
+        // Enemy Management (객체 참조 기반)
+        // ─────────────────────────────────────────────────
+        /// <summary>
+        /// BattleEnemy 등록 (씬의 적 오브젝트가 호출)
+        /// </summary>
+        public void RegisterEnemy(BattleEnemy enemy)
         {
-            _enemies?.EnsureCount(count, RunSession.I);
+            if (enemy == null) return;
+            
+            EnsureSubsystemsReady();
+
+            // RunSession 기반으로 초기화
+            enemy.SetBattleController(this);
+            
+            // 이벤트 중복 방지
+            enemy.OnDefeated -= OnEnemyDefeated;
+            enemy.OnDefeated += OnEnemyDefeated;
+            enemy.OnStatsChanged -= OnEnemyStatsChanged;
+            enemy.OnStatsChanged += OnEnemyStatsChanged;
+            
+            // ✅ SlotIndex 기반으로 초기화
+            int slotIndex = enemy.SlotIndex;
+            enemy.Initialize(RunSession.I, slotIndex);
+
+            _enemies.Register(enemy);
+            
+            Debug.Log($"[BattleController] Registered: {enemy.name} (SlotIndex={slotIndex})");
+            
             NotifyStateChanged();
         }
 
-        public bool SelectEnemy(int index)
+        /// <summary>
+        /// BattleEnemy 등록 해제
+        /// </summary>
+        public void UnregisterEnemy(BattleEnemy enemy)
         {
-            bool changed = _enemies?.Select(index) ?? false;
+            EnsureSubsystemsReady();
+            if (enemy == null) return;
+            
+            enemy.OnDefeated -= OnEnemyDefeated;
+            enemy.OnStatsChanged -= OnEnemyStatsChanged;
+            
+            _enemies.Unregister(enemy);
+            NotifyStateChanged();
+        }
+
+        /// <summary>
+        /// 특정 적 선택 (객체 참조)
+        /// </summary>
+        public bool SelectEnemy(BattleEnemy enemy)
+        {
+            bool changed = _enemies.Select(enemy);
             if (changed) NotifyStateChanged();
             return changed;
         }
 
-        // ─────────────────────────────────────────
+        /// <summary>
+        /// 슬롯 인덱스로 선택
+        /// </summary>
+        public bool SelectEnemy(int slotIndex)
+        {
+            bool changed = _enemies.SelectBySlot(slotIndex);
+            if (changed) NotifyStateChanged();
+            return changed;
+        }
+
+        /// <summary>
+        /// 하위 호환용 - 더 이상 적 수를 강제하지 않음
+        /// </summary>
+        [Obsolete("Use RegisterEnemy instead")]
+        public void EnsureEnemyCount(int count)
+        {
+            // 이제 각 BattleEnemy가 스스로 등록하므로 이 메서드는 no-op
+            Debug.LogWarning("[BattleController] EnsureEnemyCount is deprecated. Enemies register themselves.");
+        }
+
+        // ─────────────────────────────────────────────────
+        // Card Access
+        // ─────────────────────────────────────────────────
+        public CardDefinition GetHandCard(int index) => _deck?.PeekHand(index);
+
+        // ─────────────────────────────────────────────────
         // Card Play
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         public bool TryPlayCardAt(int handIndex)
         {
             if (_endingFlow || !_isPlayerTurn) return false;
@@ -225,10 +383,11 @@ namespace DungeonDeck.Battle
             var card = _deck.PeekHand(handIndex);
             if (card == null) return false;
 
+            // ✅ 슬롯 인덱스 사용
             bool enqueued = _actionQueue.EnqueueCard(
                 card,
                 handIndex,
-                SelectedEnemyIndex,
+                SelectedEnemyIndex,  // 슬롯 인덱스
                 _player.Energy
             );
 
@@ -238,9 +397,9 @@ namespace DungeonDeck.Battle
             return true;
         }
 
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         // End Turn
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         public void EndTurn()
         {
             if (_endingFlow || _resolving || !_isPlayerTurn) return;
@@ -255,9 +414,9 @@ namespace DungeonDeck.Battle
             StartCoroutine(EndTurnFlowCo());
         }
 
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         // Action Queue Runner
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         private void EnsureActionRunner()
         {
             if (_actionRunner != null) return;
@@ -282,7 +441,7 @@ namespace DungeonDeck.Battle
             if (_endingFlow || !_isPlayerTurn) yield break;
             if (action.Card == null) yield break;
 
-            // 현재 손패에서 카드 위치 찾기 (큐잉 중 인덱스 변경 대응)
+            // 현재 손패에서 카드 위치 찾기
             int handIndex = FindCurrentHandIndex(action);
             if (handIndex < 0) yield break;
 
@@ -292,22 +451,24 @@ namespace DungeonDeck.Battle
                 yield break;
             }
 
-            int targetIndex = ResolveTargetIndex(action.TargetIndex);
+            // ✅ 타겟 결정 (슬롯 인덱스 기반)
+            BattleEnemy target = ResolveTarget(action.TargetIndex);
+            int targetSlotIndex = target != null ? target.SlotIndex : 0;
 
             // 1) 에너지 소비
             _player.TrySpendEnergy(action.Card.cost);
 
-            // 2) 애니메이션 (✅ 완전히 완료될 때까지 대기)
+            // 2) 애니메이션 (슬롯 인덱스 사용)
             if (animDirector != null)
             {
                 if (action.Card.effectKind == CardEffectKind.Attack)
-                    yield return animDirector.PlayPlayerAttackComboCo(action.Card, targetIndex);
+                    StartCoroutine(animDirector.PlayPlayerAttackComboCo(action.Card, targetSlotIndex));
                 else
-                    yield return animDirector.PlayPlayerCardCo(action.Card, targetIndex);
+                    StartCoroutine(animDirector.PlayPlayerCardCo(action.Card, targetSlotIndex));
             }
 
             // 3) 효과 적용
-            ApplyCardEffect(action.Card, targetIndex);
+            ApplyCardEffect(action.Card, target);
 
             // 4) 카드 이동
             if (action.Card.exhaustOnPlay)
@@ -322,12 +483,10 @@ namespace DungeonDeck.Battle
                 yield break;
             }
 
-            // 6) ✅ 개선된 자동 복귀 로직
-            //    - 에너지 0이고 큐가 비었고 근접 상태일 때만
-            //    - animDirector.IsAttacking이 false여야 함 (공격 완료 후)
+            // 6) 개선된 자동 복귀 로직
             if (ShouldAutoReturnToBase())
             {
-                yield return animDirector?.ReturnToBaseCo(false);
+                StartCoroutine(animDirector.ReturnToBaseCo(false));
             }
 
             NotifyStateChanged();
@@ -345,22 +504,29 @@ namespace DungeonDeck.Battle
             return _deck.FindHandIndex(action.Card);
         }
 
-        private int ResolveTargetIndex(int requested)
+        /// <summary>
+        /// ✅ 슬롯 인덱스 기반 타겟 결정
+        /// </summary>
+        private BattleEnemy ResolveTarget(int requestedSlotIndex)
         {
-            if (_enemies == null || _enemies.Count == 0) return 0;
+            if (_enemies == null || _enemies.Count == 0) return null;
 
-            requested = Mathf.Clamp(requested, 0, _enemies.Count - 1);
-            var enemy = _enemies.GetAt(requested);
-
-            if (enemy != null && enemy.IsAlive)
+            // 요청된 슬롯의 적이 살아있는지 확인
+            var requested = _enemies.GetBySlot(requestedSlotIndex);
+            if (requested != null && requested.IsAlive)
                 return requested;
 
-            _enemies.AutoSelectNextAlive();
-            return _enemies.SelectedIndex;
+            // 아니면 현재 선택된 적 반환
+            var selected = _enemies.Selected;
+            if (selected != null && selected.IsAlive)
+                return selected;
+
+            // 살아있는 첫 번째 적
+            return _enemies.FindFirstAlive();
         }
 
         /// <summary>
-        /// ✅ 개선된 자동 복귀 조건 체크
+        /// 개선된 자동 복귀 조건 체크
         /// </summary>
         private bool ShouldAutoReturnToBase()
         {
@@ -370,24 +536,31 @@ namespace DungeonDeck.Battle
             if (_actionQueue.PendingCount > 0) return false;
             if (animDirector == null) return false;
             if (!animDirector.IsMelee) return false;
-            
-            // ✅ 공격 중이면 복귀하지 않음
+
+            // 공격 중이면 복귀하지 않음
             if (animDirector.IsAttacking) return false;
-            
+
             return true;
         }
 
-        // ─────────────────────────────────────────
-        // Card Effects
-        // ─────────────────────────────────────────
-        private void ApplyCardEffect(CardDefinition card, int targetIndex)
+        // ─────────────────────────────────────────────────
+        // Card Effects (객체 참조 기반)
+        // ─────────────────────────────────────────────────
+        private void ApplyCardEffect(CardDefinition card, BattleEnemy target)
         {
             switch (card.effectKind)
             {
                 case CardEffectKind.Attack:
-                    int hpLoss = _enemies.DealDamage(targetIndex, card.value);
-                    if (hitPopups != null && hpLoss > 0)
-                        hitPopups.SpawnEnemy(hpLoss, targetIndex);
+                    if (target != null)
+                    {
+                        int hpLoss = target.TakeDamage(card.value);
+                        if (hitPopups != null && hpLoss > 0)
+                        {
+                            // ✅ 슬롯 인덱스 사용
+                            int slotIdx = target.SlotIndex;
+                            hitPopups.SpawnEnemy(hpLoss, slotIdx);
+                        }
+                    }
                     break;
 
                 case CardEffectKind.Block:
@@ -403,10 +576,11 @@ namespace DungeonDeck.Battle
                     break;
 
                 case CardEffectKind.ApplyVulnerable:
-                    _enemies.ApplyVulnerable(targetIndex, card.value);
+                    if (target != null)
+                        target.ApplyVulnerable(card.value);
                     break;
-                
-                case CardEffectKind.Heal: 
+
+                case CardEffectKind.Heal:
                     _player.Heal(card.value);
                     break;
             }
@@ -414,9 +588,9 @@ namespace DungeonDeck.Battle
             NotifyStateChanged();
         }
 
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         // Turn Flow
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         private void BeginPlayerTurn()
         {
             _player.BeginTurn(RunSession.I);
@@ -456,13 +630,16 @@ namespace DungeonDeck.Battle
         {
             int rawDamage = RunSession.I.PendingBattleType == MapNodeType.Boss ? 12 : 8;
 
-            for (int i = 0; i < _enemies.Count; i++)
+            foreach (var enemy in _enemies.All)
             {
-                var enemy = _enemies.GetAt(i);
-                if (enemy == null || !enemy.IsAlive) continue;
+                if (enemy == null || !enemy.IsAlive)
+                    continue;
+
+                // ✅ 슬롯 인덱스 사용
+                int slotIndex = enemy.SlotIndex;
 
                 if (animDirector != null)
-                    yield return animDirector.PlayEnemyAttackCo(i);
+                    yield return animDirector.PlayEnemyAttackCo(slotIndex);
 
                 animDirector?.PlayPlayerHitFx();
 
@@ -480,9 +657,9 @@ namespace DungeonDeck.Battle
             }
         }
 
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         // Battle End
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         private void EndBattle(bool win)
         {
             if (_endingFlow) return;
@@ -622,9 +799,9 @@ namespace DungeonDeck.Battle
             SceneManager.LoadScene(run.IsRunFinished() ? SceneRoutes.End : SceneRoutes.Map);
         }
 
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         // Debug Helpers
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         public void DebugPlayFirstCard() => TryPlayCardAt(0);
         public void DebugEndTurn() => EndTurn();
     }

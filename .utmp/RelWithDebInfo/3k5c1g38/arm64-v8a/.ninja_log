@@ -1,0 +1,12 @@
+# ninja log v5
+3	183	1767093969574330957	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	b0325539af12bf66
+184	332	1767093969706206913	/Users/macair/Downloads/UnityProjects/DungeonDeck/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3k5c1g38/obj/arm64-v8a/libswappywrapper.so	c1a4038fda5f135f
+1	710	1767093970095802202	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	935667713f428125
+2	727	1767093970115511778	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	5bcaa962a5140c0b
+0	738	1767093970126115633	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	4aabdc7b4049498a
+3	740	1767093970128242713	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	9c789b45ee1f1179
+1	807	1767093970195563098	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	297e294720444600
+3	822	1767093970210801479	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	affcb3c7316263f7
+2	909	1767093970297522948	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	1b17c09d6f02c5a6
+0	951	1767093970339100345	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	5179332a6c6b86f9
+951	1038	1767093970427194451	/Users/macair/Downloads/UnityProjects/DungeonDeck/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3k5c1g38/obj/arm64-v8a/libgame.so	1e4336db71818e9a

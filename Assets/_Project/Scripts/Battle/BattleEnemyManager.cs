@@ -1,236 +1,284 @@
 // Assets/_Project/Scripts/Battle/BattleEnemyManager.cs
+// v2: SlotIndex 기반 접근 메서드 추가
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using DungeonDeck.Run;
-using DungeonDeck.Config.Map;
 
 namespace DungeonDeck.Battle
 {
     /// <summary>
-    /// 적 상태 관리 전담.
-    /// BattleController에서 분리된 단일 책임 클래스.
+    /// 객체 참조 기반 적 관리자.
+    /// BattleEnemy 인스턴스를 직접 관리하고, 슬롯 인덱스를 지원합니다.
     /// </summary>
-    [Serializable]
-    public class EnemyState
-    {
-        public int hp;
-        public int maxHp;
-        public int block;
-        public int vulnerableTurns;
-
-        public bool IsAlive => hp > 0;
-
-        public EnemyState(int hp, int maxHp)
-        {
-            this.hp = hp;
-            this.maxHp = maxHp;
-            this.block = 0;
-            this.vulnerableTurns = 0;
-        }
-    }
-
     public class BattleEnemyManager
     {
-        private readonly List<EnemyState> _enemies = new();
-        private int _selectedIndex = 0;
-
         public event Action SelectionChanged;
-        public event Action<int> EnemyDefeated;
         public event Action AllEnemiesDefeated;
+        public event Action<BattleEnemy> EnemyDefeated;
 
-        // ─────────────────────────────────────────
+        private readonly List<BattleEnemy> _enemies = new List<BattleEnemy>();
+        private BattleEnemy _selected;
+
+        // ─────────────────────────────────────────────────
         // Properties
-        // ─────────────────────────────────────────
+        // ─────────────────────────────────────────────────
         public int Count => _enemies.Count;
-        public int SelectedIndex => _selectedIndex;
-        public EnemyState Selected => GetAt(_selectedIndex);
+        public BattleEnemy Selected => _selected;
+        
+        /// <summary>
+        /// 선택된 적의 슬롯 인덱스 (리스트 인덱스가 아님)
+        /// </summary>
+        public int SelectedSlotIndex => _selected != null ? _selected.SlotIndex : 0;
+        
+        /// <summary>
+        /// 선택된 적의 리스트 인덱스 (하위 호환용)
+        /// </summary>
+        public int SelectedIndex => _selected != null ? IndexOf(_selected) : 0;
 
-        public EnemyState GetAt(int index)
+        /// <summary>
+        /// 모든 등록된 적을 순회합니다 (foreach 지원).
+        /// </summary>
+        public IEnumerable<BattleEnemy> All => _enemies;
+
+        // ─────────────────────────────────────────────────
+        // Registration (객체 기반)
+        // ─────────────────────────────────────────────────
+        public void Register(BattleEnemy enemy)
+        {
+            if (enemy == null) return;
+            if (_enemies.Contains(enemy)) return;
+
+            _enemies.Add(enemy);
+            
+            Debug.Log($"[BattleEnemyManager] Registered: {enemy.name} (SlotIndex={enemy.SlotIndex}, ListIndex={_enemies.Count - 1})");
+
+            // 첫 번째 적이면 자동 선택
+            if (_selected == null)
+            {
+                _selected = enemy;
+                SelectionChanged?.Invoke();
+            }
+        }
+
+        public void Unregister(BattleEnemy enemy)
+        {
+            if (enemy == null) return;
+            if (!_enemies.Contains(enemy)) return;
+
+            _enemies.Remove(enemy);
+
+            // 선택된 적이 제거되면 다른 살아있는 적으로 전환
+            if (_selected == enemy)
+            {
+                _selected = FindFirstAlive();
+                SelectionChanged?.Invoke();
+            }
+        }
+
+        // ─────────────────────────────────────────────────
+        // Selection
+        // ─────────────────────────────────────────────────
+        /// <summary>
+        /// 객체 참조로 적 선택
+        /// </summary>
+        public bool Select(BattleEnemy enemy)
+        {
+            if (enemy == null) return false;
+            if (!_enemies.Contains(enemy)) return false;
+            if (!enemy.IsAlive)
+            {
+                // 죽은 적 선택 시도 시 살아있는 적으로 보정
+                var alt = FindFirstAlive();
+                if (alt != null && alt != _selected)
+                {
+                    _selected = alt;
+                    SelectionChanged?.Invoke();
+                    return true;
+                }
+                return false;
+            }
+
+            if (_selected == enemy) return false;
+
+            _selected = enemy;
+            SelectionChanged?.Invoke();
+            return true;
+        }
+
+        /// <summary>
+        /// 슬롯 인덱스로 적 선택
+        /// </summary>
+        public bool SelectBySlot(int slotIndex)
+        {
+            var enemy = GetBySlot(slotIndex);
+            if (enemy == null) return false;
+            return Select(enemy);
+        }
+
+        /// <summary>
+        /// 리스트 인덱스로 적 선택 (하위 호환용)
+        /// </summary>
+        public bool Select(int index)
+        {
+            var enemy = GetAt(index);
+            if (enemy == null) return false;
+            return Select(enemy);
+        }
+
+        // ─────────────────────────────────────────────────
+        // Access - 리스트 인덱스 기반 (하위 호환)
+        // ─────────────────────────────────────────────────
+        /// <summary>
+        /// 리스트 인덱스로 적 가져오기
+        /// </summary>
+        public BattleEnemy GetAt(int index)
         {
             if (index < 0 || index >= _enemies.Count) return null;
             return _enemies[index];
         }
 
-        public IReadOnlyList<EnemyState> All => _enemies;
-
-        // ─────────────────────────────────────────
-        // Initialization
-        // ─────────────────────────────────────────
-        public void Initialize(int count, RunSession run)
+        /// <summary>
+        /// 적의 리스트 인덱스 반환 (-1 if not found)
+        /// </summary>
+        public int IndexOf(BattleEnemy enemy)
         {
-            _enemies.Clear();
-            count = Mathf.Clamp(count, 1, 3);
+            if (enemy == null) return -1;
+            return _enemies.IndexOf(enemy);
+        }
 
-            bool isBoss = run != null && run.PendingBattleType == MapNodeType.Boss;
-            if (isBoss) count = 1;
-
-            for (int i = 0; i < count; i++)
+        // ─────────────────────────────────────────────────
+        // Access - 슬롯 인덱스 기반 (신규)
+        // ─────────────────────────────────────────────────
+        /// <summary>
+        /// 슬롯 인덱스로 적 가져오기
+        /// </summary>
+        public BattleEnemy GetBySlot(int slotIndex)
+        {
+            foreach (var enemy in _enemies)
             {
-                _enemies.Add(CreateEnemy(run, i, isBoss));
+                if (enemy != null && enemy.SlotIndex == slotIndex)
+                    return enemy;
             }
-
-            _selectedIndex = 0;
+            return null;
         }
 
-        public void EnsureCount(int count, RunSession run)
+        /// <summary>
+        /// 적의 슬롯 인덱스 반환 (-1 if not found or enemy is null)
+        /// </summary>
+        public int SlotIndexOf(BattleEnemy enemy)
         {
-            count = Mathf.Clamp(count, 1, 3);
-
-            bool isBoss = run != null && run.PendingBattleType == MapNodeType.Boss;
-            if (isBoss) count = 1;
-
-            if (_enemies.Count == count) return;
-
-            while (_enemies.Count < count)
-                _enemies.Add(CreateEnemy(run, _enemies.Count, isBoss));
-
-            while (_enemies.Count > count)
-                _enemies.RemoveAt(_enemies.Count - 1);
-
-            _selectedIndex = Mathf.Clamp(_selectedIndex, 0, _enemies.Count - 1);
+            if (enemy == null) return -1;
+            if (!_enemies.Contains(enemy)) return -1;
+            return enemy.SlotIndex;
         }
-
-        private EnemyState CreateEnemy(RunSession run, int index, bool isBoss)
+        
+        /// <summary>
+        /// 슬롯 인덱스로 적 생존 여부 확인
+        /// </summary>
+        public bool IsAliveAtSlot(int slotIndex)
         {
-            int baseHp = isBoss ? 60 : 30;
-            int hp = isBoss ? baseHp : Mathf.Max(10, baseHp - index * 5);
-            return new EnemyState(hp, hp);
+            var enemy = GetBySlot(slotIndex);
+            return enemy != null && enemy.IsAlive;
         }
 
-        // ─────────────────────────────────────────
-        // Selection
-        // ─────────────────────────────────────────
-        public bool Select(int index)
+        // ─────────────────────────────────────────────────
+        // Query
+        // ─────────────────────────────────────────────────
+        public bool AreAllDefeated()
         {
             if (_enemies.Count == 0) return false;
 
-            int newIndex = Mathf.Clamp(index, 0, _enemies.Count - 1);
-            if (newIndex == _selectedIndex) return false;
-
-            _selectedIndex = newIndex;
-            SelectionChanged?.Invoke();
-            return true;
-        }
-
-        public void AutoSelectNextAlive()
-        {
-            var current = GetAt(_selectedIndex);
-            if (current != null && current.IsAlive) return;
-
-            for (int i = 0; i < _enemies.Count; i++)
+            foreach (var enemy in _enemies)
             {
-                if (_enemies[i] != null && _enemies[i].IsAlive)
-                {
-                    _selectedIndex = i;
-                    SelectionChanged?.Invoke();
-                    return;
-                }
-            }
-
-            _selectedIndex = 0;
-        }
-
-        // ─────────────────────────────────────────
-        // Combat Actions
-        // ─────────────────────────────────────────
-        public int DealDamage(int enemyIndex, int rawAmount)
-        {
-            var enemy = GetAt(enemyIndex);
-            if (enemy == null || !enemy.IsAlive) return 0;
-
-            int amount = Mathf.Max(0, rawAmount);
-
-            // 취약 적용
-            if (enemy.vulnerableTurns > 0 && amount > 0)
-                amount = Mathf.CeilToInt(amount * 1.5f);
-
-            int hpBefore = enemy.hp;
-
-            // 블록 먼저 소모
-            int remain = amount;
-            if (enemy.block > 0)
-            {
-                int used = Mathf.Min(enemy.block, remain);
-                enemy.block -= used;
-                remain -= used;
-            }
-
-            // 남은 데미지 HP에 적용
-            if (remain > 0) enemy.hp -= remain;
-            if (enemy.hp < 0) enemy.hp = 0;
-
-            int hpLoss = Mathf.Max(0, hpBefore - enemy.hp);
-
-            // 사망 체크
-            if (!enemy.IsAlive)
-            {
-                EnemyDefeated?.Invoke(enemyIndex);
-
-                if (enemyIndex == _selectedIndex)
-                    AutoSelectNextAlive();
-
-                if (AreAllDefeated())
-                    AllEnemiesDefeated?.Invoke();
-            }
-
-            return hpLoss;
-        }
-
-        public void ApplyVulnerable(int enemyIndex, int turns)
-        {
-            var enemy = GetAt(enemyIndex);
-            if (enemy == null) return;
-
-            enemy.vulnerableTurns = Mathf.Clamp(enemy.vulnerableTurns + turns, 0, 99);
-        }
-
-        public void TickVulnerableAll()
-        {
-            for (int i = 0; i < _enemies.Count; i++)
-            {
-                var e = _enemies[i];
-                if (e != null && e.vulnerableTurns > 0)
-                    e.vulnerableTurns -= 1;
-            }
-        }
-
-        public void ClearBlockAll()
-        {
-            for (int i = 0; i < _enemies.Count; i++)
-            {
-                if (_enemies[i] != null)
-                    _enemies[i].block = 0;
-            }
-        }
-
-        // ─────────────────────────────────────────
-        // Queries
-        // ─────────────────────────────────────────
-        public bool AreAllDefeated()
-        {
-            for (int i = 0; i < _enemies.Count; i++)
-            {
-                if (_enemies[i] != null && _enemies[i].IsAlive)
+                if (enemy != null && enemy.IsAlive)
                     return false;
             }
             return true;
         }
 
-        public int CountAlive()
+        public BattleEnemy FindFirstAlive()
         {
-            int n = 0;
-            for (int i = 0; i < _enemies.Count; i++)
+            foreach (var enemy in _enemies)
             {
-                if (_enemies[i] != null && _enemies[i].IsAlive)
-                    n++;
+                if (enemy != null && enemy.IsAlive)
+                    return enemy;
             }
-            return n;
+            return null;
         }
 
-        public int GetHP(int index) => GetAt(index)?.hp ?? 0;
-        public int GetMaxHP(int index) => GetAt(index)?.maxHp ?? 0;
-        public int GetBlock(int index) => GetAt(index)?.block ?? 0;
-        public int GetVulnerableTurns(int index) => GetAt(index)?.vulnerableTurns ?? 0;
+        public BattleEnemy FindNextAlive(BattleEnemy after)
+        {
+            if (_enemies.Count == 0) return null;
+
+            int start = after != null ? IndexOf(after) : -1;
+            int n = _enemies.Count;
+
+            // after 다음부터 순회
+            for (int step = 1; step <= n; step++)
+            {
+                int i = (start + step) % n;
+                var enemy = _enemies[i];
+                if (enemy != null && enemy.IsAlive)
+                    return enemy;
+            }
+            return null;
+        }
+        
+        /// <summary>
+        /// 첫 번째 살아있는 적의 슬롯 인덱스 반환
+        /// </summary>
+        public int FindFirstAliveSlotIndex()
+        {
+            var first = FindFirstAlive();
+            return first != null ? first.SlotIndex : 0;
+        }
+
+        // ─────────────────────────────────────────────────
+        // Combat Events
+        // ─────────────────────────────────────────────────
+        /// <summary>
+        /// 적이 사망했을 때 호출 (BattleEnemy.OnDefeated에서 호출)
+        /// </summary>
+        public void NotifyEnemyDefeated(BattleEnemy enemy)
+        {
+            if (enemy == null) return;
+
+            EnemyDefeated?.Invoke(enemy);
+
+            if (AreAllDefeated())
+            {
+                AllEnemiesDefeated?.Invoke();
+            }
+            else
+            {
+                // 선택된 적이 죽었으면 다음 살아있는 적으로 전환
+                if (_selected == enemy)
+                {
+                    _selected = FindNextAlive(enemy) ?? FindFirstAlive();
+                    SelectionChanged?.Invoke();
+                }
+            }
+        }
+
+        // ─────────────────────────────────────────────────
+        // Turn Tick
+        // ─────────────────────────────────────────────────
+        public void TickVulnerableAll()
+        {
+            foreach (var enemy in _enemies)
+            {
+                if (enemy != null && enemy.IsAlive)
+                    enemy.TickVulnerable();
+            }
+        }
+
+        // ─────────────────────────────────────────────────
+        // Cleanup
+        // ─────────────────────────────────────────────────
+        public void Clear()
+        {
+            _enemies.Clear();
+            _selected = null;
+        }
     }
 }

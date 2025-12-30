@@ -1,0 +1,1274 @@
+fileFormatVersion: 2
+guid: 8edab167961494ad4a07c6716a64a3fb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4786911331128851108
+    second: Claw Critter Sprite Sheet_0
+  - first:
+      213: 7544118310794602262
+    second: Claw Critter Sprite Sheet_1
+  - first:
+      213: 2481099884342636503
+    second: Claw Critter Sprite Sheet_2
+  - first:
+      213: 3222264117199015226
+    second: Claw Critter Sprite Sheet_3
+  - first:
+      213: 7368399760777274129
+    second: Claw Critter Sprite Sheet_4
+  - first:
+      213: 8691131704879781141
+    second: Claw Critter Sprite Sheet_5
+  - first:
+      213: 6494034070489036793
+    second: Claw Critter Sprite Sheet_6
+  - first:
+      213: 127925171044006462
+    second: Claw Critter Sprite Sheet_7
+  - first:
+      213: -3168541862201816924
+    second: Claw Critter Sprite Sheet_8
+  - first:
+      213: 6165425699967046281
+    second: Claw Critter Sprite Sheet_9
+  - first:
+      213: -5426863916474360101
+    second: Claw Critter Sprite Sheet_10
+  - first:
+      213: -3465002168040643652
+    second: Claw Critter Sprite Sheet_11
+  - first:
+      213: -4223927235414406964
+    second: Claw Critter Sprite Sheet_12
+  - first:
+      213: -6591913434118959243
+    second: Claw Critter Sprite Sheet_13
+  - first:
+      213: 4238334607421742070
+    second: Claw Critter Sprite Sheet_14
+  - first:
+      213: -8111792480990563500
+    second: Claw Critter Sprite Sheet_15
+  - first:
+      213: -6403102078667209916
+    second: Claw Critter Sprite Sheet_16
+  - first:
+      213: 6132230990817033528
+    second: Claw Critter Sprite Sheet_17
+  - first:
+      213: -4216534084278622656
+    second: Claw Critter Sprite Sheet_18
+  - first:
+      213: -9128471610567172455
+    second: Claw Critter Sprite Sheet_19
+  - first:
+      213: -1495788305317968328
+    second: Claw Critter Sprite Sheet_20
+  - first:
+      213: -1047333004227024976
+    second: Claw Critter Sprite Sheet_21
+  - first:
+      213: -3653110742271199179
+    second: Claw Critter Sprite Sheet_22
+  - first:
+      213: 346857377024314868
+    second: Claw Critter Sprite Sheet_23
+  - first:
+      213: 2577485476275255453
+    second: Claw Critter Sprite Sheet_24
+  - first:
+      213: -2446936441753555543
+    second: Claw Critter Sprite Sheet_25
+  - first:
+      213: -8005831040717440631
+    second: Claw Critter Sprite Sheet_26
+  - first:
+      213: -7624204369360603655
+    second: Claw Critter Sprite Sheet_27
+  - first:
+      213: -8861829657510171485
+    second: Claw Critter Sprite Sheet_28
+  - first:
+      213: -4524101380494192095
+    second: Claw Critter Sprite Sheet_29
+  - first:
+      213: -3615141146833079953
+    second: Claw Critter Sprite Sheet_30
+  - first:
+      213: 7130010002352689745
+    second: Claw Critter Sprite Sheet_31
+  - first:
+      213: 6567742598269394758
+    second: Claw Critter Sprite Sheet_32
+  - first:
+      213: -5845814993352639534
+    second: Claw Critter Sprite Sheet_33
+  - first:
+      213: -1096739655090485771
+    second: Claw Critter Sprite Sheet_34
+  - first:
+      213: -1879121360515016461
+    second: Claw Critter Sprite Sheet_35
+  - first:
+      213: -2110269661955059157
+    second: Claw Critter Sprite Sheet_36
+  - first:
+      213: -7196153407485528478
+    second: Claw Critter Sprite Sheet_37
+  - first:
+      213: -5916265154895282263
+    second: Claw Critter Sprite Sheet_38
+  - first:
+      213: 3334489609595317066
+    second: Claw Critter Sprite Sheet_39
+  - first:
+      213: -5162036852708629623
+    second: Claw Critter Sprite Sheet_40
+  - first:
+      213: 3137567516467129275
+    second: Claw Critter Sprite Sheet_41
+  - first:
+      213: -2798316558971085488
+    second: Claw Critter Sprite Sheet_42
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 159
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa3a375e768e6240800000000000000
+      internalID: 4786911331128851108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 159
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 617ae6a12a712b860800000000000000
+      internalID: 7544118310794602262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 159
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7df618a0333ae6220800000000000000
+      internalID: 2481099884342636503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 159
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3d822e6428c7bc20800000000000000
+      internalID: 3222264117199015226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 159
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 113e3300b80d14660800000000000000
+      internalID: 7368399760777274129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 159
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5159e7dec3a1d9870800000000000000
+      internalID: 8691131704879781141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 159
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f778ca84917f1a50800000000000000
+      internalID: 6494034070489036793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 159
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3ab8e9e34b76c100800000000000000
+      internalID: 127925171044006462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 127
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a88187c6f31704d0800000000000000
+      internalID: -3168541862201816924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 131
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 982999f120eff8550800000000000000
+      internalID: 6165425699967046281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 129
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bde192e4508efa4b0800000000000000
+      internalID: -5426863916474360101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 127
+        width: 25
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb3aaf3f2e6d9efc0800000000000000
+      internalID: -3465002168040643652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 127
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc8c6080f889165c0800000000000000
+      internalID: -4223927235414406964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 131
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57fc63938a1d484a0800000000000000
+      internalID: -6591913434118959243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 129
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb1e9aaed691da30800000000000000
+      internalID: 4238334607421742070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 127
+        width: 25
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4537fd677bf1d6f80800000000000000
+      internalID: -8111792480990563500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 95
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443c974a59c9327a0800000000000000
+      internalID: -6403102078667209916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 95
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d7a40a89f0a1550800000000000000
+      internalID: 6132230990817033528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 95
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 046ee3b279cdb75c0800000000000000
+      internalID: -4216534084278622656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 95
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99ed7e55f67215180800000000000000
+      internalID: -9128471610567172455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 95
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 836c65a1674ed3be0800000000000000
+      internalID: -1495788305317968328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 95
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b761818e202771f0800000000000000
+      internalID: -1047333004227024976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 95
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 538f2c9822b8d4dc0800000000000000
+      internalID: -3653110742271199179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 95
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd024952f840d400800000000000000
+      internalID: 346857377024314868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 63
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d987d13726115c320800000000000000
+      internalID: 2577485476275255453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 63
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ad2259454cba0ed0800000000000000
+      internalID: -2446936441753555543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 63
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 989bd3ec51395e090800000000000000
+      internalID: -8005831040717440631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 63
+        width: 36
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5b7455582613690800000000000000
+      internalID: -7624204369360603655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 63
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aca514e0e4740580800000000000000
+      internalID: -8861829657510171485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 63
+        width: 42
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1221acf93c92731c0800000000000000
+      internalID: -4524101380494192095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 63
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f61bd12e74074ddc0800000000000000
+      internalID: -3615141146833079953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 63
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152d63b1252e2f260800000000000000
+      internalID: 7130010002352689745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 31
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f5c02881f452b50800000000000000
+      internalID: 6567742598269394758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 31
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2db309a6c3e7fdea0800000000000000
+      internalID: -5845814993352639534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 31
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f54f3f281997c0f0800000000000000
+      internalID: -1096739655090485771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 31
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f857a024150ce5e0800000000000000
+      internalID: -1879121360515016461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 31
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2292e25ce0d6b2e0800000000000000
+      internalID: -2110269661955059157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 0
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 266bb9d4a90222c90800000000000000
+      internalID: -7196153407485528478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aff175ff2435eda0800000000000000
+      internalID: -5916265154895282263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 0
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4be82f02ac764e20800000000000000
+      internalID: 3334489609595317066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 0
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 983a3d405d2cc58b0800000000000000
+      internalID: -5162036852708629623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 0
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbbe3dd5801ea8b20800000000000000
+      internalID: 3137567516467129275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Critter Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 0
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05d5f6d6ae16a29d0800000000000000
+      internalID: -2798316558971085488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Claw Critter Sprite Sheet_0: 4786911331128851108
+      Claw Critter Sprite Sheet_1: 7544118310794602262
+      Claw Critter Sprite Sheet_10: -5426863916474360101
+      Claw Critter Sprite Sheet_11: -3465002168040643652
+      Claw Critter Sprite Sheet_12: -4223927235414406964
+      Claw Critter Sprite Sheet_13: -6591913434118959243
+      Claw Critter Sprite Sheet_14: 4238334607421742070
+      Claw Critter Sprite Sheet_15: -8111792480990563500
+      Claw Critter Sprite Sheet_16: -6403102078667209916
+      Claw Critter Sprite Sheet_17: 6132230990817033528
+      Claw Critter Sprite Sheet_18: -4216534084278622656
+      Claw Critter Sprite Sheet_19: -9128471610567172455
+      Claw Critter Sprite Sheet_2: 2481099884342636503
+      Claw Critter Sprite Sheet_20: -1495788305317968328
+      Claw Critter Sprite Sheet_21: -1047333004227024976
+      Claw Critter Sprite Sheet_22: -3653110742271199179
+      Claw Critter Sprite Sheet_23: 346857377024314868
+      Claw Critter Sprite Sheet_24: 2577485476275255453
+      Claw Critter Sprite Sheet_25: -2446936441753555543
+      Claw Critter Sprite Sheet_26: -8005831040717440631
+      Claw Critter Sprite Sheet_27: -7624204369360603655
+      Claw Critter Sprite Sheet_28: -8861829657510171485
+      Claw Critter Sprite Sheet_29: -4524101380494192095
+      Claw Critter Sprite Sheet_3: 3222264117199015226
+      Claw Critter Sprite Sheet_30: -3615141146833079953
+      Claw Critter Sprite Sheet_31: 7130010002352689745
+      Claw Critter Sprite Sheet_32: 6567742598269394758
+      Claw Critter Sprite Sheet_33: -5845814993352639534
+      Claw Critter Sprite Sheet_34: -1096739655090485771
+      Claw Critter Sprite Sheet_35: -1879121360515016461
+      Claw Critter Sprite Sheet_36: -2110269661955059157
+      Claw Critter Sprite Sheet_37: -7196153407485528478
+      Claw Critter Sprite Sheet_38: -5916265154895282263
+      Claw Critter Sprite Sheet_39: 3334489609595317066
+      Claw Critter Sprite Sheet_4: 7368399760777274129
+      Claw Critter Sprite Sheet_40: -5162036852708629623
+      Claw Critter Sprite Sheet_41: 3137567516467129275
+      Claw Critter Sprite Sheet_42: -2798316558971085488
+      Claw Critter Sprite Sheet_5: 8691131704879781141
+      Claw Critter Sprite Sheet_6: 6494034070489036793
+      Claw Critter Sprite Sheet_7: 127925171044006462
+      Claw Critter Sprite Sheet_8: -3168541862201816924
+      Claw Critter Sprite Sheet_9: 6165425699967046281
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

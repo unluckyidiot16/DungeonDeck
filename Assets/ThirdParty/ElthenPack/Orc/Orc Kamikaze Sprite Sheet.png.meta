@@ -1,0 +1,2184 @@
+fileFormatVersion: 2
+guid: 259cbd9604bef46e29b7daf3648e54fd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3729379672506782106
+    second: Orc Kamikaze Sprite Sheet_0
+  - first:
+      213: 3235903019325154643
+    second: Orc Kamikaze Sprite Sheet_1
+  - first:
+      213: -640942982215145925
+    second: Orc Kamikaze Sprite Sheet_2
+  - first:
+      213: -7604666672582374052
+    second: Orc Kamikaze Sprite Sheet_3
+  - first:
+      213: 4148030252373034093
+    second: Orc Kamikaze Sprite Sheet_4
+  - first:
+      213: -6151843944843621580
+    second: Orc Kamikaze Sprite Sheet_5
+  - first:
+      213: -1138068187700512117
+    second: Orc Kamikaze Sprite Sheet_6
+  - first:
+      213: 9115884440908085243
+    second: Orc Kamikaze Sprite Sheet_7
+  - first:
+      213: 6342912289426620718
+    second: Orc Kamikaze Sprite Sheet_8
+  - first:
+      213: -4853133694382240126
+    second: Orc Kamikaze Sprite Sheet_9
+  - first:
+      213: 5392055939218769238
+    second: Orc Kamikaze Sprite Sheet_10
+  - first:
+      213: -2019303575472371853
+    second: Orc Kamikaze Sprite Sheet_11
+  - first:
+      213: 2964660729638080917
+    second: Orc Kamikaze Sprite Sheet_12
+  - first:
+      213: -1370374530074038640
+    second: Orc Kamikaze Sprite Sheet_13
+  - first:
+      213: 8362232687390573178
+    second: Orc Kamikaze Sprite Sheet_14
+  - first:
+      213: 398834307197654715
+    second: Orc Kamikaze Sprite Sheet_15
+  - first:
+      213: -4051205239836435958
+    second: Orc Kamikaze Sprite Sheet_16
+  - first:
+      213: -5163621775215491559
+    second: Orc Kamikaze Sprite Sheet_17
+  - first:
+      213: 8259755720300820976
+    second: Orc Kamikaze Sprite Sheet_18
+  - first:
+      213: 7749989906988852126
+    second: Orc Kamikaze Sprite Sheet_19
+  - first:
+      213: 6105963781338851585
+    second: Orc Kamikaze Sprite Sheet_20
+  - first:
+      213: -2162611314973146894
+    second: Orc Kamikaze Sprite Sheet_21
+  - first:
+      213: -54243874627417026
+    second: Orc Kamikaze Sprite Sheet_22
+  - first:
+      213: 4329116674423844418
+    second: Orc Kamikaze Sprite Sheet_23
+  - first:
+      213: -7089470501651985847
+    second: Orc Kamikaze Sprite Sheet_24
+  - first:
+      213: 6534972397305240882
+    second: Orc Kamikaze Sprite Sheet_25
+  - first:
+      213: -8254260176289866877
+    second: Orc Kamikaze Sprite Sheet_26
+  - first:
+      213: 9152474399801797913
+    second: Orc Kamikaze Sprite Sheet_27
+  - first:
+      213: -9182328003242548805
+    second: Orc Kamikaze Sprite Sheet_28
+  - first:
+      213: 1733749029548495858
+    second: Orc Kamikaze Sprite Sheet_29
+  - first:
+      213: -5671038078841756119
+    second: Orc Kamikaze Sprite Sheet_30
+  - first:
+      213: -3981312640934649343
+    second: Orc Kamikaze Sprite Sheet_31
+  - first:
+      213: 1807357683123644130
+    second: Orc Kamikaze Sprite Sheet_32
+  - first:
+      213: 7962383058936821097
+    second: Orc Kamikaze Sprite Sheet_33
+  - first:
+      213: 7761370060378240155
+    second: Orc Kamikaze Sprite Sheet_34
+  - first:
+      213: -6921920137655575534
+    second: Orc Kamikaze Sprite Sheet_35
+  - first:
+      213: 4260256465471253980
+    second: Orc Kamikaze Sprite Sheet_36
+  - first:
+      213: -1222884014309782126
+    second: Orc Kamikaze Sprite Sheet_37
+  - first:
+      213: 6456300213808721283
+    second: Orc Kamikaze Sprite Sheet_38
+  - first:
+      213: -8655959572040616648
+    second: Orc Kamikaze Sprite Sheet_39
+  - first:
+      213: 7850002652543308113
+    second: Orc Kamikaze Sprite Sheet_40
+  - first:
+      213: 4098077809910404259
+    second: Orc Kamikaze Sprite Sheet_41
+  - first:
+      213: -4013070871139105107
+    second: Orc Kamikaze Sprite Sheet_42
+  - first:
+      213: -1870024036998011437
+    second: Orc Kamikaze Sprite Sheet_43
+  - first:
+      213: -6918188998367901742
+    second: Orc Kamikaze Sprite Sheet_44
+  - first:
+      213: 1100178417367524313
+    second: Orc Kamikaze Sprite Sheet_45
+  - first:
+      213: 8659487808346998632
+    second: Orc Kamikaze Sprite Sheet_46
+  - first:
+      213: 6580285722835486100
+    second: Orc Kamikaze Sprite Sheet_47
+  - first:
+      213: -5051829331807465608
+    second: Orc Kamikaze Sprite Sheet_48
+  - first:
+      213: 484863197511217441
+    second: Orc Kamikaze Sprite Sheet_49
+  - first:
+      213: 746444200297421132
+    second: Orc Kamikaze Sprite Sheet_50
+  - first:
+      213: -2434144750264547042
+    second: Orc Kamikaze Sprite Sheet_51
+  - first:
+      213: 8207938973406200720
+    second: Orc Kamikaze Sprite Sheet_52
+  - first:
+      213: 8420745090329173856
+    second: Orc Kamikaze Sprite Sheet_53
+  - first:
+      213: 4493938225929812199
+    second: Orc Kamikaze Sprite Sheet_54
+  - first:
+      213: -3333730527972723314
+    second: Orc Kamikaze Sprite Sheet_55
+  - first:
+      213: 6535117794162636935
+    second: Orc Kamikaze Sprite Sheet_56
+  - first:
+      213: 5699400739864367946
+    second: Orc Kamikaze Sprite Sheet_57
+  - first:
+      213: 1854517980189610602
+    second: Orc Kamikaze Sprite Sheet_58
+  - first:
+      213: -8490091549300738978
+    second: Orc Kamikaze Sprite Sheet_59
+  - first:
+      213: 4022430339496558859
+    second: Orc Kamikaze Sprite Sheet_60
+  - first:
+      213: 3398766820373583074
+    second: Orc Kamikaze Sprite Sheet_61
+  - first:
+      213: -8655642158975722049
+    second: Orc Kamikaze Sprite Sheet_62
+  - first:
+      213: 1795067606829854908
+    second: Orc Kamikaze Sprite Sheet_63
+  - first:
+      213: -2452323150340719936
+    second: Orc Kamikaze Sprite Sheet_64
+  - first:
+      213: 8243793037700627752
+    second: Orc Kamikaze Sprite Sheet_65
+  - first:
+      213: -1059332901473205740
+    second: Orc Kamikaze Sprite Sheet_66
+  - first:
+      213: 8121584797228945794
+    second: Orc Kamikaze Sprite Sheet_67
+  - first:
+      213: 5764231546420207137
+    second: Orc Kamikaze Sprite Sheet_68
+  - first:
+      213: -2782896138871949648
+    second: Orc Kamikaze Sprite Sheet_69
+  - first:
+      213: -4413448160187991392
+    second: Orc Kamikaze Sprite Sheet_70
+  - first:
+      213: -6663719009991193047
+    second: Orc Kamikaze Sprite Sheet_71
+  - first:
+      213: 39952564661390147
+    second: Orc Kamikaze Sprite Sheet_72
+  - first:
+      213: -2572007881615024887
+    second: Orc Kamikaze Sprite Sheet_73
+  - first:
+      213: -3800107990068883493
+    second: Orc Kamikaze Sprite Sheet_74
+  - first:
+      213: 5911345469613450487
+    second: Orc Kamikaze Sprite Sheet_75
+  - first:
+      213: 1449755430270336862
+    second: Orc Kamikaze Sprite Sheet_76
+  - first:
+      213: 8001335425367223521
+    second: Orc Kamikaze Sprite Sheet_77
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 418
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66eabab62f49e3cc0800000000000000
+      internalID: -3729379672506782106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 418
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3556d7ac6ac38ec20800000000000000
+      internalID: 3235903019325154643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 418
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3669c7e0c9ea17f0800000000000000
+      internalID: -640942982215145925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 418
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5dc979d3fbc67690800000000000000
+      internalID: -7604666672582374052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 418
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d64c44e8983c09930800000000000000
+      internalID: 4148030252373034093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 418
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43b45f9a68240aaa0800000000000000
+      internalID: -6151843944843621580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 418
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8a30f55305c430f0800000000000000
+      internalID: -1138068187700512117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 418
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf736d9d990228e70800000000000000
+      internalID: 9115884440908085243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 322
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e21cbbcfe1d860850800000000000000
+      internalID: 6342912289426620718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 325
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e0ed23e9436acb0800000000000000
+      internalID: -4853133694382240126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 326
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6558b22fe4e64da40800000000000000
+      internalID: 5392055939218769238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 325
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3770b4ac81ef9f3e0800000000000000
+      internalID: -2019303575472371853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 322
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 591d0a5e937942920800000000000000
+      internalID: 2964660729638080917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 325
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09ea1bd10a37bfce0800000000000000
+      internalID: -1370374530074038640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 326
+        width: 35
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a72431df25e9c0470800000000000000
+      internalID: 8362232687390573178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 325
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb651c470b1f88500800000000000000
+      internalID: 398834307197654715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 219
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0a195f6c4a37c7c0800000000000000
+      internalID: -4051205239836435958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 226
+        width: 59
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9160fcd7a512758b0800000000000000
+      internalID: -5163621775215491559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 269
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f9f708c01c80a270800000000000000
+      internalID: 8259755720300820976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 267
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93eeea52ce7d8b60800000000000000
+      internalID: 7749989906988852126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 238
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1096a1655bdbcb450800000000000000
+      internalID: 6105963781338851585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 252
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f009cf877cdcf1e0800000000000000
+      internalID: -2162611314973146894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 261
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3c8791cb794f3ff0800000000000000
+      internalID: -54243874627417026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 261
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24ee042cdac141c30800000000000000
+      internalID: 4329116674423844418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 258
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94a4c6fe3242d9d90800000000000000
+      internalID: -7089470501651985847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 265
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23d9c5685c2e0ba50800000000000000
+      internalID: 6534972397305240882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 256
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38bd6944a1af27d80800000000000000
+      internalID: -8254260176289866877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 241
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91dea0889fe140f70800000000000000
+      internalID: 9152474399801797913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 256
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb12b93c451d19080800000000000000
+      internalID: -9182328003242548805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 258
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f39aeb7e838f0810800000000000000
+      internalID: 1733749029548495858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 217
+        width: 112
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9266ceae9ec6c41b0800000000000000
+      internalID: -5671038078841756119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 226
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10261593f398fb8c0800000000000000
+      internalID: -3981312640934649343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 226
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e668acac36051910800000000000000
+      internalID: 1807357683123644130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 226
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9657481a431108e60800000000000000
+      internalID: 7962383058936821097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 226
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b94723bc2fce5bb60800000000000000
+      internalID: 7761370060378240155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 226
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21c9a670f4660ff90800000000000000
+      internalID: -6921920137655575534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 226
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdda97cfea87f1b30800000000000000
+      internalID: 4260256465471253980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 226
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29dcf85d771770fe0800000000000000
+      internalID: -1222884014309782126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 250
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38de85766d2699950800000000000000
+      internalID: 6456300213808721283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 254
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 835706661aadfd780800000000000000
+      internalID: -8655959572040616648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 241
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 151d7b642dfc0fc60800000000000000
+      internalID: 7850002652543308113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 253
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a4de993e0c4fd830800000000000000
+      internalID: 4098077809910404259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 226
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da6494b0e45be48c0800000000000000
+      internalID: -4013070871139105107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 238
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d5aa41db075c06e0800000000000000
+      internalID: -1870024036998011437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 229
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d7044792c7adff90800000000000000
+      internalID: -6918188998367901742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 238
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d32ebc017e944f00800000000000000
+      internalID: 1100178417367524313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 244
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8674951284eac2870800000000000000
+      internalID: 8659487808346998632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 236
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4950f26400fd15b50800000000000000
+      internalID: 6580285722835486100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 227
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f87bb0dfb44e9b0800000000000000
+      internalID: -5051829331807465608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 233
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 121f05c52849ab600800000000000000
+      internalID: 484863197511217441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 222
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c49d06b9b07eb5a00800000000000000
+      internalID: 746444200297421132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 228
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19899c0f3e283ed0800000000000000
+      internalID: -2434144750264547042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 237
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09306ff320578e170800000000000000
+      internalID: 8207938973406200720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 224
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f5f2d6b0f7cd470800000000000000
+      internalID: 8420745090329173856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 237
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e8781fa10dad5e30800000000000000
+      internalID: 4493938225929812199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 227
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e857f476fb53cb1d0800000000000000
+      internalID: -3333730527972723314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 219
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 788f56e520761ba50800000000000000
+      internalID: 6535117794162636935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 224
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a43d634b6c6581f40800000000000000
+      internalID: 5699400739864367946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 220
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a62d6cef6429cb910800000000000000
+      internalID: 1854517980189610602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 223
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e543265e7b22d2a80800000000000000
+      internalID: -8490091549300738978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 219
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b01427ff41b82d730800000000000000
+      internalID: 4022430339496558859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 223
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e450ca6a68da2f20800000000000000
+      internalID: 3398766820373583074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 222
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd5b53e05bf0e780800000000000000
+      internalID: -8655642158975722049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 218
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb077ec4a7c59e810800000000000000
+      internalID: 1795067606829854908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 130
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ca7975761997fdd0800000000000000
+      internalID: -2452323150340719936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 130
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82dfbfd1716d76270800000000000000
+      internalID: 8243793037700627752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 130
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4124ec4b65e7c41f0800000000000000
+      internalID: -1059332901473205740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 130
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2815b04d75aa5b070800000000000000
+      internalID: 8121584797228945794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 34
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12e1a7f1d0aaeff40800000000000000
+      internalID: 5764231546420207137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 34
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b63bb3c4ba2169d0800000000000000
+      internalID: -2782896138871949648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 34
+        width: 34
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aab461284840c2c0800000000000000
+      internalID: -4413448160187991392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 34
+        width: 36
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92e0576cdd6b583a0800000000000000
+      internalID: -6663719009991193047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 34
+        width: 44
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b028855a0fd8000800000000000000
+      internalID: 39952564661390147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 34
+        width: 46
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90dd4d075746e4cd0800000000000000
+      internalID: -2572007881615024887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 34
+        width: 48
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf02d7baed434bc0800000000000000
+      internalID: -3800107990068883493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 34
+        width: 47
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f4acec8261590250800000000000000
+      internalID: 5911345469613450487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 34
+        width: 47
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5ff478f1e09e1410800000000000000
+      internalID: 1449755430270336862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Kamikaze Sprite Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 34
+        width: 44
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec23cd2d247a0f60800000000000000
+      internalID: 8001335425367223521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Orc Kamikaze Sprite Sheet_0: -3729379672506782106
+      Orc Kamikaze Sprite Sheet_1: 3235903019325154643
+      Orc Kamikaze Sprite Sheet_10: 5392055939218769238
+      Orc Kamikaze Sprite Sheet_11: -2019303575472371853
+      Orc Kamikaze Sprite Sheet_12: 2964660729638080917
+      Orc Kamikaze Sprite Sheet_13: -1370374530074038640
+      Orc Kamikaze Sprite Sheet_14: 8362232687390573178
+      Orc Kamikaze Sprite Sheet_15: 398834307197654715
+      Orc Kamikaze Sprite Sheet_16: -4051205239836435958
+      Orc Kamikaze Sprite Sheet_17: -5163621775215491559
+      Orc Kamikaze Sprite Sheet_18: 8259755720300820976
+      Orc Kamikaze Sprite Sheet_19: 7749989906988852126
+      Orc Kamikaze Sprite Sheet_2: -640942982215145925
+      Orc Kamikaze Sprite Sheet_20: 6105963781338851585
+      Orc Kamikaze Sprite Sheet_21: -2162611314973146894
+      Orc Kamikaze Sprite Sheet_22: -54243874627417026
+      Orc Kamikaze Sprite Sheet_23: 4329116674423844418
+      Orc Kamikaze Sprite Sheet_24: -7089470501651985847
+      Orc Kamikaze Sprite Sheet_25: 6534972397305240882
+      Orc Kamikaze Sprite Sheet_26: -8254260176289866877
+      Orc Kamikaze Sprite Sheet_27: 9152474399801797913
+      Orc Kamikaze Sprite Sheet_28: -9182328003242548805
+      Orc Kamikaze Sprite Sheet_29: 1733749029548495858
+      Orc Kamikaze Sprite Sheet_3: -7604666672582374052
+      Orc Kamikaze Sprite Sheet_30: -5671038078841756119
+      Orc Kamikaze Sprite Sheet_31: -3981312640934649343
+      Orc Kamikaze Sprite Sheet_32: 1807357683123644130
+      Orc Kamikaze Sprite Sheet_33: 7962383058936821097
+      Orc Kamikaze Sprite Sheet_34: 7761370060378240155
+      Orc Kamikaze Sprite Sheet_35: -6921920137655575534
+      Orc Kamikaze Sprite Sheet_36: 4260256465471253980
+      Orc Kamikaze Sprite Sheet_37: -1222884014309782126
+      Orc Kamikaze Sprite Sheet_38: 6456300213808721283
+      Orc Kamikaze Sprite Sheet_39: -8655959572040616648
+      Orc Kamikaze Sprite Sheet_4: 4148030252373034093
+      Orc Kamikaze Sprite Sheet_40: 7850002652543308113
+      Orc Kamikaze Sprite Sheet_41: 4098077809910404259
+      Orc Kamikaze Sprite Sheet_42: -4013070871139105107
+      Orc Kamikaze Sprite Sheet_43: -1870024036998011437
+      Orc Kamikaze Sprite Sheet_44: -6918188998367901742
+      Orc Kamikaze Sprite Sheet_45: 1100178417367524313
+      Orc Kamikaze Sprite Sheet_46: 8659487808346998632
+      Orc Kamikaze Sprite Sheet_47: 6580285722835486100
+      Orc Kamikaze Sprite Sheet_48: -5051829331807465608
+      Orc Kamikaze Sprite Sheet_49: 484863197511217441
+      Orc Kamikaze Sprite Sheet_5: -6151843944843621580
+      Orc Kamikaze Sprite Sheet_50: 746444200297421132
+      Orc Kamikaze Sprite Sheet_51: -2434144750264547042
+      Orc Kamikaze Sprite Sheet_52: 8207938973406200720
+      Orc Kamikaze Sprite Sheet_53: 8420745090329173856
+      Orc Kamikaze Sprite Sheet_54: 4493938225929812199
+      Orc Kamikaze Sprite Sheet_55: -3333730527972723314
+      Orc Kamikaze Sprite Sheet_56: 6535117794162636935
+      Orc Kamikaze Sprite Sheet_57: 5699400739864367946
+      Orc Kamikaze Sprite Sheet_58: 1854517980189610602
+      Orc Kamikaze Sprite Sheet_59: -8490091549300738978
+      Orc Kamikaze Sprite Sheet_6: -1138068187700512117
+      Orc Kamikaze Sprite Sheet_60: 4022430339496558859
+      Orc Kamikaze Sprite Sheet_61: 3398766820373583074
+      Orc Kamikaze Sprite Sheet_62: -8655642158975722049
+      Orc Kamikaze Sprite Sheet_63: 1795067606829854908
+      Orc Kamikaze Sprite Sheet_64: -2452323150340719936
+      Orc Kamikaze Sprite Sheet_65: 8243793037700627752
+      Orc Kamikaze Sprite Sheet_66: -1059332901473205740
+      Orc Kamikaze Sprite Sheet_67: 8121584797228945794
+      Orc Kamikaze Sprite Sheet_68: 5764231546420207137
+      Orc Kamikaze Sprite Sheet_69: -2782896138871949648
+      Orc Kamikaze Sprite Sheet_7: 9115884440908085243
+      Orc Kamikaze Sprite Sheet_70: -4413448160187991392
+      Orc Kamikaze Sprite Sheet_71: -6663719009991193047
+      Orc Kamikaze Sprite Sheet_72: 39952564661390147
+      Orc Kamikaze Sprite Sheet_73: -2572007881615024887
+      Orc Kamikaze Sprite Sheet_74: -3800107990068883493
+      Orc Kamikaze Sprite Sheet_75: 5911345469613450487
+      Orc Kamikaze Sprite Sheet_76: 1449755430270336862
+      Orc Kamikaze Sprite Sheet_77: 8001335425367223521
+      Orc Kamikaze Sprite Sheet_8: 6342912289426620718
+      Orc Kamikaze Sprite Sheet_9: -4853133694382240126
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1716 @@
+fileFormatVersion: 2
+guid: 3c5cc7e0dfec942cc9bded47d5b2e041
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4794609120973051057
+    second: Quasit Sprite Sheet_0
+  - first:
+      213: -6367402724958552350
+    second: Quasit Sprite Sheet_1
+  - first:
+      213: 7670804510887399705
+    second: Quasit Sprite Sheet_2
+  - first:
+      213: -7356568277976507757
+    second: Quasit Sprite Sheet_3
+  - first:
+      213: 420886673203544783
+    second: Quasit Sprite Sheet_4
+  - first:
+      213: 160818350998861935
+    second: Quasit Sprite Sheet_5
+  - first:
+      213: 5928854347251649706
+    second: Quasit Sprite Sheet_6
+  - first:
+      213: 8466859847609517099
+    second: Quasit Sprite Sheet_7
+  - first:
+      213: 3629593234679380492
+    second: Quasit Sprite Sheet_8
+  - first:
+      213: -605321113605264183
+    second: Quasit Sprite Sheet_9
+  - first:
+      213: -3135351679999005733
+    second: Quasit Sprite Sheet_10
+  - first:
+      213: 7445114033416285762
+    second: Quasit Sprite Sheet_11
+  - first:
+      213: -4822606515828820865
+    second: Quasit Sprite Sheet_12
+  - first:
+      213: 2716817371779757146
+    second: Quasit Sprite Sheet_13
+  - first:
+      213: 4221188259481385830
+    second: Quasit Sprite Sheet_14
+  - first:
+      213: -1984351154717337917
+    second: Quasit Sprite Sheet_15
+  - first:
+      213: -3213710653584405553
+    second: Quasit Sprite Sheet_16
+  - first:
+      213: 8735964890773123804
+    second: Quasit Sprite Sheet_17
+  - first:
+      213: -7144902785948645948
+    second: Quasit Sprite Sheet_18
+  - first:
+      213: 7609485511391222735
+    second: Quasit Sprite Sheet_19
+  - first:
+      213: -2015605558196265499
+    second: Quasit Sprite Sheet_20
+  - first:
+      213: -3968011383664478629
+    second: Quasit Sprite Sheet_21
+  - first:
+      213: -6595913991881242744
+    second: Quasit Sprite Sheet_22
+  - first:
+      213: -4950488427384980763
+    second: Quasit Sprite Sheet_23
+  - first:
+      213: 6729573727324342216
+    second: Quasit Sprite Sheet_24
+  - first:
+      213: -4495868308787193573
+    second: Quasit Sprite Sheet_25
+  - first:
+      213: 1148651492019222124
+    second: Quasit Sprite Sheet_26
+  - first:
+      213: 2876705123560252146
+    second: Quasit Sprite Sheet_27
+  - first:
+      213: 2464581082222450188
+    second: Quasit Sprite Sheet_28
+  - first:
+      213: 6470204503934323303
+    second: Quasit Sprite Sheet_29
+  - first:
+      213: -1256547477111829063
+    second: Quasit Sprite Sheet_30
+  - first:
+      213: -3784138869727395053
+    second: Quasit Sprite Sheet_31
+  - first:
+      213: -3602037018651419608
+    second: Quasit Sprite Sheet_32
+  - first:
+      213: -3460906977937847488
+    second: Quasit Sprite Sheet_33
+  - first:
+      213: 7316800568095923503
+    second: Quasit Sprite Sheet_34
+  - first:
+      213: 3008590682553773243
+    second: Quasit Sprite Sheet_35
+  - first:
+      213: 5868550612211121987
+    second: Quasit Sprite Sheet_36
+  - first:
+      213: 8243977659698546080
+    second: Quasit Sprite Sheet_37
+  - first:
+      213: -2753716712725983924
+    second: Quasit Sprite Sheet_38
+  - first:
+      213: -8010473350228960196
+    second: Quasit Sprite Sheet_39
+  - first:
+      213: -3697528407522663133
+    second: Quasit Sprite Sheet_40
+  - first:
+      213: -4588064966279312731
+    second: Quasit Sprite Sheet_41
+  - first:
+      213: 6829262597680461185
+    second: Quasit Sprite Sheet_42
+  - first:
+      213: 3841671440659268400
+    second: Quasit Sprite Sheet_43
+  - first:
+      213: 5159642594838546426
+    second: Quasit Sprite Sheet_44
+  - first:
+      213: 2873452598938359656
+    second: Quasit Sprite Sheet_45
+  - first:
+      213: -6145598837425760958
+    second: Quasit Sprite Sheet_46
+  - first:
+      213: 1966120162044397957
+    second: Quasit Sprite Sheet_47
+  - first:
+      213: -7119492712059536725
+    second: Quasit Sprite Sheet_48
+  - first:
+      213: 3537828956396831488
+    second: Quasit Sprite Sheet_49
+  - first:
+      213: -7201644136878030099
+    second: Quasit Sprite Sheet_50
+  - first:
+      213: -8315593988304579406
+    second: Quasit Sprite Sheet_51
+  - first:
+      213: 28386400489906966
+    second: Quasit Sprite Sheet_52
+  - first:
+      213: -848055723499504512
+    second: Quasit Sprite Sheet_53
+  - first:
+      213: 6877761710835070876
+    second: Quasit Sprite Sheet_54
+  - first:
+      213: 285744831032416773
+    second: Quasit Sprite Sheet_55
+  - first:
+      213: -5798583389493799121
+    second: Quasit Sprite Sheet_56
+  - first:
+      213: -4036480704037279306
+    second: Quasit Sprite Sheet_57
+  - first:
+      213: 6252043986182042257
+    second: Quasit Sprite Sheet_58
+  - first:
+      213: 4434000301485567011
+    second: Quasit Sprite Sheet_59
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 255
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4bad8b4860267db0800000000000000
+      internalID: -4794609120973051057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 255
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eebdf425f072a7a0800000000000000
+      internalID: -6367402724958552350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 255
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91158ec9f0c247a60800000000000000
+      internalID: 7670804510887399705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 255
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39a9d41c02838e990800000000000000
+      internalID: -7356568277976507757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 255
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc24ef6033a47d500800000000000000
+      internalID: 420886673203544783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 255
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68b6ac20775b3200800000000000000
+      internalID: 160818350998861935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 223
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aac07fccd95874250800000000000000
+      internalID: 5928854347251649706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 223
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2488cb0c24508570800000000000000
+      internalID: 8466859847609517099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 226
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ab93801d7ee5230800000000000000
+      internalID: 3629593234679380492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 225
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cca38087a77997f0800000000000000
+      internalID: -605321113605264183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 223
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdb2cb3424efc74d0800000000000000
+      internalID: -3135351679999005733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 225
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24ead0a74cb525760800000000000000
+      internalID: 7445114033416285762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 225
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f74f984dce8a21db0800000000000000
+      internalID: -4822606515828820865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 224
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a54fa8c510314b520800000000000000
+      internalID: 2716817371779757146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 191
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66bff607b5ca49a30800000000000000
+      internalID: 4221188259481385830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 191
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6df69632b2674e0800000000000000
+      internalID: -1984351154717337917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 191
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcb8632003b9663d0800000000000000
+      internalID: -3213710653584405553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 191
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2f0d478c16c3970800000000000000
+      internalID: 8735964890773123804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 193
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c505d085c438dc90800000000000000
+      internalID: -7144902785948645948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 191
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcb94fd71c25a9960800000000000000
+      internalID: 7609485511391222735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 193
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed98688c612704e0800000000000000
+      internalID: -2015605558196265499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 159
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b56f8f38baacee8c0800000000000000
+      internalID: -3968011383664478629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 159
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887c3e8cb2b9674a0800000000000000
+      internalID: -6595913991881242744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 159
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea390d01055c4bb0800000000000000
+      internalID: -4950488427384980763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 159
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c708f276af346d50800000000000000
+      internalID: 6729573727324342216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 159
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b199dc1e7977b91c0800000000000000
+      internalID: -4495868308787193573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 159
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6637883274d0ff00800000000000000
+      internalID: 1148651492019222124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 159
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2ea55811c1ce720800000000000000
+      internalID: 2876705123560252146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 159
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c065406bf63f33220800000000000000
+      internalID: 2464581082222450188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 127
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a432937b8cac950800000000000000
+      internalID: 6470204503934323303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 127
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd065f1ab8df8ee0800000000000000
+      internalID: -1256547477111829063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 127
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31386294fb90c7bc0800000000000000
+      internalID: -3784138869727395053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 127
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82c997b7a6ef20ec0800000000000000
+      internalID: -3602037018651419608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 127
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04b0853b07368ffc0800000000000000
+      internalID: -3460906977937847488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 127
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2ddbb1c95f7a8560800000000000000
+      internalID: 7316800568095923503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 95
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbcea2c1949a0c920800000000000000
+      internalID: 3008590682553773243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 95
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34fbe3b50b7417150800000000000000
+      internalID: 5868550612211121987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 95
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a58696c00e786270800000000000000
+      internalID: 8243977659698546080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 101
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d49e55d35d8c9d0800000000000000
+      internalID: -2753716712725983924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 105
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c9ed4ede415d090800000000000000
+      internalID: -8010473350228960196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 110
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32522b2f08dbfacc0800000000000000
+      internalID: -3697528407522663133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 95
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aac186c83be350c0800000000000000
+      internalID: -4588064966279312731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 96
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185fa9c462a66ce50800000000000000
+      internalID: 6829262597680461185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 80
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 033424c32db505530800000000000000
+      internalID: 3841671440659268400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 79
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af783516a9bba9740800000000000000
+      internalID: 5159642594838546426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 65
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 867d4ae1aed80e720800000000000000
+      internalID: 2873452598938359656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 63
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2451f2b0b6276baa0800000000000000
+      internalID: -6145598837425760958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 63
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 589c364dedf094b10800000000000000
+      internalID: 1966120162044397957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 63
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa75bc591b723d90800000000000000
+      internalID: -7119492712059536725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 63
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 003cf1e01b4e81130800000000000000
+      internalID: 3537828956396831488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 63
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de24c9e30de9e0c90800000000000000
+      internalID: -7201644136878030099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 31
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b45bb65353199c80800000000000000
+      internalID: -8315593988304579406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 31
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61327a5e749d46000800000000000000
+      internalID: 28386400489906966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 31
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08c331b00d91b34f0800000000000000
+      internalID: -848055723499504512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 31
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c977b1806d7b27f50800000000000000
+      internalID: 6877761710835070876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50a571ee86b27f300800000000000000
+      internalID: 285744831032416773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 0
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f27ddb4212b478fa0800000000000000
+      internalID: -5798583389493799121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b9a3259f2a8bf7c0800000000000000
+      internalID: -4036480704037279306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 0
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1927f7471e8b3c650800000000000000
+      internalID: 6252043986182042257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quasit Sprite Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 0
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ca50828cbb88d30800000000000000
+      internalID: 4434000301485567011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Quasit Sprite Sheet_0: -4794609120973051057
+      Quasit Sprite Sheet_1: -6367402724958552350
+      Quasit Sprite Sheet_10: -3135351679999005733
+      Quasit Sprite Sheet_11: 7445114033416285762
+      Quasit Sprite Sheet_12: -4822606515828820865
+      Quasit Sprite Sheet_13: 2716817371779757146
+      Quasit Sprite Sheet_14: 4221188259481385830
+      Quasit Sprite Sheet_15: -1984351154717337917
+      Quasit Sprite Sheet_16: -3213710653584405553
+      Quasit Sprite Sheet_17: 8735964890773123804
+      Quasit Sprite Sheet_18: -7144902785948645948
+      Quasit Sprite Sheet_19: 7609485511391222735
+      Quasit Sprite Sheet_2: 7670804510887399705
+      Quasit Sprite Sheet_20: -2015605558196265499
+      Quasit Sprite Sheet_21: -3968011383664478629
+      Quasit Sprite Sheet_22: -6595913991881242744
+      Quasit Sprite Sheet_23: -4950488427384980763
+      Quasit Sprite Sheet_24: 6729573727324342216
+      Quasit Sprite Sheet_25: -4495868308787193573
+      Quasit Sprite Sheet_26: 1148651492019222124
+      Quasit Sprite Sheet_27: 2876705123560252146
+      Quasit Sprite Sheet_28: 2464581082222450188
+      Quasit Sprite Sheet_29: 6470204503934323303
+      Quasit Sprite Sheet_3: -7356568277976507757
+      Quasit Sprite Sheet_30: -1256547477111829063
+      Quasit Sprite Sheet_31: -3784138869727395053
+      Quasit Sprite Sheet_32: -3602037018651419608
+      Quasit Sprite Sheet_33: -3460906977937847488
+      Quasit Sprite Sheet_34: 7316800568095923503
+      Quasit Sprite Sheet_35: 3008590682553773243
+      Quasit Sprite Sheet_36: 5868550612211121987
+      Quasit Sprite Sheet_37: 8243977659698546080
+      Quasit Sprite Sheet_38: -2753716712725983924
+      Quasit Sprite Sheet_39: -8010473350228960196
+      Quasit Sprite Sheet_4: 420886673203544783
+      Quasit Sprite Sheet_40: -3697528407522663133
+      Quasit Sprite Sheet_41: -4588064966279312731
+      Quasit Sprite Sheet_42: 6829262597680461185
+      Quasit Sprite Sheet_43: 3841671440659268400
+      Quasit Sprite Sheet_44: 5159642594838546426
+      Quasit Sprite Sheet_45: 2873452598938359656
+      Quasit Sprite Sheet_46: -6145598837425760958
+      Quasit Sprite Sheet_47: 1966120162044397957
+      Quasit Sprite Sheet_48: -7119492712059536725
+      Quasit Sprite Sheet_49: 3537828956396831488
+      Quasit Sprite Sheet_5: 160818350998861935
+      Quasit Sprite Sheet_50: -7201644136878030099
+      Quasit Sprite Sheet_51: -8315593988304579406
+      Quasit Sprite Sheet_52: 28386400489906966
+      Quasit Sprite Sheet_53: -848055723499504512
+      Quasit Sprite Sheet_54: 6877761710835070876
+      Quasit Sprite Sheet_55: 285744831032416773
+      Quasit Sprite Sheet_56: -5798583389493799121
+      Quasit Sprite Sheet_57: -4036480704037279306
+      Quasit Sprite Sheet_58: 6252043986182042257
+      Quasit Sprite Sheet_59: 4434000301485567011
+      Quasit Sprite Sheet_6: 5928854347251649706
+      Quasit Sprite Sheet_7: 8466859847609517099
+      Quasit Sprite Sheet_8: 3629593234679380492
+      Quasit Sprite Sheet_9: -605321113605264183
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -36,9 +36,23 @@ namespace DungeonDeck.UI.Battle
 
         void OnEnable()
         {
-            // 레이아웃이 바뀌었을 수 있으니 enable 시 기준 재설정
+            // ✅ 이전 DOTween 잔여 애니메이션 즉시 정리
+            transform.DOKill(true);
+            
+            // ✅ 호버 상태 초기화
+            _hovered = false;
+        }
+        
+        /// <summary>
+        /// 외부에서 기준 위치/스케일을 재설정할 때 호출.
+        /// 레이아웃 변경 후나 카드 Bind 후에 호출하세요.
+        /// </summary>
+        public void ResetBaseTransform()
+        {
+            transform.DOKill(true);
             _baseLocalPos = transform.localPosition;
             _baseScale = transform.localScale;
+            _hovered = false;
         }
 
         void OnDisable()
@@ -51,10 +65,10 @@ namespace DungeonDeck.UI.Battle
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            // ✅ 이미 호버 중이면 기준값 업데이트하지 않음 (잔상 방지)
+            if (_hovered) return;
+            
             _hovered = true;
-            // 현재 위치를 기준으로(레이아웃 대응)
-            _baseLocalPos = transform.localPosition;
-            _baseScale = transform.localScale;
 
             transform.DOKill(true);
 

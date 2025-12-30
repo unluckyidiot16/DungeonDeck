@@ -1,0 +1,745 @@
+fileFormatVersion: 2
+guid: 855e8ab51d07a4feeb9fadf62ad59868
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2514144981433685240
+    second: CardEffects_0
+  - first:
+      213: 8143125598222161318
+    second: CardEffects_1
+  - first:
+      213: 6009242560708063176
+    second: CardEffects_2
+  - first:
+      213: 1614929938013107552
+    second: CardEffects_3
+  - first:
+      213: 2102122023732704149
+    second: CardEffects_4
+  - first:
+      213: 461673516997078876
+    second: CardEffects_5
+  - first:
+      213: 3137007453692192331
+    second: CardEffects_6
+  - first:
+      213: 2692993148484823641
+    second: CardEffects_7
+  - first:
+      213: 131181748406815945
+    second: CardEffects_8
+  - first:
+      213: 1112498339425124567
+    second: CardEffects_9
+  - first:
+      213: 4742605619050281085
+    second: CardEffects_10
+  - first:
+      213: -8969445771233155103
+    second: CardEffects_11
+  - first:
+      213: -2006654218934227068
+    second: CardEffects_12
+  - first:
+      213: -4414964416708140567
+    second: CardEffects_13
+  - first:
+      213: 4089761518955983361
+    second: CardEffects_14
+  - first:
+      213: 1856250997100975706
+    second: CardEffects_15
+  - first:
+      213: 5474308501805256920
+    second: CardEffects_16
+  - first:
+      213: 8861057474318321996
+    second: CardEffects_17
+  - first:
+      213: -7987665360481208046
+    second: CardEffects_18
+  - first:
+      213: 4467207127407098272
+    second: CardEffects_19
+  - first:
+      213: 5260327999931957005
+    second: CardEffects_20
+  - first:
+      213: 416232609211311969
+    second: CardEffects_21
+  - first:
+      213: 7080932309081126264
+    second: CardEffects_22
+  - first:
+      213: 5999737178491170527
+    second: CardEffects_23
+  - first:
+      213: 8605857789957789910
+    second: CardEffects_24
+  - first:
+      213: -5399309126297459304
+    second: CardEffects_25
+  - first:
+      213: 3857252592181952137
+    second: CardEffects_26
+  - first:
+      213: 4157124239304513912
+    second: CardEffects_27
+  - first:
+      213: -4182365198453970831
+    second: CardEffects_28
+  - first:
+      213: -3305953724828322888
+    second: CardEffects_29
+  - first:
+      213: -8270012015304502242
+    second: CardEffects_30
+  - first:
+      213: 6524759432388703858
+    second: CardEffects_31
+  - first:
+      213: 8878998059105524634
+    second: CardEffects_32
+  - first:
+      213: -5814312215384506635
+    second: CardEffects_33
+  - first:
+      213: 6809019359776418752
+    second: CardEffects_34
+  - first:
+      213: 6718182365872227097
+    second: CardEffects_35
+  - first:
+      213: -4792169516908754286
+    second: CardEffects_36
+  - first:
+      213: 6662797367886375185
+    second: CardEffects_37
+  - first:
+      213: -1931519437823278969
+    second: CardEffects_38
+  - first:
+      213: 5498114711896019081
+    second: CardEffects_39
+  - first:
+      213: 59292375046599901
+    second: CardEffects_40
+  - first:
+      213: 8444095830612833547
+    second: CardEffects_41
+  - first:
+      213: 2520791079177145810
+    second: CardEffects_42
+  - first:
+      213: 6188388856376281438
+    second: CardEffects_43
+  - first:
+      213: -4879636375064939440
+    second: CardEffects_44
+  - first:
+      213: 4411199711371076859
+    second: CardEffects_45
+  - first:
+      213: 5141512745032371292
+    second: CardEffects_46
+  - first:
+      213: 4337430724017592922
+    second: CardEffects_47
+  - first:
+      213: -9147347846092332723
+    second: CardEffects_48
+  - first:
+      213: 11904346955789573
+    second: CardEffects_49
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CardEffects_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80b60dbb576fb1dd0800000000000000
+      internalID: -2514144981433685240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 160
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a51c636691320170800000000000000
+      internalID: 8143125598222161318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_2
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 160
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cfa928454e156350800000000000000
+      internalID: 6009242560708063176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 160
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0653a6ce832696610800000000000000
+      internalID: 1614929938013107552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_4
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 160
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 593fc13d7dc3c2d10800000000000000
+      internalID: 2102122023732704149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_5
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 160
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5fe0de1e91386600800000000000000
+      internalID: 461673516997078876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_6
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 160
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b46631798a3e88b20800000000000000
+      internalID: 3137007453692192331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95aaffd100f6f5520800000000000000
+      internalID: 2692993148484823641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_8
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 80
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc8dcaea1d02d100800000000000000
+      internalID: 131181748406815945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_9
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 80
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d085ae6853607f00800000000000000
+      internalID: 1112498339425124567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_10
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 80
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d787341eeae11d140800000000000000
+      internalID: 4742605619050281085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_11
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 80
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e7a48dd790268380800000000000000
+      internalID: -8969445771233155103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_12
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 80
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48fe26d9e9ee624e0800000000000000
+      internalID: -2006654218934227068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_13
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 80
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e12f162145eab2c0800000000000000
+      internalID: -4414964416708140567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 102fe69de60c1c830800000000000000
+      internalID: 4089761518955983361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_15
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 0
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a561b20727ab2c910800000000000000
+      internalID: 1856250997100975706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_16
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 0
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d0d0090496a8fb40800000000000000
+      internalID: 5474308501805256920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_17
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 0
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c49401333dcc8fa70800000000000000
+      internalID: 8861057474318321996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEffects_18
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 0
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21933d3dcac162190800000000000000
+      internalID: -7987665360481208046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1d2de312d5dd64aacbb4fc389f20c824
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":3.0},"gridSpriteSize":{"x":59.0,"y":80.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      CardEffects_0: -2514144981433685240
+      CardEffects_1: 8143125598222161318
+      CardEffects_10: 4742605619050281085
+      CardEffects_11: -8969445771233155103
+      CardEffects_12: -2006654218934227068
+      CardEffects_13: -4414964416708140567
+      CardEffects_14: 4089761518955983361
+      CardEffects_15: 1856250997100975706
+      CardEffects_16: 5474308501805256920
+      CardEffects_17: 8861057474318321996
+      CardEffects_18: -7987665360481208046
+      CardEffects_2: 6009242560708063176
+      CardEffects_3: 1614929938013107552
+      CardEffects_4: 2102122023732704149
+      CardEffects_5: 461673516997078876
+      CardEffects_6: 3137007453692192331
+      CardEffects_7: 2692993148484823641
+      CardEffects_8: 131181748406815945
+      CardEffects_9: 1112498339425124567
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

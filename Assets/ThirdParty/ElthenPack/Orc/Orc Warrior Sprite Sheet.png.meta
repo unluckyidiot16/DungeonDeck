@@ -1,0 +1,1716 @@
+fileFormatVersion: 2
+guid: 4e1aec1a0ae9b413baa61ac9fb2d93f9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5749224798991814121
+    second: Orc Warrior Sprite Sheet_0
+  - first:
+      213: 3374066978883575003
+    second: Orc Warrior Sprite Sheet_1
+  - first:
+      213: -7310109790089452370
+    second: Orc Warrior Sprite Sheet_2
+  - first:
+      213: 1385184011742328765
+    second: Orc Warrior Sprite Sheet_3
+  - first:
+      213: -3925567958403293536
+    second: Orc Warrior Sprite Sheet_4
+  - first:
+      213: 8854616565570679245
+    second: Orc Warrior Sprite Sheet_5
+  - first:
+      213: -1140747702398017979
+    second: Orc Warrior Sprite Sheet_6
+  - first:
+      213: -4068793240639556707
+    second: Orc Warrior Sprite Sheet_7
+  - first:
+      213: 6497501283285548059
+    second: Orc Warrior Sprite Sheet_8
+  - first:
+      213: -39353763251226771
+    second: Orc Warrior Sprite Sheet_9
+  - first:
+      213: -4906376663456347422
+    second: Orc Warrior Sprite Sheet_10
+  - first:
+      213: 6816039819661835720
+    second: Orc Warrior Sprite Sheet_11
+  - first:
+      213: 1254562944544482750
+    second: Orc Warrior Sprite Sheet_12
+  - first:
+      213: -5048995402697711812
+    second: Orc Warrior Sprite Sheet_13
+  - first:
+      213: 9170682251594205502
+    second: Orc Warrior Sprite Sheet_14
+  - first:
+      213: 4094207003285782089
+    second: Orc Warrior Sprite Sheet_15
+  - first:
+      213: -797684459227426250
+    second: Orc Warrior Sprite Sheet_16
+  - first:
+      213: 8091794976413527855
+    second: Orc Warrior Sprite Sheet_17
+  - first:
+      213: 3652770936417817803
+    second: Orc Warrior Sprite Sheet_18
+  - first:
+      213: 4621183359648664668
+    second: Orc Warrior Sprite Sheet_19
+  - first:
+      213: 1432463449488821075
+    second: Orc Warrior Sprite Sheet_20
+  - first:
+      213: 6683690196916150401
+    second: Orc Warrior Sprite Sheet_21
+  - first:
+      213: -6050186401318016358
+    second: Orc Warrior Sprite Sheet_22
+  - first:
+      213: -864533651272544683
+    second: Orc Warrior Sprite Sheet_23
+  - first:
+      213: -2687367301292257001
+    second: Orc Warrior Sprite Sheet_24
+  - first:
+      213: 1444993659888001520
+    second: Orc Warrior Sprite Sheet_25
+  - first:
+      213: 1862255925296725566
+    second: Orc Warrior Sprite Sheet_26
+  - first:
+      213: -4049638785242588561
+    second: Orc Warrior Sprite Sheet_27
+  - first:
+      213: 1547272129661622168
+    second: Orc Warrior Sprite Sheet_28
+  - first:
+      213: 4392415841310348515
+    second: Orc Warrior Sprite Sheet_29
+  - first:
+      213: 5425228000934589654
+    second: Orc Warrior Sprite Sheet_30
+  - first:
+      213: 7506226430884268726
+    second: Orc Warrior Sprite Sheet_31
+  - first:
+      213: -4856447632710523641
+    second: Orc Warrior Sprite Sheet_32
+  - first:
+      213: -1559647280341623382
+    second: Orc Warrior Sprite Sheet_33
+  - first:
+      213: 7205383706330382799
+    second: Orc Warrior Sprite Sheet_34
+  - first:
+      213: 4528795809500399249
+    second: Orc Warrior Sprite Sheet_35
+  - first:
+      213: -8455473906555505359
+    second: Orc Warrior Sprite Sheet_36
+  - first:
+      213: 2941930848349232940
+    second: Orc Warrior Sprite Sheet_37
+  - first:
+      213: 5120791591324510958
+    second: Orc Warrior Sprite Sheet_38
+  - first:
+      213: 4382619447033239637
+    second: Orc Warrior Sprite Sheet_39
+  - first:
+      213: 3988540919179718278
+    second: Orc Warrior Sprite Sheet_40
+  - first:
+      213: -4813648708830988819
+    second: Orc Warrior Sprite Sheet_41
+  - first:
+      213: -7600136461108608474
+    second: Orc Warrior Sprite Sheet_42
+  - first:
+      213: -1920753950810530431
+    second: Orc Warrior Sprite Sheet_43
+  - first:
+      213: 2521170440424256201
+    second: Orc Warrior Sprite Sheet_44
+  - first:
+      213: 4774632894654699053
+    second: Orc Warrior Sprite Sheet_45
+  - first:
+      213: -246500378084738060
+    second: Orc Warrior Sprite Sheet_46
+  - first:
+      213: -2146243522878752284
+    second: Orc Warrior Sprite Sheet_47
+  - first:
+      213: -4085262512563423965
+    second: Orc Warrior Sprite Sheet_48
+  - first:
+      213: -7095328371504528945
+    second: Orc Warrior Sprite Sheet_49
+  - first:
+      213: -1511732654734338373
+    second: Orc Warrior Sprite Sheet_50
+  - first:
+      213: -5909402689175689641
+    second: Orc Warrior Sprite Sheet_51
+  - first:
+      213: -276236011747257777
+    second: Orc Warrior Sprite Sheet_52
+  - first:
+      213: 5803015732771032029
+    second: Orc Warrior Sprite Sheet_53
+  - first:
+      213: -7875994263037716405
+    second: Orc Warrior Sprite Sheet_54
+  - first:
+      213: -8931626048559552751
+    second: Orc Warrior Sprite Sheet_55
+  - first:
+      213: -5247603651492895066
+    second: Orc Warrior Sprite Sheet_56
+  - first:
+      213: -7860351408350871093
+    second: Orc Warrior Sprite Sheet_57
+  - first:
+      213: 235718104140547265
+    second: Orc Warrior Sprite Sheet_58
+  - first:
+      213: -3933107940653996208
+    second: Orc Warrior Sprite Sheet_59
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 515
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 712f93a8186a630b0800000000000000
+      internalID: -5749224798991814121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 515
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdc1bbc6a0813de20800000000000000
+      internalID: 3374066978883575003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 515
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea4ec9460e54d8a90800000000000000
+      internalID: -7310109790089452370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 515
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db7b3780589293310800000000000000
+      internalID: 1385184011742328765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 515
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ae57b98db49589c0800000000000000
+      internalID: -3925567958403293536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 451
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc131254adae1ea70800000000000000
+      internalID: 8854616565570679245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 454
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54e193432004b20f0800000000000000
+      internalID: -1140747702398017979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 455
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d933b23ea1eb887c0800000000000000
+      internalID: -4068793240639556707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 452
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c31ededf2cb2a50800000000000000
+      internalID: 6497501283285548059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 451
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d67f5d8f5ff247ff0800000000000000
+      internalID: -39353763251226771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 453
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ea0b607b6c09ebb0800000000000000
+      internalID: -4906376663456347422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 454
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd7cd16a10779e50800000000000000
+      internalID: 6816039819661835720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 453
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb521f1e95a196110800000000000000
+      internalID: 1254562944544482750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 387
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3f5f959e6d5ee9b0800000000000000
+      internalID: -5048995402697711812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 387
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3980426beec44f70800000000000000
+      internalID: 9170682251594205502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 387
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94ef3c3d39b81d830800000000000000
+      internalID: 4094207003285782089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 384
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63256ece53e0ee4f0800000000000000
+      internalID: -797684459227426250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 383
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2f2b6ca8a4db4070800000000000000
+      internalID: 8091794976413527855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 384
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc41e0f30df31b230800000000000000
+      internalID: 3652770936417817803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 387
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c0ec118cdb12040800000000000000
+      internalID: 4621183359648664668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 320
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35b0384fae121e310800000000000000
+      internalID: 1432463449488821075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 323
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180a2f782dc31cc50800000000000000
+      internalID: 6683690196916150401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 325
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9a6a84f58b690ca0800000000000000
+      internalID: -6050186401318016358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 322
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55e4783893f8004f0800000000000000
+      internalID: -864533651272544683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 323
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71199718dad84bad0800000000000000
+      internalID: -2687367301292257001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 259
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f1e058e316ad0410800000000000000
+      internalID: 1444993659888001520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 259
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3e7d2cb5ef08d910800000000000000
+      internalID: 1862255925296725566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 262
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a98f01bfaccc7c0800000000000000
+      internalID: -4049638785242588561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 268
+        width: 35
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 897d75bddc3097510800000000000000
+      internalID: 1547272129661622168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 275
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e41a178feef4fc30800000000000000
+      internalID: 4392415841310348515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 258
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d4753d6f184a4b40800000000000000
+      internalID: 5425228000934589654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 256
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ba41805b297b2860800000000000000
+      internalID: 7506226430884268726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 258
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 705a00ecb9e6a9cb0800000000000000
+      internalID: -4856447632710523641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 258
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aad5558df050b5ae0800000000000000
+      internalID: -1559647280341623382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 259
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc1c53e1e4aaef360800000000000000
+      internalID: 7205383706330382799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 195
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1968c8d4bc389de30800000000000000
+      internalID: 4528795809500399249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 195
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 135bc20f74f18aa80800000000000000
+      internalID: -8455473906555505359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 195
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2f9e910586d3d820800000000000000
+      internalID: 2941930848349232940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 195
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eea64b932d4b01740800000000000000
+      internalID: 5120791591324510958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 195
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558922eba2132dc30800000000000000
+      internalID: 4382619447033239637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 195
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e21d375d42a5730800000000000000
+      internalID: 3988540919179718278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 195
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de57c9cc00c723db0800000000000000
+      internalID: -4813648708830988819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 131
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6228027e724e68690800000000000000
+      internalID: -7600136461108608474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 131
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18d9205557c1855e0800000000000000
+      internalID: -1920753950810530431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 131
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2f3b7682ffcf220800000000000000
+      internalID: 2521170440424256201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 131
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d26d9c21257e24240800000000000000
+      internalID: 4774632894654699053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 131
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fb724f4631449cf0800000000000000
+      internalID: -246500378084738060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 131
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e9345123e20732e0800000000000000
+      internalID: -2146243522878752284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 131
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325ff64b36b3e47c0800000000000000
+      internalID: -4085262512563423965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 67
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc1c8b35074588d90800000000000000
+      internalID: -7095328371504528945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 67
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb69337f82f350be0800000000000000
+      internalID: -1511732654734338373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 67
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 756e1f440959dfda0800000000000000
+      internalID: -5909402689175689641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 67
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4252a59fcc9a2cf0800000000000000
+      internalID: -276236011747257777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddb02d13014788050800000000000000
+      internalID: 5803015732771032029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 3
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b485f9252f8d2b290800000000000000
+      internalID: -7875994263037716405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1176bfc3e6d7c0480800000000000000
+      internalID: -8931626048559552751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 5
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a629be2844cc27b0800000000000000
+      internalID: -5247603651492895066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 2
+        width: 41
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc1418f3a0c6ae290800000000000000
+      internalID: -7860351408350871093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 2
+        width: 43
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c40d68ed50754300800000000000000
+      internalID: 235718104140547265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warrior Sprite Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 2
+        width: 43
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 057ec0e9a2bca69c0800000000000000
+      internalID: -3933107940653996208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Orc Warrior Sprite Sheet_0: -5749224798991814121
+      Orc Warrior Sprite Sheet_1: 3374066978883575003
+      Orc Warrior Sprite Sheet_10: -4906376663456347422
+      Orc Warrior Sprite Sheet_11: 6816039819661835720
+      Orc Warrior Sprite Sheet_12: 1254562944544482750
+      Orc Warrior Sprite Sheet_13: -5048995402697711812
+      Orc Warrior Sprite Sheet_14: 9170682251594205502
+      Orc Warrior Sprite Sheet_15: 4094207003285782089
+      Orc Warrior Sprite Sheet_16: -797684459227426250
+      Orc Warrior Sprite Sheet_17: 8091794976413527855
+      Orc Warrior Sprite Sheet_18: 3652770936417817803
+      Orc Warrior Sprite Sheet_19: 4621183359648664668
+      Orc Warrior Sprite Sheet_2: -7310109790089452370
+      Orc Warrior Sprite Sheet_20: 1432463449488821075
+      Orc Warrior Sprite Sheet_21: 6683690196916150401
+      Orc Warrior Sprite Sheet_22: -6050186401318016358
+      Orc Warrior Sprite Sheet_23: -864533651272544683
+      Orc Warrior Sprite Sheet_24: -2687367301292257001
+      Orc Warrior Sprite Sheet_25: 1444993659888001520
+      Orc Warrior Sprite Sheet_26: 1862255925296725566
+      Orc Warrior Sprite Sheet_27: -4049638785242588561
+      Orc Warrior Sprite Sheet_28: 1547272129661622168
+      Orc Warrior Sprite Sheet_29: 4392415841310348515
+      Orc Warrior Sprite Sheet_3: 1385184011742328765
+      Orc Warrior Sprite Sheet_30: 5425228000934589654
+      Orc Warrior Sprite Sheet_31: 7506226430884268726
+      Orc Warrior Sprite Sheet_32: -4856447632710523641
+      Orc Warrior Sprite Sheet_33: -1559647280341623382
+      Orc Warrior Sprite Sheet_34: 7205383706330382799
+      Orc Warrior Sprite Sheet_35: 4528795809500399249
+      Orc Warrior Sprite Sheet_36: -8455473906555505359
+      Orc Warrior Sprite Sheet_37: 2941930848349232940
+      Orc Warrior Sprite Sheet_38: 5120791591324510958
+      Orc Warrior Sprite Sheet_39: 4382619447033239637
+      Orc Warrior Sprite Sheet_4: -3925567958403293536
+      Orc Warrior Sprite Sheet_40: 3988540919179718278
+      Orc Warrior Sprite Sheet_41: -4813648708830988819
+      Orc Warrior Sprite Sheet_42: -7600136461108608474
+      Orc Warrior Sprite Sheet_43: -1920753950810530431
+      Orc Warrior Sprite Sheet_44: 2521170440424256201
+      Orc Warrior Sprite Sheet_45: 4774632894654699053
+      Orc Warrior Sprite Sheet_46: -246500378084738060
+      Orc Warrior Sprite Sheet_47: -2146243522878752284
+      Orc Warrior Sprite Sheet_48: -4085262512563423965
+      Orc Warrior Sprite Sheet_49: -7095328371504528945
+      Orc Warrior Sprite Sheet_5: 8854616565570679245
+      Orc Warrior Sprite Sheet_50: -1511732654734338373
+      Orc Warrior Sprite Sheet_51: -5909402689175689641
+      Orc Warrior Sprite Sheet_52: -276236011747257777
+      Orc Warrior Sprite Sheet_53: 5803015732771032029
+      Orc Warrior Sprite Sheet_54: -7875994263037716405
+      Orc Warrior Sprite Sheet_55: -8931626048559552751
+      Orc Warrior Sprite Sheet_56: -5247603651492895066
+      Orc Warrior Sprite Sheet_57: -7860351408350871093
+      Orc Warrior Sprite Sheet_58: 235718104140547265
+      Orc Warrior Sprite Sheet_59: -3933107940653996208
+      Orc Warrior Sprite Sheet_6: -1140747702398017979
+      Orc Warrior Sprite Sheet_7: -4068793240639556707
+      Orc Warrior Sprite Sheet_8: 6497501283285548059
+      Orc Warrior Sprite Sheet_9: -39353763251226771
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

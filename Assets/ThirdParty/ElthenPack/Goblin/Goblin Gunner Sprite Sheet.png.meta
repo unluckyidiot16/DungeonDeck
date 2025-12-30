@@ -1,0 +1,1196 @@
+fileFormatVersion: 2
+guid: 328298cdd2a224be898f736f39034f06
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6815399406209389716
+    second: Goblin Gunner Sprite Sheet_0
+  - first:
+      213: 1816556703421541004
+    second: Goblin Gunner Sprite Sheet_1
+  - first:
+      213: 1742339742157743888
+    second: Goblin Gunner Sprite Sheet_2
+  - first:
+      213: 9073450789104444124
+    second: Goblin Gunner Sprite Sheet_3
+  - first:
+      213: 8193333825984442280
+    second: Goblin Gunner Sprite Sheet_4
+  - first:
+      213: 7223841455028584658
+    second: Goblin Gunner Sprite Sheet_5
+  - first:
+      213: 1743497886312247527
+    second: Goblin Gunner Sprite Sheet_6
+  - first:
+      213: 6010375152131968539
+    second: Goblin Gunner Sprite Sheet_7
+  - first:
+      213: 5644674269305989302
+    second: Goblin Gunner Sprite Sheet_8
+  - first:
+      213: -312824458805140368
+    second: Goblin Gunner Sprite Sheet_9
+  - first:
+      213: -2079006185883504373
+    second: Goblin Gunner Sprite Sheet_10
+  - first:
+      213: 5189364767075930355
+    second: Goblin Gunner Sprite Sheet_11
+  - first:
+      213: -4266810759131962301
+    second: Goblin Gunner Sprite Sheet_12
+  - first:
+      213: 1409208457929261247
+    second: Goblin Gunner Sprite Sheet_13
+  - first:
+      213: 3917381980681862916
+    second: Goblin Gunner Sprite Sheet_14
+  - first:
+      213: -2056096586788322333
+    second: Goblin Gunner Sprite Sheet_15
+  - first:
+      213: 1692487363452808642
+    second: Goblin Gunner Sprite Sheet_16
+  - first:
+      213: -6792399482540682333
+    second: Goblin Gunner Sprite Sheet_17
+  - first:
+      213: 7201496551418578919
+    second: Goblin Gunner Sprite Sheet_18
+  - first:
+      213: -829885041009854753
+    second: Goblin Gunner Sprite Sheet_19
+  - first:
+      213: 2641147449612375494
+    second: Goblin Gunner Sprite Sheet_20
+  - first:
+      213: 5975599292263798207
+    second: Goblin Gunner Sprite Sheet_21
+  - first:
+      213: 6128848713502066107
+    second: Goblin Gunner Sprite Sheet_22
+  - first:
+      213: 6848455713543399251
+    second: Goblin Gunner Sprite Sheet_23
+  - first:
+      213: 2395373909664058336
+    second: Goblin Gunner Sprite Sheet_24
+  - first:
+      213: 6369403810459252635
+    second: Goblin Gunner Sprite Sheet_25
+  - first:
+      213: -3735901466360239660
+    second: Goblin Gunner Sprite Sheet_26
+  - first:
+      213: 837486611843504036
+    second: Goblin Gunner Sprite Sheet_27
+  - first:
+      213: -7813020087558250265
+    second: Goblin Gunner Sprite Sheet_28
+  - first:
+      213: 6937714890254090259
+    second: Goblin Gunner Sprite Sheet_29
+  - first:
+      213: -9065338530459937054
+    second: Goblin Gunner Sprite Sheet_30
+  - first:
+      213: -6140849298460242735
+    second: Goblin Gunner Sprite Sheet_31
+  - first:
+      213: -2570712878218190312
+    second: Goblin Gunner Sprite Sheet_32
+  - first:
+      213: 6785935595293933292
+    second: Goblin Gunner Sprite Sheet_33
+  - first:
+      213: 2717730022704323082
+    second: Goblin Gunner Sprite Sheet_34
+  - first:
+      213: 3048754223687007876
+    second: Goblin Gunner Sprite Sheet_35
+  - first:
+      213: 3698128504591462348
+    second: Goblin Gunner Sprite Sheet_36
+  - first:
+      213: -2899309618752383318
+    second: Goblin Gunner Sprite Sheet_37
+  - first:
+      213: -923115858477231247
+    second: Goblin Gunner Sprite Sheet_38
+  - first:
+      213: -3926087078973531354
+    second: Goblin Gunner Sprite Sheet_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 159
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 494d48186a9259e50800000000000000
+      internalID: 6815399406209389716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 159
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8aabcd72b4b53910800000000000000
+      internalID: 1816556703421541004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 159
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017ab51a3c80e2810800000000000000
+      internalID: 1742339742157743888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 159
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2ee836b6f5bed70800000000000000
+      internalID: 9073450789104444124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 159
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8afaeff54b194b170800000000000000
+      internalID: 8193333825984442280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 159
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d048b0a78d304460800000000000000
+      internalID: 7223841455028584658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 159
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e039441716223810800000000000000
+      internalID: 1743497886312247527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 159
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e09a54b54296350800000000000000
+      internalID: 6010375152131968539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 127
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b865c65759e55e40800000000000000
+      internalID: 5644674269305989302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 131
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 074add7efcf98abf0800000000000000
+      internalID: -312824458805140368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 133
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b01f29493e2e523e0800000000000000
+      internalID: -2079006185883504373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 131
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f01d7fd2c3540840800000000000000
+      internalID: 5189364767075930355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 127
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344ef1a983e39c4c0800000000000000
+      internalID: -4266810759131962301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 130
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb0895d40a38e8310800000000000000
+      internalID: 1409208457929261247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 132
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40ffe0008265d5630800000000000000
+      internalID: 3917381980681862916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 131
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e3c6984c074773e0800000000000000
+      internalID: -2056096586788322333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 95
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cd21753a4cec7710800000000000000
+      internalID: 1692487363452808642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 95
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a39d9688ac8cb1a0800000000000000
+      internalID: -6792399482540682333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 97
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7418655fad0f360800000000000000
+      internalID: 7201496551418578919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 97
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd6723eb3f7ab74f0800000000000000
+      internalID: -829885041009854753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 95
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c5139dac9d37a420800000000000000
+      internalID: 2641147449612375494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 95
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb5957f65e79de250800000000000000
+      internalID: 5975599292263798207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 95
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb58662de6b0e0550800000000000000
+      internalID: 6128848713502066107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 95
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 357afb1df2a9a0f50800000000000000
+      internalID: 6848455713543399251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 63
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ebc3cd21e31e3120800000000000000
+      internalID: 2395373909664058336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 63
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b977171e40ba46850800000000000000
+      internalID: 6369403810459252635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 63
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9acb5f869672cc0800000000000000
+      internalID: -3735901466360239660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 63
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a7d313e2a95f9b00800000000000000
+      internalID: 837486611843504036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 63
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e0691220a3929390800000000000000
+      internalID: -7813020087558250265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31088826fe6b74060800000000000000
+      internalID: 6937714890254090259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 31
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e6164303a2713280800000000000000
+      internalID: -9065338530459937054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 31
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc0212491257caa0800000000000000
+      internalID: -6140849298460242735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 31
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 812684ae14ef25cd0800000000000000
+      internalID: -2570712878218190312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 31
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cee7c22787c7c2e50800000000000000
+      internalID: 6785935595293933292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0a94b67e0157b520800000000000000
+      internalID: 2717730022704323082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 0
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48ef55e30d95f4a20800000000000000
+      internalID: 3048754223687007876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccfabe90844625330800000000000000
+      internalID: 3698128504591462348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 24
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa61460534593c7d0800000000000000
+      internalID: -2899309618752383318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 0
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1735fe0840f6033f0800000000000000
+      internalID: -923115858477231247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Gunner Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 0
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62b188c5a9cb389c0800000000000000
+      internalID: -3926087078973531354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Goblin Gunner Sprite Sheet_0: 6815399406209389716
+      Goblin Gunner Sprite Sheet_1: 1816556703421541004
+      Goblin Gunner Sprite Sheet_10: -2079006185883504373
+      Goblin Gunner Sprite Sheet_11: 5189364767075930355
+      Goblin Gunner Sprite Sheet_12: -4266810759131962301
+      Goblin Gunner Sprite Sheet_13: 1409208457929261247
+      Goblin Gunner Sprite Sheet_14: 3917381980681862916
+      Goblin Gunner Sprite Sheet_15: -2056096586788322333
+      Goblin Gunner Sprite Sheet_16: 1692487363452808642
+      Goblin Gunner Sprite Sheet_17: -6792399482540682333
+      Goblin Gunner Sprite Sheet_18: 7201496551418578919
+      Goblin Gunner Sprite Sheet_19: -829885041009854753
+      Goblin Gunner Sprite Sheet_2: 1742339742157743888
+      Goblin Gunner Sprite Sheet_20: 2641147449612375494
+      Goblin Gunner Sprite Sheet_21: 5975599292263798207
+      Goblin Gunner Sprite Sheet_22: 6128848713502066107
+      Goblin Gunner Sprite Sheet_23: 6848455713543399251
+      Goblin Gunner Sprite Sheet_24: 2395373909664058336
+      Goblin Gunner Sprite Sheet_25: 6369403810459252635
+      Goblin Gunner Sprite Sheet_26: -3735901466360239660
+      Goblin Gunner Sprite Sheet_27: 837486611843504036
+      Goblin Gunner Sprite Sheet_28: -7813020087558250265
+      Goblin Gunner Sprite Sheet_29: 6937714890254090259
+      Goblin Gunner Sprite Sheet_3: 9073450789104444124
+      Goblin Gunner Sprite Sheet_30: -9065338530459937054
+      Goblin Gunner Sprite Sheet_31: -6140849298460242735
+      Goblin Gunner Sprite Sheet_32: -2570712878218190312
+      Goblin Gunner Sprite Sheet_33: 6785935595293933292
+      Goblin Gunner Sprite Sheet_34: 2717730022704323082
+      Goblin Gunner Sprite Sheet_35: 3048754223687007876
+      Goblin Gunner Sprite Sheet_36: 3698128504591462348
+      Goblin Gunner Sprite Sheet_37: -2899309618752383318
+      Goblin Gunner Sprite Sheet_38: -923115858477231247
+      Goblin Gunner Sprite Sheet_39: -3926087078973531354
+      Goblin Gunner Sprite Sheet_4: 8193333825984442280
+      Goblin Gunner Sprite Sheet_5: 7223841455028584658
+      Goblin Gunner Sprite Sheet_6: 1743497886312247527
+      Goblin Gunner Sprite Sheet_7: 6010375152131968539
+      Goblin Gunner Sprite Sheet_8: 5644674269305989302
+      Goblin Gunner Sprite Sheet_9: -312824458805140368
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

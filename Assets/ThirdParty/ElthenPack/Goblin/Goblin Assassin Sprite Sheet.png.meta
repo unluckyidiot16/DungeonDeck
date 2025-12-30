@@ -1,0 +1,1352 @@
+fileFormatVersion: 2
+guid: c9f5214a4be9e49b08e0f39ec68e5110
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2831719077688144181
+    second: Goblin Assassin Sprite Sheet_0
+  - first:
+      213: -293962132155808831
+    second: Goblin Assassin Sprite Sheet_1
+  - first:
+      213: 4534062100662962317
+    second: Goblin Assassin Sprite Sheet_2
+  - first:
+      213: -7867733871892145466
+    second: Goblin Assassin Sprite Sheet_3
+  - first:
+      213: -7467885791276907015
+    second: Goblin Assassin Sprite Sheet_4
+  - first:
+      213: -3535157983123433996
+    second: Goblin Assassin Sprite Sheet_5
+  - first:
+      213: 4949710912817610240
+    second: Goblin Assassin Sprite Sheet_6
+  - first:
+      213: 1307541805450945565
+    second: Goblin Assassin Sprite Sheet_7
+  - first:
+      213: -3205962506672270780
+    second: Goblin Assassin Sprite Sheet_8
+  - first:
+      213: 286164040158573349
+    second: Goblin Assassin Sprite Sheet_9
+  - first:
+      213: -6909623041926625352
+    second: Goblin Assassin Sprite Sheet_10
+  - first:
+      213: 4921846984208862988
+    second: Goblin Assassin Sprite Sheet_11
+  - first:
+      213: -3482231537649764511
+    second: Goblin Assassin Sprite Sheet_12
+  - first:
+      213: 3103603165048657514
+    second: Goblin Assassin Sprite Sheet_13
+  - first:
+      213: 2469468248667125171
+    second: Goblin Assassin Sprite Sheet_14
+  - first:
+      213: -4994547141912763876
+    second: Goblin Assassin Sprite Sheet_15
+  - first:
+      213: -4717726112815916848
+    second: Goblin Assassin Sprite Sheet_16
+  - first:
+      213: -6566102919567337220
+    second: Goblin Assassin Sprite Sheet_17
+  - first:
+      213: 2097327340668569879
+    second: Goblin Assassin Sprite Sheet_18
+  - first:
+      213: 4363898816858803067
+    second: Goblin Assassin Sprite Sheet_19
+  - first:
+      213: 1394551303424606107
+    second: Goblin Assassin Sprite Sheet_20
+  - first:
+      213: -8361750060703537814
+    second: Goblin Assassin Sprite Sheet_21
+  - first:
+      213: 5101033803021892380
+    second: Goblin Assassin Sprite Sheet_22
+  - first:
+      213: 8556897397213765223
+    second: Goblin Assassin Sprite Sheet_23
+  - first:
+      213: 8959323680310630480
+    second: Goblin Assassin Sprite Sheet_24
+  - first:
+      213: -1487293219546076943
+    second: Goblin Assassin Sprite Sheet_25
+  - first:
+      213: 2038438627024161633
+    second: Goblin Assassin Sprite Sheet_26
+  - first:
+      213: -4996445382287397354
+    second: Goblin Assassin Sprite Sheet_27
+  - first:
+      213: 4502543737694939644
+    second: Goblin Assassin Sprite Sheet_28
+  - first:
+      213: 8458562754612737201
+    second: Goblin Assassin Sprite Sheet_29
+  - first:
+      213: -3909952118379169301
+    second: Goblin Assassin Sprite Sheet_30
+  - first:
+      213: -5163157663663006376
+    second: Goblin Assassin Sprite Sheet_31
+  - first:
+      213: 6106844885049730652
+    second: Goblin Assassin Sprite Sheet_32
+  - first:
+      213: -2258692747214685195
+    second: Goblin Assassin Sprite Sheet_33
+  - first:
+      213: -2096513502660697011
+    second: Goblin Assassin Sprite Sheet_34
+  - first:
+      213: -6366358481955830256
+    second: Goblin Assassin Sprite Sheet_35
+  - first:
+      213: -4661531062335938498
+    second: Goblin Assassin Sprite Sheet_36
+  - first:
+      213: 1726742356492921970
+    second: Goblin Assassin Sprite Sheet_37
+  - first:
+      213: -1194222214717313875
+    second: Goblin Assassin Sprite Sheet_38
+  - first:
+      213: -6000946426897046754
+    second: Goblin Assassin Sprite Sheet_39
+  - first:
+      213: 5658562391819332638
+    second: Goblin Assassin Sprite Sheet_40
+  - first:
+      213: 956963562258264304
+    second: Goblin Assassin Sprite Sheet_41
+  - first:
+      213: 4186839205121612753
+    second: Goblin Assassin Sprite Sheet_42
+  - first:
+      213: 1962381165656626126
+    second: Goblin Assassin Sprite Sheet_43
+  - first:
+      213: 7833481033464139309
+    second: Goblin Assassin Sprite Sheet_44
+  - first:
+      213: -1677906863270713616
+    second: Goblin Assassin Sprite Sheet_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 223
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5317c418f794c4720800000000000000
+      internalID: 2831719077688144181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 223
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c3cf6f8ff2abebf0800000000000000
+      internalID: -293962132155808831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 223
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d88c39345793cee30800000000000000
+      internalID: 4534062100662962317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 223
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca5f828ab130d290800000000000000
+      internalID: -7867733871892145466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 191
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5c0cb707dbc5890800000000000000
+      internalID: -7467885791276907015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 191
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f59a0f5b8890fec0800000000000000
+      internalID: -3535157983123433996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 191
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00e3e5bb9d7e0b440800000000000000
+      internalID: 4949710912817610240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 191
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1460ea2852552210800000000000000
+      internalID: 1307541805450945565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 191
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 442149a06122283d0800000000000000
+      internalID: -3205962506672270780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 191
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5237429ada8a8f300800000000000000
+      internalID: 286164040158573349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 191
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b70c1eb3761c10a0800000000000000
+      internalID: -6909623041926625352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 191
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0fc89c41c9ed4440800000000000000
+      internalID: 4921846984208862988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 159
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16739bcbdd0acafc0800000000000000
+      internalID: -3482231537649764511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 159
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a66d08092a6321b20800000000000000
+      internalID: 3103603165048657514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 161
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b5f8e1d940554220800000000000000
+      internalID: 2469468248667125171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 163
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c12e85036ddcfaab0800000000000000
+      internalID: -4994547141912763876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 164
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d8d5029815478eb0800000000000000
+      internalID: -4717726112815916848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 163
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf89880fe2480e4a0800000000000000
+      internalID: -6566102919567337220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 159
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719c34eaa143b1d10800000000000000
+      internalID: 2097327340668569879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 127
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7bcd9e5adeaf8c30800000000000000
+      internalID: 4363898816858803067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 127
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9f7ea595017a5310800000000000000
+      internalID: 1394551303424606107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 129
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a652a2b4f9815fb80800000000000000
+      internalID: -8361750060703537814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 128
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b3168a7338ac640800000000000000
+      internalID: 5101033803021892380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 127
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76e146ca8d430c670800000000000000
+      internalID: 8556897397213765223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 95
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05819a03b69e55c70800000000000000
+      internalID: 8959323680310630480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 95
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f8eb1462b21c5be0800000000000000
+      internalID: -1487293219546076943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 95
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16bc534912df94c10800000000000000
+      internalID: 2038438627024161633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 63
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61e6e19a56f09aab0800000000000000
+      internalID: -4996445382287397354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 66
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf967f68caf3c7e30800000000000000
+      internalID: 4502543737694939644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 65
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b4ba0b820ad26570800000000000000
+      internalID: 8458562754612737201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 68
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be9393f934f0db9c0800000000000000
+      internalID: -3909952118379169301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 67
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85dd702e577c858b0800000000000000
+      internalID: -5163157663663006376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 63
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c56ecc7411fdfb450800000000000000
+      internalID: 6106844885049730652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 63
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fb7489d9e287a0e0800000000000000
+      internalID: -2258692747214685195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 63
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d44691fb310b7e2e0800000000000000
+      internalID: -2096513502660697011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 31
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0164a3ae0b626a7a0800000000000000
+      internalID: -6366358481955830256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 31
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e306408523aee4fb0800000000000000
+      internalID: -4661531062335938498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 31
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27ca169460f96f710800000000000000
+      internalID: 1726742356492921970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 31
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dace4e419354d6fe0800000000000000
+      internalID: -1194222214717313875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e13e6a4e40b58bca0800000000000000
+      internalID: -6000946426897046754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ca6c7d380478e40800000000000000
+      internalID: 5658562391819332638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f075672a41d74d00800000000000000
+      internalID: 956963562258264304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 0
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dbd3f00314aa1a30800000000000000
+      internalID: 4186839205121612753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec351e4e547cb3b10800000000000000
+      internalID: 1962381165656626126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 0
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ec3621f7d16bc60800000000000000
+      internalID: 7833481033464139309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Assassin Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f62f880990e6b8e0800000000000000
+      internalID: -1677906863270713616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Goblin Assassin Sprite Sheet_0: 2831719077688144181
+      Goblin Assassin Sprite Sheet_1: -293962132155808831
+      Goblin Assassin Sprite Sheet_10: -6909623041926625352
+      Goblin Assassin Sprite Sheet_11: 4921846984208862988
+      Goblin Assassin Sprite Sheet_12: -3482231537649764511
+      Goblin Assassin Sprite Sheet_13: 3103603165048657514
+      Goblin Assassin Sprite Sheet_14: 2469468248667125171
+      Goblin Assassin Sprite Sheet_15: -4994547141912763876
+      Goblin Assassin Sprite Sheet_16: -4717726112815916848
+      Goblin Assassin Sprite Sheet_17: -6566102919567337220
+      Goblin Assassin Sprite Sheet_18: 2097327340668569879
+      Goblin Assassin Sprite Sheet_19: 4363898816858803067
+      Goblin Assassin Sprite Sheet_2: 4534062100662962317
+      Goblin Assassin Sprite Sheet_20: 1394551303424606107
+      Goblin Assassin Sprite Sheet_21: -8361750060703537814
+      Goblin Assassin Sprite Sheet_22: 5101033803021892380
+      Goblin Assassin Sprite Sheet_23: 8556897397213765223
+      Goblin Assassin Sprite Sheet_24: 8959323680310630480
+      Goblin Assassin Sprite Sheet_25: -1487293219546076943
+      Goblin Assassin Sprite Sheet_26: 2038438627024161633
+      Goblin Assassin Sprite Sheet_27: -4996445382287397354
+      Goblin Assassin Sprite Sheet_28: 4502543737694939644
+      Goblin Assassin Sprite Sheet_29: 8458562754612737201
+      Goblin Assassin Sprite Sheet_3: -7867733871892145466
+      Goblin Assassin Sprite Sheet_30: -3909952118379169301
+      Goblin Assassin Sprite Sheet_31: -5163157663663006376
+      Goblin Assassin Sprite Sheet_32: 6106844885049730652
+      Goblin Assassin Sprite Sheet_33: -2258692747214685195
+      Goblin Assassin Sprite Sheet_34: -2096513502660697011
+      Goblin Assassin Sprite Sheet_35: -6366358481955830256
+      Goblin Assassin Sprite Sheet_36: -4661531062335938498
+      Goblin Assassin Sprite Sheet_37: 1726742356492921970
+      Goblin Assassin Sprite Sheet_38: -1194222214717313875
+      Goblin Assassin Sprite Sheet_39: -6000946426897046754
+      Goblin Assassin Sprite Sheet_4: -7467885791276907015
+      Goblin Assassin Sprite Sheet_40: 5658562391819332638
+      Goblin Assassin Sprite Sheet_41: 956963562258264304
+      Goblin Assassin Sprite Sheet_42: 4186839205121612753
+      Goblin Assassin Sprite Sheet_43: 1962381165656626126
+      Goblin Assassin Sprite Sheet_44: 7833481033464139309
+      Goblin Assassin Sprite Sheet_45: -1677906863270713616
+      Goblin Assassin Sprite Sheet_5: -3535157983123433996
+      Goblin Assassin Sprite Sheet_6: 4949710912817610240
+      Goblin Assassin Sprite Sheet_7: 1307541805450945565
+      Goblin Assassin Sprite Sheet_8: -3205962506672270780
+      Goblin Assassin Sprite Sheet_9: 286164040158573349
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

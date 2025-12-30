@@ -1,0 +1,1092 @@
+fileFormatVersion: 2
+guid: e64f28dc16f354cc3874e8a4629708cc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3643273797324297330
+    second: Orc Warlock Sprite Sheet_0
+  - first:
+      213: -473553652715318719
+    second: Orc Warlock Sprite Sheet_1
+  - first:
+      213: 8810596466390120096
+    second: Orc Warlock Sprite Sheet_2
+  - first:
+      213: 6226903677400532052
+    second: Orc Warlock Sprite Sheet_3
+  - first:
+      213: 6494450063469474181
+    second: Orc Warlock Sprite Sheet_4
+  - first:
+      213: -2731857899797563109
+    second: Orc Warlock Sprite Sheet_5
+  - first:
+      213: 6005283112956790746
+    second: Orc Warlock Sprite Sheet_6
+  - first:
+      213: 6559334038790175266
+    second: Orc Warlock Sprite Sheet_7
+  - first:
+      213: 218928677498461710
+    second: Orc Warlock Sprite Sheet_8
+  - first:
+      213: 6069414581596905321
+    second: Orc Warlock Sprite Sheet_9
+  - first:
+      213: 1304972228601574471
+    second: Orc Warlock Sprite Sheet_10
+  - first:
+      213: 5322818012059437223
+    second: Orc Warlock Sprite Sheet_11
+  - first:
+      213: -4575273028066725609
+    second: Orc Warlock Sprite Sheet_12
+  - first:
+      213: -6212953279518609228
+    second: Orc Warlock Sprite Sheet_13
+  - first:
+      213: 839251119303433556
+    second: Orc Warlock Sprite Sheet_14
+  - first:
+      213: 4143165161606723663
+    second: Orc Warlock Sprite Sheet_15
+  - first:
+      213: 1182909607914555438
+    second: Orc Warlock Sprite Sheet_16
+  - first:
+      213: -4920924868465061661
+    second: Orc Warlock Sprite Sheet_17
+  - first:
+      213: -5831173815952699255
+    second: Orc Warlock Sprite Sheet_18
+  - first:
+      213: 8328266750139323220
+    second: Orc Warlock Sprite Sheet_19
+  - first:
+      213: -6895487839076599224
+    second: Orc Warlock Sprite Sheet_20
+  - first:
+      213: -5380501920201875503
+    second: Orc Warlock Sprite Sheet_21
+  - first:
+      213: -6557700742033289721
+    second: Orc Warlock Sprite Sheet_22
+  - first:
+      213: -1515806364724660323
+    second: Orc Warlock Sprite Sheet_23
+  - first:
+      213: -2487785034480615661
+    second: Orc Warlock Sprite Sheet_24
+  - first:
+      213: 6833899889329069569
+    second: Orc Warlock Sprite Sheet_25
+  - first:
+      213: -1527573053564234422
+    second: Orc Warlock Sprite Sheet_26
+  - first:
+      213: -1760361164799666739
+    second: Orc Warlock Sprite Sheet_27
+  - first:
+      213: -5480460592822183560
+    second: Orc Warlock Sprite Sheet_28
+  - first:
+      213: -3610280914971489347
+    second: Orc Warlock Sprite Sheet_29
+  - first:
+      213: 1384492180985427677
+    second: Orc Warlock Sprite Sheet_30
+  - first:
+      213: -4387811292079181128
+    second: Orc Warlock Sprite Sheet_31
+  - first:
+      213: -1697488018913553262
+    second: Orc Warlock Sprite Sheet_32
+  - first:
+      213: -5533186046952822706
+    second: Orc Warlock Sprite Sheet_33
+  - first:
+      213: -6752939862045720060
+    second: Orc Warlock Sprite Sheet_34
+  - first:
+      213: 7891627247506008423
+    second: Orc Warlock Sprite Sheet_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 339
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 274d00d37328f8230800000000000000
+      internalID: 3643273797324297330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 339
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14290db36799d69f0800000000000000
+      internalID: -473553652715318719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 339
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a6be7e3ec6854a70800000000000000
+      internalID: 8810596466390120096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 339
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 454480e27e76a6650800000000000000
+      internalID: 6226903677400532052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 275
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5817c947cebe02a50800000000000000
+      internalID: 6494450063469474181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 275
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b19b8b1d6bd761ad0800000000000000
+      internalID: -2731857899797563109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 275
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad701738c2d075350800000000000000
+      internalID: 6005283112956790746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 275
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a77313e8f670b50800000000000000
+      internalID: 6559334038790175266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 275
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0e1175e87ac90300800000000000000
+      internalID: 218928677498461710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 275
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96fd8a2a764ea3450800000000000000
+      internalID: 6069414581596905321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 275
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 744fb8fe3513c1210800000000000000
+      internalID: 1304972228601574471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 275
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a88adcc7c27ed940800000000000000
+      internalID: 5322818012059437223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 211
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71138abfb6d5180c0800000000000000
+      internalID: -4575273028066725609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 211
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0f130f8e727c9a0800000000000000
+      internalID: -6212953279518609228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 211
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45d1e6b427e95ab00800000000000000
+      internalID: 839251119303433556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 211
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f48b75753ca7f7930800000000000000
+      internalID: 4143165161606723663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 211
+        width: 25
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28c425650a8a6010800000000000000
+      internalID: 1182909607914555438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 211
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e011c087ec55bbb0800000000000000
+      internalID: -4920924868465061661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 211
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 980949c2f42831fa0800000000000000
+      internalID: -5831173815952699255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 211
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45350c4fb72f39370800000000000000
+      internalID: 8328266750139323220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 147
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84a30de185e4e40a0800000000000000
+      internalID: -6895487839076599224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 147
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1df5f0db20e9455b0800000000000000
+      internalID: -5380501920201875503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 147
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70e4ac75bed5ef4a0800000000000000
+      internalID: -6557700742033289721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 147
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d977f427426c6fae0800000000000000
+      internalID: -1515806364724660323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 147
+        width: 25
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31fff3621bc997dd0800000000000000
+      internalID: -2487785034480615661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 147
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10e5a06edb3e6de50800000000000000
+      internalID: 6833899889329069569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 147
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4558d5b668fccae0800000000000000
+      internalID: -1527573053564234422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 83
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc519bfe8d0f197e0800000000000000
+      internalID: -1760361164799666739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 83
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8799e47a02e71f3b0800000000000000
+      internalID: -5480460592822183560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 83
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbb80cbc2a4b5edc0800000000000000
+      internalID: -3610280914971489347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 19
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd631f1ad44b63310800000000000000
+      internalID: 1384492180985427677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 19
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b23c22a0ec5b13c0800000000000000
+      internalID: -4387811292079181128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 19
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2941d26f3af4178e0800000000000000
+      internalID: -1697488018913553262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 25
+        width: 44
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e48aa3b3b9c2633b0800000000000000
+      internalID: -5533186046952822706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 19
+        width: 45
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402803d59fcb842a0800000000000000
+      internalID: -6752939862045720060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Warlock Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 19
+        width: 45
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 769a3638b21b48d60800000000000000
+      internalID: 7891627247506008423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Orc Warlock Sprite Sheet_0: 3643273797324297330
+      Orc Warlock Sprite Sheet_1: -473553652715318719
+      Orc Warlock Sprite Sheet_10: 1304972228601574471
+      Orc Warlock Sprite Sheet_11: 5322818012059437223
+      Orc Warlock Sprite Sheet_12: -4575273028066725609
+      Orc Warlock Sprite Sheet_13: -6212953279518609228
+      Orc Warlock Sprite Sheet_14: 839251119303433556
+      Orc Warlock Sprite Sheet_15: 4143165161606723663
+      Orc Warlock Sprite Sheet_16: 1182909607914555438
+      Orc Warlock Sprite Sheet_17: -4920924868465061661
+      Orc Warlock Sprite Sheet_18: -5831173815952699255
+      Orc Warlock Sprite Sheet_19: 8328266750139323220
+      Orc Warlock Sprite Sheet_2: 8810596466390120096
+      Orc Warlock Sprite Sheet_20: -6895487839076599224
+      Orc Warlock Sprite Sheet_21: -5380501920201875503
+      Orc Warlock Sprite Sheet_22: -6557700742033289721
+      Orc Warlock Sprite Sheet_23: -1515806364724660323
+      Orc Warlock Sprite Sheet_24: -2487785034480615661
+      Orc Warlock Sprite Sheet_25: 6833899889329069569
+      Orc Warlock Sprite Sheet_26: -1527573053564234422
+      Orc Warlock Sprite Sheet_27: -1760361164799666739
+      Orc Warlock Sprite Sheet_28: -5480460592822183560
+      Orc Warlock Sprite Sheet_29: -3610280914971489347
+      Orc Warlock Sprite Sheet_3: 6226903677400532052
+      Orc Warlock Sprite Sheet_30: 1384492180985427677
+      Orc Warlock Sprite Sheet_31: -4387811292079181128
+      Orc Warlock Sprite Sheet_32: -1697488018913553262
+      Orc Warlock Sprite Sheet_33: -5533186046952822706
+      Orc Warlock Sprite Sheet_34: -6752939862045720060
+      Orc Warlock Sprite Sheet_35: 7891627247506008423
+      Orc Warlock Sprite Sheet_4: 6494450063469474181
+      Orc Warlock Sprite Sheet_5: -2731857899797563109
+      Orc Warlock Sprite Sheet_6: 6005283112956790746
+      Orc Warlock Sprite Sheet_7: 6559334038790175266
+      Orc Warlock Sprite Sheet_8: 218928677498461710
+      Orc Warlock Sprite Sheet_9: 6069414581596905321
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

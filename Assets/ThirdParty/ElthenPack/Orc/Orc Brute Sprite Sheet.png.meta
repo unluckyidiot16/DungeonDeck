@@ -1,0 +1,1300 @@
+fileFormatVersion: 2
+guid: 00530c4e3fcfb49d088712467363c28c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4127270567445770276
+    second: Orc Brute Sprite Sheet_0
+  - first:
+      213: 6117791008123113152
+    second: Orc Brute Sprite Sheet_1
+  - first:
+      213: 4495024374557913864
+    second: Orc Brute Sprite Sheet_2
+  - first:
+      213: 9124213444208810027
+    second: Orc Brute Sprite Sheet_3
+  - first:
+      213: -2096221901349188107
+    second: Orc Brute Sprite Sheet_4
+  - first:
+      213: -1541493011962615829
+    second: Orc Brute Sprite Sheet_5
+  - first:
+      213: -4081165342255722010
+    second: Orc Brute Sprite Sheet_6
+  - first:
+      213: 4644235899878686079
+    second: Orc Brute Sprite Sheet_7
+  - first:
+      213: 5984958527695072209
+    second: Orc Brute Sprite Sheet_8
+  - first:
+      213: -7727180248045254286
+    second: Orc Brute Sprite Sheet_9
+  - first:
+      213: 8731388559495003064
+    second: Orc Brute Sprite Sheet_10
+  - first:
+      213: 4660756378670498866
+    second: Orc Brute Sprite Sheet_11
+  - first:
+      213: 5680789453822365755
+    second: Orc Brute Sprite Sheet_12
+  - first:
+      213: 3359940571675131220
+    second: Orc Brute Sprite Sheet_13
+  - first:
+      213: 636935169063039773
+    second: Orc Brute Sprite Sheet_14
+  - first:
+      213: 1662451533868076115
+    second: Orc Brute Sprite Sheet_15
+  - first:
+      213: 5405299779849063887
+    second: Orc Brute Sprite Sheet_16
+  - first:
+      213: 3298044238869964398
+    second: Orc Brute Sprite Sheet_17
+  - first:
+      213: 4749175372899558568
+    second: Orc Brute Sprite Sheet_18
+  - first:
+      213: -7094559562773288765
+    second: Orc Brute Sprite Sheet_19
+  - first:
+      213: -3039516770528606414
+    second: Orc Brute Sprite Sheet_20
+  - first:
+      213: -6227929591987805939
+    second: Orc Brute Sprite Sheet_21
+  - first:
+      213: 1270411946885723615
+    second: Orc Brute Sprite Sheet_22
+  - first:
+      213: 5051633644883296939
+    second: Orc Brute Sprite Sheet_23
+  - first:
+      213: -4549861917628345142
+    second: Orc Brute Sprite Sheet_24
+  - first:
+      213: 4834059298052659138
+    second: Orc Brute Sprite Sheet_25
+  - first:
+      213: 3052822931408864593
+    second: Orc Brute Sprite Sheet_26
+  - first:
+      213: -4079423898282152689
+    second: Orc Brute Sprite Sheet_27
+  - first:
+      213: 6658666198038679190
+    second: Orc Brute Sprite Sheet_28
+  - first:
+      213: -4252580651784254334
+    second: Orc Brute Sprite Sheet_29
+  - first:
+      213: 1492607853811059189
+    second: Orc Brute Sprite Sheet_30
+  - first:
+      213: 737006912597499128
+    second: Orc Brute Sprite Sheet_31
+  - first:
+      213: 8402273209021203762
+    second: Orc Brute Sprite Sheet_32
+  - first:
+      213: -435735218696912789
+    second: Orc Brute Sprite Sheet_33
+  - first:
+      213: -5793015085138362072
+    second: Orc Brute Sprite Sheet_34
+  - first:
+      213: 6473604444305974387
+    second: Orc Brute Sprite Sheet_35
+  - first:
+      213: -8071690075876210703
+    second: Orc Brute Sprite Sheet_36
+  - first:
+      213: 8221819490231669160
+    second: Orc Brute Sprite Sheet_37
+  - first:
+      213: 6693048997622050336
+    second: Orc Brute Sprite Sheet_38
+  - first:
+      213: -167479713581912670
+    second: Orc Brute Sprite Sheet_39
+  - first:
+      213: 1880862069141781645
+    second: Orc Brute Sprite Sheet_40
+  - first:
+      213: 4196756370780662887
+    second: Orc Brute Sprite Sheet_41
+  - first:
+      213: -8763905161267136588
+    second: Orc Brute Sprite Sheet_42
+  - first:
+      213: 7247292853451910869
+    second: Orc Brute Sprite Sheet_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 319
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 420b780c6b2074930800000000000000
+      internalID: 4127270567445770276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 319
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cec1492282c6e450800000000000000
+      internalID: 6117791008123113152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 319
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8033f3e5ad8816e30800000000000000
+      internalID: 4495024374557913864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 319
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b28d8ec09c7bf9e70800000000000000
+      internalID: 9124213444208810027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 319
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fd00b77949b8e2e0800000000000000
+      internalID: -2096221901349188107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 319
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be7a836d5448b9ae0800000000000000
+      internalID: -1541493011962615829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 319
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e156318eb9cc57c0800000000000000
+      internalID: -4081165342255722010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 319
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7db269d1f3a37040800000000000000
+      internalID: 4644235899878686079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 255
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dba5be3218de0350800000000000000
+      internalID: 5984958527695072209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 258
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27909d7318a83c490800000000000000
+      internalID: -7727180248045254286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 260
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bbfb9c42af1c2970800000000000000
+      internalID: 8731388559495003064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 258
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2348a4f8b355ea040800000000000000
+      internalID: 4660756378670498866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 255
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b301edef8e736de40800000000000000
+      internalID: 5680789453822365755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 257
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45d7e11f528e0ae20800000000000000
+      internalID: 3359940571675131220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 260
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d13b4f06929d6d800800000000000000
+      internalID: 636935169063039773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 257
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35c828cacd6321710800000000000000
+      internalID: 1662451533868076115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 191
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd8662e28b730b40800000000000000
+      internalID: 5405299779849063887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 191
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e662e5fe2c105cd20800000000000000
+      internalID: 3298044238869964398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 191
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a426b5e6d578e140800000000000000
+      internalID: 4749175372899558568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 191
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c82c0f8aaf0b8d90800000000000000
+      internalID: -7094559562773288765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 191
+        width: 45
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 237cccbe99771d5d0800000000000000
+      internalID: -3039516770528606414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 191
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d016c677803f199a0800000000000000
+      internalID: -6227929591987805939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 191
+        width: 45
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd5398c4fe861a110800000000000000
+      internalID: 1270411946885723615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 191
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba24eaa09020b1640800000000000000
+      internalID: 5051633644883296939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 127
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac45fae21b4abd0c0800000000000000
+      internalID: -4549861917628345142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 127
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c75a93d157061340800000000000000
+      internalID: 4834059298052659138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 127
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 155cac4184ecd5a20800000000000000
+      internalID: 3052822931408864593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 127
+        width: 40
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0d27a60499f267c0800000000000000
+      internalID: -4079423898282152689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 127
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69e0ff3c0a5586c50800000000000000
+      internalID: 6658666198038679190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 127
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c43b7ad6ccbf4c0800000000000000
+      internalID: -4252580651784254334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 127
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f9cd535feec6b410800000000000000
+      internalID: 1492607853811059189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 127
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fc9166d1ef5a3a00800000000000000
+      internalID: 737006912597499128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 63
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2358d7967feda9470800000000000000
+      internalID: 8402273209021203762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 63
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6081719025f3f9f0800000000000000
+      internalID: -435735218696912789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 63
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82149d709731b9fa0800000000000000
+      internalID: -5793015085138362072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 63
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3746f3781fcd6d950800000000000000
+      internalID: 6473604444305974387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 63
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f74a5244a89bff80800000000000000
+      internalID: -8071690075876210703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 63
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a154aae345c91270800000000000000
+      internalID: 8221819490231669160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02eeb8f1a9c72ec50800000000000000
+      internalID: 6693048997622050336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 0
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2adaddc761efcadf0800000000000000
+      internalID: -167479713581912670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 0
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8cb3be261a2a1a10800000000000000
+      internalID: 1880862069141781645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 0
+        width: 48
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c2d311fafdd3a30800000000000000
+      internalID: 4196756370780662887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 0
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b7b57160ba506680800000000000000
+      internalID: -8763905161267136588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc Brute Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 0
+        width: 48
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5de6a31d37e839460800000000000000
+      internalID: 7247292853451910869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Orc Brute Sprite Sheet_0: 4127270567445770276
+      Orc Brute Sprite Sheet_1: 6117791008123113152
+      Orc Brute Sprite Sheet_10: 8731388559495003064
+      Orc Brute Sprite Sheet_11: 4660756378670498866
+      Orc Brute Sprite Sheet_12: 5680789453822365755
+      Orc Brute Sprite Sheet_13: 3359940571675131220
+      Orc Brute Sprite Sheet_14: 636935169063039773
+      Orc Brute Sprite Sheet_15: 1662451533868076115
+      Orc Brute Sprite Sheet_16: 5405299779849063887
+      Orc Brute Sprite Sheet_17: 3298044238869964398
+      Orc Brute Sprite Sheet_18: 4749175372899558568
+      Orc Brute Sprite Sheet_19: -7094559562773288765
+      Orc Brute Sprite Sheet_2: 4495024374557913864
+      Orc Brute Sprite Sheet_20: -3039516770528606414
+      Orc Brute Sprite Sheet_21: -6227929591987805939
+      Orc Brute Sprite Sheet_22: 1270411946885723615
+      Orc Brute Sprite Sheet_23: 5051633644883296939
+      Orc Brute Sprite Sheet_24: -4549861917628345142
+      Orc Brute Sprite Sheet_25: 4834059298052659138
+      Orc Brute Sprite Sheet_26: 3052822931408864593
+      Orc Brute Sprite Sheet_27: -4079423898282152689
+      Orc Brute Sprite Sheet_28: 6658666198038679190
+      Orc Brute Sprite Sheet_29: -4252580651784254334
+      Orc Brute Sprite Sheet_3: 9124213444208810027
+      Orc Brute Sprite Sheet_30: 1492607853811059189
+      Orc Brute Sprite Sheet_31: 737006912597499128
+      Orc Brute Sprite Sheet_32: 8402273209021203762
+      Orc Brute Sprite Sheet_33: -435735218696912789
+      Orc Brute Sprite Sheet_34: -5793015085138362072
+      Orc Brute Sprite Sheet_35: 6473604444305974387
+      Orc Brute Sprite Sheet_36: -8071690075876210703
+      Orc Brute Sprite Sheet_37: 8221819490231669160
+      Orc Brute Sprite Sheet_38: 6693048997622050336
+      Orc Brute Sprite Sheet_39: -167479713581912670
+      Orc Brute Sprite Sheet_4: -2096221901349188107
+      Orc Brute Sprite Sheet_40: 1880862069141781645
+      Orc Brute Sprite Sheet_41: 4196756370780662887
+      Orc Brute Sprite Sheet_42: -8763905161267136588
+      Orc Brute Sprite Sheet_43: 7247292853451910869
+      Orc Brute Sprite Sheet_5: -1541493011962615829
+      Orc Brute Sprite Sheet_6: -4081165342255722010
+      Orc Brute Sprite Sheet_7: 4644235899878686079
+      Orc Brute Sprite Sheet_8: 5984958527695072209
+      Orc Brute Sprite Sheet_9: -7727180248045254286
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

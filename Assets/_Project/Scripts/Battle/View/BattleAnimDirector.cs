@@ -361,6 +361,56 @@ namespace DungeonDeck.Battle.View
             if (!string.IsNullOrEmpty(_pendingOathId)) 
                 ApplyOathAnimatorOverride(_pendingOathId);
         }
+        
+        /// <summary>
+        /// 슬롯 인덱스를 유지하며 바인딩 (null 슬롯 허용)
+        /// BattleStageSpawner에서 호출합니다.
+        /// </summary>
+        public void BindWithSlots(BattleActorView player, BattleActorView[] enemySlots)
+        {
+            if (player != null)
+            {
+                player.drivenByDirector = true;
+                playerView = player.transform;
+                playerAnimator = player.animator ?? player.GetComponentInChildren<Animator>(true);
+            }
+
+            // 기존 배열 초기화
+            for (int i = 0; i < enemyViews.Length; i++)
+            {
+                enemyViews[i] = null;
+                enemyAnimators[i] = null;
+            }
+
+            // ✅ 슬롯 인덱스를 유지하며 할당 (null 슬롯은 건너뜀)
+            if (enemySlots != null)
+            {
+                int n = Mathf.Min(enemySlots.Length, enemyViews.Length);
+                for (int i = 0; i < n; i++)
+                {
+                    var e = enemySlots[i];
+                    if (e == null) continue;  // null 슬롯은 건너뜀
+                    e.drivenByDirector = false;
+
+                    enemyViews[i] = e.transform;
+                    enemyAnimators[i] = e.animator ?? e.GetComponentInChildren<Animator>(true);
+                    
+                    Debug.Log($"[BattleAnimDirector] BindWithSlots: slot {i} = {e.name}");
+                }
+            }
+
+            CacheEnemyBases();
+            InitializeMover();
+            _fsm.Reset();
+
+            if (targetManager == null)
+                targetManager = FindObjectOfType<BattleTargetManager>(true);
+            
+            // Bind로 playerAnimator가 확보된 시점: base 캐시 + pending oath 적용
+            CachePlayerBaseControllerIfNeeded();
+            if (!string.IsNullOrEmpty(_pendingOathId)) 
+                ApplyOathAnimatorOverride(_pendingOathId);
+        }
 
         private void CacheEnemyBases()
         {

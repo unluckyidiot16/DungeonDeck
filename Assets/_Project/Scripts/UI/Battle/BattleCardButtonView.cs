@@ -1,4 +1,6 @@
 using System;
+using DG.Tweening;
+// using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,8 +38,25 @@ namespace DungeonDeck.UI.Battle
             AutoWireIfNeeded();
 
             bool has = card != null;
+            
+            // ✅ 활성화 전에 DOTween 정리 및 transform 초기화
+            if (has && !gameObject.activeSelf)
+            {
+                // 비활성 상태에서 활성화될 때 transform 초기화
+                transform.DOKill(true);
+                transform.localScale = Vector3.one;
+                transform.localRotation = Quaternion.identity;
+            }
+            
             gameObject.SetActive(has);
             if (!has) return;
+            
+            // ✅ CardHoverLiftFx가 있으면 기준값 리셋
+            var hoverFx = GetComponent<CardHoverLiftFx>();
+            if (hoverFx != null)
+            {
+                hoverFx.ResetBaseTransform();
+            }
 
             if (nameText != null) nameText.text = card.GetDisplayName();
             if (effectText != null) effectText.text = card.GetEffectText();
@@ -85,8 +104,6 @@ namespace DungeonDeck.UI.Battle
                 return;
             }
 
-            // 테마가 없을 때도 최소한 구분은 나게
-            // (색은 네가 theme로 정식 지정하는 게 정답)
             if (backgroundImage != null) backgroundImage.color = Color.white;
             if (frameImage != null) frameImage.color = Color.white;
         }
@@ -101,9 +118,7 @@ namespace DungeonDeck.UI.Battle
             }
 
             if (backgroundImage == null) backgroundImage = GetComponent<Image>();
-            // frame/icon/text는 프리팹에서 직접 연결하는 걸 권장 (없어도 null-safe)
-
-            // TMP들 자동 탐색(프리팹 네이밍 추천: NameText/CostText/EffectText/RarityText)
+            
             if (nameText == null) nameText = FindTmp("NameText");
             if (costText == null) costText = FindTmp("CostText");
             if (effectText == null) effectText = FindTmp("EffectText");

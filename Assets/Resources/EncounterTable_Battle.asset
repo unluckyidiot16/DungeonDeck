@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dacff4189940481d9f6b57c3f9816cb, type: 3}
+  m_Name: EncounterTable_Battle
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Config.Encounters.BattleEncounterTable
+  entries:
+  - encounter: {fileID: 11400000, guid: 3657be397d30e465c9f491a695ac2db5, type: 2}
+    weight: 1

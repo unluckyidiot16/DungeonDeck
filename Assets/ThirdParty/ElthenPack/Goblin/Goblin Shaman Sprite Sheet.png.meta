@@ -1,0 +1,1898 @@
+fileFormatVersion: 2
+guid: dbd74fd17476c4a9bb2ed52e2bf346e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 321121300123919547
+    second: Goblin Shaman Sprite Sheet_0
+  - first:
+      213: 3116504174185403190
+    second: Goblin Shaman Sprite Sheet_1
+  - first:
+      213: -6109965460056430967
+    second: Goblin Shaman Sprite Sheet_2
+  - first:
+      213: -5670749531408497170
+    second: Goblin Shaman Sprite Sheet_3
+  - first:
+      213: -1469354184164301955
+    second: Goblin Shaman Sprite Sheet_4
+  - first:
+      213: 2051414762530723014
+    second: Goblin Shaman Sprite Sheet_5
+  - first:
+      213: 8150781399534278603
+    second: Goblin Shaman Sprite Sheet_6
+  - first:
+      213: 901538939491520008
+    second: Goblin Shaman Sprite Sheet_7
+  - first:
+      213: 2221509091046197635
+    second: Goblin Shaman Sprite Sheet_8
+  - first:
+      213: -3614800745709267737
+    second: Goblin Shaman Sprite Sheet_9
+  - first:
+      213: 5847420068525495052
+    second: Goblin Shaman Sprite Sheet_10
+  - first:
+      213: 2241315165673234489
+    second: Goblin Shaman Sprite Sheet_11
+  - first:
+      213: -581674832548134686
+    second: Goblin Shaman Sprite Sheet_12
+  - first:
+      213: 8544465769776739052
+    second: Goblin Shaman Sprite Sheet_13
+  - first:
+      213: 5648688880585843660
+    second: Goblin Shaman Sprite Sheet_14
+  - first:
+      213: 7825780361833285798
+    second: Goblin Shaman Sprite Sheet_15
+  - first:
+      213: -5321408000561693134
+    second: Goblin Shaman Sprite Sheet_16
+  - first:
+      213: 2582182177568541209
+    second: Goblin Shaman Sprite Sheet_17
+  - first:
+      213: 8467314981257842285
+    second: Goblin Shaman Sprite Sheet_18
+  - first:
+      213: 1474229059021080245
+    second: Goblin Shaman Sprite Sheet_19
+  - first:
+      213: 8233302635527519679
+    second: Goblin Shaman Sprite Sheet_20
+  - first:
+      213: 8138990525172252166
+    second: Goblin Shaman Sprite Sheet_21
+  - first:
+      213: -7644432517797401788
+    second: Goblin Shaman Sprite Sheet_22
+  - first:
+      213: -8966616658621928803
+    second: Goblin Shaman Sprite Sheet_23
+  - first:
+      213: -3233754823619330711
+    second: Goblin Shaman Sprite Sheet_24
+  - first:
+      213: -2809594234100202633
+    second: Goblin Shaman Sprite Sheet_25
+  - first:
+      213: 4002714437249844952
+    second: Goblin Shaman Sprite Sheet_26
+  - first:
+      213: -2027143308272407969
+    second: Goblin Shaman Sprite Sheet_27
+  - first:
+      213: 3431668382795802694
+    second: Goblin Shaman Sprite Sheet_28
+  - first:
+      213: 2978842324696375664
+    second: Goblin Shaman Sprite Sheet_29
+  - first:
+      213: 7951954759791161877
+    second: Goblin Shaman Sprite Sheet_30
+  - first:
+      213: -7617533278230714993
+    second: Goblin Shaman Sprite Sheet_31
+  - first:
+      213: -2972183483131799269
+    second: Goblin Shaman Sprite Sheet_32
+  - first:
+      213: -2265987365828098162
+    second: Goblin Shaman Sprite Sheet_33
+  - first:
+      213: 7719429299271590427
+    second: Goblin Shaman Sprite Sheet_34
+  - first:
+      213: 3373964940830405005
+    second: Goblin Shaman Sprite Sheet_35
+  - first:
+      213: -8684960288738021386
+    second: Goblin Shaman Sprite Sheet_36
+  - first:
+      213: -4900873108954581775
+    second: Goblin Shaman Sprite Sheet_37
+  - first:
+      213: 6125020515343713517
+    second: Goblin Shaman Sprite Sheet_38
+  - first:
+      213: 8159278422223343811
+    second: Goblin Shaman Sprite Sheet_39
+  - first:
+      213: 8416555275811248395
+    second: Goblin Shaman Sprite Sheet_40
+  - first:
+      213: 2940680265003247257
+    second: Goblin Shaman Sprite Sheet_41
+  - first:
+      213: 5537047586898821780
+    second: Goblin Shaman Sprite Sheet_42
+  - first:
+      213: -3490761751622947269
+    second: Goblin Shaman Sprite Sheet_43
+  - first:
+      213: 5575814717768427366
+    second: Goblin Shaman Sprite Sheet_44
+  - first:
+      213: -772661800468448047
+    second: Goblin Shaman Sprite Sheet_45
+  - first:
+      213: -8748570345992132926
+    second: Goblin Shaman Sprite Sheet_46
+  - first:
+      213: 6481873074099795645
+    second: Goblin Shaman Sprite Sheet_47
+  - first:
+      213: 463639389729622229
+    second: Goblin Shaman Sprite Sheet_48
+  - first:
+      213: 791754332993680440
+    second: Goblin Shaman Sprite Sheet_49
+  - first:
+      213: 2658696725383027519
+    second: Goblin Shaman Sprite Sheet_50
+  - first:
+      213: 7468017548146496261
+    second: Goblin Shaman Sprite Sheet_51
+  - first:
+      213: -4085447099270283179
+    second: Goblin Shaman Sprite Sheet_52
+  - first:
+      213: 7325223869002895019
+    second: Goblin Shaman Sprite Sheet_53
+  - first:
+      213: 4538407984502406478
+    second: Goblin Shaman Sprite Sheet_54
+  - first:
+      213: -2028481155642829918
+    second: Goblin Shaman Sprite Sheet_55
+  - first:
+      213: -18370436503575926
+    second: Goblin Shaman Sprite Sheet_56
+  - first:
+      213: 3815123095889226813
+    second: Goblin Shaman Sprite Sheet_57
+  - first:
+      213: -5549286329523593420
+    second: Goblin Shaman Sprite Sheet_58
+  - first:
+      213: 2059736043864497216
+    second: Goblin Shaman Sprite Sheet_59
+  - first:
+      213: 2702939943561021943
+    second: Goblin Shaman Sprite Sheet_60
+  - first:
+      213: 2462407945825519769
+    second: Goblin Shaman Sprite Sheet_61
+  - first:
+      213: 4774359760641546190
+    second: Goblin Shaman Sprite Sheet_62
+  - first:
+      213: 5431461312785984763
+    second: Goblin Shaman Sprite Sheet_63
+  - first:
+      213: 7457258346308143447
+    second: Goblin Shaman Sprite Sheet_64
+  - first:
+      213: 1705716426703896138
+    second: Goblin Shaman Sprite Sheet_65
+  - first:
+      213: -2568769280550067878
+    second: Goblin Shaman Sprite Sheet_66
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 255
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb4a2bffe1ad47400800000000000000
+      internalID: 321121300123919547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 255
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 633d753d80c004b20800000000000000
+      internalID: 3116504174185403190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 255
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9862e6b39ca053ba0800000000000000
+      internalID: -6109965460056430967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 255
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee50f2a98537d41b0800000000000000
+      internalID: -5670749531408497170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 223
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7327ab872ecb9be0800000000000000
+      internalID: -1469354184164301955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 225
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c4d2af8bd6187c10800000000000000
+      internalID: 2051414762530723014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 227
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc71a198f746d1170800000000000000
+      internalID: 8150781399534278603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 225
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80e039f83e8e28c00800000000000000
+      internalID: 901538939491520008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 223
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3890c1d8fb264de10800000000000000
+      internalID: 2221509091046197635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 225
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e49e22bfd5a5ddc0800000000000000
+      internalID: -3614800745709267737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 227
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c03d3f44295362150800000000000000
+      internalID: 5847420068525495052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 225
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93026a7a440ca1f10800000000000000
+      internalID: 2241315165673234489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 191
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e00f2752d97de7f0800000000000000
+      internalID: -581674832548134686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 191
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce2f60bd85a049670800000000000000
+      internalID: 8544465769776739052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 191
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc3a40edb9c246e40800000000000000
+      internalID: 5648688880585843660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 191
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a80d4db6c1ca9c60800000000000000
+      internalID: 7825780361833285798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 191
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e39951e9f8626b0800000000000000
+      internalID: -5321408000561693134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 191
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91a415f6201c5d320800000000000000
+      internalID: 2582182177568541209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 159
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e873b1d12f18570800000000000000
+      internalID: 8467314981257842285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 159
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b68284b483857410800000000000000
+      internalID: 1474229059021080245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 159
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbdb7e60021924270800000000000000
+      internalID: 8233302635527519679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 159
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60e792ba2c083f070800000000000000
+      internalID: 8138990525172252166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 127
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44bad33802589e590800000000000000
+      internalID: -7644432517797401788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 127
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9a6db9f7ad209380800000000000000
+      internalID: -8966616658621928803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 127
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96db67ffe156f13d0800000000000000
+      internalID: -3233754823619330711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 127
+        width: 31
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 773c8711ee05209d0800000000000000
+      internalID: -2809594234100202633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 127
+        width: 31
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d6ca99c29f7c8730800000000000000
+      internalID: 4002714437249844952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 96
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5aec91c6e32ed3e0800000000000000
+      internalID: -2027143308272407969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 96
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 648ab7f563cbf9f20800000000000000
+      internalID: 3431668382795802694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 96
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0712d6dcf49f65920800000000000000
+      internalID: 2978842324696375664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 96
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 512345709b40b5e60800000000000000
+      internalID: 7951954759791161877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 96
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f856756c7d5194690800000000000000
+      internalID: -7617533278230714993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 96
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1955a09edea0c6d0800000000000000
+      internalID: -2972183483131799269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 96
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e870b4a1f789d80e0800000000000000
+      internalID: -2265987365828098162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 96
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1263d36c0ce02b60800000000000000
+      internalID: 7719429299271590427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 64
+        width: 21
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8171d6dc3bb2de20800000000000000
+      internalID: 3373964940830405005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 64
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ff656dd1a2d87780800000000000000
+      internalID: -8684960288738021386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 64
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f47f739fd99cfbb0800000000000000
+      internalID: -4900873108954581775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 64
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de4ca0bf4b1700550800000000000000
+      internalID: 6125020515343713517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 64
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0d12cce749b3170800000000000000
+      internalID: 8159278422223343811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 64
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b095b273e6c9dc470800000000000000
+      internalID: 8416555275811248395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 64
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9962581ee156fc820800000000000000
+      internalID: 2940680265003247257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 64
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492c989917b87dc40800000000000000
+      internalID: 5537047586898821780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 32
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3e6ef68ea25e8fc0800000000000000
+      internalID: -3490761751622947269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 32
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6676bf1a1f5416d40800000000000000
+      internalID: 5575814717768427366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 32
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc709baf24f645f0800000000000000
+      internalID: -772661800468448047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 32
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c66f9a4f95d69680800000000000000
+      internalID: -8748570345992132926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 13
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db633ece73d34f950800000000000000
+      internalID: 6481873074099795645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 16
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d886b8819d2f6600800000000000000
+      internalID: 463639389729622229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 17
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834f677fe50ecfa00800000000000000
+      internalID: 791754332993680440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 17
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3b13f9d59695e420800000000000000
+      internalID: 2658696725383027519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 22
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 503d7ad846ab3a760800000000000000
+      internalID: 7468017548146496261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 22
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550485342839d47c0800000000000000
+      internalID: -4085447099270283179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bae41245c4c68a560800000000000000
+      internalID: 7325223869002895019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4dff02340aabfe30800000000000000
+      internalID: 4538407984502406478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a3d554e22369d3e0800000000000000
+      internalID: -2028481155642829918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a82e5d17f2cbebff0800000000000000
+      internalID: -18370436503575926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 12
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3cadd80e3a02f430800000000000000
+      internalID: 3815123095889226813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 5
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f90d31c79fcf2b0800000000000000
+      internalID: -5549286329523593420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04c9c99d407a59c10800000000000000
+      internalID: 2059736043864497216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 13
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f94b21de85c28520800000000000000
+      internalID: 2702939943561021943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 6
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9988707fafa3c2220800000000000000
+      internalID: 2462407945825519769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 3
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec755fa18eee14240800000000000000
+      internalID: 4774359760641546190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfca2ef694d606b40800000000000000
+      internalID: 5431461312785984763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 0
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759830aa4f08d7760800000000000000
+      internalID: 7457258346308143447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 0
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4efb358d0ceba710800000000000000
+      internalID: 1705716426703896138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Shaman Sprite Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 0
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a51a0e203f5e95cd0800000000000000
+      internalID: -2568769280550067878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Goblin Shaman Sprite Sheet_0: 321121300123919547
+      Goblin Shaman Sprite Sheet_1: 3116504174185403190
+      Goblin Shaman Sprite Sheet_10: 5847420068525495052
+      Goblin Shaman Sprite Sheet_11: 2241315165673234489
+      Goblin Shaman Sprite Sheet_12: -581674832548134686
+      Goblin Shaman Sprite Sheet_13: 8544465769776739052
+      Goblin Shaman Sprite Sheet_14: 5648688880585843660
+      Goblin Shaman Sprite Sheet_15: 7825780361833285798
+      Goblin Shaman Sprite Sheet_16: -5321408000561693134
+      Goblin Shaman Sprite Sheet_17: 2582182177568541209
+      Goblin Shaman Sprite Sheet_18: 8467314981257842285
+      Goblin Shaman Sprite Sheet_19: 1474229059021080245
+      Goblin Shaman Sprite Sheet_2: -6109965460056430967
+      Goblin Shaman Sprite Sheet_20: 8233302635527519679
+      Goblin Shaman Sprite Sheet_21: 8138990525172252166
+      Goblin Shaman Sprite Sheet_22: -7644432517797401788
+      Goblin Shaman Sprite Sheet_23: -8966616658621928803
+      Goblin Shaman Sprite Sheet_24: -3233754823619330711
+      Goblin Shaman Sprite Sheet_25: -2809594234100202633
+      Goblin Shaman Sprite Sheet_26: 4002714437249844952
+      Goblin Shaman Sprite Sheet_27: -2027143308272407969
+      Goblin Shaman Sprite Sheet_28: 3431668382795802694
+      Goblin Shaman Sprite Sheet_29: 2978842324696375664
+      Goblin Shaman Sprite Sheet_3: -5670749531408497170
+      Goblin Shaman Sprite Sheet_30: 7951954759791161877
+      Goblin Shaman Sprite Sheet_31: -7617533278230714993
+      Goblin Shaman Sprite Sheet_32: -2972183483131799269
+      Goblin Shaman Sprite Sheet_33: -2265987365828098162
+      Goblin Shaman Sprite Sheet_34: 7719429299271590427
+      Goblin Shaman Sprite Sheet_35: 3373964940830405005
+      Goblin Shaman Sprite Sheet_36: -8684960288738021386
+      Goblin Shaman Sprite Sheet_37: -4900873108954581775
+      Goblin Shaman Sprite Sheet_38: 6125020515343713517
+      Goblin Shaman Sprite Sheet_39: 8159278422223343811
+      Goblin Shaman Sprite Sheet_4: -1469354184164301955
+      Goblin Shaman Sprite Sheet_40: 8416555275811248395
+      Goblin Shaman Sprite Sheet_41: 2940680265003247257
+      Goblin Shaman Sprite Sheet_42: 5537047586898821780
+      Goblin Shaman Sprite Sheet_43: -3490761751622947269
+      Goblin Shaman Sprite Sheet_44: 5575814717768427366
+      Goblin Shaman Sprite Sheet_45: -772661800468448047
+      Goblin Shaman Sprite Sheet_46: -8748570345992132926
+      Goblin Shaman Sprite Sheet_47: 6481873074099795645
+      Goblin Shaman Sprite Sheet_48: 463639389729622229
+      Goblin Shaman Sprite Sheet_49: 791754332993680440
+      Goblin Shaman Sprite Sheet_5: 2051414762530723014
+      Goblin Shaman Sprite Sheet_50: 2658696725383027519
+      Goblin Shaman Sprite Sheet_51: 7468017548146496261
+      Goblin Shaman Sprite Sheet_52: -4085447099270283179
+      Goblin Shaman Sprite Sheet_53: 7325223869002895019
+      Goblin Shaman Sprite Sheet_54: 4538407984502406478
+      Goblin Shaman Sprite Sheet_55: -2028481155642829918
+      Goblin Shaman Sprite Sheet_56: -18370436503575926
+      Goblin Shaman Sprite Sheet_57: 3815123095889226813
+      Goblin Shaman Sprite Sheet_58: -5549286329523593420
+      Goblin Shaman Sprite Sheet_59: 2059736043864497216
+      Goblin Shaman Sprite Sheet_6: 8150781399534278603
+      Goblin Shaman Sprite Sheet_60: 2702939943561021943
+      Goblin Shaman Sprite Sheet_61: 2462407945825519769
+      Goblin Shaman Sprite Sheet_62: 4774359760641546190
+      Goblin Shaman Sprite Sheet_63: 5431461312785984763
+      Goblin Shaman Sprite Sheet_64: 7457258346308143447
+      Goblin Shaman Sprite Sheet_65: 1705716426703896138
+      Goblin Shaman Sprite Sheet_66: -2568769280550067878
+      Goblin Shaman Sprite Sheet_7: 901538939491520008
+      Goblin Shaman Sprite Sheet_8: 2221509091046197635
+      Goblin Shaman Sprite Sheet_9: -3614800745709267737
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -11,6 +11,7 @@ using DungeonDeck.Config.Oaths;
 using DungeonDeck.Config.Cards;
 using DungeonDeck.Config.Meta;
 using DungeonDeck.Map;
+using DungeonDeck.Config.Encounters;
 using Random = UnityEngine.Random;
 
 namespace DungeonDeck.Run
@@ -57,6 +58,18 @@ namespace DungeonDeck.Run
 
         // Battle context (minimal)
         public MapNodeType PendingBattleType { get; private set; } = MapNodeType.Battle;
+        
+        // Encounter context (M1)
+        public BattleEncounterDefinition PendingEncounter { get; private set; }
+        public int PendingEncounterSeed { get; private set; }
+        
+        [Header("Encounters (Battle/Boss)")]
+        [SerializeField] private BattleEncounterTable battleEncounterTable;
+        [SerializeField] private BattleEncounterTable bossEncounterTable;
+            
+        [Header("Resources Auto-Load (Optional)")]
+        [SerializeField] private string battleEncounterTableResourcesPath = "EncounterTable_Battle";
+        [SerializeField] private string bossEncounterTableResourcesPath = "EncounterTable_Boss";
 
         private void Awake()
         {
@@ -87,6 +100,8 @@ namespace DungeonDeck.Run
             
             if (State != null) State.lastOutcome = RunEndOutcome.None;
             PendingBattleType = MapNodeType.Battle;
+            PendingEncounter = null; 
+            PendingEncounterSeed = 0;
         }
 
         /// <summary>
@@ -113,19 +128,101 @@ namespace DungeonDeck.Run
         {
             if (State == null) return;
 
-            // Lock index (M1: linear)
             index = Mathf.Clamp(index, 0, Plan.nodes.Count - 1);
-
             var type = GetNodeType(index);
             PendingBattleType = type;
-
-            // We mark "current node" by index; clear happens when finished
-            // For M1: Battle scene handles win/lose then advances or stays
+            
+            
+            // ✅ 이번 노드 전투에서 사용할 Encounter를 미리 준비
+            // (BattleStageSpawner는 RunSession.PendingEncounter를 기준으로 적을 활성화)
+            PreparePendingEncounterForNode(index, type);
+            
             State.nodeIndex = index;
-
-            // Scene load is handled by MapController (keeps RunSession simple)
+        
+            // ✅ Battle/Boss 노드면 Encounter 롤링
+            if (type == MapNodeType.Battle || type == MapNodeType.Boss)
+            {
+                PendingEncounter = RollEncounter(type, index);
+            }
+            else
+            {
+                PendingEncounter = null;
+            }
+        }
+        
+        private BattleEncounterDefinition RollEncounter(MapNodeType type, int nodeIndex)
+        {
+            var table = (type == MapNodeType.Boss && bossEncounterTable != null) 
+                ? bossEncounterTable 
+                : battleEncounterTable;
+            
+            if (table == null)
+            {
+                Debug.LogWarning("[RunSession] No encounter table assigned!");
+                return null;
+            }
+        
+            int seed = ComputeEncounterSeed(nodeIndex);
+            return table.Roll(seed);
+        }
+    
+        private int ComputeEncounterSeed(int nodeIndex)
+        {
+            unchecked
+            {
+                int seed = 17;
+                seed = seed * 31 + MapSeed;
+                seed = seed * 31 + nodeIndex;
+                seed = seed * 31 + (State?.runClearedBattles ?? 0);
+                return seed != 0 ? seed : 1;
+            }
         }
 
+
+        
+        private void PreparePendingEncounterForNode(int nodeIndex, MapNodeType type)
+        {
+            if (type != MapNodeType.Battle && type != MapNodeType.Boss)
+            {
+                PendingEncounter = null;
+                PendingEncounterSeed = 0;
+                return;
+            }
+            
+            EnsureDatabasesLoaded();
+            
+            var table = (type == MapNodeType.Boss) ? bossEncounterTable : battleEncounterTable;
+            if (table == null)
+            {
+                PendingEncounter = null;
+                PendingEncounterSeed = 0;
+                return;
+            }
+            
+            int seed = ComputeEncounterSeed(nodeIndex, type);
+            PendingEncounterSeed = seed;
+            PendingEncounter = table.Roll(seed);
+        }
+    
+        private int ComputeEncounterSeed(int nodeIndex, MapNodeType type)
+        {
+            // "항상 같은 노드면 항상 같은 엔카운터"를 만들기 위한 결정적 시드
+            int runSeed = (State != null && State.seed != 0) ? State.seed : 1;
+            int mapSeed = MapSeed != 0 ? MapSeed : 1;
+        
+            unchecked
+            {
+                int seed = runSeed;
+                seed = seed * 10007 + mapSeed * 97;
+                seed = seed * 10009 + (nodeIndex + 1) * 31;
+                seed = seed * 10037 + ((int)type + 1) * 131;
+                if (Oath != null && !string.IsNullOrWhiteSpace(Oath.id))
+                    seed = seed * 10039 + Oath.id.GetHashCode();
+                return seed != 0 ? seed : 1;
+                
+            }
+        }
+        
         public void MarkNodeClearedAndAdvance()
         {
             if (State == null || Plan == null) return;
@@ -221,6 +318,12 @@ namespace DungeonDeck.Run
 
             if (rewardPoolResolver == null && !string.IsNullOrWhiteSpace(rewardPoolResolverResourcesPath))
                 rewardPoolResolver = Resources.Load<RewardPoolResolver>(rewardPoolResolverResourcesPath);
+            
+            if (battleEncounterTable == null && !string.IsNullOrWhiteSpace(battleEncounterTableResourcesPath))
+                battleEncounterTable = Resources.Load<BattleEncounterTable>(battleEncounterTableResourcesPath);
+            
+            if (bossEncounterTable == null && !string.IsNullOrWhiteSpace(bossEncounterTableResourcesPath))
+                bossEncounterTable = Resources.Load<BattleEncounterTable>(bossEncounterTableResourcesPath);
         }
 
         // RunSession.cs 내부에 추가
@@ -335,6 +438,10 @@ public void LoadFromSaveData(
 
     // 3) PendingBattleType 안전 복원
     PendingBattleType = GetNodeType(State.nodeIndex);
+    
+    // 4) PendingEncounter도 동일 규칙으로 복원
+    PreparePendingEncounterForNode(State.nodeIndex, PendingBattleType);
+    
 }
 
         

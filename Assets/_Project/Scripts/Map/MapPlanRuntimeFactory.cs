@@ -9,13 +9,22 @@ namespace DungeonDeck.Map
     {
         public static MapPlanDefinition CreateRuntimePlan(MapPlanDefinition template, int seed)
         {
-            int len = (template != null && template.nodes != null && template.nodes.Count > 0)
-                ? template.nodes.Count
-                : 6;
-
+           
             var plan = ScriptableObject.CreateInstance<MapPlanDefinition>();
             plan.hideFlags = HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;
 
+            // ✅ MapPlanDefinition(SO)의 nodes를 그대로 사용 (SO 기반 맵 설계)
+            // 템플릿이 비어있을 때만 아래 랜덤 생성 로직을 사용합니다.
+            if (template != null && template.nodes != null && template.nodes.Count > 0) 
+            {
+                plan.nodes = new List<MapNodeType>(template.nodes);
+                return plan;
+            }
+            
+            int len = (template != null && template.nodes != null && template.nodes.Count > 0)
+                ? template.nodes.Count
+                : 6;
+            
             var rng = new System.Random(Math.Max(1, seed));
             plan.nodes = new List<MapNodeType>(len);
 

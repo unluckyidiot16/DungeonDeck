@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 64d8497ec2abc4429aa11a7895fd9a66
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3142356800873488604
+    second: Hell Portal Sprite Sheet_0
+  - first:
+      213: -2147925522298175313
+    second: Hell Portal Sprite Sheet_1
+  - first:
+      213: 7356874906878291693
+    second: Hell Portal Sprite Sheet_2
+  - first:
+      213: 5686408344498330699
+    second: Hell Portal Sprite Sheet_3
+  - first:
+      213: 262467400879207158
+    second: Hell Portal Sprite Sheet_4
+  - first:
+      213: 5611088687665563502
+    second: Hell Portal Sprite Sheet_5
+  - first:
+      213: -8064307584881715945
+    second: Hell Portal Sprite Sheet_6
+  - first:
+      213: 2064166793661545549
+    second: Hell Portal Sprite Sheet_7
+  - first:
+      213: -5772127457648714243
+    second: Hell Portal Sprite Sheet_8
+  - first:
+      213: -3413307396386722237
+    second: Hell Portal Sprite Sheet_9
+  - first:
+      213: -7536203798810172008
+    second: Hell Portal Sprite Sheet_10
+  - first:
+      213: 7606219031673734864
+    second: Hell Portal Sprite Sheet_11
+  - first:
+      213: 5092069157723036338
+    second: Hell Portal Sprite Sheet_12
+  - first:
+      213: 3808236292079708087
+    second: Hell Portal Sprite Sheet_13
+  - first:
+      213: -7239102056191868110
+    second: Hell Portal Sprite Sheet_14
+  - first:
+      213: 8857098482657803780
+    second: Hell Portal Sprite Sheet_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 227
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd0e8998cd4eb9b20800000000000000
+      internalID: 3142356800873488604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 208
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa00c6f1e190132e0800000000000000
+      internalID: -2147925522298175313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 208
+        width: 33
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dee2779dfbed81660800000000000000
+      internalID: 7356874906878291693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 208
+        width: 33
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4cd3ade24e2aee40800000000000000
+      internalID: 5686408344498330699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 206
+        width: 33
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f27682e5b874a300800000000000000
+      internalID: 262467400879207158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 208
+        width: 33
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e67c48fbe679edd40800000000000000
+      internalID: 5611088687665563502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 208
+        width: 33
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71513a36af2d51090800000000000000
+      internalID: -8064307584881715945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 208
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c7a5d23c465ac10800000000000000
+      internalID: 2064166793661545549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 112
+        width: 33
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfdd198c8a845efa0800000000000000
+      internalID: -5772127457648714243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 112
+        width: 33
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ee729e10f71a0d0800000000000000
+      internalID: -3413307396386722237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 112
+        width: 33
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89568f0d2960a6790800000000000000
+      internalID: -7536203798810172008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 112
+        width: 33
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d68abae8e7be8960800000000000000
+      internalID: 7606219031673734864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 37
+        width: 71
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2baddc58be9aaa640800000000000000
+      internalID: 5092069157723036338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 33
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b769221bb299d430800000000000000
+      internalID: 3808236292079708087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 30
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23342e7c80b898b90800000000000000
+      internalID: -7239102056191868110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hell Portal Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 26
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40e387f942cbaea70800000000000000
+      internalID: 8857098482657803780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hell Portal Sprite Sheet_0: 3142356800873488604
+      Hell Portal Sprite Sheet_1: -2147925522298175313
+      Hell Portal Sprite Sheet_10: -7536203798810172008
+      Hell Portal Sprite Sheet_11: 7606219031673734864
+      Hell Portal Sprite Sheet_12: 5092069157723036338
+      Hell Portal Sprite Sheet_13: 3808236292079708087
+      Hell Portal Sprite Sheet_14: -7239102056191868110
+      Hell Portal Sprite Sheet_15: 8857098482657803780
+      Hell Portal Sprite Sheet_2: 7356874906878291693
+      Hell Portal Sprite Sheet_3: 5686408344498330699
+      Hell Portal Sprite Sheet_4: 262467400879207158
+      Hell Portal Sprite Sheet_5: 5611088687665563502
+      Hell Portal Sprite Sheet_6: -8064307584881715945
+      Hell Portal Sprite Sheet_7: 2064166793661545549
+      Hell Portal Sprite Sheet_8: -5772127457648714243
+      Hell Portal Sprite Sheet_9: -3413307396386722237
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

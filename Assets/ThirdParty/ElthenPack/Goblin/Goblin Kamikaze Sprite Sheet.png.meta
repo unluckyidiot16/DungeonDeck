@@ -1,0 +1,1040 @@
+fileFormatVersion: 2
+guid: 04790dc4acd29494ba648c33e8f43d1d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -46099087344402582
+    second: Goblin Kamikaze Sprite Sheet_0
+  - first:
+      213: -4787819621467441545
+    second: Goblin Kamikaze Sprite Sheet_1
+  - first:
+      213: 8680088910901744764
+    second: Goblin Kamikaze Sprite Sheet_2
+  - first:
+      213: -3062413414153382069
+    second: Goblin Kamikaze Sprite Sheet_3
+  - first:
+      213: 8011002523600684152
+    second: Goblin Kamikaze Sprite Sheet_4
+  - first:
+      213: -8972960500403440767
+    second: Goblin Kamikaze Sprite Sheet_5
+  - first:
+      213: 2705328306281189136
+    second: Goblin Kamikaze Sprite Sheet_6
+  - first:
+      213: 275121042632345401
+    second: Goblin Kamikaze Sprite Sheet_7
+  - first:
+      213: -3210906804924968267
+    second: Goblin Kamikaze Sprite Sheet_8
+  - first:
+      213: -5357070427665049870
+    second: Goblin Kamikaze Sprite Sheet_9
+  - first:
+      213: 1828926405784291363
+    second: Goblin Kamikaze Sprite Sheet_10
+  - first:
+      213: 938037978682409752
+    second: Goblin Kamikaze Sprite Sheet_11
+  - first:
+      213: -7979227391552747942
+    second: Goblin Kamikaze Sprite Sheet_12
+  - first:
+      213: -8786836588898384146
+    second: Goblin Kamikaze Sprite Sheet_13
+  - first:
+      213: -581363282603978171
+    second: Goblin Kamikaze Sprite Sheet_14
+  - first:
+      213: 8203507841600779583
+    second: Goblin Kamikaze Sprite Sheet_15
+  - first:
+      213: 8155146183334667597
+    second: Goblin Kamikaze Sprite Sheet_16
+  - first:
+      213: 1465784463269736597
+    second: Goblin Kamikaze Sprite Sheet_17
+  - first:
+      213: 2720458144653383479
+    second: Goblin Kamikaze Sprite Sheet_18
+  - first:
+      213: -8216955048007455429
+    second: Goblin Kamikaze Sprite Sheet_19
+  - first:
+      213: -1868377691736786078
+    second: Goblin Kamikaze Sprite Sheet_20
+  - first:
+      213: -6897482012176358219
+    second: Goblin Kamikaze Sprite Sheet_21
+  - first:
+      213: 1709418695013830318
+    second: Goblin Kamikaze Sprite Sheet_22
+  - first:
+      213: -7906407442313072395
+    second: Goblin Kamikaze Sprite Sheet_23
+  - first:
+      213: -8182320932792833645
+    second: Goblin Kamikaze Sprite Sheet_24
+  - first:
+      213: 1295688880732471155
+    second: Goblin Kamikaze Sprite Sheet_25
+  - first:
+      213: -4112452213435928409
+    second: Goblin Kamikaze Sprite Sheet_26
+  - first:
+      213: 3051047522021280257
+    second: Goblin Kamikaze Sprite Sheet_27
+  - first:
+      213: -8884766633259614656
+    second: Goblin Kamikaze Sprite Sheet_28
+  - first:
+      213: -3447039577810880992
+    second: Goblin Kamikaze Sprite Sheet_29
+  - first:
+      213: 3833225760661398386
+    second: Goblin Kamikaze Sprite Sheet_30
+  - first:
+      213: 7711617531636479161
+    second: Goblin Kamikaze Sprite Sheet_31
+  - first:
+      213: 6529796180075890193
+    second: Goblin Kamikaze Sprite Sheet_32
+  - first:
+      213: -6408245094206592505
+    second: Goblin Kamikaze Sprite Sheet_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 127
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6ffd52df193c5ff0800000000000000
+      internalID: -46099087344402582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 127
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 776b9c5db6f3e8db0800000000000000
+      internalID: -4787819621467441545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 127
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c741b1910eed57870800000000000000
+      internalID: 8680088910901744764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 127
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b471ff5a93f1085d0800000000000000
+      internalID: -3062413414153382069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 127
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8740af1e95ccc2f60800000000000000
+      internalID: 8011002523600684152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 127
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18377d537f3a97380800000000000000
+      internalID: -8972960500403440767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 127
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f03b8d2c14b8520800000000000000
+      internalID: 2705328306281189136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 127
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9370650712d61d300800000000000000
+      internalID: 275121042632345401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 95
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b21095e5419073d0800000000000000
+      internalID: -3210906804924968267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 99
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f6564a34dcd7a5b0800000000000000
+      internalID: -5357070427665049870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 101
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 328ca1140e6a16910800000000000000
+      internalID: 1828926405784291363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 98
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813c0395294940d00800000000000000
+      internalID: 938037978682409752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 95
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a568e6096f6144190800000000000000
+      internalID: -7979227391552747942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 99
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee68e435da2ee0680800000000000000
+      internalID: -8786836588898384146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 100
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5425fe6bc259ee7f0800000000000000
+      internalID: -581363282603978171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 98
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f35febafae6b8d170800000000000000
+      internalID: 8203507841600779583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 63
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d45ab05fe36ec2170800000000000000
+      internalID: 8155146183334667597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 63
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 590ba7a0433875410800000000000000
+      internalID: 1465784463269736597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 63
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 737126ad44201c520800000000000000
+      internalID: 2720458144653383479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 63
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3da92c4be287fd80800000000000000
+      internalID: -8216955048007455429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 63
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26bb3c173603216e0800000000000000
+      internalID: -1868377691736786078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 63
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b4e49387a83740a0800000000000000
+      internalID: -6897482012176358219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 31
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eae06b80f3319b710800000000000000
+      internalID: 1709418695013830318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 31
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f0bc67325cc64290800000000000000
+      internalID: -7906407442313072395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 31
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 399e3a2a67e827e80800000000000000
+      internalID: -8182320932792833645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 31
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37f7b731c263bf110800000000000000
+      internalID: 1295688880732471155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a0f1662082ade6c0800000000000000
+      internalID: -4112452213435928409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 0
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a0aee5e8f775a20800000000000000
+      internalID: 3051047522021280257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04e315012d7f2b480800000000000000
+      internalID: -8884766633259614656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026bed564c7a920d0800000000000000
+      internalID: -3447039577810880992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 29
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2736910258a523530800000000000000
+      internalID: 3833225760661398386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 0
+        width: 29
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b4fdd0894b250b60800000000000000
+      internalID: 7711617531636479161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 29
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1164029870f7e9a50800000000000000
+      internalID: 6529796180075890193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin Kamikaze Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70a2d260a075117a0800000000000000
+      internalID: -6408245094206592505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Goblin Kamikaze Sprite Sheet_0: -46099087344402582
+      Goblin Kamikaze Sprite Sheet_1: -4787819621467441545
+      Goblin Kamikaze Sprite Sheet_10: 1828926405784291363
+      Goblin Kamikaze Sprite Sheet_11: 938037978682409752
+      Goblin Kamikaze Sprite Sheet_12: -7979227391552747942
+      Goblin Kamikaze Sprite Sheet_13: -8786836588898384146
+      Goblin Kamikaze Sprite Sheet_14: -581363282603978171
+      Goblin Kamikaze Sprite Sheet_15: 8203507841600779583
+      Goblin Kamikaze Sprite Sheet_16: 8155146183334667597
+      Goblin Kamikaze Sprite Sheet_17: 1465784463269736597
+      Goblin Kamikaze Sprite Sheet_18: 2720458144653383479
+      Goblin Kamikaze Sprite Sheet_19: -8216955048007455429
+      Goblin Kamikaze Sprite Sheet_2: 8680088910901744764
+      Goblin Kamikaze Sprite Sheet_20: -1868377691736786078
+      Goblin Kamikaze Sprite Sheet_21: -6897482012176358219
+      Goblin Kamikaze Sprite Sheet_22: 1709418695013830318
+      Goblin Kamikaze Sprite Sheet_23: -7906407442313072395
+      Goblin Kamikaze Sprite Sheet_24: -8182320932792833645
+      Goblin Kamikaze Sprite Sheet_25: 1295688880732471155
+      Goblin Kamikaze Sprite Sheet_26: -4112452213435928409
+      Goblin Kamikaze Sprite Sheet_27: 3051047522021280257
+      Goblin Kamikaze Sprite Sheet_28: -8884766633259614656
+      Goblin Kamikaze Sprite Sheet_29: -3447039577810880992
+      Goblin Kamikaze Sprite Sheet_3: -3062413414153382069
+      Goblin Kamikaze Sprite Sheet_30: 3833225760661398386
+      Goblin Kamikaze Sprite Sheet_31: 7711617531636479161
+      Goblin Kamikaze Sprite Sheet_32: 6529796180075890193
+      Goblin Kamikaze Sprite Sheet_33: -6408245094206592505
+      Goblin Kamikaze Sprite Sheet_4: 8011002523600684152
+      Goblin Kamikaze Sprite Sheet_5: -8972960500403440767
+      Goblin Kamikaze Sprite Sheet_6: 2705328306281189136
+      Goblin Kamikaze Sprite Sheet_7: 275121042632345401
+      Goblin Kamikaze Sprite Sheet_8: -3210906804924968267
+      Goblin Kamikaze Sprite Sheet_9: -5357070427665049870
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
