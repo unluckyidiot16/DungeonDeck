@@ -41,6 +41,15 @@ namespace DungeonDeck.Battle
         [SerializeField] private string plannedIntentId;
         [SerializeField] private int plannedDamage;
             
+        private bool SetPlannedIntent(string intentId, int damage)
+        {
+            // ✅ 규칙 통일: "값이 변할 때만" 변경 처리 (그리고 필요 시에만 이벤트 발행)
+            if (plannedIntentId == intentId && plannedDamage == damage) return false;
+            plannedIntentId = intentId;
+            plannedDamage = damage;
+            return true;
+        }
+        
         public string PlannedIntentId => plannedIntentId;
         public int PlannedDamage => plannedDamage;
         
@@ -129,8 +138,7 @@ namespace DungeonDeck.Battle
                 state.ResetWithValues(1, 1, 0);
                 pattern = null;
                 patternStepIndex = 0;
-                plannedIntentId = null;
-                plannedDamage = 0;
+                SetPlannedIntent(null, 0);
                 OnStatsChanged?.Invoke(this);
                 return;
             }
@@ -221,13 +229,9 @@ namespace DungeonDeck.Battle
             if (diedNow)
             {
                 
-                // ✅ 사망 시 intent 프리뷰 정리 (단 1회)
-                if (plannedIntentId != null || plannedDamage != 0)
-                {
-                    plannedIntentId = null;
-                    plannedDamage = 0;
+                // ✅ 사망 시 intent 프리뷰 정리 (규칙 통일: SetPlannedIntent로 변경 여부 판단)
+                if (SetPlannedIntent(null, 0))
                     statsChanged = true;
-                }
             }
             
             // ✅ 스탯 변경 이벤트는 1회만 발행
@@ -322,41 +326,40 @@ namespace DungeonDeck.Battle
         /// </summary>
         public void RefreshIntentPreview(int fallbackDamage = 8, bool fireEvent = true)
         {
-            // 기존 값과 비교해서 변경 시에만 이벤트를 쏜다
-            string prevId = plannedIntentId;
-            int prevDmg = plannedDamage;
             
             if (!IsAlive)
             {
-                plannedIntentId = null;
-                plannedDamage = 0;
-                
-                if (fireEvent && (prevId != plannedIntentId || prevDmg != plannedDamage))
+                bool changedDead = SetPlannedIntent(null, 0);
+                if (fireEvent && changedDead)
                     OnStatsChanged?.Invoke(this);
-                
                 return;
             }
             
             // ✅ 기본 데미지 기준: 내 ATK 우선, 없으면 fallback
             int baseDmg = ATK > 0 ? ATK : Mathf.Max(0, fallbackDamage);
 
+            string nextId;
+            int nextDmg;
             
             if (pattern != null && pattern.StepCount > 0)
             {
-                var step = pattern.GetStep(patternStepIndex);
-                plannedIntentId = string.IsNullOrWhiteSpace(step.intentId) ? "atk" : step.intentId;
+                // EnemyPatternDefinition.Step 는 struct일 가능성이 높아서 null 비교 불가
+                int idx = Mathf.Clamp(patternStepIndex, 0, pattern.StepCount - 1);
+                var step = pattern.GetStep(idx);
                 
-                // Step 정의 기반 데미지(최소 접점: baseDmg를 그대로 사용해도 OK)
+                nextId = string.IsNullOrWhiteSpace(step.intentId) ? "atk" : step.intentId;
                 int dmg = step.EvalDamage(baseDmg);
-                plannedDamage = dmg > 0 ? dmg : baseDmg;
+                nextDmg = dmg > 0 ? dmg : baseDmg;
             }
             else
             {
-                plannedIntentId = "atk";
-                plannedDamage = baseDmg;
+                nextId = "atk";
+                nextDmg = baseDmg;
             }
             
-            if (fireEvent && (prevId != plannedIntentId || prevDmg != plannedDamage))
+            // ✅ 규칙 통일: "값이 변할 때만" 이벤트 발행
+            bool changed = SetPlannedIntent(nextId, nextDmg);
+            if (fireEvent && changed)
                 OnStatsChanged?.Invoke(this);
         }
     
