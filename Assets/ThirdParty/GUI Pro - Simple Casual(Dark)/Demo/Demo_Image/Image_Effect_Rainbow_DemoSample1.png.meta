@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: c7c54163f7a3c4bfc98645b4b34d3264
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8548987158076889126
+    second: Image_Effect_Rainbow_DemoSample1_0
+  - first:
+      213: 7290230815647383715
+    second: Image_Effect_Rainbow_DemoSample1_1
+  - first:
+      213: -7386055246998481120
+    second: Image_Effect_Rainbow_DemoSample1_2
+  - first:
+      213: 161053680893656402
+    second: Image_Effect_Rainbow_DemoSample1_3
+  - first:
+      213: 8893388903155451161
+    second: Image_Effect_Rainbow_DemoSample1_4
+  - first:
+      213: 9213077722498267821
+    second: Image_Effect_Rainbow_DemoSample1_5
+  - first:
+      213: 3204662228234330200
+    second: Image_Effect_Rainbow_DemoSample1_6
+  - first:
+      213: -7379540400389260696
+    second: Image_Effect_Rainbow_DemoSample1_7
+  - first:
+      213: 1464827705642209047
+    second: Image_Effect_Rainbow_DemoSample1_8
+  - first:
+      213: 5712741362235831641
+    second: Image_Effect_Rainbow_DemoSample1_9
+  - first:
+      213: 5417261960620924972
+    second: Image_Effect_Rainbow_DemoSample1_10
+  - first:
+      213: 5445737157987462047
+    second: Image_Effect_Rainbow_DemoSample1_11
+  - first:
+      213: -4288785641068402935
+    second: Image_Effect_Rainbow_DemoSample1_12
+  - first:
+      213: -7042502144690234757
+    second: Image_Effect_Rainbow_DemoSample1_13
+  - first:
+      213: 4915489860491412879
+    second: Image_Effect_Rainbow_DemoSample1_14
+  - first:
+      213: 980696982396727254
+    second: Image_Effect_Rainbow_DemoSample1_15
+  - first:
+      213: -6304703617969359420
+    second: Image_Effect_Rainbow_DemoSample1_16
+  - first:
+      213: -1440171177736384645
+    second: Image_Effect_Rainbow_DemoSample1_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_0
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 1354
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad763756975eb5980800000000000000
+      internalID: -8548987158076889126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_1
+      rect:
+        serializedVersion: 2
+        x: 1830
+        y: 1340
+        width: 49
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a0c4413d4a1c2560800000000000000
+      internalID: 7290230815647383715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1225
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 027de37c2e57f7990800000000000000
+      internalID: -7386055246998481120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_3
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1265
+        width: 55
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d7f6f287d2c3200800000000000000
+      internalID: 161053680893656402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_4
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1224
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9154bf5961aab6b70800000000000000
+      internalID: 8893388903155451161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_5
+      rect:
+        serializedVersion: 2
+        x: 2214
+        y: 1220
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daaf299206d6bdf70800000000000000
+      internalID: 9213077722498267821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_6
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 938
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 850e40b415f397c20800000000000000
+      internalID: 3204662228234330200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_7
+      rect:
+        serializedVersion: 2
+        x: 2167
+        y: 939
+        width: 73
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a7725ba1b969990800000000000000
+      internalID: -7379540400389260696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_8
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 691
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71f44fb890d145410800000000000000
+      internalID: 1464827705642209047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_9
+      rect:
+        serializedVersion: 2
+        x: 2376
+        y: 709
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9557fb5600cb74f40800000000000000
+      internalID: 5712741362235831641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_10
+      rect:
+        serializedVersion: 2
+        x: 2153
+        y: 598
+        width: 41
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c20eb022d0bfd2b40800000000000000
+      internalID: 5417261960620924972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_11
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 441
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9becf9a715239b40800000000000000
+      internalID: 5445737157987462047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_12
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 387
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9076252be2c2b74c0800000000000000
+      internalID: -4288785641068402935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_13
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 275
+        width: 73
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7adfc7bc91044e90800000000000000
+      internalID: -7042502144690234757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_14
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 161
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8500a71cf3573440800000000000000
+      internalID: 4915489860491412879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_15
+      rect:
+        serializedVersion: 2
+        x: 2146
+        y: 171
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dfed04a5b22c9d00800000000000000
+      internalID: 980696982396727254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_16
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 92
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c5f0d496713188a0800000000000000
+      internalID: -6304703617969359420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Effect_Rainbow_DemoSample1_17
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 71
+        width: 54
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7f4447b1fb730ce0800000000000000
+      internalID: -1440171177736384645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Image_Effect_Rainbow_DemoSample1_0: -8548987158076889126
+      Image_Effect_Rainbow_DemoSample1_1: 7290230815647383715
+      Image_Effect_Rainbow_DemoSample1_10: 5417261960620924972
+      Image_Effect_Rainbow_DemoSample1_11: 5445737157987462047
+      Image_Effect_Rainbow_DemoSample1_12: -4288785641068402935
+      Image_Effect_Rainbow_DemoSample1_13: -7042502144690234757
+      Image_Effect_Rainbow_DemoSample1_14: 4915489860491412879
+      Image_Effect_Rainbow_DemoSample1_15: 980696982396727254
+      Image_Effect_Rainbow_DemoSample1_16: -6304703617969359420
+      Image_Effect_Rainbow_DemoSample1_17: -1440171177736384645
+      Image_Effect_Rainbow_DemoSample1_2: -7386055246998481120
+      Image_Effect_Rainbow_DemoSample1_3: 161053680893656402
+      Image_Effect_Rainbow_DemoSample1_4: 8893388903155451161
+      Image_Effect_Rainbow_DemoSample1_5: 9213077722498267821
+      Image_Effect_Rainbow_DemoSample1_6: 3204662228234330200
+      Image_Effect_Rainbow_DemoSample1_7: -7379540400389260696
+      Image_Effect_Rainbow_DemoSample1_8: 1464827705642209047
+      Image_Effect_Rainbow_DemoSample1_9: 5712741362235831641
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

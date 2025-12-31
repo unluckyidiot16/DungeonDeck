@@ -17,6 +17,8 @@ namespace DungeonDeck.Battle.View
         public BattleController battle;
 
         private readonly EnemyTargetView[] _slots = new EnemyTargetView[MaxSlots];
+        private readonly BattleEnemy[] _slotEnemies = new BattleEnemy[MaxSlots];
+        
         private int _selectedSlotIndex = -1;
         private BattleEnemy _selectedEnemy;
 
@@ -38,6 +40,7 @@ namespace DungeonDeck.Battle.View
 
             int idx = Mathf.Clamp(view.SlotIndex, 0, MaxSlots - 1);
             _slots[idx] = view;
+            HookEnemy(idx, view.Enemy);
             
             Debug.Log($"[BattleTargetManager] Registered: {view.name} at slot {idx}");
 
@@ -54,6 +57,8 @@ namespace DungeonDeck.Battle.View
             int idx = Mathf.Clamp(view.SlotIndex, 0, MaxSlots - 1);
             if (_slots[idx] == view)
                 _slots[idx] = null;
+            
+            HookEnemy(idx, null);
 
             // 선택이 빠졌으면 다음 살아있는 슬롯으로
             if (_selectedSlotIndex == idx)
@@ -62,6 +67,37 @@ namespace DungeonDeck.Battle.View
                 RefreshMarkers();
         }
 
+        private void HookEnemy(int slotIndex, BattleEnemy enemy)
+        {
+            if (slotIndex < 0 || slotIndex >= MaxSlots) return;
+            
+            var prev = _slotEnemies[slotIndex];
+            if (prev != null) 
+                prev.OnDefeated -= HandleEnemyDefeated;
+            
+            _slotEnemies[slotIndex] = enemy;
+            
+            if (enemy != null)
+                enemy.OnDefeated += HandleEnemyDefeated;
+        }
+    
+        private void HandleEnemyDefeated(BattleEnemy enemy)
+        {
+            if (enemy == null) return;
+        
+            // 선택된 적이 죽었거나, 현재 선택 슬롯이 더 이상 살아있지 않으면 자동 점프
+            if (_selectedSlotIndex < 0 || _selectedEnemy == enemy || !IsSlotAlive(_selectedSlotIndex))
+            {
+                int next = FindFirstAliveSlotIndex();
+                SetSelectedSlotInternal(next, notifyBattle: true);
+            }
+            else
+            {
+                // 비선택 적 사망: 링은 그대로, 프리뷰/표시는 RefreshMarkers로 동기화
+                RefreshMarkers();
+            }
+        }
+        
         // ─────────────────────────────────────────────────
         // Selection (객체 기반)
         // ─────────────────────────────────────────────────
@@ -164,6 +200,14 @@ namespace DungeonDeck.Battle.View
 
                 bool on = (i == _selectedSlotIndex);
                 v.SetSelected(on);
+                
+                
+                // ✅ Intent Preview bridge (PlannedIntentId → UI)
+                if (v.Enemy != null)
+                    v.SetIntentPreview(v.Enemy.PlannedIntentId, v.Enemy.PlannedDamage);
+                else
+                    v.SetIntentPreview(null, 0);
+                
             }
         }
 

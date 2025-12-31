@@ -1,6 +1,9 @@
 // Assets/_Project/Scripts/Battle/View/EnemyTargetView.cs
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
+using System;
 
 namespace DungeonDeck.Battle.View
 {
@@ -19,6 +22,23 @@ namespace DungeonDeck.Battle.View
         [Header("Selection Visual")]
         [Tooltip("선택 링/하이라이트 오브젝트")]
         public GameObject selectedMarker;
+        
+        [Header("Intent Preview (optional)")]
+        [Tooltip("인텐드 아이콘 이미지 (없으면 무시됩니다)")]
+        [SerializeField] private Image intentIcon;
+            
+        [Tooltip("인텐드 아이콘 매핑 (intentId → Sprite)")]
+        [SerializeField] private IntentSpriteEntry[] intentSprites;
+            
+        [Tooltip("데미지/횟수 등 프리뷰 텍스트 (없으면 무시됩니다)")]
+        [SerializeField] private TMP_Text intentValueText;
+            
+        [Serializable]
+        private struct IntentSpriteEntry
+        {
+            public string id;
+            public Sprite sprite;
+        }
 
         [Header("Manager (auto find if null)")]
         public BattleTargetManager targetManager;
@@ -27,6 +47,8 @@ namespace DungeonDeck.Battle.View
         public bool autoAddCollider2D = true;
 
         private BattleEnemy _enemy;
+        
+        private bool _boundEnemyEvents;
 
         public int SlotIndex => slotIndex;
         public BattleEnemy Enemy => _enemy;
@@ -73,10 +95,15 @@ namespace DungeonDeck.Battle.View
 
             if (targetManager != null)
                 targetManager.Register(this);
+            
+            BindEnemyEvents();
+            RefreshIntentPreviewFromEnemy();
         }
 
         private void OnDisable()
         {
+            UnbindEnemyEvents();
+            
             if (targetManager != null)
                 targetManager.Unregister(this);
         }
@@ -87,6 +114,89 @@ namespace DungeonDeck.Battle.View
                 selectedMarker.SetActive(on);
         }
 
+        /// <summary>
+        /// 인텐드 프리뷰를 직접 세팅합니다. (id, value)
+        /// </summary>
+        public void SetIntentPreview(string intentId, int value)
+        {
+            if (intentIcon != null)
+            {
+                var sprite = ResolveIntentSprite(intentId);
+                intentIcon.enabled = sprite != null;
+                intentIcon.sprite = sprite;
+            }
+            
+            if (intentValueText != null)
+                intentValueText.text = value > 0 ? value.ToString() : string.Empty;
+        }
+    
+        /// <summary>
+        /// 연결된 BattleEnemy의 PlannedIntentId/PlannedDamage로 프리뷰를 갱신합니다.
+        /// </summary>
+        public void RefreshIntentPreviewFromEnemy()
+        {
+            if (_enemy == null)
+            {
+                SetIntentPreview(null, 0);
+                return;
+            }
+            SetIntentPreview(_enemy.PlannedIntentId, _enemy.PlannedDamage);
+        }
+        
+        private void BindEnemyEvents()
+        { 
+            if (_boundEnemyEvents) return;
+            if (_enemy == null) return;
+            
+            _enemy.OnStatsChanged += HandleEnemyStatsChanged;
+            _enemy.OnDefeated += HandleEnemyDefeated;
+            _boundEnemyEvents = true;
+        }
+    
+        private void UnbindEnemyEvents()
+        {
+            if (!_boundEnemyEvents) return;
+        
+            if (_enemy != null)
+            {
+                _enemy.OnStatsChanged -= HandleEnemyStatsChanged;
+                _enemy.OnDefeated -= HandleEnemyDefeated;
+            }
+        
+            _boundEnemyEvents = false;
+        }
+    
+        private void HandleEnemyStatsChanged(BattleEnemy enemy)
+        { 
+            if (!isActiveAndEnabled) return;
+            if (enemy != _enemy) return; 
+                    
+            // ✅ 매니저 Refresh 없이도 인텐드/값이 즉시 갱신되도록
+            RefreshIntentPreviewFromEnemy(); 
+        }
+    
+        private void HandleEnemyDefeated(BattleEnemy enemy)
+        {
+            if (!isActiveAndEnabled) return;
+            if (enemy != _enemy) return;
+        
+            // 죽은 적은 인텐드 프리뷰를 비워둠 (선택 점프는 BattleTargetManager가 처리)
+            SetIntentPreview(null, 0);
+        }
+    
+        private Sprite ResolveIntentSprite(string intentId)
+        {
+            if (string.IsNullOrWhiteSpace(intentId) || intentSprites == null) return null;
+        
+            for (int i = 0; i < intentSprites.Length; i++)
+            {
+                var e = intentSprites[i];
+                if (!string.IsNullOrWhiteSpace(e.id) && e.id == intentId)
+                    return e.sprite;
+            }
+            return null;
+        }
+        
         public void OnPointerClick(PointerEventData eventData)
         {
             if (targetManager == null) return;

@@ -1,0 +1,936 @@
+fileFormatVersion: 2
+guid: a4da52ad37b5841558825977eba53bce
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8587157739891969329
+    second: Image_Leaf_White_0
+  - first:
+      213: 8860928389950126109
+    second: Image_Leaf_White_1
+  - first:
+      213: 8205499631652104658
+    second: Image_Leaf_White_2
+  - first:
+      213: 7537479404176054338
+    second: Image_Leaf_White_3
+  - first:
+      213: 5928235289873140507
+    second: Image_Leaf_White_4
+  - first:
+      213: -1678664623390696139
+    second: Image_Leaf_White_5
+  - first:
+      213: -8874914044457752006
+    second: Image_Leaf_White_6
+  - first:
+      213: -4301279329264964455
+    second: Image_Leaf_White_7
+  - first:
+      213: 2538339569441666584
+    second: Image_Leaf_White_8
+  - first:
+      213: 1427725721786916059
+    second: Image_Leaf_White_9
+  - first:
+      213: -2002383462480464981
+    second: Image_Leaf_White_10
+  - first:
+      213: -523498634194906145
+    second: Image_Leaf_White_11
+  - first:
+      213: -8560858615366555891
+    second: Image_Leaf_White_12
+  - first:
+      213: 6605918713358077686
+    second: Image_Leaf_White_13
+  - first:
+      213: -1979695885560829055
+    second: Image_Leaf_White_14
+  - first:
+      213: 5439084584062815084
+    second: Image_Leaf_White_15
+  - first:
+      213: -4618660239883175507
+    second: Image_Leaf_White_16
+  - first:
+      213: -8067704909308285219
+    second: Image_Leaf_White_17
+  - first:
+      213: -7389758959301855397
+    second: Image_Leaf_White_18
+  - first:
+      213: 1980697407856178544
+    second: Image_Leaf_White_19
+  - first:
+      213: -1779666429339437059
+    second: Image_Leaf_White_20
+  - first:
+      213: 1006252106353595902
+    second: Image_Leaf_White_21
+  - first:
+      213: -758786159479712341
+    second: Image_Leaf_White_22
+  - first:
+      213: 4548527031205500946
+    second: Image_Leaf_White_23
+  - first:
+      213: -7680067047016973650
+    second: Image_Leaf_White_24
+  - first:
+      213: 486265857258350176
+    second: Image_Leaf_White_25
+  - first:
+      213: -403541984199801520
+    second: Image_Leaf_White_26
+  - first:
+      213: 4713499039255608423
+    second: Image_Leaf_White_27
+  - first:
+      213: -6605164868513964892
+    second: Image_Leaf_White_28
+  - first:
+      213: 7068151256787854200
+    second: Image_Leaf_White_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Image_Leaf_White_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 259
+        width: 29
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc23e73488944d880800000000000000
+      internalID: -8587157739891969329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 282
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18b6276c6758fa70800000000000000
+      internalID: 8860928389950126109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_2
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 282
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9e83db07acfd170800000000000000
+      internalID: 8205499631652104658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_3
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 259
+        width: 29
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2489cb335918a9860800000000000000
+      internalID: 7537479404176054338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 209
+        width: 29
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1bc2d54692554250800000000000000
+      internalID: 5928235289873140507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_5
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 239
+        width: 48
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53d58c14b6f24b8e0800000000000000
+      internalID: -1678664623390696139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_6
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 239
+        width: 48
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a68f7a2b8f5d480800000000000000
+      internalID: -8874914044457752006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_7
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 209
+        width: 29
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c6e6b3d39ce44c0800000000000000
+      internalID: -4301279329264964455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_8
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 159
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81673e3c36ef93320800000000000000
+      internalID: 2538339569441666584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_9
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 182
+        width: 35
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdc1cc3cafc40d310800000000000000
+      internalID: 1427725721786916059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_10
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 132
+        width: 29
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba33cb699da1634e0800000000000000
+      internalID: -2002383462480464981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_11
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 182
+        width: 35
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd3196c04c82cb8f0800000000000000
+      internalID: -523498634194906145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_12
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 132
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d07ebba5278b13980800000000000000
+      internalID: -8560858615366555891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_13
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 159
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe40d4f110fcab50800000000000000
+      internalID: 6605918713358077686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 124
+        width: 46
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b28d9b415b684e0800000000000000
+      internalID: -1979695885560829055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_15
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 88
+        width: 29
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6b0e589c928b7b40800000000000000
+      internalID: 5439084584062815084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_16
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 88
+        width: 29
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da9fa878bf837efb0800000000000000
+      internalID: -4618660239883175507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_17
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 124
+        width: 46
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dde21082121c90090800000000000000
+      internalID: -8067704909308285219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_18
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 86
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b577d0f016d427990800000000000000
+      internalID: -7389758959301855397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_19
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 62
+        width: 28
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 075fdca5cc9dc7b10800000000000000
+      internalID: 1980697407856178544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_20
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 32
+        width: 29
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7f884cfca5d47e0800000000000000
+      internalID: -1779666429339437059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_21
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 32
+        width: 29
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5d1b995fce6fd00800000000000000
+      internalID: 1006252106353595902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_22
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 62
+        width: 28
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba59ab712004875f0800000000000000
+      internalID: -758786159479712341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_23
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 86
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218144a5c3d9f1f30800000000000000
+      internalID: 4548527031205500946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_24
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 52
+        width: 57
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaabe5326bbea6590800000000000000
+      internalID: -7680067047016973650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_25
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 52
+        width: 57
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 066e84888309fb600800000000000000
+      internalID: 486265857258350176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_26
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 23
+        width: 59
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05580d314b4566af0800000000000000
+      internalID: -403541984199801520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_27
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 58
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76cb9fb2766b96140800000000000000
+      internalID: 4713499039255608423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_28
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 58
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4acd5593c8db554a0800000000000000
+      internalID: -6605164868513964892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Leaf_White_29
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 23
+        width: 59
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 873229f8e1e171260800000000000000
+      internalID: 7068151256787854200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Image_Leaf_White_0: -8587157739891969329
+      Image_Leaf_White_1: 8860928389950126109
+      Image_Leaf_White_10: -2002383462480464981
+      Image_Leaf_White_11: -523498634194906145
+      Image_Leaf_White_12: -8560858615366555891
+      Image_Leaf_White_13: 6605918713358077686
+      Image_Leaf_White_14: -1979695885560829055
+      Image_Leaf_White_15: 5439084584062815084
+      Image_Leaf_White_16: -4618660239883175507
+      Image_Leaf_White_17: -8067704909308285219
+      Image_Leaf_White_18: -7389758959301855397
+      Image_Leaf_White_19: 1980697407856178544
+      Image_Leaf_White_2: 8205499631652104658
+      Image_Leaf_White_20: -1779666429339437059
+      Image_Leaf_White_21: 1006252106353595902
+      Image_Leaf_White_22: -758786159479712341
+      Image_Leaf_White_23: 4548527031205500946
+      Image_Leaf_White_24: -7680067047016973650
+      Image_Leaf_White_25: 486265857258350176
+      Image_Leaf_White_26: -403541984199801520
+      Image_Leaf_White_27: 4713499039255608423
+      Image_Leaf_White_28: -6605164868513964892
+      Image_Leaf_White_29: 7068151256787854200
+      Image_Leaf_White_3: 7537479404176054338
+      Image_Leaf_White_4: 5928235289873140507
+      Image_Leaf_White_5: -1678664623390696139
+      Image_Leaf_White_6: -8874914044457752006
+      Image_Leaf_White_7: -4301279329264964455
+      Image_Leaf_White_8: 2538339569441666584
+      Image_Leaf_White_9: 1427725721786916059
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

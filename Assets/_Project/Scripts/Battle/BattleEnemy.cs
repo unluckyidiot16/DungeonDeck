@@ -109,6 +109,14 @@ namespace DungeonDeck.Battle
             definition = def;
             if (state == null) state = new EnemyRuntimeState();
             
+            state.ResetFromDefinition(definition, slotIndex);
+            
+            // 패턴 연결 (정의에 있으면 우선 적용)
+            if (definition != null && definition.defaultPattern != null)
+                pattern = definition.defaultPattern;
+            
+            patternStepIndex = 0;
+            
             // 슬롯 인덱스는 바인딩/타겟의 기준이므로 반드시 고정
             this.slotIndex = slotIndex;
 
@@ -121,6 +129,8 @@ namespace DungeonDeck.Battle
                 state.ResetWithValues(1, 1, 0);
                 pattern = null;
                 patternStepIndex = 0;
+                plannedIntentId = null;
+                plannedDamage = 0;
                 OnStatsChanged?.Invoke(this);
                 return;
             }
@@ -142,6 +152,9 @@ namespace DungeonDeck.Battle
             // (선택) 애니메이션 override도 여기서 같이 주입 가능
             var aoc = (slot.animationOverride != null) ? slot.animationOverride : definition.animationOverride;
             ApplyAnimatorOverride(aoc);
+            
+            // ✅ 초기 Intent 값도 최신 스탯/패턴 기준으로 맞춰둔다 (Init 마지막 OnStatsChanged에서 UI 갱신)
+            RefreshIntentPreview(fireEvent: false);
 
             OnStatsChanged?.Invoke(this);
         }
@@ -171,6 +184,13 @@ namespace DungeonDeck.Battle
             {
                 // SO 기반 (정석)
                 state.ResetFromDefinition(definition, orderIndex);
+                
+                // 패턴 연결 (정의에 있으면 우선 적용)
+                if (definition != null && definition.defaultPattern != null)
+                    pattern = definition.defaultPattern;
+                patternStepIndex = 0;
+                RefreshIntentPreview(fireEvent: false);
+                
             }
             else
             {
@@ -189,7 +209,7 @@ namespace DungeonDeck.Battle
         public int TakeDamage(int rawAmount)
         {
             if (state == null || !state.IsAlive) return 0;
-
+            
             int before = state.HP;
             int dealt = state.TakeDamage(rawAmount);
 
@@ -199,6 +219,10 @@ namespace DungeonDeck.Battle
             if (!state.IsAlive)
             {
                 OnDefeated?.Invoke(this);
+                
+                // ✅ 여기서만 비움 (살아있는데 맞았다고 intent가 사라지면 UX가 이상해짐)
+                plannedIntentId = null;
+                plannedDamage = 0;
 
                 // BattleController에도 알림
                 if (_battleController == null)
@@ -259,12 +283,20 @@ namespace DungeonDeck.Battle
         /// 현재 패턴 스텝 기준으로 Intent(의도) 프리뷰 값을 갱신합니다.
         /// BattleEnemyManager.RefreshIntentAll()에서 턴 시작 시 호출됩니다.
         /// </summary>
-        public void RefreshIntentPreview(int fallbackDamage = 8)
+        public void RefreshIntentPreview(int fallbackDamage = 8, bool fireEvent = true)
         {
+            // 기존 값과 비교해서 변경 시에만 이벤트를 쏜다
+            string prevId = plannedIntentId;
+            int prevDmg = plannedDamage;
+            
             if (!IsAlive)
             {
                 plannedIntentId = null;
                 plannedDamage = 0;
+                
+                if (fireEvent && (prevId != plannedIntentId || prevDmg != plannedDamage))
+                    OnStatsChanged?.Invoke(this);
+                
                 return;
             }
             
@@ -286,6 +318,9 @@ namespace DungeonDeck.Battle
                 plannedIntentId = "atk";
                 plannedDamage = baseDmg;
             }
+            
+            if (fireEvent && (prevId != plannedIntentId || prevDmg != plannedDamage))
+                OnStatsChanged?.Invoke(this);
         }
     
         /// <summary>

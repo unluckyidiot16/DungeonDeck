@@ -1,0 +1,936 @@
+fileFormatVersion: 2
+guid: f60a1bfa1e8cf41cb919ef12a0d6a021
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2092931225347004755
+    second: ImageGroup_Victory_Deco_Leaf_0
+  - first:
+      213: -2641208102835422229
+    second: ImageGroup_Victory_Deco_Leaf_1
+  - first:
+      213: -8012078918463071371
+    second: ImageGroup_Victory_Deco_Leaf_2
+  - first:
+      213: 8664442861080945594
+    second: ImageGroup_Victory_Deco_Leaf_3
+  - first:
+      213: 2305816450243268820
+    second: ImageGroup_Victory_Deco_Leaf_4
+  - first:
+      213: -8183921561860724904
+    second: ImageGroup_Victory_Deco_Leaf_5
+  - first:
+      213: 5445813749707936830
+    second: ImageGroup_Victory_Deco_Leaf_6
+  - first:
+      213: -5422914223976968668
+    second: ImageGroup_Victory_Deco_Leaf_7
+  - first:
+      213: -5274876759368598756
+    second: ImageGroup_Victory_Deco_Leaf_8
+  - first:
+      213: -2824760073927246520
+    second: ImageGroup_Victory_Deco_Leaf_9
+  - first:
+      213: -9173163013013826419
+    second: ImageGroup_Victory_Deco_Leaf_10
+  - first:
+      213: -4290826517319244437
+    second: ImageGroup_Victory_Deco_Leaf_11
+  - first:
+      213: 7556327206933321129
+    second: ImageGroup_Victory_Deco_Leaf_12
+  - first:
+      213: 4086410478655930246
+    second: ImageGroup_Victory_Deco_Leaf_13
+  - first:
+      213: 5604061916343617978
+    second: ImageGroup_Victory_Deco_Leaf_14
+  - first:
+      213: -4070335022150055878
+    second: ImageGroup_Victory_Deco_Leaf_15
+  - first:
+      213: -6206970049775956514
+    second: ImageGroup_Victory_Deco_Leaf_16
+  - first:
+      213: -126902296202845299
+    second: ImageGroup_Victory_Deco_Leaf_17
+  - first:
+      213: -2138775534568453329
+    second: ImageGroup_Victory_Deco_Leaf_18
+  - first:
+      213: 7824455375853379913
+    second: ImageGroup_Victory_Deco_Leaf_19
+  - first:
+      213: 6455929968447001197
+    second: ImageGroup_Victory_Deco_Leaf_20
+  - first:
+      213: -4074329182459192989
+    second: ImageGroup_Victory_Deco_Leaf_21
+  - first:
+      213: 3282009860623427349
+    second: ImageGroup_Victory_Deco_Leaf_22
+  - first:
+      213: 7882658586024049352
+    second: ImageGroup_Victory_Deco_Leaf_23
+  - first:
+      213: -7469018873395706612
+    second: ImageGroup_Victory_Deco_Leaf_24
+  - first:
+      213: 570322301391007749
+    second: ImageGroup_Victory_Deco_Leaf_25
+  - first:
+      213: -4199441976350446509
+    second: ImageGroup_Victory_Deco_Leaf_26
+  - first:
+      213: 5513300871976208852
+    second: ImageGroup_Victory_Deco_Leaf_27
+  - first:
+      213: -1769753103659047340
+    second: ImageGroup_Victory_Deco_Leaf_28
+  - first:
+      213: -8254087502704566654
+    second: ImageGroup_Victory_Deco_Leaf_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 220
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35991225cd59b0d10800000000000000
+      internalID: 2092931225347004755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 239
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beb7c94693b885bd0800000000000000
+      internalID: -2641208102835422229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_2
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 239
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57bdc986ca06fc090800000000000000
+      internalID: -8012078918463071371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_3
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 220
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab3266f30e84e3870800000000000000
+      internalID: 8664442861080945594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_4
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 177
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d0900248d7efff10800000000000000
+      internalID: 2305816450243268820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_5
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 202
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857a1a323bedc6e80800000000000000
+      internalID: -8183921561860724904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_6
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 202
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e34974090ca639b40800000000000000
+      internalID: 5445813749707936830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_7
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 177
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e8070ce30fdb4b0800000000000000
+      internalID: -5422914223976968668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 135
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1bfedbe88fdbc6b0800000000000000
+      internalID: -5274876759368598756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 154
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d3cd1ddaf6cc8d0800000000000000
+      internalID: -2824760073927246520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_10
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 112
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d841f8657d062b080800000000000000
+      internalID: -9173163013013826419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 154
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b652c5a240ce374c0800000000000000
+      internalID: -4290826517319244437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 112
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a551ef3f877dd860800000000000000
+      internalID: 7556327206933321129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_13
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 135
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f78bafda8d5b830800000000000000
+      internalID: 4086410478655930246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 105
+        width: 39
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab9c4fe0f90a5cd40800000000000000
+      internalID: 5604061916343617978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_15
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 74
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a380ae7ecd34387c0800000000000000
+      internalID: -4070335022150055878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_16
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 74
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edd8d9b20a96cd9a0800000000000000
+      internalID: -6206970049775956514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_17
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 105
+        width: 39
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d83e5a1b8072d3ef0800000000000000
+      internalID: -126902296202845299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_18
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 72
+        width: 44
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b40c7abfa8152e0800000000000000
+      internalID: -2138775534568453329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_19
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 52
+        width: 25
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 941e2a665bc069c60800000000000000
+      internalID: 7824455375853379913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_20
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 27
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d621510f912189950800000000000000
+      internalID: 6455929968447001197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_21
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 27
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 369138df1331577c0800000000000000
+      internalID: -4074329182459192989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_22
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 52
+        width: 25
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 517e9c3549a0c8d20800000000000000
+      internalID: 3282009860623427349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_23
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 72
+        width: 44
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ca75a94834d46d60800000000000000
+      internalID: 7882658586024049352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_24
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 44
+        width: 49
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c058f8e38e6b85890800000000000000
+      internalID: -7469018873395706612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_25
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 19
+        width: 49
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500f4e58c113ae700800000000000000
+      internalID: 570322301391007749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_26
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 19
+        width: 49
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35c64c8a5c598b5c0800000000000000
+      internalID: -4199441976350446509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_27
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 44
+        width: 49
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d94efdaeed238c40800000000000000
+      internalID: 5513300871976208852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_28
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 50
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 456e144cde29077e0800000000000000
+      internalID: -1769753103659047340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageGroup_Victory_Deco_Leaf_29
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 50
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e9d48f527937d80800000000000000
+      internalID: -8254087502704566654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ImageGroup_Victory_Deco_Leaf_0: 2092931225347004755
+      ImageGroup_Victory_Deco_Leaf_1: -2641208102835422229
+      ImageGroup_Victory_Deco_Leaf_10: -9173163013013826419
+      ImageGroup_Victory_Deco_Leaf_11: -4290826517319244437
+      ImageGroup_Victory_Deco_Leaf_12: 7556327206933321129
+      ImageGroup_Victory_Deco_Leaf_13: 4086410478655930246
+      ImageGroup_Victory_Deco_Leaf_14: 5604061916343617978
+      ImageGroup_Victory_Deco_Leaf_15: -4070335022150055878
+      ImageGroup_Victory_Deco_Leaf_16: -6206970049775956514
+      ImageGroup_Victory_Deco_Leaf_17: -126902296202845299
+      ImageGroup_Victory_Deco_Leaf_18: -2138775534568453329
+      ImageGroup_Victory_Deco_Leaf_19: 7824455375853379913
+      ImageGroup_Victory_Deco_Leaf_2: -8012078918463071371
+      ImageGroup_Victory_Deco_Leaf_20: 6455929968447001197
+      ImageGroup_Victory_Deco_Leaf_21: -4074329182459192989
+      ImageGroup_Victory_Deco_Leaf_22: 3282009860623427349
+      ImageGroup_Victory_Deco_Leaf_23: 7882658586024049352
+      ImageGroup_Victory_Deco_Leaf_24: -7469018873395706612
+      ImageGroup_Victory_Deco_Leaf_25: 570322301391007749
+      ImageGroup_Victory_Deco_Leaf_26: -4199441976350446509
+      ImageGroup_Victory_Deco_Leaf_27: 5513300871976208852
+      ImageGroup_Victory_Deco_Leaf_28: -1769753103659047340
+      ImageGroup_Victory_Deco_Leaf_29: -8254087502704566654
+      ImageGroup_Victory_Deco_Leaf_3: 8664442861080945594
+      ImageGroup_Victory_Deco_Leaf_4: 2305816450243268820
+      ImageGroup_Victory_Deco_Leaf_5: -8183921561860724904
+      ImageGroup_Victory_Deco_Leaf_6: 5445813749707936830
+      ImageGroup_Victory_Deco_Leaf_7: -5422914223976968668
+      ImageGroup_Victory_Deco_Leaf_8: -5274876759368598756
+      ImageGroup_Victory_Deco_Leaf_9: -2824760073927246520
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
