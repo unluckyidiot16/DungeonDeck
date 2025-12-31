@@ -210,20 +210,34 @@ namespace DungeonDeck.Battle
         {
             if (state == null || !state.IsAlive) return 0;
             
-            int before = state.HP;
+            int beforeHp = state.HP;
+            int beforeBlock = state.Block;
             int dealt = state.TakeDamage(rawAmount);
 
-            if (dealt > 0 || before != state.HP)
-                OnStatsChanged?.Invoke(this);
+            bool diedNow = !state.IsAlive;
+            bool statsChanged = (dealt != 0 || beforeHp != state.HP || beforeBlock != state.Block);
 
-            if (!state.IsAlive)
+
+            if (diedNow)
+            {
+                
+                // ✅ 사망 시 intent 프리뷰 정리 (단 1회)
+                if (plannedIntentId != null || plannedDamage != 0)
+                {
+                    plannedIntentId = null;
+                    plannedDamage = 0;
+                    statsChanged = true;
+                }
+            }
+            
+            // ✅ 스탯 변경 이벤트는 1회만 발행
+            if (statsChanged)
+                OnStatsChanged?.Invoke(this);
+            
+            if (diedNow)
             {
                 OnDefeated?.Invoke(this);
                 
-                // ✅ 여기서만 비움 (살아있는데 맞았다고 intent가 사라지면 UX가 이상해짐)
-                plannedIntentId = null;
-                plannedDamage = 0;
-
                 // BattleController에도 알림
                 if (_battleController == null)
                     _battleController = FindObjectOfType<BattleController>(true);
@@ -237,29 +251,52 @@ namespace DungeonDeck.Battle
         public void Heal(int amount)
         {
             if (state == null || !state.IsAlive) return;
+            if (amount <= 0) return;
+            
+            int beforeHp = state.HP;
             state.Heal(amount);
-            OnStatsChanged?.Invoke(this);
+            
+            // ✅ 실제로 HP가 변했을 때만 이벤트 발행
+            if (state.HP != beforeHp)
+                OnStatsChanged?.Invoke(this);
         }
 
         public void AddBlock(int amount)
         {
             if (state == null || !state.IsAlive) return;
+            if (amount == 0) return;
+            
+            int beforeBlock = state.Block;
             state.AddBlock(amount);
-            OnStatsChanged?.Invoke(this);
+            
+            // ✅ 실제로 Block이 변했을 때만 이벤트 발행
+            if (state.Block != beforeBlock)
+                OnStatsChanged?.Invoke(this);
         }
 
         public void ApplyVulnerable(int turns)
         {
             if (state == null || !state.IsAlive) return;
+            if (turns <= 0) return;
+            
+            int before = state.VulnerableTurns;
             state.ApplyVulnerable(turns);
-            OnStatsChanged?.Invoke(this);
+            
+            // ✅ 실제로 VulnerableTurns가 변했을 때만 이벤트 발행
+            if (state.VulnerableTurns != before)
+                OnStatsChanged?.Invoke(this);
         }
 
         public void TickVulnerable()
         {
             if (state == null) return;
+            
+            int before = state.VulnerableTurns;
+            
             state.TickVulnerable();
-            OnStatsChanged?.Invoke(this);
+            // ✅ tick 결과로 값이 바뀐 경우에만 이벤트 발행
+            if (state.VulnerableTurns != before)
+                OnStatsChanged?.Invoke(this);
         }
 
         // ─────────────────────────────────────────────────

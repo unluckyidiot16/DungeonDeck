@@ -49,7 +49,8 @@ namespace DungeonDeck.Battle.View
         private BattleEnemy _enemy;
         
         private bool _boundEnemyEvents;
-
+        private bool _boundManagerEvents;
+        
         public int SlotIndex => slotIndex;
         public BattleEnemy Enemy => _enemy;
         public Transform PopupTarget => _enemy != null ? _enemy.PopupTarget : transform;
@@ -93,21 +94,44 @@ namespace DungeonDeck.Battle.View
             if (targetManager == null)
                 targetManager = FindObjectOfType<BattleTargetManager>(true);
 
+            BindManagerEvents(); // ✅ selection 링 이벤트 구독
+            BindEnemyEvents();   // ✅ intent 프리뷰 이벤트 구독
+            
             if (targetManager != null)
                 targetManager.Register(this);
             
-            BindEnemyEvents();
             RefreshIntentPreviewFromEnemy();
+            
+            // ✅ 현재 선택 상태 즉시 반영 (등록 타이밍에 따라 이벤트를 놓쳐도 안전)
+            if (targetManager != null) 
+                HandleSelectionChanged(targetManager.SelectedSlotIndex, targetManager.SelectedEnemy);
         }
 
         private void OnDisable()
         {
             UnbindEnemyEvents();
+            UnbindManagerEvents();
             
             if (targetManager != null)
                 targetManager.Unregister(this);
         }
 
+        private void BindManagerEvents()
+        {
+            if (_boundManagerEvents) return;
+            if (targetManager == null) return;
+            targetManager.OnSelectionChanged += HandleSelectionChanged;
+            _boundManagerEvents = true;
+        }
+    
+        private void UnbindManagerEvents()
+        {
+            if (!_boundManagerEvents) return;
+            if (targetManager != null)
+                targetManager.OnSelectionChanged -= HandleSelectionChanged;
+            _boundManagerEvents = false;
+        }
+        
         public void SetSelected(bool on)
         {
             if (selectedMarker != null)
@@ -144,7 +168,7 @@ namespace DungeonDeck.Battle.View
         }
         
         private void BindEnemyEvents()
-        { 
+        {
             if (_boundEnemyEvents) return;
             if (_enemy == null) return;
             
@@ -167,12 +191,10 @@ namespace DungeonDeck.Battle.View
         }
     
         private void HandleEnemyStatsChanged(BattleEnemy enemy)
-        { 
+        {
             if (!isActiveAndEnabled) return;
-            if (enemy != _enemy) return; 
-                    
-            // ✅ 매니저 Refresh 없이도 인텐드/값이 즉시 갱신되도록
-            RefreshIntentPreviewFromEnemy(); 
+            if (enemy != _enemy) return;
+            RefreshIntentPreviewFromEnemy();
         }
     
         private void HandleEnemyDefeated(BattleEnemy enemy)
@@ -180,9 +202,16 @@ namespace DungeonDeck.Battle.View
             if (!isActiveAndEnabled) return;
             if (enemy != _enemy) return;
         
-            // 죽은 적은 인텐드 프리뷰를 비워둠 (선택 점프는 BattleTargetManager가 처리)
+            // 죽은 적은 인텐드 프리뷰 비움 (선택 링 점프는 매니저가 처리)
             SetIntentPreview(null, 0);
         }
+    
+        private void HandleSelectionChanged(int selectedSlotIndex, BattleEnemy selectedEnemy)
+        {
+            // ✅ “선택 링도 매니저 Refresh 없이”: 이벤트만 받고 자기 링만 갱신
+            SetSelected(selectedSlotIndex == SlotIndex);
+        }
+        
     
         private Sprite ResolveIntentSprite(string intentId)
         {
