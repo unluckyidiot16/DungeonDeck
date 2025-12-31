@@ -1,41 +1,87 @@
+// Assets/_Project/Scripts/Config/Enemies/EnemyDefinition.cs
 using UnityEngine;
 
 namespace DungeonDeck.Config.Enemies
 {
-    [CreateAssetMenu(menuName = "DungeonDeck/Enemies/Enemy Definition", fileName = "EnemyDef_")]
+    /// <summary>
+    /// 종족값 느낌의 아주 단순한 3분할
+    /// - Tank:    HP > ATK
+    /// - Balanced:HP = ATK
+    /// - Striker: HP < ATK
+    /// </summary>
+    public enum EnemyStatProfile
+    {
+        Tank = 0,
+        Balanced = 1,
+        Striker = 2,
+    }
+
+    [CreateAssetMenu(menuName = "DungeonDeck/Enemies/Enemy Definition", fileName = "Enemy_")]
     public class EnemyDefinition : ScriptableObject
     {
         [Header("Identity")]
-        public string id = "enemy.default";
+        public string id = "enemy.unknown";
         public string displayName = "Enemy";
 
-        [Header("Tags")]
-        public bool isBoss = false;
+        [Header("Core Power (MVP)")]
+        [Min(0)] public int basePower = 5; // 기존 에셋이 0으로 들어오면 아래 fallback 로직으로 커버
+        public EnemyStatProfile defaultProfile = EnemyStatProfile.Balanced;
+        public EnemyPatternDefinition defaultPattern;
 
-        [Header("Base Stats")]
-        [Min(1)] public int baseMaxHp = 30;
-
-        [Tooltip("같은 전투 내 N번째 적(0,1,2...)에 따라 HP를 깎고 싶을 때 사용")]
-        public int hpPenaltyPerOrder = 5;
-
-        [Tooltip("HP 최소값(페널티로 너무 낮아지는 것 방지)")]
-        public int minHp = 10;
-        
-        [Header("Visual / Animation")]
-        [Tooltip("비워두면 프리팹(씬)에 설정된 AnimatorController를 그대로 사용합니다.\n전투 시작 시 BattleStageSpawner가 runtimeAnimatorController로 적용합니다.")]
+        [Header("Optional Visual Override")]
         public AnimatorOverrideController animationOverride;
-            
 
-        // 필요해지면 확장:
-        // public int baseAtk;
-        // public int rewardGold;
-        // public RuntimeAnimatorController animatorBase;
-        // public Sprite portrait;
+        [Header("Legacy HP (kept for compatibility)")]
+        [Min(0)] public int baseMaxHp = 30;
+        [Min(0)] public int hpPenaltyPerOrder = 0;
+        [Min(1)] public int minHp = 1;
 
+        public int GetBasePowerSafe()
+        {
+            // 기존 에셋이 basePower=0이면 baseMaxHp에서 대충 환산해서 “안 죽게”만
+            if (basePower > 0) return basePower;
+            return Mathf.Max(1, Mathf.CeilToInt(baseMaxHp / 10f));
+        }
+
+        public void ComputeBaseStats(int orderIndex, int power, EnemyStatProfile profile, out int maxHp, out int atk)
+        {
+            power = Mathf.Max(1, power);
+
+            // ✅ 너무 복잡해지지 않게 “정수 곱”만 사용
+            // (원하면 여기 숫자만 바꿔도 밸런스가 전체적으로 움직임)
+            int hp;
+            int a;
+
+            switch (profile)
+            {
+                case EnemyStatProfile.Tank:
+                    hp = power * 12;
+                    a  = power * 6;
+                    break;
+
+                case EnemyStatProfile.Striker:
+                    hp = power * 7;
+                    a  = power * 11;
+                    break;
+
+                default: // Balanced
+                    hp = power * 9;
+                    a  = power * 9;
+                    break;
+            }
+
+            if (hpPenaltyPerOrder > 0 && orderIndex > 0)
+                hp = Mathf.Max(minHp, hp - hpPenaltyPerOrder * orderIndex);
+
+            maxHp = Mathf.Max(minHp, hp);
+            atk   = Mathf.Max(0, a);
+        }
+
+        // (기존 코드가 ComputeMaxHp를 쓰고 있으면 계속 동작하도록 유지)
         public int ComputeMaxHp(int orderIndex)
         {
-            int hp = Mathf.Max(minHp, baseMaxHp - Mathf.Max(0, orderIndex) * Mathf.Max(0, hpPenaltyPerOrder));
-            return Mathf.Max(1, hp);
+            ComputeBaseStats(orderIndex, GetBasePowerSafe(), defaultProfile, out int hp, out _);
+            return hp;
         }
     }
 }

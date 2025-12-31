@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Battle.View.BattleActorView
   animator: {fileID: 4778233256228514917}
+  drivenByDirector: 0
   trigAttack: Attack
   trigHit: Hit
   trigBlock: Block
@@ -72,7 +73,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4571455572658197528
 Transform:
   m_ObjectHideFlags: 0

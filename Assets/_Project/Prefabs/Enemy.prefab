@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7829733635156486871}
   - component: {fileID: 7626180972850496668}
   - component: {fileID: 3310378735430040592}
+  - component: {fileID: 6615986938761039642}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -86,9 +87,9 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -6904328890148941082, guid: 822ad26d7aad34a2eab411b7d5697c9c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c761a5448fc64bd897d290c3c8dc1cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -109,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Battle.View.BattleActorView
   animator: {fileID: 7829733635156486871}
+  drivenByDirector: 0
   trigAttack: Attack
   trigHit: Hit
   trigBlock: Block
@@ -151,10 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72773e308f2c4d539c26045c03c78c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Battle.View.EnemyTargetView
-  index: -1
+  slotIndex: -1
   selectedMarker: {fileID: 5414589679204224495}
-  popupTarget: {fileID: 1386026862281104534}
-  manager: {fileID: 0}
+  targetManager: {fileID: 0}
   autoAddCollider2D: 1
 --- !u!61 &3310378735430040592
 BoxCollider2D:
@@ -194,7 +195,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.4, y: 6.4}
+    oldSize: {x: 2.1333334, y: 2.1333334}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -202,6 +203,27 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 6.4, y: 6.4}
   m_EdgeRadius: 0
+--- !u!114 &6615986938761039642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012044703435611031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1015273f22d21432e9323bc9eb85413e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Battle.BattleEnemy
+  definition: {fileID: 0}
+  state:
+    hp: 0
+    maxHp: 0
+    block: 0
+    vulnerableTurns: 0
+  popupTarget: {fileID: 0}
+  slotIndex: -1
+  autoRegister: 1
 --- !u!1 &5414589679204224495
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,13 +12,27 @@ namespace DungeonDeck.Battle
     [Serializable]
     public class EnemyRuntimeState
     {
+        // NOTE
+        // - BattleEnemy/UI에서 참조하는 최소 스탯만 보관합니다.
+        // - def/slotIndex는 디버그/문맥용(세이브 목적 아님)입니다.
+                    
+        [Header("Debug / Context")]
+        [SerializeField] public EnemyDefinition def;
+        [SerializeField] public int slotIndex = -1;
+                    
+        [Header("Core Stats")]
+            
         [SerializeField] private int hp;
         [SerializeField] private int maxHp;
+        [SerializeField] private int atk;
+        
+        [Header("Temporary States")]
         [SerializeField] private int block;
         [SerializeField] private int vulnerableTurns;
 
         public int HP => hp;
         public int MaxHP => maxHp;
+        public int ATK => atk;
         public int Block => block;
         public int VulnerableTurns => vulnerableTurns;
         public bool IsAlive => hp > 0;
@@ -28,34 +42,42 @@ namespace DungeonDeck.Battle
         /// </summary>
         public void ResetFromDefinition(EnemyDefinition def, int orderIndex = 0)
         {
+            this.def = def;
+            
             if (def == null)
             {
                 // 안전 기본값
-                maxHp = 30;
-                hp = 30;
-                block = 0;
-                vulnerableTurns = 0;
+                ResetWithValues(hp: 30, maxHp: 30, atk: 0);
                 return;
             }
 
-            maxHp = def.ComputeMaxHp(orderIndex);
-            hp = maxHp;
-            block = 0;
-            vulnerableTurns = 0;
+            int power = def.GetBasePowerSafe();
+            def.ComputeBaseStats(orderIndex, power, def.defaultProfile, out int computedMaxHp, out int computedAtk);
+            ResetWithValues(hp: computedMaxHp, maxHp: computedMaxHp, atk: computedAtk);
         }
 
         /// <summary>
-        /// 직접 값으로 초기화 (RunSession 기반 등)
+        /// - 기존 호출부 호환을 위해 (maxHealth, attack) 시그니처 유지
         /// </summary>
         public void ResetWithValues(int maxHealth, int attack = 0)
         {
-            maxHp = Mathf.Max(1, maxHealth);
-            hp = maxHp;
-            block = 0;
-            vulnerableTurns = 0;
-            // attack은 현재 사용되지 않지만 확장용으로 파라미터 유지
+            ResetWithValues(hp: maxHealth, maxHp: maxHealth, atk: attack);
         }
 
+        /// <summary>
+        /// HP/MaxHP/ATK를 명시적으로 세팅하는 버전.
+        /// BattleEnemy.Init()에서 사용합니다.
+        /// </summary>
+        public void ResetWithValues(int hp, int maxHp, int atk)
+        {
+            this.maxHp = Mathf.Max(1, maxHp);
+            this.hp = Mathf.Clamp(hp, 0, this.maxHp);
+            this.atk = Mathf.Max(0, atk);
+            
+            block = 0;
+            vulnerableTurns = 0;
+        }
+        
         public int TakeDamage(int rawAmount)
         {
             if (!IsAlive) return 0;

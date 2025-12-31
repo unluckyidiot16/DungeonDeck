@@ -1,5 +1,6 @@
 // Assets/_Project/Scripts/Battle/BattleEnemy.cs
 using System;
+using DungeonDeck.Config.Encounters;
 using UnityEngine;
 using DungeonDeck.Config.Enemies;
 using DungeonDeck.Run;
@@ -19,6 +20,10 @@ namespace DungeonDeck.Battle
         [Header("Runtime State (readonly in inspector)")]
         [SerializeField] private EnemyRuntimeState state;
 
+        [Header("Pattern (MVP)")]
+        [SerializeField] private EnemyPatternDefinition pattern;
+        [SerializeField] private int patternStepIndex;
+        
         [Header("View References")]
         [Tooltip("팝업/FX가 뜰 위치. 비워두면 자기 transform 사용")]
         public Transform popupTarget;
@@ -26,7 +31,9 @@ namespace DungeonDeck.Battle
         [Header("Slot")]
         [SerializeField] private int slotIndex = -1;
         public int SlotIndex => slotIndex >= 0 ? slotIndex : Mathf.Clamp(transform.GetSiblingIndex(), 0, 2);
-        
+
+        public int ATK => state != null ? state.ATK : 0;
+        public EnemyPatternDefinition Pattern => pattern;
         
         [Header("Auto Registration")]
         [Tooltip("활성화 시 BattleController에 자동 등록")]
@@ -85,21 +92,59 @@ namespace DungeonDeck.Battle
             }
         }
 
-        // ─────────────────────────────────────────────────
-        // Initialization
-        // ─────────────────────────────────────────────────
         /// <summary>
-        /// SO 정의를 주입하고 런타임 상태를 리셋합니다.
+        /// ✅ StageSpawner에서 호출하는 “정식 초기화”
         /// </summary>
-        public void Init(EnemyDefinition def, int orderIndex = 0)
+        public void Init(EnemyDefinition def, int slotIndex, BattleEncounterDefinition encounter)
         {
             definition = def;
-            slotIndex = orderIndex;
-            
             if (state == null) state = new EnemyRuntimeState();
-            state.ResetFromDefinition(definition, orderIndex);
+            
+            // 슬롯 인덱스는 바인딩/타겟의 기준이므로 반드시 고정
+            this.slotIndex = slotIndex;
+
+            state.def = definition;
+            state.slotIndex = slotIndex;
+
+            if (definition == null)
+            {
+                // 빈 슬롯이면 그냥 비활성 상태로 두는 게 안전
+                state.ResetWithValues(1, 1, 0);
+                pattern = null;
+                patternStepIndex = 0;
+                OnStatsChanged?.Invoke(this);
+                return;
+            }
+
+            var slot = (encounter != null) ? encounter.GetResolvedSlotAt(slotIndex) : default;
+
+            int power = (slot.powerOverride > 0) ? slot.powerOverride : definition.GetBasePowerSafe();
+            var profile = (slot.overrideProfile) ? slot.profileOverride : definition.defaultProfile;
+
+            definition.ComputeBaseStats(slotIndex, power, profile, out int maxHp, out int atk);
+
+            // ✅ HP/ATK 반영
+            state.ResetWithValues(maxHp, maxHp, atk);
+
+            // ✅ 패턴 주입
+            pattern = (slot.patternOverride != null) ? slot.patternOverride : definition.defaultPattern;
+            patternStepIndex = 0;
+
+            // (선택) 애니메이션 override도 여기서 같이 주입 가능
+            var aoc = (slot.animationOverride != null) ? slot.animationOverride : definition.animationOverride;
+            ApplyAnimatorOverride(aoc);
 
             OnStatsChanged?.Invoke(this);
+        }
+
+        private void ApplyAnimatorOverride(AnimatorOverrideController aoc)
+        {
+            if (aoc == null) return;
+            var anim = GetComponentInChildren<Animator>(true);
+            if (anim == null) return;
+
+            if (anim.runtimeAnimatorController != aoc)
+                anim.runtimeAnimatorController = aoc;
         }
 
         /// <summary>

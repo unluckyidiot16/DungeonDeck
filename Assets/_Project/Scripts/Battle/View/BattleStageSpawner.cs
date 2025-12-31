@@ -133,7 +133,7 @@ namespace DungeonDeck.Battle.View
                 {
                     Debug.Log($"[BattleStageSpawner] Slot {slot}: Initializing with {enemyDef.id}");
                     
-                    enemy.Init(enemyDef, slot);
+                    enemy.Init(enemyDef, slot, encounter);
                     ApplyVisualOverrides(enemy, encounter, slot);
                     
                     // 이 슬롯은 사용 → GO + 주요 컴포넌트가 꺼져있어도 강제로 켠다
