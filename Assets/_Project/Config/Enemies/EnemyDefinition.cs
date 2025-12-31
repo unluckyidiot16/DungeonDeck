@@ -26,7 +26,6 @@ namespace DungeonDeck.Config.Enemies
         [Header("Core Power (MVP)")]
         [Min(0)] public int basePower = 5; // 기존 에셋이 0으로 들어오면 아래 fallback 로직으로 커버
         public EnemyStatProfile defaultProfile = EnemyStatProfile.Balanced;
-        public EnemyPatternDefinition defaultPattern;
 
         [Header("Optional Visual Override")]
         public AnimatorOverrideController animationOverride;
@@ -34,8 +33,17 @@ namespace DungeonDeck.Config.Enemies
         [Header("Legacy HP (kept for compatibility)")]
         [Min(0)] public int baseMaxHp = 30;
         [Min(0)] public int hpPenaltyPerOrder = 0;
-        [Min(1)] public int minHp = 1;
-
+        
+        [Tooltip("HP 최소값(페널티로 너무 낮아지는 것 방지)")]
+        public int minHp = 10;
+        
+        [Tooltip("기본 공격력(패턴이 없을 때 사용)")]
+        [Min(0)] public int baseAtk = 8;
+        
+        [Header("Pattern (MVP)")]
+        [Tooltip("적의 행동 패턴. 비워두면 BattleController가 단순 기본 공격으로 처리합니다.")]
+        public EnemyPatternDefinition defaultPattern;
+        
         public int GetBasePowerSafe()
         {
             // 기존 에셋이 basePower=0이면 baseMaxHp에서 대충 환산해서 “안 죽게”만

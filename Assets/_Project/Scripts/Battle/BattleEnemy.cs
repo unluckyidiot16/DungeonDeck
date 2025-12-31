@@ -2,6 +2,7 @@
 using System;
 using DungeonDeck.Config.Encounters;
 using UnityEngine;
+using DungeonDeck.Config.Encounters;
 using DungeonDeck.Config.Enemies;
 using DungeonDeck.Run;
 
@@ -19,10 +20,6 @@ namespace DungeonDeck.Battle
 
         [Header("Runtime State (readonly in inspector)")]
         [SerializeField] private EnemyRuntimeState state;
-
-        [Header("Pattern (MVP)")]
-        [SerializeField] private EnemyPatternDefinition pattern;
-        [SerializeField] private int patternStepIndex;
         
         [Header("View References")]
         [Tooltip("팝업/FX가 뜰 위치. 비워두면 자기 transform 사용")]
@@ -34,6 +31,18 @@ namespace DungeonDeck.Battle
 
         public int ATK => state != null ? state.ATK : 0;
         public EnemyPatternDefinition Pattern => pattern;
+        
+        // ─────────────────────────────────────────────────
+        // Pattern Runtime (Intent Preview)
+        // ─────────────────────────────────────────────────
+        [Header("Pattern Runtime")]
+        [SerializeField] private EnemyPatternDefinition pattern;
+        [SerializeField] private int patternStepIndex = 0;
+        [SerializeField] private string plannedIntentId;
+        [SerializeField] private int plannedDamage;
+            
+        public string PlannedIntentId => plannedIntentId;
+        public int PlannedDamage => plannedDamage;
         
         [Header("Auto Registration")]
         [Tooltip("활성화 시 BattleController에 자동 등록")]
@@ -245,6 +254,57 @@ namespace DungeonDeck.Battle
             slotIndex = Mathf.Clamp(idx, 0, 2);
         }
         
+        
+        // <summary>
+        /// 현재 패턴 스텝 기준으로 Intent(의도) 프리뷰 값을 갱신합니다.
+        /// BattleEnemyManager.RefreshIntentAll()에서 턴 시작 시 호출됩니다.
+        /// </summary>
+        public void RefreshIntentPreview(int fallbackDamage = 8)
+        {
+            if (!IsAlive)
+            {
+                plannedIntentId = null;
+                plannedDamage = 0;
+                return;
+            }
+            
+            // ✅ 기본 데미지 기준: 내 ATK 우선, 없으면 fallback
+            int baseDmg = ATK > 0 ? ATK : Mathf.Max(0, fallbackDamage);
+
+            
+            if (pattern != null && pattern.StepCount > 0)
+            {
+                var step = pattern.GetStep(patternStepIndex);
+                plannedIntentId = string.IsNullOrWhiteSpace(step.intentId) ? "atk" : step.intentId;
+                
+                // Step 정의 기반 데미지(최소 접점: baseDmg를 그대로 사용해도 OK)
+                int dmg = step.EvalDamage(baseDmg);
+                plannedDamage = dmg > 0 ? dmg : baseDmg;
+            }
+            else
+            {
+                plannedIntentId = "atk";
+                plannedDamage = baseDmg;
+            }
+        }
+    
+        /// <summary>
+        /// 적 행동(공격) 후 패턴 스텝을 1칸 진행시키고, 다음 프리뷰로 갱신합니다.
+        /// BattleController.EnemyAttackPhaseCo()에서 호출됩니다.
+        /// </summary>
+        public void AdvancePatternStep(int fallbackDamage = 8)
+        {
+            if (pattern != null && pattern.StepCount > 0)
+            {
+                if (pattern.loop)
+                    patternStepIndex = (patternStepIndex + 1) % pattern.StepCount;
+                else
+                    patternStepIndex = Mathf.Min(patternStepIndex + 1, pattern.StepCount - 1);
+            }
+        
+            // 다음 턴(또는 즉시 UI)에 보일 값 갱신
+            RefreshIntentPreview(fallbackDamage);
+        }
         
     }
 }

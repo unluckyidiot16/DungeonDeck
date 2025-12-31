@@ -243,6 +243,18 @@ namespace DungeonDeck.Battle
             NotifyStateChanged();
         }
         
+        private int GetFallbackEnemyDamage()
+        {
+            int dmg = 8;
+            try
+            {
+                if (RunSession.I.PendingBattleType == MapNodeType.Elite)
+                    dmg = 12;
+            }
+            catch { }
+            return dmg;
+        }
+        
         private void SyncTargetSelection(BattleEnemy selected)
         {
             if (targetManager == null) return;
@@ -597,6 +609,9 @@ namespace DungeonDeck.Battle
             _deck.Draw(_player.DrawPerTurn);
             _isPlayerTurn = true;
             _resolving = false;
+            
+            // Enemy intent preview (Pattern Peek)
+            _enemies.RefreshIntentAll(GetFallbackEnemyDamage());
 
             NotifyStateChanged();
         }
@@ -628,7 +643,7 @@ namespace DungeonDeck.Battle
 
         private IEnumerator EnemyAttackPhaseCo()
         {
-            int rawDamage = RunSession.I.PendingBattleType == MapNodeType.Boss ? 12 : 8;
+            int fallbackDamage = GetFallbackEnemyDamage();
 
             foreach (var enemy in _enemies.All)
             {
@@ -637,13 +652,14 @@ namespace DungeonDeck.Battle
 
                 // ✅ 슬롯 인덱스 사용
                 int slotIndex = enemy.SlotIndex;
+                int damage = enemy.PlannedDamage > 0 ? enemy.PlannedDamage : fallbackDamage;
 
                 if (animDirector != null)
                     yield return animDirector.PlayEnemyAttackCo(slotIndex);
 
                 animDirector?.PlayPlayerHitFx();
 
-                int hpLoss = _player.TakeDamage(rawDamage);
+                int hpLoss = _player.TakeDamage(damage);
                 if (hitPopups != null && hpLoss > 0)
                     hitPopups.SpawnPlayer(hpLoss);
 
@@ -654,6 +670,8 @@ namespace DungeonDeck.Battle
                     EndBattle(false);
                     yield break;
                 }
+                
+                enemy.AdvancePatternStep(fallbackDamage);
             }
         }
 

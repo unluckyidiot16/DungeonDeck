@@ -259,6 +259,15 @@ namespace DungeonDeck.Battle
                 }
             }
         }
+        
+        public void RefreshIntentAll(int fallbackDamage = 8)
+        {
+            foreach (var e in _enemies)
+            {
+                if (e == null || !e.IsAlive) continue;
+                e.RefreshIntentPreview(fallbackDamage);
+            }
+        }
 
         // ─────────────────────────────────────────────────
         // Turn Tick

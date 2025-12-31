@@ -9,7 +9,8 @@ namespace DungeonDeck.Config.Map
         Battle,
         Shop,
         Rest,
-        Boss
+        Elite,
+        Boss,
     }
 
     [CreateAssetMenu(menuName = "DungeonDeck/Map/Map Plan", fileName = "MapPlanDefinition")]
