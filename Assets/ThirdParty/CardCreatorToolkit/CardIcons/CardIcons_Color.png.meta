@@ -1,0 +1,1482 @@
+fileFormatVersion: 2
+guid: 4ca8fa804095a4026a51fa4284890501
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8672398341431059999
+    second: CardIcons_Color_0
+  - first:
+      213: 6578005901834184988
+    second: CardIcons_Color_1
+  - first:
+      213: -3627087024045601490
+    second: CardIcons_Color_2
+  - first:
+      213: -1477786171317754901
+    second: CardIcons_Color_3
+  - first:
+      213: -5336789312826954725
+    second: CardIcons_Color_4
+  - first:
+      213: -7165718044036720787
+    second: CardIcons_Color_5
+  - first:
+      213: 6042707373126005178
+    second: CardIcons_Color_6
+  - first:
+      213: -6372028924382928357
+    second: CardIcons_Color_7
+  - first:
+      213: -2944575276371530850
+    second: CardIcons_Color_8
+  - first:
+      213: 8589113435972047938
+    second: CardIcons_Color_9
+  - first:
+      213: -5808526582052473740
+    second: CardIcons_Color_10
+  - first:
+      213: 3011028490792891962
+    second: CardIcons_Color_11
+  - first:
+      213: 8077782930577013772
+    second: CardIcons_Color_12
+  - first:
+      213: -5828219993798656862
+    second: CardIcons_Color_13
+  - first:
+      213: 5466970712748287590
+    second: CardIcons_Color_14
+  - first:
+      213: -3583003880871172256
+    second: CardIcons_Color_15
+  - first:
+      213: -9086549353300461774
+    second: CardIcons_Color_16
+  - first:
+      213: -8364632042986349269
+    second: CardIcons_Color_17
+  - first:
+      213: -3455154942758207059
+    second: CardIcons_Color_18
+  - first:
+      213: 7015130713243602092
+    second: CardIcons_Color_19
+  - first:
+      213: -5646818334489245456
+    second: CardIcons_Color_20
+  - first:
+      213: -2054157583284257448
+    second: CardIcons_Color_21
+  - first:
+      213: 7856339159814737050
+    second: CardIcons_Color_22
+  - first:
+      213: -1259247328636713417
+    second: CardIcons_Color_23
+  - first:
+      213: 5442486806532354753
+    second: CardIcons_Color_24
+  - first:
+      213: 2452074379587479845
+    second: CardIcons_Color_25
+  - first:
+      213: -7809476888635880836
+    second: CardIcons_Color_26
+  - first:
+      213: -2271141446777868192
+    second: CardIcons_Color_27
+  - first:
+      213: 933315916100881777
+    second: CardIcons_Color_28
+  - first:
+      213: 6469815500111597283
+    second: CardIcons_Color_29
+  - first:
+      213: -4579575204524842768
+    second: CardIcons_Color_30
+  - first:
+      213: 2100204610852781220
+    second: CardIcons_Color_31
+  - first:
+      213: -1326246343042910302
+    second: CardIcons_Color_32
+  - first:
+      213: 6430469284171208297
+    second: CardIcons_Color_33
+  - first:
+      213: 2345319939718886763
+    second: CardIcons_Color_34
+  - first:
+      213: -1724886835114339182
+    second: CardIcons_Color_35
+  - first:
+      213: -541984375480759367
+    second: CardIcons_Color_36
+  - first:
+      213: -27125277959947350
+    second: CardIcons_Color_37
+  - first:
+      213: -7990173632659876583
+    second: CardIcons_Color_38
+  - first:
+      213: -3066657817357354735
+    second: CardIcons_Color_39
+  - first:
+      213: -2317246342235044095
+    second: CardIcons_Color_40
+  - first:
+      213: 5501270944938586701
+    second: CardIcons_Color_41
+  - first:
+      213: -2282242251939896731
+    second: CardIcons_Color_42
+  - first:
+      213: 4320895811157326946
+    second: CardIcons_Color_43
+  - first:
+      213: -7315224421914159707
+    second: CardIcons_Color_44
+  - first:
+      213: -6461492242153997457
+    second: CardIcons_Color_45
+  - first:
+      213: -5609039912022525509
+    second: CardIcons_Color_46
+  - first:
+      213: 8703742812066693413
+    second: CardIcons_Color_47
+  - first:
+      213: 6452626403370581354
+    second: CardIcons_Color_48
+  - first:
+      213: 4745068149759612476
+    second: CardIcons_Color_49
+  - first:
+      213: 2277293935547109193
+    second: CardIcons_Color_50
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CardIcons_Color_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 825
+        width: 168
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f166fabd75c8a5870800000000000000
+      internalID: 8672398341431059999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_1
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 819
+        width: 158
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c19ef351485c94b50800000000000000
+      internalID: 6578005901834184988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_2
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 819
+        width: 164
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2d455a919ff9adc0800000000000000
+      internalID: -3627087024045601490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_3
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 817
+        width: 165
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be3ee9c8e49dd7be0800000000000000
+      internalID: -1477786171317754901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_4
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 886
+        width: 86
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c29df356aefe5b0800000000000000
+      internalID: -5336789312826954725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_5
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 817
+        width: 114
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d67959097614e8c90800000000000000
+      internalID: -7165718044036720787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_6
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 820
+        width: 162
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab13fc817520cd350800000000000000
+      internalID: 6042707373126005178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_7
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 819
+        width: 153
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1224a724710297a0800000000000000
+      internalID: -6372028924382928357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_8
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 820
+        width: 162
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b2a7d1364c227d0800000000000000
+      internalID: -2944575276371530850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_9
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 813
+        width: 169
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24416a6b929a23770800000000000000
+      internalID: 8589113435972047938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_10
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 817
+        width: 170
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 474395839d7f36fa0800000000000000
+      internalID: -5808526582052473740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_11
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 619
+        width: 164
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a367a42957259c920800000000000000
+      internalID: 3011028490792891962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_12
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 620
+        width: 164
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0cb1c507cc0a1070800000000000000
+      internalID: 8077782930577013772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_13
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 616
+        width: 167
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac3dcc7bc00e1fa0800000000000000
+      internalID: -5828219993798656862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_14
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 616
+        width: 121
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66663d2e5e49edb40800000000000000
+      internalID: 5466970712748287590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_15
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 616
+        width: 150
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 067e3d334fc964ec0800000000000000
+      internalID: -3583003880871172256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_16
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 616
+        width: 158
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 237787a718716e180800000000000000
+      internalID: -9086549353300461774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_17
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 616
+        width: 168
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2dd2f0897bdaeb80800000000000000
+      internalID: -8364632042986349269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_18
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 616
+        width: 134
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da146f0c2e2dc00d0800000000000000
+      internalID: -3455154942758207059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_19
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 636
+        width: 168
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cac41d74730ca5160800000000000000
+      internalID: 7015130713243602092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_20
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 617
+        width: 134
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f80b9594a872a1b0800000000000000
+      internalID: -5646818334489245456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_21
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 417
+        width: 129
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85dbaa7bf8a2e73e0800000000000000
+      internalID: -2054157583284257448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_22
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 417
+        width: 151
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9c8fb757d2570d60800000000000000
+      internalID: 7856339159814737050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_23
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 420
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 736cf34f931468ee0800000000000000
+      internalID: -1259247328636713417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_24
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 417
+        width: 167
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c27c1e3ae8978b40800000000000000
+      internalID: 5442486806532354753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_25
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 417
+        width: 159
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 529e52618a4870220800000000000000
+      internalID: 2452074379587479845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_26
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 436
+        width: 168
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a4c3b652a2f9390800000000000000
+      internalID: -7809476888635880836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_27
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 419
+        width: 154
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 060732e13e84b70e0800000000000000
+      internalID: -2271141446777868192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_28
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 415
+        width: 171
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17d496a71edc3fc00800000000000000
+      internalID: 933315916100881777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_29
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 415
+        width: 169
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eec7763be669c950800000000000000
+      internalID: 6469815500111597283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_30
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 417
+        width: 167
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f02c187d941270c0800000000000000
+      internalID: -4579575204524842768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_31
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 217
+        width: 163
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac748957fc652d10800000000000000
+      internalID: 2100204610852781220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_32
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 215
+        width: 139
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a7344e4af9389de0800000000000000
+      internalID: -1326246343042910302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_33
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 217
+        width: 170
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 966d51e6ebd9d3950800000000000000
+      internalID: 6430469284171208297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_34
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 217
+        width: 170
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b65b5932f004c8020800000000000000
+      internalID: 2345319939718886763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_35
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 222
+        width: 166
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2941343ff88ff08e0800000000000000
+      internalID: -1724886835114339182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_36
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 230
+        width: 170
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb48a1051c7a78f0800000000000000
+      internalID: -541984375480759367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_37
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 220
+        width: 166
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aab73c214b1af9ff0800000000000000
+      internalID: -27125277959947350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_38
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 221
+        width: 164
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9159d933a633d1190800000000000000
+      internalID: -7990173632659876583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_39
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 216
+        width: 159
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1197db486fa0175d0800000000000000
+      internalID: -3066657817357354735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_40
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 219
+        width: 171
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107c102aabc77dfd0800000000000000
+      internalID: -2317246342235044095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_41
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 19
+        width: 167
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d42fd3607c0785c40800000000000000
+      internalID: 5501270944938586701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_42
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 17
+        width: 161
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5622cb183c8d350e0800000000000000
+      internalID: -2282242251939896731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_43
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 15
+        width: 166
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c718fd8d7e6fb30800000000000000
+      internalID: 4320895811157326946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_44
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 19
+        width: 158
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a55b8f552a1b7a90800000000000000
+      internalID: -7315224421914159707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_45
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 20
+        width: 166
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6bf77b4a0b2456a0800000000000000
+      internalID: -6461492242153997457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_46
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 15
+        width: 136
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb9b8e00befa822b0800000000000000
+      internalID: -5609039912022525509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_47
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 18
+        width: 84
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 521489129f7e9c870800000000000000
+      internalID: 8703742812066693413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_48
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 18
+        width: 106
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6db531c6855c8950800000000000000
+      internalID: 6452626403370581354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_49
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 21
+        width: 169
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c36117d775ed9d140800000000000000
+      internalID: 4745068149759612476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardIcons_Color_50
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 18
+        width: 164
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94fcf6dc4c29a9f10800000000000000
+      internalID: 2277293935547109193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CardIcons_Color_0: 8672398341431059999
+      CardIcons_Color_1: 6578005901834184988
+      CardIcons_Color_10: -5808526582052473740
+      CardIcons_Color_11: 3011028490792891962
+      CardIcons_Color_12: 8077782930577013772
+      CardIcons_Color_13: -5828219993798656862
+      CardIcons_Color_14: 5466970712748287590
+      CardIcons_Color_15: -3583003880871172256
+      CardIcons_Color_16: -9086549353300461774
+      CardIcons_Color_17: -8364632042986349269
+      CardIcons_Color_18: -3455154942758207059
+      CardIcons_Color_19: 7015130713243602092
+      CardIcons_Color_2: -3627087024045601490
+      CardIcons_Color_20: -5646818334489245456
+      CardIcons_Color_21: -2054157583284257448
+      CardIcons_Color_22: 7856339159814737050
+      CardIcons_Color_23: -1259247328636713417
+      CardIcons_Color_24: 5442486806532354753
+      CardIcons_Color_25: 2452074379587479845
+      CardIcons_Color_26: -7809476888635880836
+      CardIcons_Color_27: -2271141446777868192
+      CardIcons_Color_28: 933315916100881777
+      CardIcons_Color_29: 6469815500111597283
+      CardIcons_Color_3: -1477786171317754901
+      CardIcons_Color_30: -4579575204524842768
+      CardIcons_Color_31: 2100204610852781220
+      CardIcons_Color_32: -1326246343042910302
+      CardIcons_Color_33: 6430469284171208297
+      CardIcons_Color_34: 2345319939718886763
+      CardIcons_Color_35: -1724886835114339182
+      CardIcons_Color_36: -541984375480759367
+      CardIcons_Color_37: -27125277959947350
+      CardIcons_Color_38: -7990173632659876583
+      CardIcons_Color_39: -3066657817357354735
+      CardIcons_Color_4: -5336789312826954725
+      CardIcons_Color_40: -2317246342235044095
+      CardIcons_Color_41: 5501270944938586701
+      CardIcons_Color_42: -2282242251939896731
+      CardIcons_Color_43: 4320895811157326946
+      CardIcons_Color_44: -7315224421914159707
+      CardIcons_Color_45: -6461492242153997457
+      CardIcons_Color_46: -5609039912022525509
+      CardIcons_Color_47: 8703742812066693413
+      CardIcons_Color_48: 6452626403370581354
+      CardIcons_Color_49: 4745068149759612476
+      CardIcons_Color_5: -7165718044036720787
+      CardIcons_Color_50: 2277293935547109193
+      CardIcons_Color_6: 6042707373126005178
+      CardIcons_Color_7: -6372028924382928357
+      CardIcons_Color_8: -2944575276371530850
+      CardIcons_Color_9: 8589113435972047938
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

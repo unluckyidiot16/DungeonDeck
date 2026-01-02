@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b230aca252c24c7081f129321b3d413, type: 3}
   m_Name: EnemyDef_
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Config.Enemies.EnemyDefinition
-  id: Slime
-  displayName: Slime
-  isBoss: 0
+  id: Goblin
+  displayName: Goblin
+  basePower: 1
+  defaultProfile: 1
+  animationOverride: {fileID: 0}
   baseMaxHp: 30
   hpPenaltyPerOrder: 5
   minHp: 10
+  baseAtk: 8
+  defaultPattern: {fileID: 11400000, guid: 188271cb335e64412b4eeffcaa2a98d3, type: 2}

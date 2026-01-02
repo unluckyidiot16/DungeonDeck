@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DungeonDeck.Config.Cards;
 using DungeonDeck.Config.UI;
+using DungeonDeck.UI.Cards;
 
 namespace DungeonDeck.UI.Battle
 {
@@ -24,6 +25,10 @@ namespace DungeonDeck.UI.Battle
         public TMP_Text costText;
         public TMP_Text effectText;
         public TMP_Text rarityText;
+        
+        [Header("Effect Line (Icon Tokens)")]
+        [Tooltip("연결되면 effectText 대신 아이콘 토큰 라인을 사용합니다. (없으면 기존 텍스트 fallback)")]
+        public CardEffectLineView effectLineView;
 
         [Header("Theme (optional)")]
         public CardVisualTheme theme;
@@ -59,7 +64,20 @@ namespace DungeonDeck.UI.Battle
             }
 
             if (nameText != null) nameText.text = card.GetDisplayName();
-            if (effectText != null) effectText.text = card.GetEffectText();
+            // ✅ 1순위: 아이콘 토큰 라인 / 2순위: 기존 TMP 텍스트 라인
+            if (effectLineView != null)
+            {
+                effectLineView.Bind(card);
+                if (effectText != null) effectText.gameObject.SetActive(false);
+            }
+            else
+            {
+                if (effectText != null)
+                {
+                    effectText.gameObject.SetActive(true);
+                    effectText.text = card.GetCompactEffectLine(); // 기존 유지(디버그/임시)
+                }
+            }
 
             if (costText != null)
             {
@@ -126,6 +144,10 @@ namespace DungeonDeck.UI.Battle
 
             if (frameImage == null) frameImage = FindImg("Frame");
             if (iconImage == null) iconImage = FindImg("Icon");
+            
+            // ✅ 아이콘 라인 자동 탐색(프리팹에 붙여두면 자동 연결)
+            if (effectLineView == null)
+                effectLineView = GetComponentInChildren<CardEffectLineView>(true);
         }
 
         private TMP_Text FindTmp(string childName)

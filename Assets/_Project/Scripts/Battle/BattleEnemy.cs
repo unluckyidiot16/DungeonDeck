@@ -5,6 +5,7 @@ using UnityEngine;
 using DungeonDeck.Config.Encounters;
 using DungeonDeck.Config.Enemies;
 using DungeonDeck.Run;
+using DungeonDeck.Battle.Combat;
 
 namespace DungeonDeck.Battle
 {
@@ -13,7 +14,7 @@ namespace DungeonDeck.Battle
     /// - EnemyDefinition(SO) + EnemyRuntimeState(런타임) 보유
     /// - Init(def) 또는 Initialize(run, orderIndex)에서 state 생성/리셋
     /// </summary>
-    public class BattleEnemy : MonoBehaviour
+    public class BattleEnemy : MonoBehaviour, ICombatant
     {
         [Header("Definition")]
         [SerializeField] private EnemyDefinition definition;
@@ -40,18 +41,24 @@ namespace DungeonDeck.Battle
         [SerializeField] private int patternStepIndex = 0;
         [SerializeField] private string plannedIntentId;
         [SerializeField] private int plannedDamage;
+        [SerializeField] private int plannedVulnerableToPlayerTurns = 0;
+        public int PatternStepIndex => patternStepIndex;
             
-        private bool SetPlannedIntent(string intentId, int damage)
+        private bool SetPlannedIntent(string intentId, int damage, int vulnTurns)
         {
             // ✅ 규칙 통일: "값이 변할 때만" 변경 처리 (그리고 필요 시에만 이벤트 발행)
-            if (plannedIntentId == intentId && plannedDamage == damage) return false;
+            if (plannedIntentId == intentId &&
+                plannedDamage == damage &&
+                plannedVulnerableToPlayerTurns == vulnTurns) return false;  
             plannedIntentId = intentId;
             plannedDamage = damage;
+            plannedVulnerableToPlayerTurns = vulnTurns;
             return true;
         }
         
         public string PlannedIntentId => plannedIntentId;
         public int PlannedDamage => plannedDamage;
+        public int PlannedVulnerableToPlayerTurns => plannedVulnerableToPlayerTurns;
         
         [Header("Auto Registration")]
         [Tooltip("활성화 시 BattleController에 자동 등록")]
@@ -64,6 +71,33 @@ namespace DungeonDeck.Battle
         // ─────────────────────────────────────────────────
         public event Action<BattleEnemy> OnDefeated;
         public event Action<BattleEnemy> OnStatsChanged;
+            
+        // ICombatant 이벤트 브릿지(기존 시그니처 유지 + 공통 인터페이스 제공)
+        private event Action<ICombatant> _onDefeatedCombatant;
+        private event Action<ICombatant> _onStatsChangedCombatant;
+            
+        event Action<ICombatant> ICombatant.OnDefeated
+        {
+            add => _onDefeatedCombatant += value;
+            remove => _onDefeatedCombatant -= value;
+        }
+        event Action<ICombatant> ICombatant.OnStatsChanged
+        {
+            add => _onStatsChangedCombatant += value;
+            remove => _onStatsChangedCombatant -= value;
+        }
+    
+        private void RaiseStatsChanged()
+        {
+            OnStatsChanged?.Invoke(this);
+            _onStatsChangedCombatant?.Invoke(this);
+        }
+    
+        private void RaiseDefeated()
+        {
+            OnDefeated?.Invoke(this);
+            _onDefeatedCombatant?.Invoke(this);
+        }
 
         // ─────────────────────────────────────────────────
         // Properties
@@ -78,6 +112,7 @@ namespace DungeonDeck.Battle
         public bool IsAlive => state != null && state.IsAlive;
 
         public Transform PopupTarget => popupTarget != null ? popupTarget : transform;
+        public int PopupSlotIndex => SlotIndex;
 
         // ─────────────────────────────────────────────────
         // Unity Lifecycle
@@ -138,8 +173,8 @@ namespace DungeonDeck.Battle
                 state.ResetWithValues(1, 1, 0);
                 pattern = null;
                 patternStepIndex = 0;
-                SetPlannedIntent(null, 0);
-                OnStatsChanged?.Invoke(this);
+                SetPlannedIntent(null, 0, 0);
+                RaiseStatsChanged();
                 return;
             }
 
@@ -164,7 +199,7 @@ namespace DungeonDeck.Battle
             // ✅ 초기 Intent 값도 최신 스탯/패턴 기준으로 맞춰둔다 (Init 마지막 OnStatsChanged에서 UI 갱신)
             RefreshIntentPreview(fireEvent: false);
 
-            OnStatsChanged?.Invoke(this);
+            RaiseStatsChanged();
         }
 
         private void ApplyAnimatorOverride(AnimatorOverrideController aoc)
@@ -208,7 +243,7 @@ namespace DungeonDeck.Battle
                 state.ResetWithValues(maxHealth: 30, attack: 0);
             }
 
-            OnStatsChanged?.Invoke(this);
+            RaiseStatsChanged();
         }
 
         // ─────────────────────────────────────────────────
@@ -230,17 +265,17 @@ namespace DungeonDeck.Battle
             {
                 
                 // ✅ 사망 시 intent 프리뷰 정리 (규칙 통일: SetPlannedIntent로 변경 여부 판단)
-                if (SetPlannedIntent(null, 0))
+                if (SetPlannedIntent(null, 0,0))
                     statsChanged = true;
             }
             
             // ✅ 스탯 변경 이벤트는 1회만 발행
             if (statsChanged)
-                OnStatsChanged?.Invoke(this);
+                RaiseStatsChanged();
             
             if (diedNow)
             {
-                OnDefeated?.Invoke(this);
+                RaiseDefeated();
                 
                 // BattleController에도 알림
                 if (_battleController == null)
@@ -262,7 +297,7 @@ namespace DungeonDeck.Battle
             
             // ✅ 실제로 HP가 변했을 때만 이벤트 발행
             if (state.HP != beforeHp)
-                OnStatsChanged?.Invoke(this);
+                RaiseStatsChanged();
         }
 
         public void AddBlock(int amount)
@@ -275,7 +310,7 @@ namespace DungeonDeck.Battle
             
             // ✅ 실제로 Block이 변했을 때만 이벤트 발행
             if (state.Block != beforeBlock)
-                OnStatsChanged?.Invoke(this);
+                RaiseStatsChanged();
         }
 
         public void ApplyVulnerable(int turns)
@@ -288,7 +323,7 @@ namespace DungeonDeck.Battle
             
             // ✅ 실제로 VulnerableTurns가 변했을 때만 이벤트 발행
             if (state.VulnerableTurns != before)
-                OnStatsChanged?.Invoke(this);
+                RaiseStatsChanged();
         }
 
         public void TickVulnerable()
@@ -300,7 +335,7 @@ namespace DungeonDeck.Battle
             state.TickVulnerable();
             // ✅ tick 결과로 값이 바뀐 경우에만 이벤트 발행
             if (state.VulnerableTurns != before)
-                OnStatsChanged?.Invoke(this);
+                RaiseStatsChanged();
         }
 
         // ─────────────────────────────────────────────────
@@ -329,9 +364,9 @@ namespace DungeonDeck.Battle
             
             if (!IsAlive)
             {
-                bool changedDead = SetPlannedIntent(null, 0);
+                bool changedDead = SetPlannedIntent(null, 0,0);
                 if (fireEvent && changedDead)
-                    OnStatsChanged?.Invoke(this);
+                    RaiseStatsChanged();
                 return;
             }
             
@@ -340,6 +375,7 @@ namespace DungeonDeck.Battle
 
             string nextId;
             int nextDmg;
+            int nextVuln = 0;
             
             if (pattern != null && pattern.StepCount > 0)
             {
@@ -350,17 +386,19 @@ namespace DungeonDeck.Battle
                 nextId = string.IsNullOrWhiteSpace(step.intentId) ? "atk" : step.intentId;
                 int dmg = step.EvalDamage(baseDmg);
                 nextDmg = dmg > 0 ? dmg : baseDmg;
+                nextVuln = Mathf.Max(0, step.applyVulnerableToPlayerTurns);
             }
             else
             {
                 nextId = "atk";
                 nextDmg = baseDmg;
+                nextVuln = 0;
             }
             
             // ✅ 규칙 통일: "값이 변할 때만" 이벤트 발행
-            bool changed = SetPlannedIntent(nextId, nextDmg);
+            bool changed = SetPlannedIntent(nextId, nextDmg, nextVuln);
             if (fireEvent && changed)
-                OnStatsChanged?.Invoke(this);
+                RaiseStatsChanged();
         }
     
         /// <summary>

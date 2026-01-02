@@ -13,12 +13,24 @@ MonoBehaviour:
   m_Name: Encounter_Battle
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Config.Encounters.BattleEncounterDefinition
   id: encounter_battle
-  displayName: Battle
-  enemies:
-  - {fileID: 0}
-  - {fileID: 11400000, guid: ab3d8f2f4075848bdac3222de520fc4c, type: 2}
-  - {fileID: 0}
-  slotAnimationOverrides:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  title: Encounter
+  enemies: []
+  slots:
+  - enemy: {fileID: 11400000, guid: ab3d8f2f4075848bdac3222de520fc4c, type: 2}
+    powerOverride: 2
+    overrideProfile: 0
+    profileOverride: 0
+    patternOverride: {fileID: 11400000, guid: 188271cb335e64412b4eeffcaa2a98d3, type: 2}
+    animationOverride: {fileID: 0}
+  - enemy: {fileID: 11400000, guid: ab3d8f2f4075848bdac3222de520fc4c, type: 2}
+    powerOverride: 2
+    overrideProfile: 0
+    profileOverride: 2
+    patternOverride: {fileID: 11400000, guid: 188271cb335e64412b4eeffcaa2a98d3, type: 2}
+    animationOverride: {fileID: 0}
+  - enemy: {fileID: 0}
+    powerOverride: 0
+    overrideProfile: 0
+    profileOverride: 0
+    patternOverride: {fileID: 0}
+    animationOverride: {fileID: 0}

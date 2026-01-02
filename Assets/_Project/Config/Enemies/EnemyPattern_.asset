@@ -14,7 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Config.Enemies.EnemyPatternDefinition
   loop: 1
   steps:
-  - intentId: 
+  - intentId: Attack
+    damageMultiplier: 1
+    applyVulnerableToPlayerTurns: 0
+    flatBonus: 0
+    hits: 1
+    blockAmount: 0
+  - intentId: Block
     damageMultiplier: 0
+    applyVulnerableToPlayerTurns: 0
     flatBonus: 0
     hits: 0
+    blockAmount: 1

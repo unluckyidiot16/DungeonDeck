@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RewardPoolResolver
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDeck.Config.Meta.RewardPoolResolver
   knownPools:
-  - {fileID: 11400000, guid: 995b052ac5e2146898f0b47bf390ed8c, type: 2}
+  - {fileID: 11400000, guid: 74670f42248dc4eb4aadef9a4bd7d81a, type: 2}

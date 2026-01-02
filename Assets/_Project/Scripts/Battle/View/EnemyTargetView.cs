@@ -20,8 +20,11 @@ namespace DungeonDeck.Battle.View
         public int slotIndex = -1;
 
         [Header("Selection Visual")]
-        [Tooltip("선택 링/하이라이트 오브젝트")]
+        [Tooltip("선택 링/하이라이트 오브젝트 (🎯 단일 대상)")]
         public GameObject selectedMarker;
+
+        [Tooltip("광역 표시 오브젝트 (🌐 전체 대상 / 🎯+🌐 혼합)")]
+        public GameObject aoeMarker;
         
         [Header("Intent Preview (optional)")]
         [Tooltip("인텐드 아이콘 이미지 (없으면 무시됩니다)")]
@@ -51,7 +54,7 @@ namespace DungeonDeck.Battle.View
         private bool _boundEnemyEvents;
         private bool _boundManagerEvents;
         
-        public int SlotIndex => slotIndex;
+        public int SlotIndex => _enemy != null ? _enemy.SlotIndex : slotIndex;
         public BattleEnemy Enemy => _enemy;
         public Transform PopupTarget => _enemy != null ? _enemy.PopupTarget : transform;
 
@@ -64,6 +67,9 @@ namespace DungeonDeck.Battle.View
 
             if (selectedMarker != null)
                 selectedMarker.SetActive(false);
+            
+            if (aoeMarker != null)
+                aoeMarker.SetActive(false);
 
             EnsureCollider();
         }
@@ -154,6 +160,12 @@ namespace DungeonDeck.Battle.View
                 intentValueText.text = value > 0 ? value.ToString() : string.Empty;
         }
     
+        public void SetAoe(bool on)
+        {
+            if (aoeMarker != null)
+                aoeMarker.SetActive(on);
+        }
+        
         /// <summary>
         /// 연결된 BattleEnemy의 PlannedIntentId/PlannedDamage로 프리뷰를 갱신합니다.
         /// </summary>
@@ -196,7 +208,7 @@ namespace DungeonDeck.Battle.View
             if (enemy != _enemy) return;
             RefreshIntentPreviewFromEnemy();
         }
-    
+        
         private void HandleEnemyDefeated(BattleEnemy enemy)
         {
             if (!isActiveAndEnabled) return;
@@ -204,13 +216,54 @@ namespace DungeonDeck.Battle.View
         
             // 죽은 적은 인텐드 프리뷰 비움 (선택 링 점프는 매니저가 처리)
             SetIntentPreview(null, 0);
+            
+            // ✅ 즉시 마커 정리 (매니저 브로드캐스트 전 한 프레임 잔상 방지)
+            SetSelected(false);
+            SetAoe(false);
         }
     
         private void HandleSelectionChanged(int selectedSlotIndex, BattleEnemy selectedEnemy)
         {
-            // ✅ “선택 링도 매니저 Refresh 없이”: 이벤트만 받고 자기 링만 갱신
-            SetSelected(selectedSlotIndex == SlotIndex);
+            var mode = (targetManager != null) ? targetManager.TargetingMode
+                : BattleTargetManager.CardTargetingMode.None;
+
+            bool alive = _enemy != null && _enemy.IsAlive;
+            bool isSelectedSlot = (selectedSlotIndex == SlotIndex) && alive;
+
+            // 기본값
+            SetAoe(false);
+            SetSelected(false);
+
+            switch (mode)
+            {
+                // 🌐 전체 대상: 살아있는 적 전원 강조(aoeMarker), 단일 선택 링은 숨김
+                case BattleTargetManager.CardTargetingMode.AllEnemiesOnly:
+                {
+                    SetAoe(alive);
+                    SetSelected(false);
+                    break;
+                }
+
+                // 🎯+🌐 혼합: 전체 강조 + 선택된 적만 추가 강조
+                case BattleTargetManager.CardTargetingMode.Mixed:
+                {
+                    SetAoe(alive);
+                    SetSelected(isSelectedSlot);
+                    break;
+                }
+
+                // 🎯 단일 대상 요구 / None: 기존 단일 선택 링만
+                case BattleTargetManager.CardTargetingMode.RequireSingleEnemy:
+                case BattleTargetManager.CardTargetingMode.None:
+                default:
+                {
+                    SetAoe(false);
+                    SetSelected(isSelectedSlot);
+                    break;
+                }
+            }
         }
+
         
     
         private Sprite ResolveIntentSprite(string intentId)
@@ -228,7 +281,10 @@ namespace DungeonDeck.Battle.View
         
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (targetManager == null) return;
+            Debug.Log($"[ETV.Click] view={name}, _enemy={_enemy?.name}, _enemy.SlotIndex={_enemy?.SlotIndex}, this.slotIndex={slotIndex}");
+            
+            if (targetManager != null && targetManager.IsSelectionLocked)
+                return;
             if (_enemy == null) return;
 
             // “BattleEnemy.IsAlive”가 상태 기반 컨트롤러와 불일치할 수 있으니

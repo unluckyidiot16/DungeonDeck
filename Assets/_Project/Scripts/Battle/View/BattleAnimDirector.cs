@@ -671,7 +671,7 @@ namespace DungeonDeck.Battle.View
         // ─────────────────────────────────────────
         // Helpers (Target/Enemy Animator Cache)
         // ─────────────────────────────────────────
-        private Animator GetEnemyAnimator(int index)
+        public Animator GetEnemyAnimator(int index)
         {
             if (enemyAnimators != null &&
                 index >= 0 && index < enemyAnimators.Length &&

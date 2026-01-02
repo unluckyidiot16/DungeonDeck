@@ -20,6 +20,11 @@ MonoBehaviour:
   cost: 1
   effectKind: 0
   value: 6
+  effects:
+  - kind: 0
+    value: 6
+    repeat: 1
+    target: 2
   exhaustOnPlay: 0
   approachAnimType: 1
   attackAnimType: 7

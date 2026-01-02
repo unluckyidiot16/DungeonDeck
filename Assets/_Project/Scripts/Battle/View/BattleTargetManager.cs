@@ -1,6 +1,8 @@
 // Assets/_Project/Scripts/Battle/View/BattleTargetManager.cs
 // v2: 슬롯 인덱스 기반 선택 로직 수정
 using System;
+using DungeonDeck.Config.Cards;
+using TMPro;
 using UnityEngine;
 
 namespace DungeonDeck.Battle.View
@@ -87,21 +89,25 @@ namespace DungeonDeck.Battle.View
             if (enemy == null) return;
             if (battle == null) battle = FindObjectOfType<BattleController>(true);
 
-            // 어떤 슬롯의 enemy인지 찾아서 선택
             int slotIdx = SlotIndexOf(enemy);
+            Debug.Log($"[BTM.Select] enemy={enemy.name}, slotIdx={slotIdx}");  // ← 추가
+    
             if (slotIdx < 0)
             {
-                Debug.LogWarning($"[BattleTargetManager] Select failed: enemy {enemy.name} not found in slots");
+                Debug.LogWarning($"[BTM.Select] FAILED: enemy {enemy.name} not found in slots");
+                // _slots 상태 덤프
+                for (int i = 0; i < MaxSlots; i++)
+                    Debug.Log($"  _slots[{i}] = {(_slots[i] != null ? _slots[i].Enemy?.name ?? "null enemy" : "null view")}");
                 return;
             }
 
-            // ✅ 적 객체의 생존 여부로 직접 체크 (EnemyCount 비교 제거)
             if (!enemy.IsAlive)
             {
-                Debug.Log($"[BattleTargetManager] Select failed: enemy {enemy.name} is not alive");
+                Debug.Log($"[BTM.Select] FAILED: enemy {enemy.name} is not alive");
                 return;
             }
 
+            Debug.Log($"[BTM.Select] SUCCESS: selecting slot {slotIdx}");  // ← 추가
             _selectedEnemy = enemy;
             SetSelectedSlotInternal(slotIdx, notifyBattle: true);
         }
@@ -230,18 +236,19 @@ namespace DungeonDeck.Battle.View
 
         /// <summary>
         /// 적 객체의 슬롯 인덱스 찾기
+        /// ✅ BattleEnemy.SlotIndex를 직접 사용 (EnemyTargetView.slotIndex와 불일치 방지)
         /// </summary>
         private int SlotIndexOf(BattleEnemy enemy)
         {
             if (enemy == null) return -1;
-            
-            for (int i = 0; i < MaxSlots; i++)
-            {
-                var v = _slots[i];
-                if (v == null) continue;
-                if (v.Enemy == enemy) return i;
-            }
-            return -1;
+    
+            // ✅ BattleEnemy의 SlotIndex를 직접 반환
+            int slot = enemy.SlotIndex;
+    
+            // 유효성 검증
+            if (slot < 0 || slot >= MaxSlots) return -1;
+    
+            return slot;
         }
         
         /// <summary>
@@ -252,5 +259,72 @@ namespace DungeonDeck.Battle.View
         {
             return SlotIndexOf(enemy);
         }
+        
+        
+        public enum CardTargetingMode
+        {
+            None,
+            RequireSingleEnemy, // 🎯
+            AllEnemiesOnly,     // 🌐
+            Mixed               // 🎯 + 🌐
+        }
+
+        [Header("Targeting UX (optional)")]
+        [SerializeField] private GameObject lockOverlay;      // 잠금 시 표시(선택)
+        [SerializeField] private TMP_Text targetingHintText;  // “대상 선택” 등(선택)
+
+        public CardTargetingMode TargetingMode { get; private set; } = CardTargetingMode.None;
+
+        public bool IsSelectionLocked =>
+            TargetingMode == CardTargetingMode.AllEnemiesOnly;
+
+        public bool IsTargetRequired =>
+            TargetingMode == CardTargetingMode.RequireSingleEnemy ||
+            TargetingMode == CardTargetingMode.Mixed;
+
+        /// <summary>
+        /// ✅ 카드 하나로 타겟 UX 상태를 결정
+        /// </summary>
+        public void ApplyCardTargeting(CardDefinition card)
+        {
+            var mode = CardTargetingMode.None;
+
+            if (card != null && card.HasAnyEnemyTargetEffect())
+            {
+                bool hasSingle = card.HasAnySingleEnemyTargetEffect();   // 🎯
+                bool hasAll = card.HasAnyAllEnemiesTargetEffect();       // 🌐
+
+                if (hasSingle && hasAll) mode = CardTargetingMode.Mixed;
+                else if (hasSingle) mode = CardTargetingMode.RequireSingleEnemy;
+                else if (hasAll) mode = CardTargetingMode.AllEnemiesOnly;
+            }
+
+            SetTargetingMode(mode);
+        }
+
+        public void SetTargetingMode(CardTargetingMode mode)
+        {
+            if (TargetingMode == mode) return;
+            TargetingMode = mode;
+
+            if (lockOverlay != null)
+                lockOverlay.SetActive(IsSelectionLocked);
+
+            if (targetingHintText != null)
+            {
+                string msg = "";
+                if (TargetingMode == CardTargetingMode.RequireSingleEnemy || TargetingMode == CardTargetingMode.Mixed)
+                    msg = "대상을 선택하세요";
+                else if (TargetingMode == CardTargetingMode.AllEnemiesOnly)
+                    msg = "전체 대상";
+
+                targetingHintText.text = msg;
+                targetingHintText.gameObject.SetActive(!string.IsNullOrEmpty(msg));
+            }
+
+            // 기존 갱신 루틴 재사용
+            Refresh();
+        }
+        
     }
 }

@@ -17,11 +17,15 @@ namespace DungeonDeck.Battle
         public int Block { get; private set; }
         public int Energy { get; private set; }
         public int DrawPerTurn { get; private set; }
+        public int VulnerableTurns { get; private set; }
 
         public event Action StateChanged;
         public event Action Died;
 
         public bool IsAlive => HP > 0;
+        
+        private const float VULNERABLE_DAMAGE_MULT = 1.5f;
+        // NOTE: 소수 처리 정책은 ceil(올림). (1 피해도 취약이면 체감되게)
 
         // ─────────────────────────────────────────
         // Initialization
@@ -35,12 +39,14 @@ namespace DungeonDeck.Battle
                 Energy = 3;
                 DrawPerTurn = 5;
                 Block = 0;
+                VulnerableTurns = 0;
                 return;
             }
 
             MaxHP = run.State.maxHP;
             HP = run.State.hp;
             Block = 0;
+            VulnerableTurns = 0;
 
             var balance = run.Balance;
             Energy = balance != null ? balance.startEnergyPerTurn : 3;
@@ -94,8 +100,35 @@ namespace DungeonDeck.Battle
 
         public void ClearBlock()
         {
+            if (Block == 0) return;
             Block = 0;
             StateChanged?.Invoke();
+        }
+        
+        // ─────────────────────────────────────────
+        // Debuff: Vulnerable
+        // ─────────────────────────────────────────
+        /// <summary>
+        /// 취약: 받는 피해 증가. (턴 단위)
+        /// </summary>
+        public void ApplyVulnerable(int turns)
+        {
+            if (turns <= 0) return;
+            int before = VulnerableTurns;
+            VulnerableTurns = Mathf.Max(0, VulnerableTurns + turns);
+            if (VulnerableTurns != before)
+                StateChanged?.Invoke();
+        }
+    
+        /// <summary>
+        /// 취약 턴 감소(0 아래로 내려가지 않음). 보통 플레이어 턴 시작에 호출.
+        /// </summary>
+        public void TickVulnerable()
+        {
+            int before = VulnerableTurns;
+            if (VulnerableTurns > 0) VulnerableTurns -= 1;
+            if (VulnerableTurns != before)
+                StateChanged?.Invoke();
         }
 
         // ─────────────────────────────────────────
@@ -104,8 +137,14 @@ namespace DungeonDeck.Battle
         public int TakeDamage(int rawAmount)
         {
             int amount = Mathf.Max(0, rawAmount);
+            
+            // ✅ 취약 보정: 들어오는 피해를 증가시킨 뒤 Block을 적용한다.
+            // (STS류 규칙과 동일: Block이 더 빨리 깎이게 됨)
+            if (amount > 0 && VulnerableTurns > 0)
+                amount = Mathf.CeilToInt(amount * VULNERABLE_DAMAGE_MULT);
             int hpBefore = HP;
-
+            int blockBefore = Block;
+            
             int remain = amount;
             if (Block > 0)
             {
@@ -119,7 +158,8 @@ namespace DungeonDeck.Battle
 
             int hpLoss = Mathf.Max(0, hpBefore - HP);
 
-            StateChanged?.Invoke();
+            if (hpLoss != 0 || Block != blockBefore)
+                StateChanged?.Invoke();
 
             if (!IsAlive)
                 Died?.Invoke();
@@ -132,9 +172,9 @@ namespace DungeonDeck.Battle
         // ─────────────────────────────────────────
         public void Heal(int amount)
         {
-            if (amount <= 0) return;
+            int before = HP;
             HP = Mathf.Min(HP + amount, MaxHP);
-            StateChanged?.Invoke();
+            if (HP != before) StateChanged?.Invoke();
         }
 
         // ─────────────────────────────────────────

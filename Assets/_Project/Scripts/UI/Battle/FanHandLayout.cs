@@ -95,6 +95,8 @@ namespace DungeonDeck.UI.Battle
         {
             if (_hoveredIndex == index) return;
             
+            if (_hoveredIndex >= _cards.Count) _hoveredIndex = -1;
+            
             // 이전 호버 카드 복구
             if (_hoveredIndex >= 0 && _hoveredIndex < _cards.Count)
             {
@@ -180,8 +182,6 @@ namespace DungeonDeck.UI.Battle
                     card.SetSiblingIndex(i);
                 }
             }
-
-            _hoveredIndex = -1;
         }
 
         private void AnimateCardTo(RectTransform card, Vector3 pos, Quaternion rot, Vector3 scale, int siblingIndex)

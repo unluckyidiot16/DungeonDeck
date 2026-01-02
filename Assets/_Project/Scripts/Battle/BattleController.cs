@@ -11,6 +11,11 @@ using DungeonDeck.Config.Cards;
 using DungeonDeck.Config.Map;
 using DungeonDeck.UI.Widgets;
 using DungeonDeck.Rewards;
+using DungeonDeck.Battle.Combat;
+using DungeonDeck.Battle.View;
+using DungeonDeck.Battle;
+using DungeonDeck.Config.Enemies;
+
 
 namespace DungeonDeck.Battle
 {
@@ -36,6 +41,11 @@ namespace DungeonDeck.Battle
         [Header("Target UI")]
         [Tooltip("현재 선택된 적을 표시하는 타겟 UI 매니저")]
         public View.BattleTargetManager targetManager;
+        
+        [Header("Combatants")]
+        [SerializeField] private BattlePlayer player; // ✅ 플레이어도 유닛으로 분리
+            
+        private DungeonDeck.Battle.View.BattleTargetManager _targetManager;
 
         // ─────────────────────────────────────────────────
         // Sub-systems
@@ -44,6 +54,7 @@ namespace DungeonDeck.Battle
         private BattleEnemyManager _enemies;
         private BattleActionQueue _actionQueue;
         private DeckRuntime _deck;
+        private ICombatant _playerCombatant;
 
         private bool _subsystemsReady = false;
         private bool _eventsWired = false;
@@ -82,6 +93,7 @@ namespace DungeonDeck.Battle
         public int EnemyMaxHP => SelectedEnemy?.MaxHP ?? 0;
         public int EnemyBlock => SelectedEnemy?.Block ?? 0;
         public int EnemyVulnerableTurns => SelectedEnemy?.VulnerableTurns ?? 0;
+        public int PlayerVulnerableTurns => _player?.VulnerableTurns ?? 0;
 
         public int HandCount => _deck?.HandCount ?? 0;
 
@@ -119,6 +131,35 @@ namespace DungeonDeck.Battle
             return enemy?.MaxHP ?? 0;
         }
 
+        // BattleController.cs 내부 필드 추가
+        private CardDefinition _previewCard;
+
+        // BattleController.cs 내부 메서드 추가
+        public void PreviewCardTargeting(CardDefinition card)
+        {
+            _previewCard = card;
+            if (targetManager != null)
+                targetManager.ApplyCardTargeting(card);
+
+            // ✅ 타겟 요구 카드인데 현재 선택이 죽어있으면, 살아있는 적으로 자동 보정
+            if (card != null && card.HasAnySingleEnemyTargetEffect())
+            {
+                var alive = ResolveTarget(SelectedEnemyIndex);
+                if (alive != null && alive.IsAlive)
+                    SelectEnemy(alive);
+            }
+        }
+
+        public void ClearCardTargetPreview(CardDefinition card = null)
+        {
+            if (card != null && card != _previewCard) return;
+            _previewCard = null;
+
+            if (targetManager != null)
+                targetManager.ApplyCardTargeting(null);
+        }
+
+        
         // ─────────────────────────────────────────────────
         // Lifecycle
         // ─────────────────────────────────────────────────
@@ -126,6 +167,9 @@ namespace DungeonDeck.Battle
         private void Awake()
         { 
             EnsureSubsystemsReady();
+            if (player == null) player = FindObjectOfType<BattlePlayer>(true);
+            if (targetManager == null) targetManager = FindObjectOfType<View.BattleTargetManager>(true);
+            
         }
         
         private void Start()
@@ -176,6 +220,43 @@ namespace DungeonDeck.Battle
                 EndBattle(true);
         }
 
+        // ─────────────────────────────────────────────
+        // ✅ 공통 전투 API (BattleEnemy/BattlePlayer 분기 제거)
+        // ─────────────────────────────────────────────
+        private ICombatant ResolveSelectedEnemy()
+        { 
+            if (targetManager == null) return null;
+            return targetManager.SelectedEnemy; // BattleEnemy == ICombatant
+        }
+    
+        private ICombatant ResolvePlayer()
+        { 
+            return player;
+        }
+    
+        // "타겟이 플레이어냐/적이냐" 분기는 여기 1곳으로 몰아넣기
+        private ICombatant ResolveTarget(bool targetIsPlayer)
+        {
+            return targetIsPlayer ? ResolvePlayer() : ResolveSelectedEnemy();
+        }
+    
+        private int DealDamage(ICombatant target, int rawAmount)
+        {
+            if (target == null) return 0;
+            return target.TakeDamage(rawAmount);
+        }
+    
+        private void HealTarget(ICombatant target, int amount)
+        {
+            if (target == null) return;
+            target.Heal(amount);
+        }
+    
+        private void AddBlockTarget(ICombatant target, int amount)
+        { 
+            if (target == null) return;
+            target.AddBlock(amount);
+        }
         
         private void EnsureSubsystemsReady()
         {
@@ -291,13 +372,93 @@ namespace DungeonDeck.Battle
             var run = RunSession.I;
 
             _player.Initialize(run);
+            SyncPlayerViewCombatant(); // ✅ 초기 HUD 동기화
             // 적 초기화는 이제 각 BattleEnemy가 스스로 등록함
             _deck = new DeckRuntime(run.State.deck);
         }
 
         private void NotifyStateChanged()
         {
+            SyncPlayerViewCombatant(); // ✅ BattlePlayerState -> BattlePlayer 값 미러링
             StateChanged?.Invoke();
+        }
+        
+        // ─────────────────────────────────────────────────
+        // Player Combatant Adapter (BattlePlayerState -> ICombatant)
+        // ─────────────────────────────────────────────────
+        /// <summary>
+        /// BattlePlayerState를 ICombatant로 노출하기 위한 최소 어댑터.
+        /// (플레이어 스탯 권위는 BattlePlayerState에 유지)
+        /// </summary>
+        private sealed class PlayerCombatantAdapter : ICombatant
+        {
+            private readonly BattleController _c;
+
+            public PlayerCombatantAdapter(BattleController controller)
+            {
+                _c = controller;
+            }
+
+            // 이 어댑터는 "카드 효과 적용" 용도라 이벤트는 당장 사용하지 않음(필요 시 확장)
+            public event Action<ICombatant> OnStatsChanged { add { } remove { } }
+            public event Action<ICombatant> OnDefeated { add { } remove { } }
+
+            public int SlotIndex { get; }
+            public int HP => _c.PlayerHP;
+            public int MaxHP => _c.PlayerMaxHP;
+            public int Block => _c.PlayerBlock; 
+                
+            // ✅ 현재 BattlePlayerState는 Vulnerable을 관리하지 않음.
+            // (플레이어 디버프를 넣고 싶으면 BattlePlayerState에 정식 필드/로직 추가하면서 데미지 공식까지 반영하는 게 좋음)
+            public int VulnerableTurns => 0;
+            
+            public bool IsAlive => HP > 0;
+
+            public Transform PopupTarget => _c.player != null ? _c.player.transform : _c.transform;
+            public int PopupSlotIndex => -1;
+
+            public int TakeDamage(int rawAmount)
+            {
+                if (_c._player == null) return 0;
+                return _c._player.TakeDamage(rawAmount);
+            }
+
+            public void Heal(int amount)
+            {
+                if (_c._player == null) return;
+                _c._player.Heal(amount);
+            }
+
+            public void AddBlock(int amount)
+            {
+                if (_c._player == null) return;
+                _c._player.GainBlock(amount);
+            }
+
+            public void ApplyVulnerable(int turns)
+            {
+                // ✅ no-op: 플레이어 취약은 아직 BattlePlayerState에서 지원하지 않음
+                // 필요해지면 BattlePlayerState에 VulnerableTurns/ApplyVulnerable/TickVulnerable + TakeDamage 보정까지 함께 추가하자.
+            }
+
+            public void TickVulnerable()
+            {
+                // ✅ no-op
+            }
+        }
+
+        
+        
+        /// <summary>
+        /// BattlePlayerState(_player)에서 관리되는 HP/Block을
+        /// BattlePlayer(모노비)로 미러링하여 PlayerHUDView 이벤트 갱신을 살립니다.
+        /// </summary>
+        private void SyncPlayerViewCombatant()
+        {
+            if (player == null) return;
+            int maxHp = PlayerMaxHP;
+            if (maxHp <= 0) return;
+            player.ResetWithValues(maxHp, PlayerHP, PlayerBlock);
         }
 
         // ─────────────────────────────────────────────────
@@ -463,9 +624,13 @@ namespace DungeonDeck.Battle
                 yield break;
             }
 
-            // ✅ 타겟 결정 (슬롯 인덱스 기반)
-            BattleEnemy target = ResolveTarget(action.TargetIndex);
-            int targetSlotIndex = target != null ? target.SlotIndex : 0;
+            // ✅ 타겟 결정 (effectKind 기반: 적/플레이어 공통)
+            ICombatant target = ResolveCardTargetCombatant(action.Card, action.TargetIndex);
+            
+            // AnimDirector는 "적 슬롯" 개념을 쓰므로, 플레이어 타겟(-1)인 경우 현재 선택 슬롯로 fallback
+            int targetSlotIndex = (target != null && target.PopupSlotIndex >= 0)
+                ? target.PopupSlotIndex
+                : SelectedEnemyIndex;
 
             // 1) 에너지 소비
             _player.TrySpendEnergy(action.Card.cost);
@@ -473,14 +638,14 @@ namespace DungeonDeck.Battle
             // 2) 애니메이션 (슬롯 인덱스 사용)
             if (animDirector != null)
             {
-                if (action.Card.effectKind == CardEffectKind.Attack)
+                if (action.Card.HasEffect(CardEffectKind.Attack))
                     StartCoroutine(animDirector.PlayPlayerAttackComboCo(action.Card, targetSlotIndex));
                 else
                     StartCoroutine(animDirector.PlayPlayerCardCo(action.Card, targetSlotIndex));
             }
 
             // 3) 효과 적용
-            ApplyCardEffect(action.Card, target);
+            ApplyCardEffect(action.Card, action.TargetIndex);
 
             // 4) 카드 이동
             if (action.Card.exhaustOnPlay)
@@ -538,6 +703,51 @@ namespace DungeonDeck.Battle
         }
 
         /// <summary>
+        /// 카드의 effectKind 기준으로 실제 적용 대상(ICombatant)을 결정합니다.
+        /// - 공격/디버프: 적(요청 슬롯/선택/첫 생존)
+        /// - 그 외(블록/힐/자원): 플레이어(런타임 state)
+        /// </summary>
+        // BattleController.cs 내부 메서드 교체
+        private ICombatant ResolveCardTargetCombatant(CardDefinition card, int requestedEnemySlotIndex)
+        {
+            if (card == null) return null;
+
+            // ✅ v2(Multi Effects) 기준: 적 타겟 효과가 하나라도 있으면 적을 대표 타겟으로
+            bool hasEnemyTargetEffect = false;
+
+            foreach (var e in card.EnumerateEffects())
+            {
+                if (e.value == 0) continue;
+
+                // BattleController 안에 이미 있는 ResolveEffectTarget() 사용 (Auto 처리)
+                var t = ResolveEffectTarget(e.target, e.kind);
+                if (t == CardEffectTarget.Enemy || t == CardEffectTarget.AllEnemies)
+                {
+                    hasEnemyTargetEffect = true;
+                    break;
+                }
+            }
+
+            if (hasEnemyTargetEffect)
+                return ResolveTarget(requestedEnemySlotIndex);
+
+            // ✅ 플레이어는 BattlePlayerState 권위 → 어댑터로 노출
+            return _playerCombatant ?? (_playerCombatant = new PlayerCombatantAdapter(this));
+        }
+
+    
+        private void SpawnDamagePopup(ICombatant target, int amount)
+        {
+            if (hitPopups == null) return;
+            if (target == null) return;
+            if (amount <= 0) return;
+        
+            int slot = target.PopupSlotIndex;
+            if (slot >= 0) hitPopups.SpawnEnemy(amount, slot);
+            else hitPopups.SpawnPlayer(amount);
+        }
+        
+        /// <summary>
         /// 개선된 자동 복귀 조건 체크
         /// </summary>
         private bool ShouldAutoReturnToBase()
@@ -558,53 +768,141 @@ namespace DungeonDeck.Battle
         // ─────────────────────────────────────────────────
         // Card Effects (객체 참조 기반)
         // ─────────────────────────────────────────────────
-        private void ApplyCardEffect(CardDefinition card, BattleEnemy target)
+        private void ApplyCardEffect(CardDefinition card, int requestedEnemySlotIndex)
         {
-            switch (card.effectKind)
+            if (card == null) return;
+            // ✅ 단일 적 타겟(필요 시) 미리 구해두기
+            BattleEnemy singleEnemy = ResolveTarget(requestedEnemySlotIndex);
+
+            // ✅ 플레이어 타겟(권위는 BattlePlayerState이므로 어댑터 사용)
+            var self = _playerCombatant ?? (_playerCombatant = new PlayerCombatantAdapter(this));
+
+            // ✅ 데미지 팝업은 타겟별로 합산해서 “한 번씩만”
+            Dictionary<int, int> dmgByEnemySlot = null; // slot -> dmg
+            int playerHpLoss = 0;
+
+            foreach (var e in card.EnumerateEffects())
             {
-                case CardEffectKind.Attack:
-                    if (target != null)
+                if (e.value == 0) continue;
+                int repeat = Mathf.Max(1, e.repeat);
+
+                // 1) 타겟 해석(Auto 포함)
+                var resolvedTarget = ResolveEffectTarget(e.target, e.kind);
+
+                // 2) 실제 대상 열거
+                IEnumerable<ICombatant> targets = EnumerateTargets(resolvedTarget, self, singleEnemy);
+                if (targets == null) continue;
+
+                foreach (var t in targets)
+                {
+                    if (t == null || !t.IsAlive) continue;
+
+                    switch (e.kind)
                     {
-                        int hpLoss = target.TakeDamage(card.value);
-                        if (hitPopups != null && hpLoss > 0)
+                        case CardEffectKind.Attack:
                         {
-                            // ✅ 슬롯 인덱스 사용
-                            int slotIdx = target.SlotIndex;
-                            hitPopups.SpawnEnemy(hpLoss, slotIdx);
+                            int sum = 0;
+                            for (int i = 0; i < repeat; i++)
+                                sum += t.TakeDamage(e.value);
+
+                            int slot = t.PopupSlotIndex;
+                            if (sum > 0)
+                            {
+                                if (slot >= 0)
+                                {
+                                    dmgByEnemySlot ??= new Dictionary<int, int>();
+                                    dmgByEnemySlot[slot] = (dmgByEnemySlot.TryGetValue(slot, out var cur) ? cur : 0) + sum;
+                                }
+                                else
+                                {
+                                    playerHpLoss += sum;
+                                }
+                            }
+                            break;
                         }
+
+                        case CardEffectKind.ApplyVulnerable:
+                            for (int i = 0; i < repeat; i++)
+                                t.ApplyVulnerable(e.value);
+                            break;
+
+                        case CardEffectKind.Block:
+                            for (int i = 0; i < repeat; i++)
+                                t.AddBlock(e.value);
+                            break;
+
+                        case CardEffectKind.Heal:
+                            for (int i = 0; i < repeat; i++)
+                                t.Heal(e.value);
+                            break;
+
+                        case CardEffectKind.Draw:
+                            // ✅ Draw/Energy는 "Self 전용" 권장 (타겟이 Self가 아니면 무시)
+                            if (ReferenceEquals(t, self))
+                                _deck.Draw(e.value * repeat);
+                            break;
+
+                        case CardEffectKind.GainEnergy:
+                            if (ReferenceEquals(t, self))
+                                _player.GainEnergy(e.value * repeat);
+                            break;
                     }
-                    break;
+                }
+            }
 
-                case CardEffectKind.Block:
-                    _player.GainBlock(card.value);
-                    break;
-
-                case CardEffectKind.Draw:
-                    _deck.Draw(card.value);
-                    break;
-
-                case CardEffectKind.GainEnergy:
-                    _player.GainEnergy(card.value);
-                    break;
-
-                case CardEffectKind.ApplyVulnerable:
-                    if (target != null)
-                        target.ApplyVulnerable(card.value);
-                    break;
-
-                case CardEffectKind.Heal:
-                    _player.Heal(card.value);
-                    break;
+            // ✅ 팝업 스폰(타겟별 1회)
+            if (hitPopups != null)
+            {
+                if (dmgByEnemySlot != null)
+                {
+                    foreach (var kv in dmgByEnemySlot)
+                        if (kv.Value > 0) hitPopups.SpawnEnemy(kv.Value, kv.Key);
+                }
+                if (playerHpLoss > 0) hitPopups.SpawnPlayer(playerHpLoss);
             }
 
             NotifyStateChanged();
+         }
+
+        private static CardEffectTarget ResolveEffectTarget(CardEffectTarget t, CardEffectKind kind)
+        {
+            if (t != CardEffectTarget.Auto) return t;
+            switch (kind)
+            {
+                case CardEffectKind.Attack:
+                case CardEffectKind.ApplyVulnerable:
+                    return CardEffectTarget.Enemy;
+                default:
+                    return CardEffectTarget.Self;
+            }
         }
+
+        private IEnumerable<ICombatant> EnumerateTargets(CardEffectTarget t, ICombatant self, BattleEnemy singleEnemy)
+        {
+            switch (t)
+            {
+                case CardEffectTarget.Self:
+                    yield return self;
+                    yield break;
+
+                case CardEffectTarget.Enemy:
+                    if (singleEnemy != null && singleEnemy.IsAlive) yield return singleEnemy;
+                    yield break;
+
+                case CardEffectTarget.AllEnemies:
+                    if (_enemies == null) yield break;
+                    foreach (var e in _enemies.All)
+                        if (e != null && e.IsAlive) yield return e;
+                    yield break;
+            }
+        } 
 
         // ─────────────────────────────────────────────────
         // Turn Flow
         // ─────────────────────────────────────────────────
         private void BeginPlayerTurn()
         {
+            _player.TickVulnerable(); // ✅ 플레이어 취약 턴 감소(턴 시작)
             _player.BeginTurn(RunSession.I);
             _deck.Draw(_player.DrawPerTurn);
             _isPlayerTurn = true;
@@ -613,6 +911,7 @@ namespace DungeonDeck.Battle
             // Enemy intent preview (Pattern Peek)
             _enemies.RefreshIntentAll(GetFallbackEnemyDamage());
 
+            ClearCardTargetPreview();
             NotifyStateChanged();
         }
 
@@ -642,38 +941,142 @@ namespace DungeonDeck.Battle
         }
 
         private IEnumerator EnemyAttackPhaseCo()
+{
+    int fallbackDamage = GetFallbackEnemyDamage();
+
+    foreach (var enemy in _enemies.All)
+    {
+        if (enemy == null || !enemy.IsAlive)
+            continue;
+
+        int slotIndex = enemy.SlotIndex;
+        
+        // ✅ 현재 패턴 Step 가져오기
+        var pattern = enemy.Pattern;
+        EnemyPatternDefinition.Step step = default;
+        bool hasPattern = false;
+        
+        if (pattern != null && pattern.StepCount > 0)
         {
-            int fallbackDamage = GetFallbackEnemyDamage();
-
-            foreach (var enemy in _enemies.All)
-            {
-                if (enemy == null || !enemy.IsAlive)
-                    continue;
-
-                // ✅ 슬롯 인덱스 사용
-                int slotIndex = enemy.SlotIndex;
-                int damage = enemy.PlannedDamage > 0 ? enemy.PlannedDamage : fallbackDamage;
-
-                if (animDirector != null)
-                    yield return animDirector.PlayEnemyAttackCo(slotIndex);
-
-                animDirector?.PlayPlayerHitFx();
-
-                int hpLoss = _player.TakeDamage(damage);
-                if (hitPopups != null && hpLoss > 0)
-                    hitPopups.SpawnPlayer(hpLoss);
-
-                NotifyStateChanged();
-
-                if (!_player.IsAlive)
-                {
-                    EndBattle(false);
-                    yield break;
-                }
-                
-                enemy.AdvancePatternStep(fallbackDamage);
-            }
+            step = pattern.GetStep(enemy.PatternStepIndex);
+            hasPattern = true;
         }
+        
+        // ✅ 의도에 따른 분기
+        if (!hasPattern || step.IsAttackIntent)
+        {
+            // 공격 의도 (기본 포함)
+            yield return ExecuteEnemyAttack(enemy, slotIndex, fallbackDamage, step);
+        }
+        else if (step.IsDefendIntent)
+        {
+            // 방어 의도
+            yield return ExecuteEnemyDefend(enemy, slotIndex, step);
+        }
+        else if (step.IsDebuffOnlyIntent)
+        {
+            // 디버프만 의도 (공격 없이 취약만 부여)
+            yield return ExecuteEnemyDebuffOnly(enemy, slotIndex, step);
+        }
+        else
+        {
+            // 기타 의도 (버프 등) - 현재는 아무것도 안 함
+            Debug.Log($"[Battle] Enemy {enemy.name} performs non-attack action: {step.intentId}");
+            yield return new WaitForSeconds(0.3f);
+        }
+
+        NotifyStateChanged();
+
+        if (!_player.IsAlive)
+        {
+            EndBattle(false);
+            yield break;
+        }
+        
+        // ✅ 패턴 Step 진행
+        enemy.AdvancePatternStep(fallbackDamage);
+    }
+}
+
+/// <summary>
+/// 적 공격 실행
+/// </summary>
+private IEnumerator ExecuteEnemyAttack(BattleEnemy enemy, int slotIndex, int fallbackDamage, EnemyPatternDefinition.Step step)
+{
+    int damage = enemy.PlannedDamage > 0 ? enemy.PlannedDamage : fallbackDamage;
+
+    Debug.Log($"[Battle] Enemy {enemy.name} attacks for {damage} damage (ATK={enemy.ATK}, multiplier={step.damageMultiplier})");
+
+    // 공격 애니메이션
+    if (animDirector != null)
+        yield return animDirector.PlayEnemyAttackCo(slotIndex);
+
+    animDirector?.PlayPlayerHitFx();
+
+    // 데미지 적용
+    int hpLoss = _player.TakeDamage(damage);
+    if (hitPopups != null && hpLoss > 0)
+        hitPopups.SpawnPlayer(hpLoss);
+    
+    // 취약 부여 (공격과 함께)
+    int vulnTurns = enemy.PlannedVulnerableToPlayerTurns;
+    if (_player.IsAlive && vulnTurns > 0)
+    {
+        _player.ApplyVulnerable(vulnTurns);
+        Debug.Log($"[Battle] Enemy {enemy.name} applies {vulnTurns} Vulnerable to player");
+    }
+}
+
+/// <summary>
+/// 적 방어 실행 (블록 획득)
+/// </summary>
+private IEnumerator ExecuteEnemyDefend(BattleEnemy enemy, int slotIndex, EnemyPatternDefinition.Step step)
+{
+    int blockAmount = step.blockAmount > 0 ? step.blockAmount : 5; // 기본 블록량
+    
+    Debug.Log($"[Battle] Enemy {enemy.name} defends, gaining {blockAmount} block");
+
+    // 방어 애니메이션 (Focus 트리거 사용)
+    if (animDirector != null)
+    {
+        var animator = animDirector.GetEnemyAnimator(slotIndex);
+        if (animator != null)
+        {
+            animator.SetTrigger("Focus");
+        }
+    }
+    
+    yield return new WaitForSeconds(0.4f);
+    
+    enemy.AddBlock(blockAmount);
+}
+
+/// <summary>
+/// 적 디버프만 실행 (공격 없이 취약만 부여)
+/// </summary>
+private IEnumerator ExecuteEnemyDebuffOnly(BattleEnemy enemy, int slotIndex, EnemyPatternDefinition.Step step)
+{
+    int vulnTurns = step.applyVulnerableToPlayerTurns;
+    
+    Debug.Log($"[Battle] Enemy {enemy.name} applies debuff: {vulnTurns} Vulnerable to player");
+
+    // 디버프 애니메이션
+    if (animDirector != null)
+    {
+        var animator = animDirector.GetEnemyAnimator(slotIndex);
+        if (animator != null)
+        {
+            animator.SetTrigger("Focus");
+        }
+    }
+    
+    yield return new WaitForSeconds(0.4f);
+    
+    if (_player.IsAlive && vulnTurns > 0)
+    {
+        _player.ApplyVulnerable(vulnTurns);
+    }
+}
 
         // ─────────────────────────────────────────────────
         // Battle End
