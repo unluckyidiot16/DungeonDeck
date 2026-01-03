@@ -25,6 +25,8 @@ namespace DungeonDeck.Battle
         [Header("View References")]
         [Tooltip("팝업/FX가 뜰 위치. 비워두면 자기 transform 사용")]
         public Transform popupTarget;
+        
+        [SerializeField] private int plannedIntentValue; // ✅ UI에 보여줄 값(공격/방어/디버프 등)
 
         [Header("Slot")]
         [SerializeField] private int slotIndex = -1;
@@ -44,17 +46,21 @@ namespace DungeonDeck.Battle
         [SerializeField] private int plannedVulnerableToPlayerTurns = 0;
         public int PatternStepIndex => patternStepIndex;
             
-        private bool SetPlannedIntent(string intentId, int damage, int vulnTurns)
+        private bool SetPlannedIntent(string intentId, int damage, int intentValue, int vulnTurns)
         {
-            // ✅ 규칙 통일: "값이 변할 때만" 변경 처리 (그리고 필요 시에만 이벤트 발행)
             if (plannedIntentId == intentId &&
                 plannedDamage == damage &&
-                plannedVulnerableToPlayerTurns == vulnTurns) return false;  
+                plannedIntentValue == intentValue &&
+                plannedVulnerableToPlayerTurns == vulnTurns) return false;
+
             plannedIntentId = intentId;
             plannedDamage = damage;
+            plannedIntentValue = intentValue;
             plannedVulnerableToPlayerTurns = vulnTurns;
             return true;
         }
+
+        public int PlannedIntentValue => plannedIntentValue;
         
         public string PlannedIntentId => plannedIntentId;
         public int PlannedDamage => plannedDamage;
@@ -173,7 +179,7 @@ namespace DungeonDeck.Battle
                 state.ResetWithValues(1, 1, 0);
                 pattern = null;
                 patternStepIndex = 0;
-                SetPlannedIntent(null, 0, 0);
+                SetPlannedIntent(null, 0, 0,0);
                 RaiseStatsChanged();
                 return;
             }
@@ -265,7 +271,7 @@ namespace DungeonDeck.Battle
             {
                 
                 // ✅ 사망 시 intent 프리뷰 정리 (규칙 통일: SetPlannedIntent로 변경 여부 판단)
-                if (SetPlannedIntent(null, 0,0))
+                if (SetPlannedIntent(null, 0, 0, 0))
                     statsChanged = true;
             }
             
@@ -361,44 +367,49 @@ namespace DungeonDeck.Battle
         /// </summary>
         public void RefreshIntentPreview(int fallbackDamage = 8, bool fireEvent = true)
         {
-            
             if (!IsAlive)
             {
-                bool changedDead = SetPlannedIntent(null, 0,0);
-                if (fireEvent && changedDead)
-                    RaiseStatsChanged();
+                bool changedDead = SetPlannedIntent(null, 0, 0, 0);
+                if (fireEvent && changedDead) RaiseStatsChanged();
                 return;
             }
-            
-            // ✅ 기본 데미지 기준: 내 ATK 우선, 없으면 fallback
+
             int baseDmg = ATK > 0 ? ATK : Mathf.Max(0, fallbackDamage);
 
-            string nextId;
-            int nextDmg;
+            string nextId = "atk";
+            int nextDmg = baseDmg;      // ✅ 실제 데미지
+            int nextValue = baseDmg;    // ✅ UI 표시값
             int nextVuln = 0;
-            
+
             if (pattern != null && pattern.StepCount > 0)
             {
-                // EnemyPatternDefinition.Step 는 struct일 가능성이 높아서 null 비교 불가
                 int idx = Mathf.Clamp(patternStepIndex, 0, pattern.StepCount - 1);
                 var step = pattern.GetStep(idx);
-                
-                nextId = string.IsNullOrWhiteSpace(step.intentId) ? "atk" : step.intentId;
-                int dmg = step.EvalDamage(baseDmg);
-                nextDmg = dmg > 0 ? dmg : baseDmg;
-                nextVuln = Mathf.Max(0, step.applyVulnerableToPlayerTurns);
+
+                int dmg = Mathf.Max(0, step.EvalDamage(baseDmg));
+                int blk = Mathf.Max(0, step.blockAmount);
+                int vuln = Mathf.Max(0, step.applyVulnerableToPlayerTurns);
+
+                // intentId가 비어있으면 내용 기반으로 자동 선택
+                if (string.IsNullOrWhiteSpace(step.intentId))
+                {
+                    if (dmg > 0) nextId = "atk";
+                    else if (blk > 0) nextId = "def";
+                    else if (vuln > 0) nextId = "debuff";
+                    else nextId = "atk";
+                }
+                else nextId = step.intentId;
+
+                nextDmg = dmg;
+                nextVuln = vuln;
+
+                // ✅ UI 값은 “그 턴에 보여줄 대표 숫자”
+                // (MVP: 공격 있으면 공격 우선, 없으면 방어, 없으면 디버프)
+                nextValue = (dmg > 0) ? dmg : (blk > 0) ? blk : vuln;
             }
-            else
-            {
-                nextId = "atk";
-                nextDmg = baseDmg;
-                nextVuln = 0;
-            }
-            
-            // ✅ 규칙 통일: "값이 변할 때만" 이벤트 발행
-            bool changed = SetPlannedIntent(nextId, nextDmg, nextVuln);
-            if (fireEvent && changed)
-                RaiseStatsChanged();
+
+            bool changed = SetPlannedIntent(nextId, nextDmg, nextValue, nextVuln);
+            if (fireEvent && changed) RaiseStatsChanged();
         }
     
         /// <summary>

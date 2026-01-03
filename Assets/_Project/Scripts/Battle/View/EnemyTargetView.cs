@@ -176,7 +176,7 @@ namespace DungeonDeck.Battle.View
                 SetIntentPreview(null, 0);
                 return;
             }
-            SetIntentPreview(_enemy.PlannedIntentId, _enemy.PlannedDamage);
+            SetIntentPreview(_enemy.PlannedIntentId, _enemy.PlannedIntentValue);
         }
         
         private void BindEnemyEvents()

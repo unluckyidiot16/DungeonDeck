@@ -37,7 +37,7 @@ namespace DungeonDeck.Battle
         public int SlotIndex => -1;
         public int PopupSlotIndex => -1;
 
-        public void ResetWithValues(int maxHp, int startHp, int startBlock = 0)
+        public void ResetWithValues(int maxHp, int startHp, int startBlock = 0, int startVulnerableTurns = -1)
         {
             bool changed = false;
 
@@ -49,8 +49,12 @@ namespace DungeonDeck.Battle
             if (hp != startHp) { hp = startHp; changed = true; }
             if (block != startBlock) { block = startBlock; changed = true; }
 
-            // 상태이상은 초기화 정책 선택: 기본은 유지, 필요하면 0으로.
-            // if (vulnerableTurns != 0) { vulnerableTurns = 0; changed = true; }
+            // ✅ 선택: startVulnerableTurns >= 0이면 그 값으로 동기화
+            if (startVulnerableTurns >= 0)
+            {
+                startVulnerableTurns = Mathf.Max(0, startVulnerableTurns);
+                if (vulnerableTurns != startVulnerableTurns) { vulnerableTurns = startVulnerableTurns; changed = true; }
+            }
 
             _defeatedRaised = false;
 

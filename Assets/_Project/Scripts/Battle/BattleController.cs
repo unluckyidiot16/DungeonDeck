@@ -403,14 +403,14 @@ namespace DungeonDeck.Battle
             public event Action<ICombatant> OnStatsChanged { add { } remove { } }
             public event Action<ICombatant> OnDefeated { add { } remove { } }
 
-            public int SlotIndex { get; }
+            public int SlotIndex => -1;
             public int HP => _c.PlayerHP;
             public int MaxHP => _c.PlayerMaxHP;
             public int Block => _c.PlayerBlock; 
                 
             // ✅ 현재 BattlePlayerState는 Vulnerable을 관리하지 않음.
             // (플레이어 디버프를 넣고 싶으면 BattlePlayerState에 정식 필드/로직 추가하면서 데미지 공식까지 반영하는 게 좋음)
-            public int VulnerableTurns => 0;
+            public int VulnerableTurns => _c._player != null ? _c._player.VulnerableTurns : 0;
             
             public bool IsAlive => HP > 0;
 
@@ -437,13 +437,14 @@ namespace DungeonDeck.Battle
 
             public void ApplyVulnerable(int turns)
             {
-                // ✅ no-op: 플레이어 취약은 아직 BattlePlayerState에서 지원하지 않음
-                // 필요해지면 BattlePlayerState에 VulnerableTurns/ApplyVulnerable/TickVulnerable + TakeDamage 보정까지 함께 추가하자.
+                if (_c._player == null) return;
+                _c._player.ApplyVulnerable(turns);
             }
-
-            public void TickVulnerable()
-            {
-                // ✅ no-op
+        
+           public void TickVulnerable()
+           {
+               if (_c._player == null) return;
+               _c._player.TickVulnerable();
             }
         }
 
@@ -458,7 +459,7 @@ namespace DungeonDeck.Battle
             if (player == null) return;
             int maxHp = PlayerMaxHP;
             if (maxHp <= 0) return;
-            player.ResetWithValues(maxHp, PlayerHP, PlayerBlock);
+            player.ResetWithValues(maxHp, PlayerHP, PlayerBlock, PlayerVulnerableTurns);
         }
 
         // ─────────────────────────────────────────────────
@@ -941,62 +942,62 @@ namespace DungeonDeck.Battle
         }
 
         private IEnumerator EnemyAttackPhaseCo()
-{
-    int fallbackDamage = GetFallbackEnemyDamage();
-
-    foreach (var enemy in _enemies.All)
     {
-        if (enemy == null || !enemy.IsAlive)
-            continue;
+        int fallbackDamage = GetFallbackEnemyDamage();
 
-        int slotIndex = enemy.SlotIndex;
-        
-        // ✅ 현재 패턴 Step 가져오기
-        var pattern = enemy.Pattern;
-        EnemyPatternDefinition.Step step = default;
-        bool hasPattern = false;
-        
-        if (pattern != null && pattern.StepCount > 0)
+        foreach (var enemy in _enemies.All)
         {
-            step = pattern.GetStep(enemy.PatternStepIndex);
-            hasPattern = true;
-        }
-        
-        // ✅ 의도에 따른 분기
-        if (!hasPattern || step.IsAttackIntent)
-        {
-            // 공격 의도 (기본 포함)
-            yield return ExecuteEnemyAttack(enemy, slotIndex, fallbackDamage, step);
-        }
-        else if (step.IsDefendIntent)
-        {
-            // 방어 의도
-            yield return ExecuteEnemyDefend(enemy, slotIndex, step);
-        }
-        else if (step.IsDebuffOnlyIntent)
-        {
-            // 디버프만 의도 (공격 없이 취약만 부여)
-            yield return ExecuteEnemyDebuffOnly(enemy, slotIndex, step);
-        }
-        else
-        {
-            // 기타 의도 (버프 등) - 현재는 아무것도 안 함
-            Debug.Log($"[Battle] Enemy {enemy.name} performs non-attack action: {step.intentId}");
-            yield return new WaitForSeconds(0.3f);
-        }
+            if (enemy == null || !enemy.IsAlive)
+                continue;
 
-        NotifyStateChanged();
+            int slotIndex = enemy.SlotIndex;
+            
+            // ✅ 현재 패턴 Step 가져오기
+            var pattern = enemy.Pattern;
+            EnemyPatternDefinition.Step step = default;
+            bool hasPattern = false;
+            
+            if (pattern != null && pattern.StepCount > 0)
+            {
+                step = pattern.GetStep(enemy.PatternStepIndex);
+                hasPattern = true;
+            }
+            
+            // ✅ 의도에 따른 분기
+            if (!hasPattern || step.IsAttackIntent)
+            {
+                // 공격 의도 (기본 포함)
+                yield return ExecuteEnemyAttack(enemy, slotIndex, fallbackDamage, step);
+            }
+            else if (step.IsDefendIntent)
+            {
+                // 방어 의도
+                yield return ExecuteEnemyDefend(enemy, slotIndex, step);
+            }
+            else if (step.IsDebuffOnlyIntent)
+            {
+                // 디버프만 의도 (공격 없이 취약만 부여)
+                yield return ExecuteEnemyDebuffOnly(enemy, slotIndex, step);
+            }
+            else
+            {
+                // 기타 의도 (버프 등) - 현재는 아무것도 안 함
+                Debug.Log($"[Battle] Enemy {enemy.name} performs non-attack action: {step.intentId}");
+                yield return new WaitForSeconds(0.3f);
+            }
 
-        if (!_player.IsAlive)
-        {
-            EndBattle(false);
-            yield break;
+            NotifyStateChanged();
+
+            if (!_player.IsAlive)
+            {
+                EndBattle(false);
+                yield break;
+            }
+            
+            // ✅ 패턴 Step 진행
+            enemy.AdvancePatternStep(fallbackDamage);
         }
-        
-        // ✅ 패턴 Step 진행
-        enemy.AdvancePatternStep(fallbackDamage);
     }
-}
 
 /// <summary>
 /// 적 공격 실행
@@ -1017,6 +1018,10 @@ private IEnumerator ExecuteEnemyAttack(BattleEnemy enemy, int slotIndex, int fal
     int hpLoss = _player.TakeDamage(damage);
     if (hitPopups != null && hpLoss > 0)
         hitPopups.SpawnPlayer(hpLoss);
+    
+    // ✅ (추가) 공격 스텝에 blockAmount가 같이 있으면 즉시 획득
+    if (step.blockAmount > 0)
+        enemy.AddBlock(step.blockAmount);
     
     // 취약 부여 (공격과 함께)
     int vulnTurns = enemy.PlannedVulnerableToPlayerTurns;
