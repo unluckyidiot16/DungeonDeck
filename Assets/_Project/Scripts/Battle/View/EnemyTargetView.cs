@@ -35,6 +35,20 @@ namespace DungeonDeck.Battle.View
             
         [Tooltip("데미지/횟수 등 프리뷰 텍스트 (없으면 무시됩니다)")]
         [SerializeField] private TMP_Text intentValueText;
+        
+        [Header("Intent Theme (optional)")]
+        [Tooltip("인텐트 타입별 색상(아이콘/숫자 틴트). 공격=빨강, 방어=파랑, 디버프=보라 기본값")]
+        [SerializeField] private bool tintIntentUI = true;
+            
+        [SerializeField] private Color attackColor = new Color(1f, 0.25f, 0.25f, 1f);
+        [SerializeField] private Color defendColor = new Color(0.35f, 0.65f, 1f, 1f);
+        [SerializeField] private Color debuffColor = new Color(0.85f, 0.45f, 1f, 1f);
+        [SerializeField] private Color neutralColor = Color.white;
+            
+        [Tooltip("value가 0일 때 빈칸으로 레이아웃이 흔들리면 공백 한 칸을 유지합니다.")]
+        [SerializeField] private bool keepValueSpaceWhenZero = true;
+        
+        
             
         [Serializable]
         private struct IntentSpriteEntry
@@ -157,9 +171,51 @@ namespace DungeonDeck.Battle.View
             }
             
             if (intentValueText != null)
-                intentValueText.text = value > 0 ? value.ToString() : string.Empty;
+            {
+                if (value > 0) intentValueText.text = value.ToString();
+                else intentValueText.text = keepValueSpaceWhenZero ? " " : string.Empty;
+            }
+        }
+   
+        private void ApplyIntentTheme(string intentId)
+        {
+            if (!tintIntentUI) return;
+            
+            var kind = ResolveIntentKind(intentId);
+            var c = kind switch
+            {
+                IntentKind.Attack => attackColor,
+                IntentKind.Defend => defendColor,
+                IntentKind.Debuff => debuffColor,
+                _ => neutralColor
+            };
+            
+            if (intentIcon != null) intentIcon.color = c;
+            if (intentValueText != null) intentValueText.color = c;
         }
     
+        private enum IntentKind { None, Attack, Defend, Debuff, Other }
+    
+        private static IntentKind ResolveIntentKind(string intentId)
+        {
+            if (string.IsNullOrWhiteSpace(intentId))
+                return IntentKind.None;
+        
+            // 소문자/공백 제거
+            var id = intentId.Trim().ToLowerInvariant();
+        
+            // ✅ MVP 기준 키워드: atk / def / debuff
+            // 확장 대비: attack / block / shield / buff / weaken 등도 흡수
+            if (id == "atk" || id == "attack" || id.Contains("atk") || id.Contains("attack"))
+                return IntentKind.Attack;
+            if (id == "def" || id.Contains("def") || id.Contains("block") || id.Contains("shield"))
+                return IntentKind.Defend;
+            if (id == "debuff" || id.Contains("debuff") || id.Contains("vuln") || id.Contains("weak"))
+                return IntentKind.Debuff;
+        
+            return IntentKind.Other;
+        }
+        
         public void SetAoe(bool on)
         {
             if (aoeMarker != null)
